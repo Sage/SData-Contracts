@@ -1,0 +1,5984 @@
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sme="http://schemas.sage.com/sdata/sme/2007">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>http://schemas.sage.com/sc/2009</title>
+<link href="http://interop.sage.com/daisy/resources/skins/sageBranding2009/css/daisy.css" type="text/css" rel="stylesheet">
+<link href="http://interop.sage.com/daisy/resources/skins/sageBranding2009/css/basic.css" type="text/css" rel="stylesheet">
+</head>
+<body><a name="_top"></a><div id="bodyContainer">
+<p></p>
+<h1>
+            Contract http://schemas.sage.com/sc/2009</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<th>Resource Kind</th>
+<th>Plural</th>
+<th>Compliance</th>
+<th>CanGet</th>
+<th>CanPost</th>
+<th>CanPut</th>
+<th>CanDelete</th>
+<th>isSyncSource</th>
+<th>isSyncTarget</th>
+</tr>
+<tr>
+<td><a href="#operatingCompany--type">operatingCompany</a></td>
+<td>operatingCompanies</td>
+<td>must</td>
+<td>true 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+</tr>
+<tr>
+<td><a href="#person--type">person</a></td>
+<td>people</td>
+<td>must</td>
+<td>true 
+      </td>
+<td>true 
+      </td>
+<td>true 
+      </td>
+<td>true 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+</tr>
+<tr>
+<td><a href="#postalAddress--type">postalAddress</a></td>
+<td>postalAddresses</td>
+<td>must</td>
+<td>true 
+      </td>
+<td>true 
+      </td>
+<td>true 
+      </td>
+<td>true 
+      </td>
+<td>true 
+      </td>
+<td>true 
+      </td>
+</tr>
+<tr>
+<td><a href="#email--type">email</a></td>
+<td>emails</td>
+<td>must</td>
+<td>true 
+      </td>
+<td>true 
+      </td>
+<td>true 
+      </td>
+<td>true 
+      </td>
+<td>true 
+      </td>
+<td>true 
+      </td>
+</tr>
+<tr>
+<td><a href="#phoneNumber--type">phoneNumber</a></td>
+<td>phoneNumbers</td>
+<td>must</td>
+<td>true 
+      </td>
+<td>true 
+      </td>
+<td>true 
+      </td>
+<td>true 
+      </td>
+<td>true 
+      </td>
+<td>true 
+      </td>
+</tr>
+<tr>
+<td><a href="#note--type">note</a></td>
+<td>notes</td>
+<td>may</td>
+<td>true 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+</tr>
+<tr>
+<td><a href="#financialAccount--type">financialAccount</a></td>
+<td>financialAccounts</td>
+<td>may</td>
+<td>true 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+</tr>
+<tr>
+<td><a href="#costCentre--type">costCentre</a></td>
+<td>costCentres</td>
+<td>may</td>
+<td>true 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+</tr>
+<tr>
+<td><a href="#department--type">department</a></td>
+<td>departments</td>
+<td>may</td>
+<td>true 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+</tr>
+<tr>
+<td><a href="#financialAccountAnalysis--type">financialAccountAnalysis</a></td>
+<td>financialAccountAnalysis</td>
+<td>may</td>
+<td>true 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+</tr>
+<tr>
+<td><a href="#financialAccountGroup--type">financialAccountGroup</a></td>
+<td>financialAccountGroups</td>
+<td>may</td>
+<td>true 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+</tr>
+<tr>
+<td><a href="#financialAccountHistory--type">financialAccountHistory</a></td>
+<td>financialAccountsHistory</td>
+<td>may</td>
+<td>true 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+</tr>
+<tr>
+<td><a href="#financialAccountMultiCurrencyHistory--type">financialAccountMultiCurrencyHistory</a></td>
+<td>financialAccountsMultiCurrencyHistory</td>
+<td>may</td>
+<td>true 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+</tr>
+<tr>
+<td><a href="#financialAccountBudget--type">financialAccountBudget</a></td>
+<td>financialAccountsBudget</td>
+<td>may</td>
+<td>true 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+</tr>
+<tr>
+<td><a href="#financialPeriod--type">financialPeriod</a></td>
+<td>financialPeriods</td>
+<td>should</td>
+<td>true 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+</tr>
+<tr>
+<td><a href="#financialAccountBudgetType--type">financialAccountBudgetType</a></td>
+<td>financialAccountBudgetType</td>
+<td>may</td>
+<td>true 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+</tr>
+</table>
+</div>
+<hr><a name="operatingCompany--type"></a><div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p>
+<h1>
+        Resource operatingCompany</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Label</th>
+<th>Unique</th>
+<th>Nillable</th>
+<th>Extension</th>
+<th>Mandatory</th>
+<th>Relationship</th>
+<th>Documentation</th>
+</tr>
+<tr>
+<td>active</td>
+<td>boolean</td>
+<td>Operating Company Active Flag</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Flag to indicate if the Company is an active Company.
+            Default = True
+           
+      </td>
+</tr>
+<tr>
+<td>name</td>
+<td>normalizedString</td>
+<td>Operating Company Name</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+            X
+          </td>
+<td> 
+      </td>
+<td>
+            The entity name (e.g. Home-style Kitchens).
+           
+      </td>
+</tr>
+<tr>
+<td>shortName</td>
+<td>normalizedString</td>
+<td>Operating Company Short Name</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            A shorter name for the Company.
+           
+      </td>
+</tr>
+<tr>
+<td>currency</td>
+<td>normalizedString</td>
+<td>Operating Company Currency</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The Company currency (e.g. GBP, USD, EUR).
+            ISO 4217
+           
+      </td>
+</tr>
+<tr>
+<td>identifier</td>
+<td>normalizedString</td>
+<td>Operating Company Identifier</td>
+<td>
+            X
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Identifier(s) of the Company as used by the third parties (e.g. Company Registration Number, DUNS number, 1099 type, CIS number, siret number, Trading Number, etc).
+           
+      </td>
+</tr>
+<tr>
+<td>taxLocale</td>
+<td>normalizedString</td>
+<td>Operating Company Tax Locale</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The tax-locale applicable to the Operating Company (e.g. District)
+           
+      </td>
+</tr>
+<tr>
+<td>taxReference</td>
+<td>normalizedString</td>
+<td>Operating Company Tax Reference</td>
+<td>
+            X
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Tax reference associated with the Company (e.g. VAT number, numero intracommnunautaire, FEIN)
+            NIF (Spain)
+           
+      </td>
+</tr>
+<tr>
+<td>language</td>
+<td>normalizedString</td>
+<td>Operating Company Language</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Language used by the Company (e.g. EN-GB)
+            ISO 639-1
+           
+      </td>
+</tr>
+<tr>
+<td>postalAddresses</td>
+<td><a href="#postalAddress--type">postalAddress</a>*
+          </td>
+<td>Operating Company Postal Addresses</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>association 
+      </td>
+<td>
+            Postal address(es) associated with the Operating Company. See PostalAddress definition.
+           
+      </td>
+</tr>
+<tr>
+<td>phoneNumbers</td>
+<td><a href="#phoneNumber--type">phoneNumber</a>*
+          </td>
+<td>Operating Company Phone Numbers</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>association 
+      </td>
+<td>
+            Phone numbers associated with the Operating Company. See PhoneNumber definition.
+           
+      </td>
+</tr>
+<tr>
+<td>legalEntityType</td>
+<td><a href="#operatingCompanyLegalEntityType--enum">operatingCompanyLegalEntityType</a></td>
+<td>Operating Company Legal Entity Type</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The type of legal business entity the Operating Company is, e.g. Partnership, Limited Company, etc.
+           
+      </td>
+</tr>
+</table>
+</div>
+<hr><a name="person--type"></a><div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p>
+<h1>
+        Resource person</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Label</th>
+<th>Unique</th>
+<th>Nillable</th>
+<th>Extension</th>
+<th>Mandatory</th>
+<th>Relationship</th>
+<th>Documentation</th>
+</tr>
+</table>
+</div>
+<hr><a name="postalAddress--type"></a><div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p>
+<h1>
+        Resource postalAddress</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Label</th>
+<th>Unique</th>
+<th>Nillable</th>
+<th>Extension</th>
+<th>Mandatory</th>
+<th>Relationship</th>
+<th>Documentation</th>
+</tr>
+<tr>
+<td>active</td>
+<td>boolean</td>
+<td>PostalAddress Active Flag</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Flag to indicate if the Postal Address is an active one. Default =
+            True
+           
+      </td>
+</tr>
+<tr>
+<td>reference</td>
+<td>normalizedString</td>
+<td>PostalAddress Reference</td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>Reference for the Postal Address. 
+      </td>
+</tr>
+<tr>
+<td>name</td>
+<td>normalizedString</td>
+<td>PostalAddress Name</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            A name for the Postal Address (e.g. Billing Address).
+           
+      </td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>PostalAddress Description</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            A longer description of the postal Postal Address.
+           
+      </td>
+</tr>
+<tr>
+<td>address1</td>
+<td>normalizedString</td>
+<td>PostalAddress Address 1</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>1st Line of Postal Address 
+      </td>
+</tr>
+<tr>
+<td>address2</td>
+<td>normalizedString</td>
+<td>PostalAddress Address 2</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>2nd Line of Postal Address 
+      </td>
+</tr>
+<tr>
+<td>address3</td>
+<td>normalizedString</td>
+<td>PostalAddress Address 3</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>3rd Line of Postal Address 
+      </td>
+</tr>
+<tr>
+<td>address4</td>
+<td>normalizedString</td>
+<td>PostalAddress Address 4</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>4th Line of Postal Address 
+      </td>
+</tr>
+<tr>
+<td>townCity</td>
+<td>normalizedString</td>
+<td>PostalAddress TownCity</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>Town or City 
+      </td>
+</tr>
+<tr>
+<td>county</td>
+<td>normalizedString</td>
+<td>PostalAddress County</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>County 
+      </td>
+</tr>
+<tr>
+<td>stateRegion</td>
+<td>normalizedString</td>
+<td>PostalAddress StateRegion</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            State/Region. For USA addresses use ISO 3166-2:US for state codes. For
+            UK addresses use ISO 3166-2:GB. For French addresses use ISO 3166-2:FR. For German
+            addresses use ISO 3166-2:DE. For Canada addresses use ISO 3166-2:CA.
+           
+      </td>
+</tr>
+<tr>
+<td>zipPostCode</td>
+<td>normalizedString</td>
+<td>PostalAddress ZipPost Code</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Zip or Post code. Should be formatted as raw text no formatting
+            included.
+           
+      </td>
+</tr>
+<tr>
+<td>country</td>
+<td>normalizedString</td>
+<td>PostalAddress Country</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>Country. ISO 3166-1 alpha-2 country codes only 
+      </td>
+</tr>
+<tr>
+<td>primacyIndicator</td>
+<td>boolean</td>
+<td>PostalAddress Primacy Indicator</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            A flag to indicate if the Address is the primary/default Address. Only
+            one Postal Address can have Primacy against an associated entity (e.g. Contact, Company,
+            etc). Default = False
+           
+      </td>
+</tr>
+<tr>
+<td>type</td>
+<td><a href="#postalAddressType--enum">postalAddressType</a></td>
+<td>PostalAddress Type</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+            X
+          </td>
+<td> 
+      </td>
+<td>
+            The type of the Postal Address, e.g., billing, sales address, home,
+            etc. A new Postal Address will be required for each type, even though the address
+            itself may be the same. Default = Correspondence
+           
+      </td>
+</tr>
+<tr>
+<td>notes</td>
+<td><a href="#note--type">note</a>*
+          </td>
+<td>PostalAddress Notes</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>child 
+      </td>
+<td>Notes associated with the Postal Address. 
+      </td>
+</tr>
+</table>
+</div>
+<hr><a name="email--type"></a><div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p>
+<h1>
+        Resource email</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Label</th>
+<th>Unique</th>
+<th>Nillable</th>
+<th>Extension</th>
+<th>Mandatory</th>
+<th>Relationship</th>
+<th>Documentation</th>
+</tr>
+<tr>
+<td>active</td>
+<td>boolean</td>
+<td>Email Active Flag</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Flag to indicate if the Email is an active one. Default = True
+           
+      </td>
+</tr>
+<tr>
+<td>reference</td>
+<td>normalizedString</td>
+<td>Email Reference</td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>Reference associated with the Email. 
+      </td>
+</tr>
+<tr>
+<td>reference2</td>
+<td>normalizedString</td>
+<td>Email Reference2</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>Another reference associated with the email. 
+      </td>
+</tr>
+<tr>
+<td>type</td>
+<td><a href="#emailType--enum">emailType</a></td>
+<td>Email Type</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            A simple string value used to label this email address. It allows for
+            email addresses such as Work, Personal, Preferred, etc. Can also be used to
+            distinguish instant messaging type addresses.
+           
+      </td>
+</tr>
+<tr>
+<td>address</td>
+<td>normalizedString</td>
+<td>Email Address</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+            X
+          </td>
+<td> 
+      </td>
+<td>
+            The Email address itself (e.g. joe.bloggs@acme.com).
+           
+      </td>
+</tr>
+<tr>
+<td>url</td>
+<td>normalizedString</td>
+<td>mailto:URL</td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            URL that allows an email to be automatically generated that is to be
+            set to the email address. Could be created automatically.
+           
+      </td>
+</tr>
+<tr>
+<td>primacyIndicator</td>
+<td>boolean</td>
+<td>Email Primacy Indicator</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Flag to indicate if this Email is the primary one associated with the
+            linked resource. Default = False
+           
+      </td>
+</tr>
+<tr>
+<td>notes</td>
+<td><a href="#note--type">note</a>*
+          </td>
+<td>Email Notes</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>child 
+      </td>
+<td>Notes associated with email. 
+      </td>
+</tr>
+</table>
+</div>
+<hr><a name="phoneNumber--type"></a><div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p>
+<h1>
+        Resource phoneNumber</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Label</th>
+<th>Unique</th>
+<th>Nillable</th>
+<th>Extension</th>
+<th>Mandatory</th>
+<th>Relationship</th>
+<th>Documentation</th>
+</tr>
+<tr>
+<td>active</td>
+<td>boolean</td>
+<td>PhoneNumber Active Flag</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Flag to indicate if the phone number is an active one. Default =
+            True
+           
+      </td>
+</tr>
+<tr>
+<td>reference</td>
+<td>normalizedString</td>
+<td>PhoneNumber Reference</td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>Reference associated with the phone number. 
+      </td>
+</tr>
+<tr>
+<td>reference2</td>
+<td>normalizedString</td>
+<td>PhoneNumber Reference2</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Another reference associated with the phone number.
+           
+      </td>
+</tr>
+<tr>
+<td>uri</td>
+<td>normalizedString</td>
+<td>PhoneNumber URI</td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            A phone unique reference number used to represent the number in a
+            formal way. Useful for programmatic access, such as a VoIP/PSTN/CTI. Could be derived
+            by concatenating attributes.
+           
+      </td>
+</tr>
+<tr>
+<td>type</td>
+<td><a href="#phoneNumberType--enum">phoneNumberType</a></td>
+<td>PhoneNumber Type</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            A value that identifies the type of phone number (general, fax, car,
+            home, internal, mobile, other, pager, satellite, VoIP, work).
+           
+      </td>
+</tr>
+<tr>
+<td>name</td>
+<td>normalizedString</td>
+<td>PhoneNumber Name</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            A simple string value used to label this phone number. In most cases,
+            Label is not necessary as Phone Type uniquely identifies a number and allows UIs to
+            display a proper label such as Mobile, Home, Work, etc. However, in the case where
+            one person has (for example) multiple mobile phones, this property can be used to
+            disambiguate them. Could be derived from Phone Type
+           
+      </td>
+</tr>
+<tr>
+<td>text</td>
+<td>normalizedString</td>
+<td>PhoneNumber Text</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+            X
+          </td>
+<td> 
+      </td>
+<td>
+            Human-readable phone number, containing all attributes. Could be
+            derived by concatenating other properties.
+           
+      </td>
+</tr>
+<tr>
+<td>countryCode</td>
+<td>normalizedString</td>
+<td>PhoneNumber Country Code</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Country code for the phone number based on ITU-T recommendation E.164
+            country codes. ITU-T E. 164 country codes only.
+           
+      </td>
+</tr>
+<tr>
+<td>areaCode</td>
+<td>normalizedString</td>
+<td>PhoneNumber Area Code</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>Area code for the phone number 
+      </td>
+</tr>
+<tr>
+<td>number</td>
+<td>normalizedString</td>
+<td>PhoneNumber Number</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>Telephone number. 
+      </td>
+</tr>
+<tr>
+<td>extension</td>
+<td>normalizedString</td>
+<td>PhoneNumber Extension</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>Any extension applicable to the phone number. 
+      </td>
+</tr>
+<tr>
+<td>primacyIndicator</td>
+<td>boolean</td>
+<td>PhoneNumber Primacy Indicator</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Flag to indicate if this Phone Number is the primary one associated
+            with the linked resource. Default = False
+           
+      </td>
+</tr>
+<tr>
+<td>notes</td>
+<td><a href="#note--type">note</a>*
+          </td>
+<td>PhoneNumber Note</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>child 
+      </td>
+<td>Notes associated with phone number. 
+      </td>
+</tr>
+</table>
+</div>
+<hr><a name="note--type"></a><div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p>
+<h1>
+        Resource note</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Label</th>
+<th>Unique</th>
+<th>Nillable</th>
+<th>Extension</th>
+<th>Mandatory</th>
+<th>Relationship</th>
+<th>Documentation</th>
+</tr>
+<tr>
+<td>active</td>
+<td>boolean</td>
+<td>Note Active Flag</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Flag to indicate if the note is an active one. Default = True
+           
+      </td>
+</tr>
+<tr>
+<td>reference</td>
+<td>normalizedString</td>
+<td>Note Reference</td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>Reference associated with the note. 
+      </td>
+</tr>
+<tr>
+<td>reference2</td>
+<td>normalizedString</td>
+<td>Note Reference2</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>Another reference associated with the note. 
+      </td>
+</tr>
+<tr>
+<td>text</td>
+<td>string</td>
+<td>Note Text</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+            X
+          </td>
+<td> 
+      </td>
+<td>The note text itself. 
+      </td>
+</tr>
+<tr>
+<td>privacyFlag</td>
+<td>boolean</td>
+<td>Note Privacy Flag</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Flag to indicate if the note is public or private. Default = No
+            (not private).
+           
+      </td>
+</tr>
+<tr>
+<td>dateStamp</td>
+<td>date</td>
+<td>Note Date Stamp</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>Date and time of note 
+      </td>
+</tr>
+<tr>
+<td>primacyIndicator</td>
+<td>boolean</td>
+<td>Note Primacy Indicator</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Flag to indicate if this Note is the primary one associated with the
+            linked resource. Default = False
+           
+      </td>
+</tr>
+<tr>
+<td>user</td>
+<td>normalizedString</td>
+<td>Note User</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>Details of the user who created the note. 
+      </td>
+</tr>
+</table>
+</div>
+<hr><a name="financialAccount--type"></a><div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p>
+<h1>
+        Resource financialAccount</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Label</th>
+<th>Unique</th>
+<th>Nillable</th>
+<th>Extension</th>
+<th>Mandatory</th>
+<th>Relationship</th>
+<th>Documentation</th>
+</tr>
+<tr>
+<td>financialAccountGroups</td>
+<td><a href="#financialAccountGroup--type">financialAccountGroup</a>*
+          </td>
+<td>FinancialAccount Groups</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>association 
+      </td>
+<td>
+            Link to the Financial Account Group associated with this Financial Account
+            See Financial Account Group definition.
+           
+      </td>
+</tr>
+<tr>
+<td>active</td>
+<td>boolean</td>
+<td>FinancialAccount Active Flag</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Flag to indicate if the FinancialAccount is an active one. Default = True
+           
+      </td>
+</tr>
+<tr>
+<td>reference</td>
+<td>normalizedString</td>
+<td>FinancialAccount Reference</td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>Reference associated with the Financial Account. 
+      </td>
+</tr>
+<tr>
+<td>reference2</td>
+<td>normalizedString</td>
+<td>FinancialAccount Reference2</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Another reference associated with the Financial Account.
+           
+      </td>
+</tr>
+<tr>
+<td>accountCategory</td>
+<td><a href="#financialAccountAccountCategory--enum">financialAccountAccountCategory</a></td>
+<td>FinancialAccount Account Category</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The account category applicable to the FinancialAccount (see enum for list of values).
+            Account categories classify each account into major accounting categories for financial reporting.
+            Implementation teams should try and map to these where possible (based on IFRS/GAAP so should be common). However the list can be extended to add other account categories. 
+      </td>
+</tr>
+<tr>
+<td>accountType</td>
+<td><a href="#financialAccountAccountType--enum">financialAccountAccountType</a></td>
+<td>FinancialAccount Account Type</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The account type applicable to the FinancialAccount (see enum for list of values). Implementation teams should try and map to these where possible (based on IFRS/GAAP so should be common). However the list can be extended to add other account types. 
+      </td>
+</tr>
+<tr>
+<td>postingType</td>
+<td><a href="#financialAccountPostingType--enum">financialAccountPostingType</a></td>
+<td>FinancialAccount Posting Type</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The type of posting applicable to the FinancialAccount (memo, posting, grouping). Default =
+            Posting. Memo accounts are not posting accounts - they are used to show text only, e.g. for
+            reporting purposes. Grouping accounts are super-types used to group other accounts together,
+            e.g. all sales accounts. Posting accounts receive financial postings
+           
+      </td>
+</tr>
+<tr>
+<td>reportingType</td>
+<td><a href="#financialAccountReportingType--enum">financialAccountReportingType</a></td>
+<td>FinancialAccount Reporting Type</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The reporting type applicable to the Financial Account (P&amp;L or
+            BS). Default = Unknown
+           
+      </td>
+</tr>
+<tr>
+<td>accountingType</td>
+<td><a href="#financialAccountAccountingType--enum">financialAccountAccountingType</a></td>
+<td>FinancialAccount Accounting Type</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            A flag that indicates the type of accounting applicable to the
+            Financial Account. Default = Unknown
+           
+      </td>
+</tr>
+<tr>
+<td>name</td>
+<td>normalizedString</td>
+<td>FinancialAccount Name</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The name of the FinancialAccount (e.g. Cost of sales, Inventory,
+            Debtors Control, etc).
+           
+      </td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>FinancialAccount Description</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            A longer textual description of the FinancialAccount.
+           
+      </td>
+</tr>
+<tr>
+<td>account</td>
+<td>normalizedString</td>
+<td>FinancialAccount Account</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>Financial accounting code or natural account. 
+      </td>
+</tr>
+<tr>
+<td>costCentres</td>
+<td><a href="#costCentre--type">costCentre</a>*
+          </td>
+<td>FinancialAccount Cost Centres</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>association 
+      </td>
+<td>
+            Analysis code (cost centre) applicable to the financial account. If
+            cost centres are used, then they should be used here.
+           
+      </td>
+</tr>
+<tr>
+<td>departments</td>
+<td><a href="#department--type">department</a>*
+          </td>
+<td>FinancialAccount Departments</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>association 
+      </td>
+<td>
+            Analysis code (department) applicable to the financial account. If
+            departments are used, then they should be used here.
+           
+      </td>
+</tr>
+<tr>
+<td>analysis01</td>
+<td><a href="#financialAccountAnalysis--type">financialAccountAnalysis</a>*
+          </td>
+<td>FinancialAccount Analysis 01</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>association 
+      </td>
+<td>
+            Analysis code (1) applicable to the financial account.
+            E.g. COA segment 1
+           
+      </td>
+</tr>
+<tr>
+<td>analysis02</td>
+<td><a href="#financialAccountAnalysis--type">financialAccountAnalysis</a>*
+          </td>
+<td>FinancialAccount Analysis 02</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>association 
+      </td>
+<td>
+            Analysis code (2) applicable to the financial account.
+            E.g. COA segment 2
+           
+      </td>
+</tr>
+<tr>
+<td>analysis03</td>
+<td><a href="#financialAccountAnalysis--type">financialAccountAnalysis</a>*
+          </td>
+<td>FinancialAccount Analysis 03</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>association 
+      </td>
+<td>
+            Analysis code (3) applicable to the financial account.
+            E.g. COA segment 3
+           
+      </td>
+</tr>
+<tr>
+<td>analysis04</td>
+<td><a href="#financialAccountAnalysis--type">financialAccountAnalysis</a>*
+          </td>
+<td>FinancialAccount Analysis 04</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>association 
+      </td>
+<td>
+            Analysis code (4) applicable to the financial account.
+            E.g. COA segment 4
+           
+      </td>
+</tr>
+<tr>
+<td>analysis05</td>
+<td><a href="#financialAccountAnalysis--type">financialAccountAnalysis</a>*
+          </td>
+<td>FinancialAccount Analysis 05</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>association 
+      </td>
+<td>
+            Analysis code (5) applicable to the financial account.
+            E.g. COA segment 5
+           
+      </td>
+</tr>
+<tr>
+<td>analysis06</td>
+<td><a href="#financialAccountAnalysis--type">financialAccountAnalysis</a>*
+          </td>
+<td>FinancialAccount Analysis 06</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>association 
+      </td>
+<td>
+            Analysis code (6) applicable to the financial account.
+            E.g. COA segment 6
+           
+      </td>
+</tr>
+<tr>
+<td>analysis07</td>
+<td><a href="#financialAccountAnalysis--type">financialAccountAnalysis</a>*
+          </td>
+<td>FinancialAccount Analysis 07</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>association 
+      </td>
+<td>
+            Analysis code (7) applicable to the financial account.
+            E.g. COA segment 7
+           
+      </td>
+</tr>
+<tr>
+<td>analysis08</td>
+<td><a href="#financialAccountAnalysis--type">financialAccountAnalysis</a>*
+          </td>
+<td>FinancialAccount Analysis 08</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>association 
+      </td>
+<td>
+            Analysis code (8) applicable to the financial account.
+            E.g. COA segment 8
+           
+      </td>
+</tr>
+<tr>
+<td>analysis09</td>
+<td><a href="#financialAccountAnalysis--type">financialAccountAnalysis</a>*
+          </td>
+<td>FinancialAccount Analysis 09</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>association 
+      </td>
+<td>
+            Analysis code (9) applicable to the financial account.
+            E.g. COA segment 9
+           
+      </td>
+</tr>
+<tr>
+<td>analysis10</td>
+<td><a href="#financialAccountAnalysis--type">financialAccountAnalysis</a>*
+          </td>
+<td>FinancialAccount Analysis 10</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>association 
+      </td>
+<td>
+            Analysis code (10) applicable to the financial account.
+            E.g. COA segment 10
+           
+      </td>
+</tr>
+<tr>
+<td>analysis11</td>
+<td><a href="#financialAccountAnalysis--type">financialAccountAnalysis</a>*
+          </td>
+<td>FinancialAccount Analysis 11</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>association 
+      </td>
+<td>
+            Analysis code (11) applicable to the financial account.
+            E.g. COA segment 11
+           
+      </td>
+</tr>
+<tr>
+<td>analysis12</td>
+<td><a href="#financialAccountAnalysis--type">financialAccountAnalysis</a>*
+          </td>
+<td>FinancialAccount Analysis 12</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>association 
+      </td>
+<td>
+            Analysis code (12) applicable to the financial account.
+            E.g. COA segment 12
+           
+      </td>
+</tr>
+<tr>
+<td>analysis13</td>
+<td><a href="#financialAccountAnalysis--type">financialAccountAnalysis</a>*
+          </td>
+<td>FinancialAccount Analysis 13</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>association 
+      </td>
+<td>
+            Analysis code (13) applicable to the financial account.
+            E.g. COA segment 13
+           
+      </td>
+</tr>
+<tr>
+<td>analysis14</td>
+<td><a href="#financialAccountAnalysis--type">financialAccountAnalysis</a>*
+          </td>
+<td>FinancialAccount Analysis 14</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>association 
+      </td>
+<td>
+            Analysis code (14) applicable to the financial account.
+            E.g. COA segment 14
+           
+      </td>
+</tr>
+<tr>
+<td>analysis15</td>
+<td><a href="#financialAccountAnalysis--type">financialAccountAnalysis</a>*
+          </td>
+<td>FinancialAccount Analysis 15</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>association 
+      </td>
+<td>
+            Analysis code (15) applicable to the financial account.
+            E.g. COA segment 15
+           
+      </td>
+</tr>
+<tr>
+<td>naturalBalanceType</td>
+<td><a href="#financialAccountNaturalBalanceType--enum">financialAccountNaturalBalanceType</a></td>
+<td>FinancialAccount Natural Balance Type</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            A flag that indicates the natural balance of the
+            Financial Account - Debit or Credit. Used to show correct
+            Positive/Negative balance values. 
+      </td>
+</tr>
+<tr>
+<td>financialAccountHistories</td>
+<td><a href="#financialAccountHistory--type">financialAccountHistory</a>*
+          </td>
+<td>FinancialAccount Histories</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>association 
+      </td>
+<td>
+            Financial Account History (balances, stats) associated with this Financial Account.
+            The financialAccountHistory resource may be current or historic.
+           
+      </td>
+</tr>
+<tr>
+<td>multiCurrencyPostingAllowed</td>
+<td>boolean</td>
+<td>FinancialAccount Multi-Currency Posting Allowed Flag</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Flag to indicate if this Financial Account is allowed to have
+            postings in multiple currencies. Default = False (posting in single currency).
+            If this is true then the Financial Account should have financialAccountMultiCurrencyHistory feeds associated with it.
+           
+      </td>
+</tr>
+<tr>
+<td>currencyRestriction</td>
+<td><a href="#financialAccountCurrencyRestriction--enum">financialAccountCurrencyRestriction</a></td>
+<td>FinancialAccount Currency Restriction</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>For accounts where multi-currency posting is allowed, this enum shows what type of currency restrictions apply to the account. Options are base currency only, base currency and one other, all currencies. Default = All Currencies. 
+      </td>
+</tr>
+<tr>
+<td>financialAccountMultiCurrencyHistories</td>
+<td><a href="#financialAccountMultiCurrencyHistory--type">financialAccountMultiCurrencyHistory</a>*
+          </td>
+<td>FinancialAccount Multi-Currency Histories</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>association 
+      </td>
+<td>
+            Multi-Currency Financial Account History (balances, stats) associated with this Financial Account. Only if multiCurrencyPostingAllowed=True.
+            The financialAccountMultiCurrencyHistory resource may be current or historic.
+           
+      </td>
+</tr>
+<tr>
+<td>financialAccountBudgets</td>
+<td><a href="#financialAccountBudget--type">financialAccountBudget</a>*
+          </td>
+<td>FinancialAccount Budgets</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>association 
+      </td>
+<td>Budget (balances, stats) associated with this Financial Account. 
+      </td>
+</tr>
+<tr>
+<td>primacyIndicator</td>
+<td>boolean</td>
+<td>FinancialAccount Primacy Indicator</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Flag to indicate if this Financial Account is the primary Financial
+            Account in cases where there are multiple. Default = False
+           
+      </td>
+</tr>
+<tr>
+<td>allowStats</td>
+<td>boolean</td>
+<td>FinancialAccount Allow Statistics Flag</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Flag to indicate if this FinancialAccount can also be used to track statistical data. Default = False
+           
+      </td>
+</tr>
+<tr>
+<td>statUnit</td>
+<td>normalizedString</td>
+<td>FinancialAccount Statistical Unit</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            A text description of the statistical unit associated with this account (if allowStats=True).
+            Examples of stats include headcount, number of, etc.
+           
+      </td>
+</tr>
+<tr>
+<td>orderOfPrecedence</td>
+<td>decimal</td>
+<td>FinancialAccount Order Of Precedence</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>Where there are multiple Financial Accounts (e.g. in a Group) then this field will be used to sort the order of precedence/application. 
+      </td>
+</tr>
+<tr>
+<td>distributionPercentage</td>
+<td>decimal</td>
+<td>FinancialAccount Distribution Percentage</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>Distribution percentage applicable to the Financial Account (e.g. where a collection of Financial Accounts are associated with an amount, this figure determines the percentage split, e.g. 80% to this account). 
+      </td>
+</tr>
+<tr>
+<td>createDate</td>
+<td>date</td>
+<td>FinancialAccount Create Date</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>The date the financial account was created. 
+      </td>
+</tr>
+<tr>
+<td>notes</td>
+<td><a href="#note--type">note</a>*
+          </td>
+<td>FinancialAccount Note</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>child 
+      </td>
+<td>
+            Note associated with the FinancialAccount. See Note definition.
+           
+      </td>
+</tr>
+</table>
+</div>
+<hr><a name="costCentre--type"></a><div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p>
+<h1>
+        Resource costCentre</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Label</th>
+<th>Unique</th>
+<th>Nillable</th>
+<th>Extension</th>
+<th>Mandatory</th>
+<th>Relationship</th>
+<th>Documentation</th>
+</tr>
+<tr>
+<td>active</td>
+<td>boolean</td>
+<td>CostCentre Active Flag</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Flag to indicate if the costCentre is an active one. Default = True
+           
+      </td>
+</tr>
+<tr>
+<td>reference</td>
+<td>normalizedString</td>
+<td>CostCentre Reference</td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>Reference associated with the Financial Account. 
+      </td>
+</tr>
+<tr>
+<td>reference2</td>
+<td>normalizedString</td>
+<td>CostCentre Reference2</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Another reference associated with the Financial Account.
+           
+      </td>
+</tr>
+<tr>
+<td>type</td>
+<td>normalizedString</td>
+<td>CostCentre Type</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The type of the costCentre
+           
+      </td>
+</tr>
+<tr>
+<td>name</td>
+<td>normalizedString</td>
+<td>CostCentre Name</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The name of the costCentre
+           
+      </td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>CostCentre Description</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            A longer textual description of the costCentre.
+           
+      </td>
+</tr>
+<tr>
+<td>notes</td>
+<td><a href="#note--type">note</a>*
+          </td>
+<td>CostCentre Note</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>child 
+      </td>
+<td>
+            Note associated with the costCentre. See Note definition.
+           
+      </td>
+</tr>
+</table>
+</div>
+<hr><a name="department--type"></a><div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p>
+<h1>
+        Resource department</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Label</th>
+<th>Unique</th>
+<th>Nillable</th>
+<th>Extension</th>
+<th>Mandatory</th>
+<th>Relationship</th>
+<th>Documentation</th>
+</tr>
+<tr>
+<td>active</td>
+<td>boolean</td>
+<td>Department Active Flag</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Flag to indicate if the Department is an active one. Default = True
+           
+      </td>
+</tr>
+<tr>
+<td>reference</td>
+<td>normalizedString</td>
+<td>Department Reference</td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>Reference associated with the Financial Account. 
+      </td>
+</tr>
+<tr>
+<td>reference2</td>
+<td>normalizedString</td>
+<td>Department Reference2</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Another reference associated with the Financial Account.
+           
+      </td>
+</tr>
+<tr>
+<td>type</td>
+<td>normalizedString</td>
+<td>Department Type</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The type of the Department
+           
+      </td>
+</tr>
+<tr>
+<td>name</td>
+<td>normalizedString</td>
+<td>Department Name</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The name of the Department
+           
+      </td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>Department Description</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            A longer textual description of the Department.
+           
+      </td>
+</tr>
+<tr>
+<td>notes</td>
+<td><a href="#note--type">note</a>*
+          </td>
+<td>Department Note</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>child 
+      </td>
+<td>
+            Note associated with the Department. See Note definition.
+           
+      </td>
+</tr>
+</table>
+</div>
+<hr><a name="financialAccountAnalysis--type"></a><div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p>
+<h1>
+        Resource financialAccountAnalysis</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Label</th>
+<th>Unique</th>
+<th>Nillable</th>
+<th>Extension</th>
+<th>Mandatory</th>
+<th>Relationship</th>
+<th>Documentation</th>
+</tr>
+<tr>
+<td>active</td>
+<td>boolean</td>
+<td>Financial Account Analysis Active Flag</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Flag to indicate if the Financial Account Analysis (code) is an active one. Default = True
+           
+      </td>
+</tr>
+<tr>
+<td>reference</td>
+<td>normalizedString</td>
+<td>Financial Account Analysis Reference</td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>Reference associated with the Financial Account Analysis (code). 
+      </td>
+</tr>
+<tr>
+<td>reference2</td>
+<td>normalizedString</td>
+<td>Financial Account Analysis Reference2</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Another reference associated with the Financial Account Analysis (code).
+           
+      </td>
+</tr>
+<tr>
+<td>type</td>
+<td><a href="#financialAccountAnalysisType--enum">financialAccountAnalysisType</a></td>
+<td>Financial Account Analysis Type</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The type of the Financial Account Analysis (code)
+            Used to indicate if this Financial Account Analysis (code) is also the natural account.
+            Allowable values Natural, Other.
+           
+      </td>
+</tr>
+<tr>
+<td>name</td>
+<td>normalizedString</td>
+<td>Financial Account Analysis Name</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The name of the Financial Account Analysis (code)
+           
+      </td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>Financial Account Analysis Description</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            A longer textual description of Financial Account Analysis (code).
+           
+      </td>
+</tr>
+<tr>
+<td>notes</td>
+<td><a href="#note--type">note</a>*
+          </td>
+<td>Financial Account Analysis Note</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>child 
+      </td>
+<td>
+            Note associated with the Financial Account Analysis (code). See Note definition.
+           
+      </td>
+</tr>
+</table>
+</div>
+<hr><a name="financialAccountGroup--type"></a><div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p>
+<h1>
+        Resource financialAccountGroup</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Label</th>
+<th>Unique</th>
+<th>Nillable</th>
+<th>Extension</th>
+<th>Mandatory</th>
+<th>Relationship</th>
+<th>Documentation</th>
+</tr>
+<tr>
+<td>active</td>
+<td>boolean</td>
+<td>FinancialAccountGroup Active Flag</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Flag to indicate if the Financial Account Group is an active one.
+            Default = True
+           
+      </td>
+</tr>
+<tr>
+<td>reference</td>
+<td>normalizedString</td>
+<td>FinancialAccountGroup Reference</td>
+<td>
+            X
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>Reference for the Financial Account Group. 
+      </td>
+</tr>
+<tr>
+<td>name</td>
+<td>normalizedString</td>
+<td>FinancialAccountGroup Name</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+            X
+          </td>
+<td> 
+      </td>
+<td>Name of the Financial Account Group. 
+      </td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>FinancialAccountGroup Description</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>A longer description of the Financial Account Group. 
+      </td>
+</tr>
+<tr>
+<td>orderOfPrecedence</td>
+<td>decimal</td>
+<td>FinancialAccountGroup Order Of Precedence</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>Where there are multiple Financial Account Groups then this field will be used to sort the order of precedence/application (e.g. for reporting). 
+      </td>
+</tr>
+<tr>
+<td>financialAccounts</td>
+<td><a href="#financialAccount--type">financialAccount</a>*
+          </td>
+<td>FinancialAccountGroup FinancialAccount</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>association 
+      </td>
+<td>
+            Financial Accounts associated with the FinancialAccount Group.
+            See Financial Account definition.
+            FinancialAccounts can belong to multiple FinancialAccount Groups.
+           
+      </td>
+</tr>
+<tr>
+<td>notes</td>
+<td><a href="#note--type">note</a>*
+          </td>
+<td>FinancialAccountGroup Note</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>child 
+      </td>
+<td>Notes associated with a Financial Account Group. 
+      </td>
+</tr>
+</table>
+</div>
+<hr><a name="financialAccountHistory--type"></a><div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p>
+<h1>
+        Resource financialAccountHistory</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Label</th>
+<th>Unique</th>
+<th>Nillable</th>
+<th>Extension</th>
+<th>Mandatory</th>
+<th>Relationship</th>
+<th>Documentation</th>
+</tr>
+<tr>
+<td>financialAccount</td>
+<td><a href="#financialAccount--type">financialAccount</a></td>
+<td>FinancialAccountHistory Financial Account</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>reference 
+      </td>
+<td>
+            Link to the Financial Account associated with this Financial Account History
+            See Financial Account definition.
+           
+      </td>
+</tr>
+<tr>
+<td>financialPeriods</td>
+<td><a href="#financialPeriod--type">financialPeriod</a>*
+          </td>
+<td>FinancialAccountHistory Financial Periods</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>association 
+      </td>
+<td>
+            Link to the Financial Period(s) associated with this Financial Account History.
+            A combination of Financial Account and Financial Period allows all financial history to be reported.
+           
+      </td>
+</tr>
+<tr>
+<td>active</td>
+<td>boolean</td>
+<td>FinancialAccountHistory Active Flag</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Flag to indicate if the FinancialAccountHistory is an active one. Default = True
+           
+      </td>
+</tr>
+<tr>
+<td>reference</td>
+<td>normalizedString</td>
+<td>FinancialAccountHistory Reference</td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>Reference associated with the Financial Account History. 
+      </td>
+</tr>
+<tr>
+<td>reference2</td>
+<td>normalizedString</td>
+<td>FinancialAccountHistory Reference2</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Another reference associated with the Financial Account History.
+           
+      </td>
+</tr>
+<tr>
+<td>name</td>
+<td>normalizedString</td>
+<td>FinancialAccountHistory Name</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The name of the FinancialAccountHistory (e.g. Q1 2010, Q2 2010, etc).
+           
+      </td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>FinancialAccountHistory Description</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            A longer textual description of the FinancialAccountHistory.
+           
+      </td>
+</tr>
+<tr>
+<td>currency</td>
+<td>normalizedString</td>
+<td>FinancialAccountHistory Currency</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The financial account history currency (e.g. GBP, USD, EUR). ISO 4217.
+            This should be in the base currency of the operating company. 
+      </td>
+</tr>
+<tr>
+<td>balance</td>
+<td>decimal</td>
+<td>FinancialAccountHistory (Closing) Balance</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The financial account history balance in the financial account history currency.
+            If this is a summary feed then this is the closing balance for the financial period concerned.
+           
+      </td>
+</tr>
+<tr>
+<td>balanceDate</td>
+<td>date</td>
+<td>FinancialAccountHistory (Closing) Balance Date</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The date upon which the balance was based. Default to system date if
+            not used.
+           
+      </td>
+</tr>
+<tr>
+<td>openingBalance</td>
+<td>decimal</td>
+<td>FinancialAccountHistory Opening Balance</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>FinancialAccountHistory opening balance. In FinancialAccountHistory currency. For summary feeds only. This is the opening balance for the financial period concerned. 
+      </td>
+</tr>
+<tr>
+<td>debitPostingAmount</td>
+<td>decimal</td>
+<td>FinancialAccountHistory Debit Posting Amount</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>FinancialAccountHistory debit posting amount. In FinancialAccountHistory currency. For summary feeds only. This is the debit amount posted to the account for the financial period concerned. 
+      </td>
+</tr>
+<tr>
+<td>creditPostingAmount</td>
+<td>decimal</td>
+<td>FinancialAccountHistory Credit Posting Amount</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>FinancialAccountHistory Credit posting amount. In FinancialAccountHistory currency. For summary feeds only. This is the credit amount posted to the account for the financial period concerned. 
+      </td>
+</tr>
+<tr>
+<td>lastTransactionDate</td>
+<td>date</td>
+<td>FinancialAccountHistory Last Transaction Date</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Date the last transaction was posted to the FinancialAccountHistory account.
+           
+      </td>
+</tr>
+<tr>
+<td>primacyIndicator</td>
+<td>boolean</td>
+<td>FinancialAccountHistory Primacy Indicator</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Flag to indicate if this FinancialAccountHistory is the primary (current) one.
+           
+      </td>
+</tr>
+<tr>
+<td>statOpeningBalance</td>
+<td>decimal</td>
+<td>FinancialAccountHistory Statistical Opening Balance</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>FinancialAccountHistory stat opening balance. In FinancialAccount stat unit. For summary feeds only. This is the opening statistical balance for the financial period concerned. 
+      </td>
+</tr>
+<tr>
+<td>statAmount</td>
+<td>decimal</td>
+<td>FinancialAccountHistory Statistical Amount</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>FinancialAccountHistory stat amount. In FinancialAccount stat unit. For summary feeds only. This is the amount of stat unit for the account for the financial period concerned. 
+      </td>
+</tr>
+<tr>
+<td>statClosingBalance</td>
+<td>decimal</td>
+<td>FinancialAccountHistory Statistical Closing Balance</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>FinancialAccountHistory stat closing balance. In FinancialAccountHistory stat unit. For summary feeds only. This is the closing statistical balance for the financial period concerned. 
+      </td>
+</tr>
+</table>
+</div>
+<hr><a name="financialAccountMultiCurrencyHistory--type"></a><div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p>
+<h1>
+        Resource financialAccountMultiCurrencyHistory</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Label</th>
+<th>Unique</th>
+<th>Nillable</th>
+<th>Extension</th>
+<th>Mandatory</th>
+<th>Relationship</th>
+<th>Documentation</th>
+</tr>
+<tr>
+<td>financialAccount</td>
+<td><a href="#financialAccount--type">financialAccount</a></td>
+<td>FinancialAccountMultiCurrencyHistory Financial Account</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>reference 
+      </td>
+<td>
+            Link to the Financial Account associated with this Financial Account Multi-Currency History.
+            See Financial Account definition.
+           
+      </td>
+</tr>
+<tr>
+<td>financialPeriods</td>
+<td><a href="#financialPeriod--type">financialPeriod</a>*
+          </td>
+<td>FinancialAccountMultiCurrencyHistory Financial Periods</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>association 
+      </td>
+<td>
+            Link to the Financial Period(s) associated with this FinancialAccountMultiCurrencyHistory.
+            A combination of Financial Account and Financial Period and Currency allows all financial history to be reported in all currencies.
+           
+      </td>
+</tr>
+<tr>
+<td>active</td>
+<td>boolean</td>
+<td>FinancialAccountMultiCurrencyHistory Active Flag</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Flag to indicate if the FinancialAccountMultiCurrencyHistory is an active one. Default = True
+           
+      </td>
+</tr>
+<tr>
+<td>reference</td>
+<td>normalizedString</td>
+<td>FinancialAccountMultiCurrencyHistory Reference</td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>Reference associated with the FinancialAccountMultiCurrencyHistory. 
+      </td>
+</tr>
+<tr>
+<td>reference2</td>
+<td>normalizedString</td>
+<td>FinancialAccountMultiCurrencyHistory Reference2</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Another reference associated with the FinancialAccountMultiCurrencyHistory.
+           
+      </td>
+</tr>
+<tr>
+<td>name</td>
+<td>normalizedString</td>
+<td>FinancialAccountMultiCurrencyHistory Name</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The name of the FinancialAccountMultiCurrencyHistory (e.g. Q1 2010 USD, Q2 2010 GBP, etc).
+           
+      </td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>FinancialAccountMultiCurrencyHistory Description</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            A longer textual description of the FinancialAccountMultiCurrencyHistory.
+           
+      </td>
+</tr>
+<tr>
+<td>currency</td>
+<td>normalizedString</td>
+<td>FinancialAccountMultiCurrencyHistory Currency</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The FinancialAccountMultiCurrencyHistory currency (e.g. GBP, USD, EUR). ISO 4217.
+           
+      </td>
+</tr>
+<tr>
+<td>operatingCompanyCurrency</td>
+<td>normalizedString</td>
+<td>FinancialAccountMultiCurrencyHistory OperatingCompany Currency</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The currency as used by OperatingCompany, the business operating the
+            Sage application (the base or home currency). ISO 4217.
+           
+      </td>
+</tr>
+<tr>
+<td>operatingCompanyCurrencyExchangeRate</td>
+<td>decimal</td>
+<td>FinancialAccountMultiCurrencyHistory OperatingCompany Currency Exchange Rate</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Rate used to convert from FinancialAccountMultiCurrencyHistory into
+            FinancialAccountMultiCurrencyHistory OperatingCompany Currency, if different.
+           
+      </td>
+</tr>
+<tr>
+<td>operatingCompanyCurrencyExchangeRateOperator</td>
+<td><a href="#rateOperator--enum">rateOperator</a></td>
+<td>FinancialAccountMultiCurrencyHistory OperatingCompany Currency Exchange Rate Operator</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Operator to be used (multiplication or division) to convert from FinancialAccountMultiCurrencyHistory Currency to FinancialAccountMultiCurrencyHistory OperatingCompany Currency. * (multiplication) or / division. E.g. if the operator is division then it is amounts in FinancialAccountMultiCurrencyHistory Currency / FinancialAccountMultiCurrencyHistory OperatingCompanyCurrencyExchange Rate = amounts in
+            FinancialAccountMultiCurrencyHistory OperatingCompanyCurrency.
+           
+      </td>
+</tr>
+<tr>
+<td>operatingCompanyCurrencyExchangeRateDate</td>
+<td>date</td>
+<td>FinancialAccountMultiCurrencyHistory OperatingCompany Currency Exchange Rate Date</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Date of the exchange rate used to convert from FinancialAccountMultiCurrencyHistory Currency to
+            FinancialAccountMultiCurrencyHistory OperatingCompanyCurrency, if different. Default = System date
+           
+      </td>
+</tr>
+<tr>
+<td>balance</td>
+<td>decimal</td>
+<td>FinancialAccountMultiCurrencyHistory (Closing) Balance</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The financial account multi-currency history balance in the financial account multi-currency history currency.
+            If this is a summary feed then this is the closing balance for the financial period concerned.
+           
+      </td>
+</tr>
+<tr>
+<td>balanceOperatingCompanyCurrency</td>
+<td>decimal</td>
+<td>FinancialAccountMultiCurrencyHistory (Closing) Balance (Operating Company Currency)</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The financial account multi-currency history balance in the operating company (base/home) currency.
+            If this is a summary feed then this is the closing balance for the financial period concerned.
+           
+      </td>
+</tr>
+<tr>
+<td>balanceDate</td>
+<td>date</td>
+<td>FinancialAccountMultiCurrencyHistory (Closing) Balance Date</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The date upon which the balance was based. Default to system date if
+            not used.
+           
+      </td>
+</tr>
+<tr>
+<td>openingBalance</td>
+<td>decimal</td>
+<td>FinancialAccountMultiCurrencyHistory Opening Balance</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>FinancialAccountMultiCurrencyHistory opening balance. In FinancialAccountMultiCurrencyHistory currency. For summary feeds only. This is the opening balance for the financial period concerned. 
+      </td>
+</tr>
+<tr>
+<td>openingBalanceOperatingCompanyCurrency</td>
+<td>decimal</td>
+<td>FinancialAccountMultiCurrencyHistory Opening Balance (Operating Company Currency)</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>FinancialAccountMultiCurrencyHistory opening balance. In operating company (base/home) currency. For summary feeds only. This is the opening balance for the financial period concerned. 
+      </td>
+</tr>
+<tr>
+<td>debitPostingAmount</td>
+<td>decimal</td>
+<td>FinancialAccountMultiCurrencyHistory Debit Posting Amount</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>FinancialAccountMultiCurrencyHistory Debit posting amount. In FinancialAccountMultiCurrencyHistory currency. For summary feeds only. This is the debit amount posted to the account for the financial period concerned. 
+      </td>
+</tr>
+<tr>
+<td>debitPostingAmountOperatingCompanyCurrency</td>
+<td>decimal</td>
+<td>FinancialAccountMultiCurrencyHistory Debit Posting Amount (Operating Company Currency)</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>FinancialAccountMultiCurrencyHistory debit posting amount. In Operating Company (base/home) currency. For summary feeds only. This is the debit amount posted to the account for the financial period concerned. 
+      </td>
+</tr>
+<tr>
+<td>creditPostingAmount</td>
+<td>decimal</td>
+<td>FinancialAccountMultiCurrencyHistory Credit Posting Amount</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>FinancialAccountMultiCurrencyHistory Credit posting amount. In FinancialAccountMultiCurrencyHistory currency. For summary feeds only. This is the credit amount posted to the account for the financial period concerned. 
+      </td>
+</tr>
+<tr>
+<td>creditPostingAmountOperatingCompanyCurrency</td>
+<td>decimal</td>
+<td>FinancialAccountMultiCurrencyHistory Credit Posting Amount (Operating Company Currency)</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>FinancialAccountMultiCurrencyHistory Credit posting amount. In Operating Company (base/home) currency. For summary feeds only. This is the credit amount posted to the account for the financial period concerned. 
+      </td>
+</tr>
+<tr>
+<td>lastTransactionDate</td>
+<td>date</td>
+<td>FinancialAccountMultiCurrencyHistory Last Transaction Date</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Date the last transaction was posted to the FinancialAccountMultiCurrencyHistory account.
+           
+      </td>
+</tr>
+<tr>
+<td>primacyIndicator</td>
+<td>boolean</td>
+<td>FinancialAccountMultiCurrencyHistory Primacy Indicator</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Flag to indicate if this FinancialAccountMultiCurrencyHistory is the primary (current) one.
+           
+      </td>
+</tr>
+</table>
+</div>
+<hr><a name="financialAccountBudget--type"></a><div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p>
+<h1>
+        Resource financialAccountBudget</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Label</th>
+<th>Unique</th>
+<th>Nillable</th>
+<th>Extension</th>
+<th>Mandatory</th>
+<th>Relationship</th>
+<th>Documentation</th>
+</tr>
+<tr>
+<td>financialAccount</td>
+<td><a href="#financialAccount--type">financialAccount</a></td>
+<td>FinancialAccountBudget Financial Account</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>reference 
+      </td>
+<td>
+            Link to the Financial Account associated with this financialAccountBudget.
+            See Financial Account definition.
+           
+      </td>
+</tr>
+<tr>
+<td>financialPeriods</td>
+<td><a href="#financialPeriod--type">financialPeriod</a>*
+          </td>
+<td>FinancialAccountBudget Financial Periods</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>association 
+      </td>
+<td>
+            Link to the Financial Period(s) associated with this Financial Account Budget.
+            A combination of Financial Account and Financial Period allows all financial budgets to be reported.
+           
+      </td>
+</tr>
+<tr>
+<td>active</td>
+<td>boolean</td>
+<td>FinancialAccountBudget Active Flag</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Flag to indicate if the financialAccountBudget is an active one. Default = True
+           
+      </td>
+</tr>
+<tr>
+<td>reference</td>
+<td>normalizedString</td>
+<td>FinancialAccountBudget Reference</td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>Reference associated with the financialAccountBudget. 
+      </td>
+</tr>
+<tr>
+<td>reference2</td>
+<td>normalizedString</td>
+<td>FinancialAccountBudget Reference2</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Another reference associated with the financialAccountBudget.
+           
+      </td>
+</tr>
+<tr>
+<td>name</td>
+<td>normalizedString</td>
+<td>FinancialAccountBudget Name</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The name of the FinancialAccountHistory (e.g. Q1 2010 REV1, Q2 2010 FINAL, etc).
+           
+      </td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>FinancialAccountBudget Description</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            A longer textual description of the financialAccountBudget.
+           
+      </td>
+</tr>
+<tr>
+<td>financialAccountBudgetType</td>
+<td><a href="#financialAccountBudgetType--type">financialAccountBudgetType</a></td>
+<td>FinancialAccountBudget Type</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>reference 
+      </td>
+<td>
+            Financial Account Budget Type. 
+      </td>
+</tr>
+<tr>
+<td>currency</td>
+<td>normalizedString</td>
+<td>FinancialAccountBudget Currency</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The financialAccountBudget currency (e.g. GBP, USD, EUR). ISO 4217.
+           
+      </td>
+</tr>
+<tr>
+<td>operatingCompanyCurrency</td>
+<td>normalizedString</td>
+<td>FinancialAccountBudget OperatingCompany Currency</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>The currency as used by OperatingCompany, the business operating the
+            Sage application (the base or home currency). ISO 4217.
+           
+      </td>
+</tr>
+<tr>
+<td>operatingCompanyCurrencyExchangeRate</td>
+<td>decimal</td>
+<td>FinancialAccountBudget OperatingCompany Currency Exchange Rate</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Rate used to convert from financialBudget currency into
+            financialBudget OperatingCompanyCurrency, if different.
+           
+      </td>
+</tr>
+<tr>
+<td>operatingCompanyCurrencyExchangeRateOperator</td>
+<td><a href="#rateOperator--enum">rateOperator</a></td>
+<td>FinancialAccountBudget OperatingCompany Currency Exchange Rate Operator</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Operator to be used (multiplication or division) to convert from FinancialAccountBudget Currency to FinancialAccountBudget OperatingCompany Currency. * (multiplication) or / division. E.g. if the operator is division then it is amounts in FinancialAccountBudget Currency / FinancialAccountBudget OperatingCompanyCurrencyExchange Rate = amounts in
+            FinancialAccountBudget OperatingCompanyCurrency.
+           
+      </td>
+</tr>
+<tr>
+<td>operatingCompanyCurrencyExchangeRateDate</td>
+<td>date</td>
+<td>FinancialAccountBudget OperatingCompany Currency Exchange Rate Date</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Date of the exchange rate used to convert from FinancialAccountBudget Currency to
+            FinancialAccountBudget OperatingCompanyCurrency, if different. Default = System date
+           
+      </td>
+</tr>
+<tr>
+<td>balance</td>
+<td>decimal</td>
+<td>FinancialAccountBudget Balance</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The financial account budget balance in the financial account budget currency.
+           
+      </td>
+</tr>
+<tr>
+<td>balanceOperatingCompanyCurrency</td>
+<td>decimal</td>
+<td>FinancialAccountBudget Balance (Operating Company Currency)</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The financial account budget balance in the operating company (base/home) currency.
+           
+      </td>
+</tr>
+<tr>
+<td>date</td>
+<td>date</td>
+<td>FinancialAccountBudget Date</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The date of the budget. Default to system date if not used.
+           
+      </td>
+</tr>
+<tr>
+<td>lastRevisionDate</td>
+<td>date</td>
+<td>FinancialAccountBudget Last revision Date</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The date the budget was last revised. Can be left blank if not revised.
+           
+      </td>
+</tr>
+<tr>
+<td>status</td>
+<td><a href="#financialBudgetStatus--enum">financialBudgetStatus</a></td>
+<td>FinancialAccountBudget Status</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>Status of the financial budget (Active, hold or closed). 
+      </td>
+</tr>
+<tr>
+<td>primacyIndicator</td>
+<td>boolean</td>
+<td>FinancialAccountBudget Primacy Indicator</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Flag to indicate if this financialAccountBudget is the primary (current) budget in cases where there are multiple.
+           
+      </td>
+</tr>
+<tr>
+<td>statBalance</td>
+<td>decimal</td>
+<td>FinancialAccountBudget Statistical Balance</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The financial account budget stat balance in the financial account stat unit.
+           
+      </td>
+</tr>
+<tr>
+<td>notes</td>
+<td><a href="#note--type">note</a>*
+          </td>
+<td>FinancialAccountBudget Note</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>child 
+      </td>
+<td>Note associated with the financialAccountBudget. See Note definition.
+           
+      </td>
+</tr>
+</table>
+</div>
+<hr><a name="financialPeriod--type"></a><div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p>
+<h1>
+        Resource financialPeriod</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Label</th>
+<th>Unique</th>
+<th>Nillable</th>
+<th>Extension</th>
+<th>Mandatory</th>
+<th>Relationship</th>
+<th>Documentation</th>
+</tr>
+<tr>
+<td>active</td>
+<td>boolean</td>
+<td>Financial Period Active Flag</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Flag to indicate if the Financial Period is an active one. Default = True
+           
+      </td>
+</tr>
+<tr>
+<td>reference</td>
+<td>normalizedString</td>
+<td>Financial Period Reference</td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>Reference for the Financial Period. 
+      </td>
+</tr>
+<tr>
+<td>name</td>
+<td>normalizedString</td>
+<td>Financial Period Name</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>Financial Period Name (e.g. Q1-Week1-2008) 
+      </td>
+</tr>
+<tr>
+<td>year</td>
+<td>normalizedString</td>
+<td>Financial Period Year</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>Financial Period Year (e.g. 2008) 
+      </td>
+</tr>
+<tr>
+<td>financialPeriodNumber</td>
+<td>decimal</td>
+<td>Financial Period Number</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Financial Period Number expressed as a number.
+            May be different to Month Number which may run 1-12 whereas there may be 13 periods in a year.
+           
+      </td>
+</tr>
+<tr>
+<td>financialPeriodText</td>
+<td>normalizedString</td>
+<td>Financial Period Number Text</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Financial Period Number expressed as text (e.g. 01)
+           
+      </td>
+</tr>
+<tr>
+<td>quarterNumber</td>
+<td>decimal</td>
+<td>Financial Period Quarter Number</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Financial Period Quarter expressed as a number (e.g. 3)
+           
+      </td>
+</tr>
+<tr>
+<td>quarterText</td>
+<td>normalizedString</td>
+<td>Financial Period Quarter Text</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Financial Period Quarter expressed as text (e.g. Q3)
+           
+      </td>
+</tr>
+<tr>
+<td>monthNumber</td>
+<td>decimal</td>
+<td>Financial Period Month Number</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Financial Period Month expressed as a number (e.g. 1 to 12, or 1 - 13).
+           
+      </td>
+</tr>
+<tr>
+<td>monthText</td>
+<td>normalizedString</td>
+<td>Financial Period Month Text</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Financial Period Month expressed as text (e.g. January or Period 1).
+           
+      </td>
+</tr>
+<tr>
+<td>weekNumber</td>
+<td>decimal</td>
+<td>Financial Period Week Number</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Financial Period week expressed as a number (e.g. 26).
+           
+      </td>
+</tr>
+<tr>
+<td>weekText</td>
+<td>normalizedString</td>
+<td>Financial Period Week Text</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Financial Period week expressed as text (e.g. Week 26).
+           
+      </td>
+</tr>
+<tr>
+<td>startDate</td>
+<td>date</td>
+<td>Financial Period Start Date</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Start date of the Financial Period entry (e.g. if Year is 2008 and
+            Quarter is Q1 and Month is January then this would be 01/01/2008)
+           
+      </td>
+</tr>
+<tr>
+<td>endDate</td>
+<td>date</td>
+<td>Financial Period End Date</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            End date of the Financial Period entry (e.g. if Year is 2008 and
+            Quarter is Q1 and Month is January then this would be 31/01/2008)
+           
+      </td>
+</tr>
+<tr>
+<td>status</td>
+<td><a href="#financialPeriodStatus--enum">financialPeriodStatus</a></td>
+<td>Financial Period Status</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>Status of the financial period (open or closed). 
+      </td>
+</tr>
+<tr>
+<td>notes</td>
+<td><a href="#note--type">note</a>*
+          </td>
+<td>Financial Period Note</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>child 
+      </td>
+<td>Notes associated with a Financial Period. 
+      </td>
+</tr>
+</table>
+</div>
+<hr><a name="financialAccountBudgetType--type"></a><div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p>
+<h1>
+        Resource financialAccountBudgetType</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Label</th>
+<th>Unique</th>
+<th>Nillable</th>
+<th>Extension</th>
+<th>Mandatory</th>
+<th>Relationship</th>
+<th>Documentation</th>
+</tr>
+<tr>
+<td>active</td>
+<td>boolean</td>
+<td>Financial Account Budget Type Active Flag</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Flag to indicate if the Financial Account Budget Type is an active one. Default = True
+           
+      </td>
+</tr>
+<tr>
+<td>reference</td>
+<td>normalizedString</td>
+<td>Financial Account Budget Type Reference</td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>Reference associated with the Financial Account Budget Type. 
+      </td>
+</tr>
+<tr>
+<td>name</td>
+<td>normalizedString</td>
+<td>Financial Account Budget Type Name</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The name of the Financial Account Budget Type
+           
+      </td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>Financial Account Budget Type Description</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            A longer textual description of Financial Account Budget Type.
+           
+      </td>
+</tr>
+<tr>
+<td>notes</td>
+<td><a href="#note--type">note</a>*
+          </td>
+<td>Financial Account Budget Type Note</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>child 
+      </td>
+<td>
+            Note associated with the Financial Account Budget Type. See Note definition.
+           
+      </td>
+</tr>
+</table>
+</div>
+<hr>
+<div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p><a name="operatingCompanyLegalEntityType--enum"></a><h1>
+        Enumeration operatingCompanyLegalEntityType</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<td>Sole Trader</td>
+</tr>
+<tr>
+<td>Partnership</td>
+</tr>
+<tr>
+<td>Limited Liability Partnership</td>
+</tr>
+<tr>
+<td>Limited Company</td>
+</tr>
+<tr>
+<td>Public Limited Company</td>
+</tr>
+<tr>
+<td>User Defined</td>
+</tr>
+<tr>
+<td>Other</td>
+</tr>
+<tr>
+<td>Unknown</td>
+</tr>
+</table>
+</div>
+<hr>
+<div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p><a name="postalAddressType--enum"></a><h1>
+        Enumeration postalAddressType</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<td>Shipping</td>
+</tr>
+<tr>
+<td>Billing</td>
+</tr>
+<tr>
+<td>Correspondence</td>
+</tr>
+<tr>
+<td>Home</td>
+</tr>
+<tr>
+<td>Office</td>
+</tr>
+<tr>
+<td>Work Site</td>
+</tr>
+<tr>
+<td>Other</td>
+</tr>
+<tr>
+<td>Unknown</td>
+</tr>
+</table>
+</div>
+<hr>
+<div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p><a name="phoneNumberType--enum"></a><h1>
+        Enumeration phoneNumberType</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<td>Business Phone</td>
+</tr>
+<tr>
+<td>Business Fax</td>
+</tr>
+<tr>
+<td>Business Mobile</td>
+</tr>
+<tr>
+<td>Personal Phone</td>
+</tr>
+<tr>
+<td>Personal Fax</td>
+</tr>
+<tr>
+<td>Personal Mobile</td>
+</tr>
+<tr>
+<td>Pager</td>
+</tr>
+<tr>
+<td>Toll Free</td>
+</tr>
+<tr>
+<td>Other Phone</td>
+</tr>
+<tr>
+<td>Other Fax</td>
+</tr>
+<tr>
+<td>Unknown</td>
+</tr>
+</table>
+</div>
+<hr>
+<div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p><a name="emailType--enum"></a><h1>
+        Enumeration emailType</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<td>Business</td>
+</tr>
+<tr>
+<td>Personal</td>
+</tr>
+<tr>
+<td>Other</td>
+</tr>
+<tr>
+<td>Unknown</td>
+</tr>
+</table>
+</div>
+<hr>
+<div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p><a name="financialAccountPostingType--enum"></a><h1>
+        Enumeration financialAccountPostingType</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<td>Memo</td>
+</tr>
+<tr>
+<td>Posting</td>
+</tr>
+<tr>
+<td>Grouping</td>
+</tr>
+<tr>
+<td>Unknown</td>
+</tr>
+</table>
+</div>
+<hr>
+<div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p><a name="financialAccountReportingType--enum"></a><h1>
+        Enumeration financialAccountReportingType</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<td>Profit &amp; Loss</td>
+</tr>
+<tr>
+<td>Balance Sheet</td>
+</tr>
+<tr>
+<td>User Defined</td>
+</tr>
+<tr>
+<td>Unknown</td>
+</tr>
+</table>
+</div>
+<hr>
+<div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p><a name="financialAccountAccountingType--enum"></a><h1>
+        Enumeration financialAccountAccountingType</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<td>Revenue</td>
+</tr>
+<tr>
+<td>Expense</td>
+</tr>
+<tr>
+<td>Revenue &amp; Expense</td>
+</tr>
+<tr>
+<td>User Defined</td>
+</tr>
+<tr>
+<td>Unknown</td>
+</tr>
+</table>
+</div>
+<hr>
+<div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p><a name="financialAccountAnalysisType--enum"></a><h1>
+        Enumeration financialAccountAnalysisType</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<td>Natural</td>
+</tr>
+<tr>
+<td>Other</td>
+</tr>
+</table>
+</div>
+<hr>
+<div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p><a name="financialAccountNaturalBalanceType--enum"></a><h1>
+        Enumeration financialAccountNaturalBalanceType</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<td>Debit</td>
+</tr>
+<tr>
+<td>Credit</td>
+</tr>
+</table>
+</div>
+<hr>
+<div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p><a name="financialAccountAccountType--enum"></a><h1>
+        Enumeration financialAccountAccountType</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<td>Cash (Default)</td>
+</tr>
+<tr>
+<td>Cash (Cash Equivalents)</td>
+</tr>
+<tr>
+<td>Accounts Receivable</td>
+</tr>
+<tr>
+<td>Other Receivables (Default)</td>
+</tr>
+<tr>
+<td>Other Receivables (Long Term)</td>
+</tr>
+<tr>
+<td>Inventory</td>
+</tr>
+<tr>
+<td>Prepaid Expenses (Prepayments/Credit Cards)</td>
+</tr>
+<tr>
+<td>Prepaid Expenses (Default)</td>
+</tr>
+<tr>
+<td>Other Assets (Bank)</td>
+</tr>
+<tr>
+<td>Other Assets (VAT/Sales Tax)</td>
+</tr>
+<tr>
+<td>Other Assets (Default)</td>
+</tr>
+<tr>
+<td>Fixed Assets (Default)</td>
+</tr>
+<tr>
+<td>Fixed Assets (Buildings)</td>
+</tr>
+<tr>
+<td>Fixed Assets (Land)</td>
+</tr>
+<tr>
+<td>Fixed Assets (Lease)</td>
+</tr>
+<tr>
+<td>Fixed Assets (Plant/Machinery)</td>
+</tr>
+<tr>
+<td>Fixed Assets (Equipment)</td>
+</tr>
+<tr>
+<td>Fixed Assets (Fixtures/Furniture)</td>
+</tr>
+<tr>
+<td>Fixed Assets (Vehicles)</td>
+</tr>
+<tr>
+<td>Current Liabilities (Creditors/Accounts Payable)</td>
+</tr>
+<tr>
+<td>Current Liabilities (Wages/Payroll)</td>
+</tr>
+<tr>
+<td>Current Liabilities (Accruals/Credit Cards)</td>
+</tr>
+<tr>
+<td>Current Liabilities (Bank/Cash on hand/Securities)</td>
+</tr>
+<tr>
+<td>Current Liabilities (Default)</td>
+</tr>
+<tr>
+<td>Current Liabilities (VAT/Sales Tax)</td>
+</tr>
+<tr>
+<td>Current Liabilities (Dividends)</td>
+</tr>
+<tr>
+<td>Long Term Liabilities (Default)</td>
+</tr>
+<tr>
+<td>Stockholders Equity</td>
+</tr>
+<tr>
+<td>Retained Earnings</td>
+</tr>
+<tr>
+<td>Sales (Default)</td>
+</tr>
+<tr>
+<td>Sales (Asset Sales)</td>
+</tr>
+<tr>
+<td>Sales (Finance/Interest)</td>
+</tr>
+<tr>
+<td>Sales (Default)</td>
+</tr>
+<tr>
+<td>Cost Of Goods Sold (Labour)</td>
+</tr>
+<tr>
+<td>Cost Of Goods Sold (Subcontractors)</td>
+</tr>
+<tr>
+<td>Cost Of Goods Sold (Commodities)</td>
+</tr>
+<tr>
+<td>Cost Of Goods Sold (Materials)</td>
+</tr>
+<tr>
+<td>Cost Of Goods Sold (Default)</td>
+</tr>
+<tr>
+<td>Other Income and Expense (Wages/Payroll)</td>
+</tr>
+<tr>
+<td>Other Income and Expense (Rent/Rates)</td>
+</tr>
+<tr>
+<td>Other Income and Expense (Office)</td>
+</tr>
+<tr>
+<td>Other Income and Expense (Heat/Light/Power)</td>
+</tr>
+<tr>
+<td>Other Income and Expense (Vehicles)</td>
+</tr>
+<tr>
+<td>Other Income and Expense (Travel)</td>
+</tr>
+<tr>
+<td>Other Income and Expense (IT)</td>
+</tr>
+<tr>
+<td>Other Income and Expense (Professional)</td>
+</tr>
+<tr>
+<td>Other Income and Expense (Hire/Rental)</td>
+</tr>
+<tr>
+<td>Other Income and Expense (Maintenance)</td>
+</tr>
+<tr>
+<td>Other Income and Expense (Depreciation/Amortisation)</td>
+</tr>
+<tr>
+<td>Other Income and Expense (Bad Debts)</td>
+</tr>
+<tr>
+<td>Other Income and Expense (Default)</td>
+</tr>
+<tr>
+<td>Other Income and Expense (Suspense)</td>
+</tr>
+<tr>
+<td>Other Income and Expense (Finance/Interest)</td>
+</tr>
+<tr>
+<td>Income Tax (Default)</td>
+</tr>
+<tr>
+<td>Income Tax (Payroll)</td>
+</tr>
+<tr>
+<td>Income Tax (Corporation/Company)</td>
+</tr>
+<tr>
+<td>Operating Expense (Accounts Payable)</td>
+</tr>
+<tr>
+<td>Operating Expense (Inventory)</td>
+</tr>
+<tr>
+<td>Operating Expense (Default)</td>
+</tr>
+<tr>
+<td>Non Financial</td>
+</tr>
+</table>
+</div>
+<hr>
+<div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p><a name="financialAccountAccountCategory--enum"></a><h1>
+        Enumeration financialAccountAccountCategory</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<td>Asset (Fixed Assets)</td>
+</tr>
+<tr>
+<td>Asset (Current Assets)</td>
+</tr>
+<tr>
+<td>Liability (Current Liabilities)</td>
+</tr>
+<tr>
+<td>Liability (Long Term Liabilities)</td>
+</tr>
+<tr>
+<td>Equity (Capital and Reserves)</td>
+</tr>
+<tr>
+<td>Revenue (Sales)</td>
+</tr>
+<tr>
+<td>Cost Of Sales (Direct Expenses)</td>
+</tr>
+<tr>
+<td>Other Income and Expense (Overheads)</td>
+</tr>
+<tr>
+<td>Income Tax</td>
+</tr>
+<tr>
+<td>Expense (Purchases)</td>
+</tr>
+<tr>
+<td>Non Financial</td>
+</tr>
+</table>
+</div>
+<hr>
+<div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p><a name="financialAccountCurrencyRestriction--enum"></a><h1>
+        Enumeration financialAccountCurrencyRestriction</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<td>Base Currency Only</td>
+</tr>
+<tr>
+<td>Base Currency + One Other Currency</td>
+</tr>
+<tr>
+<td>All Currencies</td>
+</tr>
+</table>
+</div>
+<hr>
+<div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p><a name="rateOperator--enum"></a><h1>
+        Enumeration rateOperator</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<td>*</td>
+</tr>
+<tr>
+<td>/</td>
+</tr>
+</table>
+</div>
+<hr>
+<div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p><a name="financialPeriodStatus--enum"></a><h1>
+        Enumeration financialPeriodStatus</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<td>Open</td>
+</tr>
+<tr>
+<td>Closed</td>
+</tr>
+</table>
+</div>
+<hr>
+<div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p><a name="financialBudgetStatus--enum"></a><h1>
+        Enumeration financialBudgetStatus</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<td>Active</td>
+</tr>
+<tr>
+<td>Hold</td>
+</tr>
+<tr>
+<td>Closed</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4D546910-910D-4B06-AF49-CDB42983F6F4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sage.Integration.Northwind.Sync</RootNamespace>
+    <AssemblyName>Sage.Integration.Northwind.Sync</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppBookmarkInfoStore.cs" />
+    <Compile Include="CorrelatedResSyncInfoStore.cs" />
+    <Compile Include="ISyncSyncDigestInfoStore.cs" />
+    <Compile Include="ISyncTickProvider.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StoreLocator.cs" />
+    <Compile Include="SyncDigestInfoStore.cs" />
+    <Compile Include="SyncResultInfoStore.cs" />
+    <Compile Include="Syndication\SyncState.cs" />
+    <Compile Include="TickProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sage.Integration.Northwind.Application\Sage.Integration.Northwind.Application.csproj">
+      <Project>{F579CD13-5147-4EE0-8E90-39AE59C1ABEB}</Project>
+      <Name>Sage.Integration.Northwind.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.Integration.Northwind.Common\Sage.Integration.Northwind.Common.csproj">
+      <Project>{3C819437-8FB9-4D9B-AC4D-9B8DA65BEC0F}</Project>
+      <Name>Sage.Integration.Northwind.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.Sis.Common.Data\Sage.Sis.Common.Data.csproj">
+      <Project>{4FCA340F-6C11-4C37-9A30-AEED463B1342}</Project>
+      <Name>Sage.Sis.Common.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.Sis.Sdata.Sync.Context\Sage.Sis.Sdata.Sync.Context.csproj">
+      <Project>{3F60D46A-CACD-4014-93CC-1FC40AA1FF3D}</Project>
+      <Name>Sage.Sis.Sdata.Sync.Context</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.Sis.Sdata.Sync.Results\Sage.Sis.Sdata.Sync.Results.csproj">
+      <Project>{83E87110-F2E5-491C-A4E6-53CDFA41FE45}</Project>
+      <Name>Sage.Sis.Sdata.Sync.Results</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.Sis.Sdata.Sync.Storage.Jet\Sage.Sis.Sdata.Sync.Storage.Jet.csproj">
+      <Project>{C2D466E2-8580-48DD-A005-04F33A5B9C0B}</Project>
+      <Name>Sage.Sis.Sdata.Sync.Storage.Jet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.Sis.Sdata.Sync.Storage\Sage.Sis.Sdata.Sync.Storage.csproj">
+      <Project>{8302A3E6-9AF0-4F17-90F7-1780612D9977}</Project>
+      <Name>Sage.Sis.Sdata.Sync.Storage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.Sis.Sdata.Sync.Tick\Sage.Sis.Sdata.Sync.Tick.csproj">
+      <Project>{63AD8E69-2267-42FF-B5E4-F4E488185103}</Project>
+      <Name>Sage.Sis.Sdata.Sync.Tick</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

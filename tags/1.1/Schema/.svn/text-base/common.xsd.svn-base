@@ -1,0 +1,1807 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../Tools/XsdToHtml.xslt"?>
+<xs:schema xmlns:sme="http://schemas.sage.com/sdata/sme/2007" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.sage.com/sc/2009" targetNamespace="http://schemas.sage.com/sc/2009" elementFormDefault="qualified" id="sc" version="1.1.0">
+  <xs:element name="operatingCompany" type="operatingCompany--type" sme:role="resourceKind" sme:pluralName="operatingCompanies" sme:compliance="must" sme:hasUuid="true" sme:canGet="true" />
+  <xs:complexType name="operatingCompany--type">
+    <xs:all>
+      <xs:element name="active" type="xs:boolean" minOccurs="0" sme:label="Operating Company Active Flag">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if the Company is an active Company.
+            Default = True
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="name" type="xs:normalizedString" minOccurs="0" sme:label="Operating Company Name" sme:isMandatory="true">
+        <xs:annotation>
+          <xs:documentation>
+            The entity name (e.g. Home-style Kitchens).
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="shortName" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="Operating Company Short Name">
+        <xs:annotation>
+          <xs:documentation>
+            A shorter name for the Company.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="currency" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="Operating Company Currency">
+        <xs:annotation>
+          <xs:documentation>
+            The Company currency (e.g. GBP, USD, EUR).
+            ISO 4217
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="identifier" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="Operating Company Identifier" sme:isUniqueKey="true">
+        <xs:annotation>
+          <xs:documentation>
+            Identifier(s) of the Company as used by the third parties (e.g. Company Registration Number, DUNS number, 1099 type, CIS number, siret number, Trading Number, etc).
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="taxLocale" type="xs:normalizedString" minOccurs="0" sme:label="Operating Company Tax Locale">
+        <xs:annotation>
+          <xs:documentation>
+            The tax-locale applicable to the Operating Company (e.g. District)
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="taxReference" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="Operating Company Tax Reference" sme:isUniqueKey="true">
+        <xs:annotation>
+          <xs:documentation>
+            Tax reference associated with the Company (e.g. VAT number, numero intracommnunautaire, FEIN)
+            NIF (Spain)
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="language" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="Operating Company Language">
+        <xs:annotation>
+          <xs:documentation>
+            Language used by the Company (e.g. EN-GB)
+            ISO 639-1
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="postalAddresses" type="postalAddress--list" minOccurs="0" sme:label="Operating Company Postal Addresses" sme:isCollection="true" sme:relationship="association">
+        <xs:annotation>
+          <xs:documentation>
+            Postal address(es) associated with the Operating Company. See PostalAddress definition.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="phoneNumbers" type="phoneNumber--list" minOccurs="0" sme:label="Operating Company Phone Numbers" sme:isCollection="true" sme:relationship="association">
+        <xs:annotation>
+          <xs:documentation>
+            Phone numbers associated with the Operating Company. See PhoneNumber definition.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="legalEntityType" type="operatingCompanyLegalEntityType--enum" minOccurs="0" sme:label="Operating Company Legal Entity Type">
+        <xs:annotation>
+          <xs:documentation>
+            The type of legal business entity the Operating Company is, e.g. Partnership, Limited Company, etc.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+    <xs:anyAttribute />
+  </xs:complexType>
+  <xs:complexType name="operatingCompany--list">
+    <xs:sequence>
+      <xs:element name="operatingCompany" type="operatingCompany--type" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:anyAttribute />
+  </xs:complexType>
+  <xs:element name="person" type="person--type" sme:role="resourceKind" sme:pluralName="people" sme:compliance="must" sme:canGet="true" sme:canPut="true" sme:canPost="true" sme:canDelete="true" />
+  <xs:complexType name="person--type">
+    <xs:all />
+    <xs:anyAttribute />
+  </xs:complexType>
+  <xs:element name="postalAddress" type="postalAddress--type" sme:role="resourceKind" sme:pluralName="postalAddresses" sme:compliance="must" sme:canGet="true" sme:canPut="true" sme:canPost="true" sme:canDelete="true" sme:hasUuid="true" sme:isSyncSource="true" sme:isSyncTarget="true" />
+  <xs:complexType name="postalAddress--type">
+    <xs:all>
+      <xs:element name="active" type="xs:boolean" minOccurs="0" sme:label="PostalAddress Active Flag">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if the Postal Address is an active one. Default =
+            True
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reference" type="xs:normalizedString" minOccurs="0" sme:label="PostalAddress Reference" sme:isUniqueKey="true">
+        <xs:annotation>
+          <xs:documentation>Reference for the Postal Address.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="name" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="PostalAddress Name">
+        <xs:annotation>
+          <xs:documentation>
+            A name for the Postal Address (e.g. Billing Address).
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="description" type="xs:string" nillable="true" minOccurs="0" sme:label="PostalAddress Description">
+        <xs:annotation>
+          <xs:documentation>
+            A longer description of the postal Postal Address.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="address1" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="PostalAddress Address 1">
+        <xs:annotation>
+          <xs:documentation>1st Line of Postal Address</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="address2" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="PostalAddress Address 2">
+        <xs:annotation>
+          <xs:documentation>2nd Line of Postal Address</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="address3" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="PostalAddress Address 3">
+        <xs:annotation>
+          <xs:documentation>3rd Line of Postal Address</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="address4" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="PostalAddress Address 4">
+        <xs:annotation>
+          <xs:documentation>4th Line of Postal Address</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="townCity" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="PostalAddress TownCity">
+        <xs:annotation>
+          <xs:documentation>Town or City</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="county" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="PostalAddress County">
+        <xs:annotation>
+          <xs:documentation>County</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="stateRegion" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="PostalAddress StateRegion">
+        <xs:annotation>
+          <xs:documentation>
+            State/Region. For USA addresses use ISO 3166-2:US for state codes. For
+            UK addresses use ISO 3166-2:GB. For French addresses use ISO 3166-2:FR. For German
+            addresses use ISO 3166-2:DE. For Canada addresses use ISO 3166-2:CA.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="zipPostCode" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="PostalAddress ZipPost Code">
+        <xs:annotation>
+          <xs:documentation>
+            Zip or Post code. Should be formatted as raw text no formatting
+            included.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="country" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="PostalAddress Country">
+        <xs:annotation>
+          <xs:documentation>Country. ISO 3166-1 alpha-2 country codes only</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="primacyIndicator" type="xs:boolean" minOccurs="0" sme:label="PostalAddress Primacy Indicator">
+        <xs:annotation>
+          <xs:documentation>
+            A flag to indicate if the Address is the primary/default Address. Only
+            one Postal Address can have Primacy against an associated entity (e.g. Contact, Company,
+            etc). Default = False
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="type" type="postalAddressType--enum" minOccurs="0" sme:label="PostalAddress Type" sme:isMandatory="true">
+        <xs:annotation>
+          <xs:documentation>
+            The type of the Postal Address, e.g., billing, sales address, home,
+            etc. A new Postal Address will be required for each type, even though the address
+            itself may be the same. Default = Correspondence
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="notes" type="note--list" nillable="true" minOccurs="0" sme:label="PostalAddress Notes" sme:relationship="child" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>Notes associated with the Postal Address.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+    <xs:anyAttribute />
+  </xs:complexType>
+  <xs:complexType name="postalAddress--list">
+    <xs:sequence>
+      <xs:element name="postalAddress" type="postalAddress--type" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:anyAttribute />
+  </xs:complexType>
+  <xs:element name="email" type="email--type" sme:role="resourceKind" sme:pluralName="emails" sme:compliance="must" sme:canGet="true" sme:canPut="true" sme:canPost="true" sme:canDelete="true" sme:hasUuid="true" sme:isSyncSource="true" sme:isSyncTarget="true" />
+  <xs:complexType name="email--type">
+    <xs:all>
+      <xs:element name="active" type="xs:boolean" minOccurs="0" sme:label="Email Active Flag">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if the Email is an active one. Default = True
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reference" type="xs:normalizedString" minOccurs="0" sme:label="Email Reference" sme:isUniqueKey="true">
+        <xs:annotation>
+          <xs:documentation>Reference associated with the Email.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reference2" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="Email Reference2">
+        <xs:annotation>
+          <xs:documentation>Another reference associated with the email.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="type" type="emailType--enum" minOccurs="0" sme:label="Email Type">
+        <xs:annotation>
+          <xs:documentation>
+            A simple string value used to label this email address. It allows for
+            email addresses such as Work, Personal, Preferred, etc. Can also be used to
+            distinguish instant messaging type addresses.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="address" type="xs:normalizedString" minOccurs="0" sme:label="Email Address" sme:isMandatory="true">
+        <xs:annotation>
+          <xs:documentation>
+            The Email address itself (e.g. joe.bloggs@acme.com).
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="url" type="xs:normalizedString" minOccurs="0" sme:label="mailto:URL" sme:isUniqueKey="true">
+        <xs:annotation>
+          <xs:documentation>
+            URL that allows an email to be automatically generated that is to be
+            set to the email address. Could be created automatically.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="primacyIndicator" type="xs:boolean" minOccurs="0" sme:label="Email Primacy Indicator">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if this Email is the primary one associated with the
+            linked resource. Default = False
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="notes" type="note--list" nillable="true" minOccurs="0" sme:label="Email Notes" sme:relationship="child" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>Notes associated with email.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+    <xs:anyAttribute />
+  </xs:complexType>
+  <xs:complexType name="email--list">
+    <xs:sequence>
+      <xs:element name="email" type="email--type" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:anyAttribute />
+  </xs:complexType>
+  <xs:element name="phoneNumber" type="phoneNumber--type" sme:role="resourceKind" sme:pluralName="phoneNumbers" sme:compliance="must" sme:canGet="true" sme:canPut="true" sme:canPost="true" sme:canDelete="true" sme:hasUuid="true" sme:isSyncSource="true" sme:isSyncTarget="true" />
+  <xs:complexType name="phoneNumber--type">
+    <xs:all>
+      <xs:element name="active" type="xs:boolean" minOccurs="0" sme:label="PhoneNumber Active Flag">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if the phone number is an active one. Default =
+            True
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reference" type="xs:normalizedString" minOccurs="0" sme:label="PhoneNumber Reference" sme:isUniqueKey="true">
+        <xs:annotation>
+          <xs:documentation>Reference associated with the phone number.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reference2" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="PhoneNumber Reference2">
+        <xs:annotation>
+          <xs:documentation>
+            Another reference associated with the phone number.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="uri" type="xs:normalizedString" minOccurs="0" sme:label="PhoneNumber URI" sme:isUniqueKey="true">
+        <xs:annotation>
+          <xs:documentation>
+            A phone unique reference number used to represent the number in a
+            formal way. Useful for programmatic access, such as a VoIP/PSTN/CTI. Could be derived
+            by concatenating attributes.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="type" type="phoneNumberType--enum" minOccurs="0" sme:label="PhoneNumber Type">
+        <xs:annotation>
+          <xs:documentation>
+            A value that identifies the type of phone number (general, fax, car,
+            home, internal, mobile, other, pager, satellite, VoIP, work).
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="name" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="PhoneNumber Name">
+        <xs:annotation>
+          <xs:documentation>
+            A simple string value used to label this phone number. In most cases,
+            Label is not necessary as Phone Type uniquely identifies a number and allows UIs to
+            display a proper label such as Mobile, Home, Work, etc. However, in the case where
+            one person has (for example) multiple mobile phones, this property can be used to
+            disambiguate them. Could be derived from Phone Type
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="text" type="xs:normalizedString" minOccurs="0" sme:label="PhoneNumber Text" sme:isMandatory="true">
+        <xs:annotation>
+          <xs:documentation>
+            Human-readable phone number, containing all attributes. Could be
+            derived by concatenating other properties.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="countryCode" type="xs:normalizedString" minOccurs="0" sme:label="PhoneNumber Country Code">
+        <xs:annotation>
+          <xs:documentation>
+            Country code for the phone number based on ITU-T recommendation E.164
+            country codes. ITU-T E. 164 country codes only.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="areaCode" type="xs:normalizedString" minOccurs="0" sme:label="PhoneNumber Area Code">
+        <xs:annotation>
+          <xs:documentation>Area code for the phone number</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="number" type="xs:normalizedString" minOccurs="0" sme:label="PhoneNumber Number">
+        <xs:annotation>
+          <xs:documentation>Telephone number.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="extension" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="PhoneNumber Extension">
+        <xs:annotation>
+          <xs:documentation>Any extension applicable to the phone number.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="primacyIndicator" type="xs:boolean" minOccurs="0" sme:label="PhoneNumber Primacy Indicator">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if this Phone Number is the primary one associated
+            with the linked resource. Default = False
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="notes" type="note--list" nillable="true" minOccurs="0" sme:label="PhoneNumber Note" sme:relationship="child" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>Notes associated with phone number.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+    <xs:anyAttribute />
+  </xs:complexType>
+  <xs:complexType name="phoneNumber--list">
+    <xs:sequence>
+      <xs:element name="phoneNumber" type="phoneNumber--type" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:anyAttribute />
+  </xs:complexType>
+  <xs:element name="note" type="note--type" sme:role="resourceKind" sme:pluralName="notes" sme:compliance="may" sme:canGet="true" />
+  <xs:complexType name="note--type">
+    <xs:all>
+      <xs:element name="active" type="xs:boolean" minOccurs="0" sme:label="Note Active Flag">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if the note is an active one. Default = True
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reference" type="xs:normalizedString" minOccurs="0" sme:label="Note Reference" sme:isUniqueKey="true">
+        <xs:annotation>
+          <xs:documentation>Reference associated with the note.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reference2" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="Note Reference2">
+        <xs:annotation>
+          <xs:documentation>Another reference associated with the note.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="text" type="xs:string" minOccurs="0" sme:label="Note Text" sme:isMandatory="true">
+        <xs:annotation>
+          <xs:documentation>The note text itself.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="privacyFlag" type="xs:boolean" minOccurs="0" sme:label="Note Privacy Flag">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if the note is public or private. Default = No
+            (not private).
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="dateStamp" type="xs:date" minOccurs="0" sme:label="Note Date Stamp">
+        <xs:annotation>
+          <xs:documentation>Date and time of note</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="primacyIndicator" type="xs:boolean" minOccurs="0" sme:label="Note Primacy Indicator">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if this Note is the primary one associated with the
+            linked resource. Default = False
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="user" type="xs:normalizedString" minOccurs="0" sme:label="Note User">
+        <xs:annotation>
+          <xs:documentation>Details of the user who created the note.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+    <xs:anyAttribute />
+  </xs:complexType>
+  <xs:complexType name="note--list">
+    <xs:sequence>
+      <xs:element name="note" type="note--type" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:anyAttribute />
+  </xs:complexType>
+  <xs:element name="financialAccount" type="financialAccount--type" sme:role="resourceKind" sme:pluralName="financialAccounts" sme:compliance="may" sme:canGet="true" />
+  <xs:complexType name="financialAccount--type">
+    <xs:all>
+      <xs:element name="financialAccountGroups" type="financialAccountGroup--list" nillable="true" minOccurs="0" sme:label="FinancialAccount Groups" sme:relationship="association" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>
+            Link to the Financial Account Group associated with this Financial Account
+            See Financial Account Group definition.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="active" type="xs:boolean" minOccurs="0" sme:label="FinancialAccount Active Flag">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if the FinancialAccount is an active one. Default = True
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reference" type="xs:normalizedString" minOccurs="0" sme:label="FinancialAccount Reference" sme:isUniqueKey="true">
+        <xs:annotation>
+          <xs:documentation>Reference associated with the Financial Account.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reference2" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="FinancialAccount Reference2">
+        <xs:annotation>
+          <xs:documentation>
+            Another reference associated with the Financial Account.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="accountCategory" type="financialAccountAccountCategory--enum" nillable="true" minOccurs="0" sme:label="FinancialAccount Account Category">
+        <xs:annotation>
+          <xs:documentation>
+            The account category applicable to the FinancialAccount (see enum for list of values).
+            Account categories classify each account into major accounting categories for financial reporting.
+            Implementation teams should try and map to these where possible (based on IFRS/GAAP so should be common). However the list can be extended to add other account categories.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="accountType" type="financialAccountAccountType--enum" nillable="true" minOccurs="0" sme:label="FinancialAccount Account Type">
+        <xs:annotation>
+          <xs:documentation>
+            The account type applicable to the FinancialAccount (see enum for list of values). Implementation teams should try and map to these where possible (based on IFRS/GAAP so should be common). However the list can be extended to add other account types.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="postingType" type="financialAccountPostingType--enum" nillable="true" minOccurs="0" sme:label="FinancialAccount Posting Type">
+        <xs:annotation>
+          <xs:documentation>
+            The type of posting applicable to the FinancialAccount (memo, posting, grouping). Default =
+            Posting. Memo accounts are not posting accounts - they are used to show text only, e.g. for
+            reporting purposes. Grouping accounts are super-types used to group other accounts together,
+            e.g. all sales accounts. Posting accounts receive financial postings
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reportingType" type="financialAccountReportingType--enum" nillable="true" minOccurs="0" sme:label="FinancialAccount Reporting Type">
+        <xs:annotation>
+          <xs:documentation>
+            The reporting type applicable to the Financial Account (P&amp;L or
+            BS). Default = Unknown
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="accountingType" type="financialAccountAccountingType--enum" nillable="true" minOccurs="0" sme:label="FinancialAccount Accounting Type">
+        <xs:annotation>
+          <xs:documentation>
+            A flag that indicates the type of accounting applicable to the
+            Financial Account. Default = Unknown
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="name" type="xs:normalizedString" minOccurs="0" sme:label="FinancialAccount Name">
+        <xs:annotation>
+          <xs:documentation>
+            The name of the FinancialAccount (e.g. Cost of sales, Inventory,
+            Debtors Control, etc).
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="description" type="xs:string" nillable="true" minOccurs="0" sme:label="FinancialAccount Description">
+        <xs:annotation>
+          <xs:documentation>
+            A longer textual description of the FinancialAccount.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="account" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="FinancialAccount Account">
+        <xs:annotation>
+          <xs:documentation>Financial accounting code or natural account.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="costCentres" type="costCentre--list" nillable="true" minOccurs="0" sme:relationship="association" sme:isCollection="true" sme:label="FinancialAccount Cost Centres">
+        <xs:annotation>
+          <xs:documentation>
+            Analysis code (cost centre) applicable to the financial account. If
+            cost centres are used, then they should be used here.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="departments" type="department--list" nillable="true" minOccurs="0" sme:relationship="association" sme:isCollection="true" sme:label="FinancialAccount Departments">
+        <xs:annotation>
+          <xs:documentation>
+            Analysis code (department) applicable to the financial account. If
+            departments are used, then they should be used here.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="analysis01" type="financialAccountAnalysis--list" nillable="true" minOccurs="0" sme:label="FinancialAccount Analysis 01" sme:relationship="association" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>
+            Analysis code (1) applicable to the financial account.
+            E.g. COA segment 1
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="analysis02" type="financialAccountAnalysis--list" nillable="true" minOccurs="0" sme:label="FinancialAccount Analysis 02" sme:relationship="association" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>
+            Analysis code (2) applicable to the financial account.
+            E.g. COA segment 2
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="analysis03" type="financialAccountAnalysis--list" nillable="true" minOccurs="0" sme:label="FinancialAccount Analysis 03" sme:relationship="association" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>
+            Analysis code (3) applicable to the financial account.
+            E.g. COA segment 3
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="analysis04" type="financialAccountAnalysis--list" nillable="true" minOccurs="0" sme:label="FinancialAccount Analysis 04" sme:relationship="association" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>
+            Analysis code (4) applicable to the financial account.
+            E.g. COA segment 4
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="analysis05" type="financialAccountAnalysis--list" nillable="true" minOccurs="0" sme:label="FinancialAccount Analysis 05" sme:relationship="association" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>
+            Analysis code (5) applicable to the financial account.
+            E.g. COA segment 5
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="analysis06" type="financialAccountAnalysis--list" nillable="true" minOccurs="0" sme:label="FinancialAccount Analysis 06" sme:relationship="association" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>
+            Analysis code (6) applicable to the financial account.
+            E.g. COA segment 6
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="analysis07" type="financialAccountAnalysis--list" nillable="true" minOccurs="0" sme:label="FinancialAccount Analysis 07" sme:relationship="association" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>
+            Analysis code (7) applicable to the financial account.
+            E.g. COA segment 7
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="analysis08" type="financialAccountAnalysis--list" nillable="true" minOccurs="0" sme:label="FinancialAccount Analysis 08" sme:relationship="association" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>
+            Analysis code (8) applicable to the financial account.
+            E.g. COA segment 8
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="analysis09" type="financialAccountAnalysis--list" nillable="true" minOccurs="0" sme:label="FinancialAccount Analysis 09" sme:relationship="association" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>
+            Analysis code (9) applicable to the financial account.
+            E.g. COA segment 9
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="analysis10" type="financialAccountAnalysis--list" nillable="true" minOccurs="0" sme:label="FinancialAccount Analysis 10" sme:relationship="association" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>
+            Analysis code (10) applicable to the financial account.
+            E.g. COA segment 10
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="analysis11" type="financialAccountAnalysis--list" nillable="true" minOccurs="0" sme:label="FinancialAccount Analysis 11" sme:relationship="association" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>
+            Analysis code (11) applicable to the financial account.
+            E.g. COA segment 11
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="analysis12" type="financialAccountAnalysis--list" nillable="true" minOccurs="0" sme:label="FinancialAccount Analysis 12" sme:relationship="association" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>
+            Analysis code (12) applicable to the financial account.
+            E.g. COA segment 12
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="analysis13" type="financialAccountAnalysis--list" nillable="true" minOccurs="0" sme:label="FinancialAccount Analysis 13" sme:relationship="association" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>
+            Analysis code (13) applicable to the financial account.
+            E.g. COA segment 13
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="analysis14" type="financialAccountAnalysis--list" nillable="true" minOccurs="0" sme:label="FinancialAccount Analysis 14" sme:relationship="association" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>
+            Analysis code (14) applicable to the financial account.
+            E.g. COA segment 14
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="analysis15" type="financialAccountAnalysis--list" nillable="true" minOccurs="0" sme:label="FinancialAccount Analysis 15" sme:relationship="association" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>
+            Analysis code (15) applicable to the financial account.
+            E.g. COA segment 15
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="naturalBalanceType" type="financialAccountNaturalBalanceType--enum" nillable="true" minOccurs="0" sme:label="FinancialAccount Natural Balance Type">
+        <xs:annotation>
+          <xs:documentation>
+            A flag that indicates the natural balance of the
+            Financial Account - Debit or Credit. Used to show correct
+            Positive/Negative balance values.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="financialAccountHistories" type="financialAccountHistory--list" nillable="true" minOccurs="0" sme:label="FinancialAccount Histories" sme:relationship="association" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>
+            Financial Account History (balances, stats) associated with this Financial Account.
+            The financialAccountHistory resource may be current or historic.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="multiCurrencyPostingAllowed" type="xs:boolean" minOccurs="0" sme:label="FinancialAccount Multi-Currency Posting Allowed Flag">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if this Financial Account is allowed to have
+            postings in multiple currencies. Default = False (posting in single currency).
+            If this is true then the Financial Account should have financialAccountMultiCurrencyHistory feeds associated with it.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="currencyRestriction" type="financialAccountCurrencyRestriction--enum" nillable="true" minOccurs="0" sme:label="FinancialAccount Currency Restriction">
+        <xs:annotation>
+          <xs:documentation>For accounts where multi-currency posting is allowed, this enum shows what type of currency restrictions apply to the account. Options are base currency only, base currency and one other, all currencies. Default = All Currencies.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="financialAccountMultiCurrencyHistories" type="financialAccountMultiCurrencyHistory--list" nillable="true" minOccurs="0" sme:label="FinancialAccount Multi-Currency Histories" sme:relationship="association" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>
+            Multi-Currency Financial Account History (balances, stats) associated with this Financial Account. Only if multiCurrencyPostingAllowed=True.
+            The financialAccountMultiCurrencyHistory resource may be current or historic.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="financialAccountBudgets" type="financialAccountBudget--list" nillable="true" minOccurs="0" sme:label="FinancialAccount Budgets" sme:relationship="association" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>Budget (balances, stats) associated with this Financial Account.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="primacyIndicator" type="xs:boolean" minOccurs="0" sme:label="FinancialAccount Primacy Indicator">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if this Financial Account is the primary Financial
+            Account in cases where there are multiple. Default = False
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="allowStats" type="xs:boolean" nillable="true" minOccurs="0" sme:label="FinancialAccount Allow Statistics Flag">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if this FinancialAccount can also be used to track statistical data. Default = False
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="statUnit" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="FinancialAccount Statistical Unit">
+        <xs:annotation>
+          <xs:documentation>
+            A text description of the statistical unit associated with this account (if allowStats=True).
+            Examples of stats include headcount, number of, etc.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="orderOfPrecedence" type="xs:decimal" nillable="true" minOccurs="0" sme:label="FinancialAccount Order Of Precedence">
+        <xs:annotation>
+          <xs:documentation>Where there are multiple Financial Accounts (e.g. in a Group) then this field will be used to sort the order of precedence/application.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="distributionPercentage" type="xs:decimal" nillable="true" minOccurs="0" sme:label="FinancialAccount Distribution Percentage">
+        <xs:annotation>
+          <xs:documentation>Distribution percentage applicable to the Financial Account (e.g. where a collection of Financial Accounts are associated with an amount, this figure determines the percentage split, e.g. 80% to this account).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="createDate" type="xs:date" nillable="true" minOccurs="0" sme:label="FinancialAccount Create Date">
+        <xs:annotation>
+          <xs:documentation>The date the financial account was created.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="notes" type="note--list" nillable="true" minOccurs="0" sme:label="FinancialAccount Note" sme:relationship="child" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>
+            Note associated with the FinancialAccount. See Note definition.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+    <xs:anyAttribute />
+  </xs:complexType>
+  <xs:complexType name="financialAccount--list">
+    <xs:sequence>
+      <xs:element name="financialAccount" type="financialAccount--type" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:anyAttribute />
+  </xs:complexType>
+  <xs:element name="costCentre" type="costCentre--type" sme:role="resourceKind" sme:pluralName="costCentres" sme:compliance="may" sme:canGet="true" />
+  <xs:complexType name="costCentre--type">
+    <xs:all>
+      <xs:element name="active" type="xs:boolean" minOccurs="0" sme:label="CostCentre Active Flag">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if the costCentre is an active one. Default = True
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reference" type="xs:normalizedString" minOccurs="0" sme:label="CostCentre Reference" sme:isUniqueKey="true">
+        <xs:annotation>
+          <xs:documentation>Reference associated with the Financial Account.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reference2" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="CostCentre Reference2">
+        <xs:annotation>
+          <xs:documentation>
+            Another reference associated with the Financial Account.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="type" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="CostCentre Type">
+        <xs:annotation>
+          <xs:documentation>
+            The type of the costCentre
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="name" type="xs:normalizedString" minOccurs="0" sme:label="CostCentre Name">
+        <xs:annotation>
+          <xs:documentation>
+            The name of the costCentre
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="description" type="xs:string" nillable="true" minOccurs="0" sme:label="CostCentre Description">
+        <xs:annotation>
+          <xs:documentation>
+            A longer textual description of the costCentre.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="notes" type="note--list" nillable="true" minOccurs="0" sme:label="CostCentre Note" sme:relationship="child" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>
+            Note associated with the costCentre. See Note definition.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+    <xs:anyAttribute />
+  </xs:complexType>
+  <xs:complexType name="costCentre--list">
+    <xs:sequence>
+      <xs:element name="costCentre" type="costCentre--type" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:anyAttribute />
+  </xs:complexType>
+  <xs:element name="department" type="department--type" sme:role="resourceKind" sme:pluralName="departments" sme:compliance="may" sme:canGet="true" />
+  <xs:complexType name="department--type">
+    <xs:all>
+      <xs:element name="active" type="xs:boolean" minOccurs="0" sme:label="Department Active Flag">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if the Department is an active one. Default = True
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reference" type="xs:normalizedString" minOccurs="0" sme:label="Department Reference" sme:isUniqueKey="true">
+        <xs:annotation>
+          <xs:documentation>Reference associated with the Financial Account.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reference2" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="Department Reference2">
+        <xs:annotation>
+          <xs:documentation>
+            Another reference associated with the Financial Account.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="type" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="Department Type">
+        <xs:annotation>
+          <xs:documentation>
+            The type of the Department
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="name" type="xs:normalizedString" minOccurs="0" sme:label="Department Name">
+        <xs:annotation>
+          <xs:documentation>
+            The name of the Department
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="description" type="xs:string" nillable="true" minOccurs="0" sme:label="Department Description">
+        <xs:annotation>
+          <xs:documentation>
+            A longer textual description of the Department.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="notes" type="note--list" nillable="true" minOccurs="0" sme:label="Department Note" sme:relationship="child" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>
+            Note associated with the Department. See Note definition.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+    <xs:anyAttribute />
+  </xs:complexType>
+  <xs:complexType name="department--list">
+    <xs:sequence>
+      <xs:element name="department" type="department--type" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:anyAttribute />
+  </xs:complexType>
+  <xs:element name="financialAccountAnalysis" type="financialAccountAnalysis--type" sme:role="resourceKind" sme:pluralName="financialAccountAnalysis" sme:compliance="may" sme:canGet="true" />
+  <xs:complexType name="financialAccountAnalysis--type">
+    <xs:all>
+      <xs:element name="active" type="xs:boolean" minOccurs="0" sme:label="Financial Account Analysis Active Flag">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if the Financial Account Analysis (code) is an active one. Default = True
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reference" type="xs:normalizedString" minOccurs="0" sme:label="Financial Account Analysis Reference" sme:isUniqueKey="true">
+        <xs:annotation>
+          <xs:documentation>Reference associated with the Financial Account Analysis (code).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reference2" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="Financial Account Analysis Reference2">
+        <xs:annotation>
+          <xs:documentation>
+            Another reference associated with the Financial Account Analysis (code).
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="type" type="financialAccountAnalysisType--enum" nillable="true" minOccurs="0" sme:label="Financial Account Analysis Type">
+        <xs:annotation>
+          <xs:documentation>
+            The type of the Financial Account Analysis (code)
+            Used to indicate if this Financial Account Analysis (code) is also the natural account.
+            Allowable values Natural, Other.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="name" type="xs:normalizedString" minOccurs="0" sme:label="Financial Account Analysis Name">
+        <xs:annotation>
+          <xs:documentation>
+            The name of the Financial Account Analysis (code)
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="description" type="xs:string" nillable="true" minOccurs="0" sme:label="Financial Account Analysis Description">
+        <xs:annotation>
+          <xs:documentation>
+            A longer textual description of Financial Account Analysis (code).
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="notes" type="note--list" nillable="true" minOccurs="0" sme:label="Financial Account Analysis Note" sme:relationship="child" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>
+            Note associated with the Financial Account Analysis (code). See Note definition.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+    <xs:anyAttribute />
+  </xs:complexType>
+  <xs:complexType name="financialAccountAnalysis--list">
+    <xs:sequence>
+      <xs:element name="financialAccountAnalysis" type="financialAccountAnalysis--type" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:anyAttribute />
+  </xs:complexType>
+  <xs:element name="financialAccountGroup" type="financialAccountGroup--type" sme:role="resourceKind" sme:pluralName="financialAccountGroups" sme:compliance="may" sme:canGet="true" />
+  <xs:complexType name="financialAccountGroup--type">
+    <xs:all>
+      <xs:element name="active" type="xs:boolean" minOccurs="0" sme:label="FinancialAccountGroup Active Flag">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if the Financial Account Group is an active one.
+            Default = True
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reference" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="FinancialAccountGroup Reference" sme:isUniqueKey="true">
+        <xs:annotation>
+          <xs:documentation>Reference for the Financial Account Group.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="name" type="xs:normalizedString" minOccurs="0" sme:label="FinancialAccountGroup Name" sme:isMandatory="true">
+        <xs:annotation>
+          <xs:documentation>Name of the Financial Account Group.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="description" type="xs:string" nillable="true" minOccurs="0" sme:label="FinancialAccountGroup Description">
+        <xs:annotation>
+          <xs:documentation>A longer description of the Financial Account Group.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="orderOfPrecedence" type="xs:decimal" nillable="true" minOccurs="0" sme:label="FinancialAccountGroup Order Of Precedence">
+        <xs:annotation>
+          <xs:documentation>Where there are multiple Financial Account Groups then this field will be used to sort the order of precedence/application (e.g. for reporting).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="financialAccounts" type="financialAccount--list" nillable="true" minOccurs="0" sme:label="FinancialAccountGroup FinancialAccount" sme:relationship="association" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>
+            Financial Accounts associated with the FinancialAccount Group.
+            See Financial Account definition.
+            FinancialAccounts can belong to multiple FinancialAccount Groups.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="notes" type="note--list" nillable="true" minOccurs="0" sme:label="FinancialAccountGroup Note" sme:relationship="child" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>Notes associated with a Financial Account Group.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+    <xs:anyAttribute />
+  </xs:complexType>
+  <xs:complexType name="financialAccountGroup--list">
+    <xs:sequence>
+      <xs:element name="financialAccountGroup" type="financialAccountGroup--type" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:anyAttribute />
+  </xs:complexType>
+  <xs:simpleType name="operatingCompanyLegalEntityType--enum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Sole Trader" />
+      <xs:enumeration value="Partnership" />
+      <xs:enumeration value="Limited Liability Partnership" />
+      <xs:enumeration value="Limited Company" />
+      <xs:enumeration value="Public Limited Company" />
+      <xs:enumeration value="User Defined" />
+      <xs:enumeration value="Other" />
+      <xs:enumeration value="Unknown" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="postalAddressType--enum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Shipping" />
+      <xs:enumeration value="Billing" />
+      <xs:enumeration value="Correspondence" />
+      <xs:enumeration value="Home" />
+      <xs:enumeration value="Office" />
+      <xs:enumeration value="Work Site" />
+      <xs:enumeration value="Other" />
+      <xs:enumeration value="Unknown" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="phoneNumberType--enum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Business Phone" />
+      <xs:enumeration value="Business Fax" />
+      <xs:enumeration value="Business Mobile" />
+      <xs:enumeration value="Personal Phone" />
+      <xs:enumeration value="Personal Fax" />
+      <xs:enumeration value="Personal Mobile" />
+      <xs:enumeration value="Pager" />
+      <xs:enumeration value="Toll Free" />
+      <xs:enumeration value="Other Phone" />
+      <xs:enumeration value="Other Fax" />
+      <xs:enumeration value="Unknown" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="emailType--enum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Business" />
+      <xs:enumeration value="Personal" />
+      <xs:enumeration value="Other" />
+      <xs:enumeration value="Unknown" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="financialAccountPostingType--enum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Memo" />
+      <xs:enumeration value="Posting" />
+      <xs:enumeration value="Grouping" />
+      <xs:enumeration value="Unknown" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="financialAccountReportingType--enum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Profit &amp; Loss" />
+      <xs:enumeration value="Balance Sheet" />
+      <xs:enumeration value="User Defined" />
+      <xs:enumeration value="Unknown" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="financialAccountAccountingType--enum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Revenue" />
+      <xs:enumeration value="Expense" />
+      <xs:enumeration value="Revenue &amp; Expense" />
+      <xs:enumeration value="User Defined" />
+      <xs:enumeration value="Unknown" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="financialAccountAnalysisType--enum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Natural" />
+      <xs:enumeration value="Other" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="financialAccountNaturalBalanceType--enum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Debit" />
+      <xs:enumeration value="Credit" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="financialAccountAccountType--enum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Cash (Default)" />
+      <xs:enumeration value="Cash (Cash Equivalents)" />
+      <xs:enumeration value="Accounts Receivable" />
+      <xs:enumeration value="Other Receivables (Default)" />
+      <xs:enumeration value="Other Receivables (Long Term)" />
+      <xs:enumeration value="Inventory" />
+      <xs:enumeration value="Prepaid Expenses (Prepayments/Credit Cards)" />
+      <xs:enumeration value="Prepaid Expenses (Default)" />
+      <xs:enumeration value="Other Assets (Bank)" />
+      <xs:enumeration value="Other Assets (VAT/Sales Tax)" />
+      <xs:enumeration value="Other Assets (Default)" />
+      <xs:enumeration value="Fixed Assets (Default)" />
+      <xs:enumeration value="Fixed Assets (Buildings)" />
+      <xs:enumeration value="Fixed Assets (Land)" />
+      <xs:enumeration value="Fixed Assets (Lease)" />
+      <xs:enumeration value="Fixed Assets (Plant/Machinery)" />
+      <xs:enumeration value="Fixed Assets (Equipment)" />
+      <xs:enumeration value="Fixed Assets (Fixtures/Furniture)" />
+      <xs:enumeration value="Fixed Assets (Vehicles)" />
+      <xs:enumeration value="Current Liabilities (Creditors/Accounts Payable)" />
+      <xs:enumeration value="Current Liabilities (Wages/Payroll)" />
+      <xs:enumeration value="Current Liabilities (Accruals/Credit Cards)" />
+      <xs:enumeration value="Current Liabilities (Bank/Cash on hand/Securities)" />
+      <xs:enumeration value="Current Liabilities (Default)" />
+      <xs:enumeration value="Current Liabilities (VAT/Sales Tax)" />
+      <xs:enumeration value="Current Liabilities (Dividends)" />
+      <xs:enumeration value="Long Term Liabilities (Default)" />
+      <xs:enumeration value="Stockholders Equity" />
+      <xs:enumeration value="Retained Earnings" />
+      <xs:enumeration value="Sales (Default)" />
+      <xs:enumeration value="Sales (Asset Sales)" />
+      <xs:enumeration value="Sales (Finance/Interest)" />
+      <xs:enumeration value="Sales (Default)" />
+      <xs:enumeration value="Cost Of Goods Sold (Labour)" />
+      <xs:enumeration value="Cost Of Goods Sold (Subcontractors)" />
+      <xs:enumeration value="Cost Of Goods Sold (Commodities)" />
+      <xs:enumeration value="Cost Of Goods Sold (Materials)" />
+      <xs:enumeration value="Cost Of Goods Sold (Default)" />
+      <xs:enumeration value="Other Income and Expense (Wages/Payroll)" />
+      <xs:enumeration value="Other Income and Expense (Rent/Rates)" />
+      <xs:enumeration value="Other Income and Expense (Office)" />
+      <xs:enumeration value="Other Income and Expense (Heat/Light/Power)" />
+      <xs:enumeration value="Other Income and Expense (Vehicles)" />
+      <xs:enumeration value="Other Income and Expense (Travel)" />
+      <xs:enumeration value="Other Income and Expense (IT)" />
+      <xs:enumeration value="Other Income and Expense (Professional)" />
+      <xs:enumeration value="Other Income and Expense (Hire/Rental)" />
+      <xs:enumeration value="Other Income and Expense (Maintenance)" />
+      <xs:enumeration value="Other Income and Expense (Depreciation/Amortisation)" />
+      <xs:enumeration value="Other Income and Expense (Bad Debts)" />
+      <xs:enumeration value="Other Income and Expense (Default)" />
+      <xs:enumeration value="Other Income and Expense (Suspense)" />
+      <xs:enumeration value="Other Income and Expense (Finance/Interest)" />
+      <xs:enumeration value="Income Tax (Default)" />
+      <xs:enumeration value="Income Tax (Payroll)" />
+      <xs:enumeration value="Income Tax (Corporation/Company)" />
+      <xs:enumeration value="Operating Expense (Accounts Payable)" />
+      <xs:enumeration value="Operating Expense (Inventory)" />
+      <xs:enumeration value="Operating Expense (Default)" />
+      <xs:enumeration value="Non Financial" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="financialAccountAccountCategory--enum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Asset (Fixed Assets)" />
+      <xs:enumeration value="Asset (Current Assets)" />
+      <xs:enumeration value="Liability (Current Liabilities)" />
+      <xs:enumeration value="Liability (Long Term Liabilities)" />
+      <xs:enumeration value="Equity (Capital and Reserves)" />
+      <xs:enumeration value="Revenue (Sales)" />
+      <xs:enumeration value="Cost Of Sales (Direct Expenses)" />
+      <xs:enumeration value="Other Income and Expense (Overheads)" />
+      <xs:enumeration value="Income Tax" />
+      <xs:enumeration value="Expense (Purchases)" />
+      <xs:enumeration value="Non Financial" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="financialAccountCurrencyRestriction--enum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Base Currency Only" />
+      <xs:enumeration value="Base Currency + One Other Currency" />
+      <xs:enumeration value="All Currencies" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="rateOperator--enum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="*" />
+      <xs:enumeration value="/" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="financialAccountHistory" type="financialAccountHistory--type" sme:role="resourceKind" sme:pluralName="financialAccountsHistory" sme:compliance="may" sme:canGet="true" />
+  <xs:complexType name="financialAccountHistory--type">
+    <xs:all>
+      <xs:element name="financialAccount" type="financialAccount--type" nillable="true" minOccurs="0" sme:label="FinancialAccountHistory Financial Account" sme:relationship="reference" sme:isCollection="false">
+        <xs:annotation>
+          <xs:documentation>
+            Link to the Financial Account associated with this Financial Account History
+            See Financial Account definition.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="financialPeriods" type="financialPeriod--list" nillable="true" minOccurs="0" sme:label="FinancialAccountHistory Financial Periods" sme:relationship="association" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>
+            Link to the Financial Period(s) associated with this Financial Account History.
+            A combination of Financial Account and Financial Period allows all financial history to be reported.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="active" type="xs:boolean" minOccurs="0" sme:label="FinancialAccountHistory Active Flag">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if the FinancialAccountHistory is an active one. Default = True
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reference" type="xs:normalizedString" minOccurs="0" sme:label="FinancialAccountHistory Reference" sme:isUniqueKey="true">
+        <xs:annotation>
+          <xs:documentation>Reference associated with the Financial Account History.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reference2" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="FinancialAccountHistory Reference2">
+        <xs:annotation>
+          <xs:documentation>
+            Another reference associated with the Financial Account History.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="name" type="xs:normalizedString" minOccurs="0" sme:label="FinancialAccountHistory Name">
+        <xs:annotation>
+          <xs:documentation>
+            The name of the FinancialAccountHistory (e.g. Q1 2010, Q2 2010, etc).
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="description" type="xs:string" nillable="true" minOccurs="0" sme:label="FinancialAccountHistory Description">
+        <xs:annotation>
+          <xs:documentation>
+            A longer textual description of the FinancialAccountHistory.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="currency" type="xs:normalizedString" minOccurs="0" sme:label="FinancialAccountHistory Currency">
+        <xs:annotation>
+          <xs:documentation>
+            The financial account history currency (e.g. GBP, USD, EUR). ISO 4217.
+            This should be in the base currency of the operating company.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="balance" type="xs:decimal" nillable="true" minOccurs="0" sme:label="FinancialAccountHistory (Closing) Balance">
+        <xs:annotation>
+          <xs:documentation>
+            The financial account history balance in the financial account history currency.
+            If this is a summary feed then this is the closing balance for the financial period concerned.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="balanceDate" type="xs:date" nillable="true" minOccurs="0" sme:label="FinancialAccountHistory (Closing) Balance Date">
+        <xs:annotation>
+          <xs:documentation>
+            The date upon which the balance was based. Default to system date if
+            not used.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="openingBalance" type="xs:decimal" nillable="true" minOccurs="0" sme:label="FinancialAccountHistory Opening Balance">
+        <xs:annotation>
+          <xs:documentation>FinancialAccountHistory opening balance. In FinancialAccountHistory currency. For summary feeds only. This is the opening balance for the financial period concerned.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="debitPostingAmount" type="xs:decimal" nillable="true" minOccurs="0" sme:label="FinancialAccountHistory Debit Posting Amount">
+        <xs:annotation>
+          <xs:documentation>FinancialAccountHistory debit posting amount. In FinancialAccountHistory currency. For summary feeds only. This is the debit amount posted to the account for the financial period concerned.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="creditPostingAmount" type="xs:decimal" nillable="true" minOccurs="0" sme:label="FinancialAccountHistory Credit Posting Amount">
+        <xs:annotation>
+          <xs:documentation>FinancialAccountHistory Credit posting amount. In FinancialAccountHistory currency. For summary feeds only. This is the credit amount posted to the account for the financial period concerned.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="lastTransactionDate" type="xs:date" nillable="true" minOccurs="0" sme:label="FinancialAccountHistory Last Transaction Date">
+        <xs:annotation>
+          <xs:documentation>
+            Date the last transaction was posted to the FinancialAccountHistory account.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="primacyIndicator" type="xs:boolean" minOccurs="0" sme:label="FinancialAccountHistory Primacy Indicator">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if this FinancialAccountHistory is the primary (current) one.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="statOpeningBalance" type="xs:decimal" nillable="true" minOccurs="0" sme:label="FinancialAccountHistory Statistical Opening Balance">
+        <xs:annotation>
+          <xs:documentation>FinancialAccountHistory stat opening balance. In FinancialAccount stat unit. For summary feeds only. This is the opening statistical balance for the financial period concerned.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="statAmount" type="xs:decimal" nillable="true" minOccurs="0" sme:label="FinancialAccountHistory Statistical Amount">
+        <xs:annotation>
+          <xs:documentation>FinancialAccountHistory stat amount. In FinancialAccount stat unit. For summary feeds only. This is the amount of stat unit for the account for the financial period concerned.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="statClosingBalance" type="xs:decimal" nillable="true" minOccurs="0" sme:label="FinancialAccountHistory Statistical Closing Balance">
+        <xs:annotation>
+          <xs:documentation>FinancialAccountHistory stat closing balance. In FinancialAccountHistory stat unit. For summary feeds only. This is the closing statistical balance for the financial period concerned.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+    <xs:anyAttribute />
+  </xs:complexType>
+  <xs:complexType name="financialAccountHistory--list">
+    <xs:sequence>
+      <xs:element name="financialAccountHistory" type="financialAccountHistory--type" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:anyAttribute />
+  </xs:complexType>
+  <xs:element name="financialAccountMultiCurrencyHistory" type="financialAccountMultiCurrencyHistory--type" sme:role="resourceKind" sme:pluralName="financialAccountsMultiCurrencyHistory" sme:compliance="may" sme:canGet="true" />
+  <xs:complexType name="financialAccountMultiCurrencyHistory--type">
+    <xs:all>
+      <xs:element name="financialAccount" type="financialAccount--type" nillable="true" minOccurs="0" sme:label="FinancialAccountMultiCurrencyHistory Financial Account" sme:relationship="reference" sme:isCollection="false">
+        <xs:annotation>
+          <xs:documentation>
+            Link to the Financial Account associated with this Financial Account Multi-Currency History.
+            See Financial Account definition.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="financialPeriods" type="financialPeriod--list" nillable="true" minOccurs="0" sme:label="FinancialAccountMultiCurrencyHistory Financial Periods" sme:relationship="association" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>
+            Link to the Financial Period(s) associated with this FinancialAccountMultiCurrencyHistory.
+            A combination of Financial Account and Financial Period and Currency allows all financial history to be reported in all currencies.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="active" type="xs:boolean" minOccurs="0" sme:label="FinancialAccountMultiCurrencyHistory Active Flag">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if the FinancialAccountMultiCurrencyHistory is an active one. Default = True
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reference" type="xs:normalizedString" minOccurs="0" sme:label="FinancialAccountMultiCurrencyHistory Reference" sme:isUniqueKey="true">
+        <xs:annotation>
+          <xs:documentation>Reference associated with the FinancialAccountMultiCurrencyHistory.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reference2" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="FinancialAccountMultiCurrencyHistory Reference2">
+        <xs:annotation>
+          <xs:documentation>
+            Another reference associated with the FinancialAccountMultiCurrencyHistory.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="name" type="xs:normalizedString" minOccurs="0" sme:label="FinancialAccountMultiCurrencyHistory Name">
+        <xs:annotation>
+          <xs:documentation>
+            The name of the FinancialAccountMultiCurrencyHistory (e.g. Q1 2010 USD, Q2 2010 GBP, etc).
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="description" type="xs:string" nillable="true" minOccurs="0" sme:label="FinancialAccountMultiCurrencyHistory Description">
+        <xs:annotation>
+          <xs:documentation>
+            A longer textual description of the FinancialAccountMultiCurrencyHistory.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="currency" type="xs:normalizedString" minOccurs="0" sme:label="FinancialAccountMultiCurrencyHistory Currency">
+        <xs:annotation>
+          <xs:documentation>
+            The FinancialAccountMultiCurrencyHistory currency (e.g. GBP, USD, EUR). ISO 4217.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="operatingCompanyCurrency" type="xs:normalizedString" minOccurs="0" sme:label="FinancialAccountMultiCurrencyHistory OperatingCompany Currency">
+        <xs:annotation>
+          <xs:documentation>
+            The currency as used by OperatingCompany, the business operating the
+            Sage application (the base or home currency). ISO 4217.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="operatingCompanyCurrencyExchangeRate" type="xs:decimal" nillable="true" minOccurs="0" sme:label="FinancialAccountMultiCurrencyHistory OperatingCompany Currency Exchange Rate">
+        <xs:annotation>
+          <xs:documentation>
+            Rate used to convert from FinancialAccountMultiCurrencyHistory into
+            FinancialAccountMultiCurrencyHistory OperatingCompany Currency, if different.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="operatingCompanyCurrencyExchangeRateOperator" type="rateOperator--enum" nillable="true" minOccurs="0" sme:label="FinancialAccountMultiCurrencyHistory OperatingCompany Currency Exchange Rate Operator">
+        <xs:annotation>
+          <xs:documentation>
+            Operator to be used (multiplication or division) to convert from FinancialAccountMultiCurrencyHistory Currency to FinancialAccountMultiCurrencyHistory OperatingCompany Currency. * (multiplication) or / division. E.g. if the operator is division then it is amounts in FinancialAccountMultiCurrencyHistory Currency / FinancialAccountMultiCurrencyHistory OperatingCompanyCurrencyExchange Rate = amounts in
+            FinancialAccountMultiCurrencyHistory OperatingCompanyCurrency.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="operatingCompanyCurrencyExchangeRateDate" type="xs:date" nillable="true" minOccurs="0" sme:label="FinancialAccountMultiCurrencyHistory OperatingCompany Currency Exchange Rate Date">
+        <xs:annotation>
+          <xs:documentation>
+            Date of the exchange rate used to convert from FinancialAccountMultiCurrencyHistory Currency to
+            FinancialAccountMultiCurrencyHistory OperatingCompanyCurrency, if different. Default = System date
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="balance" type="xs:decimal" nillable="true" minOccurs="0" sme:label="FinancialAccountMultiCurrencyHistory (Closing) Balance">
+        <xs:annotation>
+          <xs:documentation>
+            The financial account multi-currency history balance in the financial account multi-currency history currency.
+            If this is a summary feed then this is the closing balance for the financial period concerned.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="balanceOperatingCompanyCurrency" type="xs:decimal" nillable="true" minOccurs="0" sme:label="FinancialAccountMultiCurrencyHistory (Closing) Balance (Operating Company Currency)">
+        <xs:annotation>
+          <xs:documentation>
+            The financial account multi-currency history balance in the operating company (base/home) currency.
+            If this is a summary feed then this is the closing balance for the financial period concerned.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="balanceDate" type="xs:date" nillable="true" minOccurs="0" sme:label="FinancialAccountMultiCurrencyHistory (Closing) Balance Date">
+        <xs:annotation>
+          <xs:documentation>
+            The date upon which the balance was based. Default to system date if
+            not used.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="openingBalance" type="xs:decimal" nillable="true" minOccurs="0" sme:label="FinancialAccountMultiCurrencyHistory Opening Balance">
+        <xs:annotation>
+          <xs:documentation>FinancialAccountMultiCurrencyHistory opening balance. In FinancialAccountMultiCurrencyHistory currency. For summary feeds only. This is the opening balance for the financial period concerned.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="openingBalanceOperatingCompanyCurrency" type="xs:decimal" nillable="true" minOccurs="0" sme:label="FinancialAccountMultiCurrencyHistory Opening Balance (Operating Company Currency)">
+        <xs:annotation>
+          <xs:documentation>FinancialAccountMultiCurrencyHistory opening balance. In operating company (base/home) currency. For summary feeds only. This is the opening balance for the financial period concerned.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="debitPostingAmount" type="xs:decimal" nillable="true" minOccurs="0" sme:label="FinancialAccountMultiCurrencyHistory Debit Posting Amount">
+        <xs:annotation>
+          <xs:documentation>FinancialAccountMultiCurrencyHistory Debit posting amount. In FinancialAccountMultiCurrencyHistory currency. For summary feeds only. This is the debit amount posted to the account for the financial period concerned.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="debitPostingAmountOperatingCompanyCurrency" type="xs:decimal" nillable="true" minOccurs="0" sme:label="FinancialAccountMultiCurrencyHistory Debit Posting Amount (Operating Company Currency)">
+        <xs:annotation>
+          <xs:documentation>FinancialAccountMultiCurrencyHistory debit posting amount. In Operating Company (base/home) currency. For summary feeds only. This is the debit amount posted to the account for the financial period concerned.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="creditPostingAmount" type="xs:decimal" nillable="true" minOccurs="0" sme:label="FinancialAccountMultiCurrencyHistory Credit Posting Amount">
+        <xs:annotation>
+          <xs:documentation>FinancialAccountMultiCurrencyHistory Credit posting amount. In FinancialAccountMultiCurrencyHistory currency. For summary feeds only. This is the credit amount posted to the account for the financial period concerned.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="creditPostingAmountOperatingCompanyCurrency" type="xs:decimal" nillable="true" minOccurs="0" sme:label="FinancialAccountMultiCurrencyHistory Credit Posting Amount (Operating Company Currency)">
+        <xs:annotation>
+          <xs:documentation>FinancialAccountMultiCurrencyHistory Credit posting amount. In Operating Company (base/home) currency. For summary feeds only. This is the credit amount posted to the account for the financial period concerned.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="lastTransactionDate" type="xs:date" nillable="true" minOccurs="0" sme:label="FinancialAccountMultiCurrencyHistory Last Transaction Date">
+        <xs:annotation>
+          <xs:documentation>
+            Date the last transaction was posted to the FinancialAccountMultiCurrencyHistory account.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="primacyIndicator" type="xs:boolean" minOccurs="0" sme:label="FinancialAccountMultiCurrencyHistory Primacy Indicator">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if this FinancialAccountMultiCurrencyHistory is the primary (current) one.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+    <xs:anyAttribute />
+  </xs:complexType>
+  <xs:complexType name="financialAccountMultiCurrencyHistory--list">
+    <xs:sequence>
+      <xs:element name="financialAccountMultiCurrencyHistory" type="financialAccountMultiCurrencyHistory--type" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:anyAttribute />
+  </xs:complexType>
+  <xs:element name="financialAccountBudget" type="financialAccountBudget--type" sme:role="resourceKind" sme:pluralName="financialAccountsBudget" sme:compliance="may" sme:canGet="true" />
+  <xs:complexType name="financialAccountBudget--type">
+    <xs:all>
+      <xs:element name="financialAccount" type="financialAccount--type" nillable="true" minOccurs="0" sme:label="FinancialAccountBudget Financial Account" sme:relationship="reference" sme:isCollection="false">
+        <xs:annotation>
+          <xs:documentation>
+            Link to the Financial Account associated with this financialAccountBudget.
+            See Financial Account definition.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="financialPeriods" type="financialPeriod--list" nillable="true" minOccurs="0" sme:label="FinancialAccountBudget Financial Periods" sme:relationship="association" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>
+            Link to the Financial Period(s) associated with this Financial Account Budget.
+            A combination of Financial Account and Financial Period allows all financial budgets to be reported.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="active" type="xs:boolean" minOccurs="0" sme:label="FinancialAccountBudget Active Flag">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if the financialAccountBudget is an active one. Default = True
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reference" type="xs:normalizedString" minOccurs="0" sme:label="FinancialAccountBudget Reference" sme:isUniqueKey="true">
+        <xs:annotation>
+          <xs:documentation>Reference associated with the financialAccountBudget.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reference2" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="FinancialAccountBudget Reference2">
+        <xs:annotation>
+          <xs:documentation>
+            Another reference associated with the financialAccountBudget.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="name" type="xs:normalizedString" minOccurs="0" sme:label="FinancialAccountBudget Name">
+        <xs:annotation>
+          <xs:documentation>
+            The name of the FinancialAccountHistory (e.g. Q1 2010 REV1, Q2 2010 FINAL, etc).
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="description" type="xs:string" nillable="true" minOccurs="0" sme:label="FinancialAccountBudget Description">
+        <xs:annotation>
+          <xs:documentation>
+            A longer textual description of the financialAccountBudget.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="financialAccountBudgetType" type="financialAccountBudgetType--type" nillable="true" minOccurs="0" sme:label="FinancialAccountBudget Type" sme:relationship="reference" sme:isCollection="false">
+        <xs:annotation>
+          <xs:documentation>
+            Financial Account Budget Type.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="currency" type="xs:normalizedString" minOccurs="0" sme:label="FinancialAccountBudget Currency">
+        <xs:annotation>
+          <xs:documentation>
+            The financialAccountBudget currency (e.g. GBP, USD, EUR). ISO 4217.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="operatingCompanyCurrency" type="xs:normalizedString" minOccurs="0" sme:label="FinancialAccountBudget OperatingCompany Currency">
+        <xs:annotation>
+          <xs:documentation>The currency as used by OperatingCompany, the business operating the
+            Sage application (the base or home currency). ISO 4217.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="operatingCompanyCurrencyExchangeRate" type="xs:decimal" nillable="true" minOccurs="0" sme:label="FinancialAccountBudget OperatingCompany Currency Exchange Rate">
+        <xs:annotation>
+          <xs:documentation>
+            Rate used to convert from financialBudget currency into
+            financialBudget OperatingCompanyCurrency, if different.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="operatingCompanyCurrencyExchangeRateOperator" type="rateOperator--enum" nillable="true" minOccurs="0" sme:label="FinancialAccountBudget OperatingCompany Currency Exchange Rate Operator">
+        <xs:annotation>
+          <xs:documentation>
+            Operator to be used (multiplication or division) to convert from FinancialAccountBudget Currency to FinancialAccountBudget OperatingCompany Currency. * (multiplication) or / division. E.g. if the operator is division then it is amounts in FinancialAccountBudget Currency / FinancialAccountBudget OperatingCompanyCurrencyExchange Rate = amounts in
+            FinancialAccountBudget OperatingCompanyCurrency.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="operatingCompanyCurrencyExchangeRateDate" type="xs:date" nillable="true" minOccurs="0" sme:label="FinancialAccountBudget OperatingCompany Currency Exchange Rate Date">
+        <xs:annotation>
+          <xs:documentation>
+            Date of the exchange rate used to convert from FinancialAccountBudget Currency to
+            FinancialAccountBudget OperatingCompanyCurrency, if different. Default = System date
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="balance" type="xs:decimal" nillable="true" minOccurs="0" sme:label="FinancialAccountBudget Balance">
+        <xs:annotation>
+          <xs:documentation>
+            The financial account budget balance in the financial account budget currency.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="balanceOperatingCompanyCurrency" type="xs:decimal" nillable="true" minOccurs="0" sme:label="FinancialAccountBudget Balance (Operating Company Currency)">
+        <xs:annotation>
+          <xs:documentation>
+            The financial account budget balance in the operating company (base/home) currency.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="date" type="xs:date" nillable="true" minOccurs="0" sme:label="FinancialAccountBudget Date">
+        <xs:annotation>
+          <xs:documentation>
+            The date of the budget. Default to system date if not used.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="lastRevisionDate" type="xs:date" nillable="true" minOccurs="0" sme:label="FinancialAccountBudget Last revision Date">
+        <xs:annotation>
+          <xs:documentation>
+            The date the budget was last revised. Can be left blank if not revised.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="status" type="financialBudgetStatus--enum" nillable="true" minOccurs="0" sme:label="FinancialAccountBudget Status">
+        <xs:annotation>
+          <xs:documentation>Status of the financial budget (Active, hold or closed).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="primacyIndicator" type="xs:boolean" minOccurs="0" sme:label="FinancialAccountBudget Primacy Indicator">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if this financialAccountBudget is the primary (current) budget in cases where there are multiple.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="statBalance" type="xs:decimal" nillable="true" minOccurs="0" sme:label="FinancialAccountBudget Statistical Balance">
+        <xs:annotation>
+          <xs:documentation>
+            The financial account budget stat balance in the financial account stat unit.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="notes" type="note--list" nillable="true" minOccurs="0" sme:label="FinancialAccountBudget Note" sme:relationship="child" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>Note associated with the financialAccountBudget. See Note definition.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+    <xs:anyAttribute />
+  </xs:complexType>
+  <xs:complexType name="financialAccountBudget--list">
+    <xs:sequence>
+      <xs:element name="financialAccountBudget" type="financialAccountBudget--type" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:anyAttribute />
+  </xs:complexType>
+  <xs:element name="financialPeriod" type="financialPeriod--type" sme:role="resourceKind" sme:pluralName="financialPeriods" sme:compliance="should" sme:canGet="true" />
+  <xs:complexType name="financialPeriod--type">
+    <xs:all>
+      <xs:element name="active" type="xs:boolean" minOccurs="0" sme:label="Financial Period Active Flag">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if the Financial Period is an active one. Default = True
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reference" type="xs:normalizedString" minOccurs="0" sme:label="Financial Period Reference" sme:isUniqueKey="true">
+        <xs:annotation>
+          <xs:documentation>Reference for the Financial Period.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="name" type="xs:normalizedString" minOccurs="0" sme:label="Financial Period Name">
+        <xs:annotation>
+          <xs:documentation>Financial Period Name (e.g. Q1-Week1-2008)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="year" type="xs:normalizedString" minOccurs="0" sme:label="Financial Period Year">
+        <xs:annotation>
+          <xs:documentation>Financial Period Year (e.g. 2008)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="financialPeriodNumber" type="xs:decimal" nillable="true" minOccurs="0" sme:label="Financial Period Number">
+        <xs:annotation>
+          <xs:documentation>
+            Financial Period Number expressed as a number.
+            May be different to Month Number which may run 1-12 whereas there may be 13 periods in a year.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="financialPeriodText" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="Financial Period Number Text">
+        <xs:annotation>
+          <xs:documentation>
+            Financial Period Number expressed as text (e.g. 01)
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="quarterNumber" type="xs:decimal" nillable="true" minOccurs="0" sme:label="Financial Period Quarter Number">
+        <xs:annotation>
+          <xs:documentation>
+            Financial Period Quarter expressed as a number (e.g. 3)
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="quarterText" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="Financial Period Quarter Text">
+        <xs:annotation>
+          <xs:documentation>
+            Financial Period Quarter expressed as text (e.g. Q3)
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="monthNumber" type="xs:decimal" nillable="true" minOccurs="0" sme:label="Financial Period Month Number">
+        <xs:annotation>
+          <xs:documentation>
+            Financial Period Month expressed as a number (e.g. 1 to 12, or 1 - 13).
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="monthText" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="Financial Period Month Text">
+        <xs:annotation>
+          <xs:documentation>
+            Financial Period Month expressed as text (e.g. January or Period 1).
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="weekNumber" type="xs:decimal" nillable="true" minOccurs="0" sme:label="Financial Period Week Number">
+        <xs:annotation>
+          <xs:documentation>
+            Financial Period week expressed as a number (e.g. 26).
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="weekText" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="Financial Period Week Text">
+        <xs:annotation>
+          <xs:documentation>
+            Financial Period week expressed as text (e.g. Week 26).
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="startDate" type="xs:date" nillable="true" minOccurs="0" sme:label="Financial Period Start Date">
+        <xs:annotation>
+          <xs:documentation>
+            Start date of the Financial Period entry (e.g. if Year is 2008 and
+            Quarter is Q1 and Month is January then this would be 01/01/2008)
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="endDate" type="xs:date" nillable="true" minOccurs="0" sme:label="Financial Period End Date">
+        <xs:annotation>
+          <xs:documentation>
+            End date of the Financial Period entry (e.g. if Year is 2008 and
+            Quarter is Q1 and Month is January then this would be 31/01/2008)
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="status" type="financialPeriodStatus--enum" nillable="true" minOccurs="0" sme:label="Financial Period Status">
+        <xs:annotation>
+          <xs:documentation>Status of the financial period (open or closed).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="notes" type="note--list" nillable="true" minOccurs="0" sme:label="Financial Period Note" sme:relationship="child" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>Notes associated with a Financial Period.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+    <xs:anyAttribute />
+  </xs:complexType>
+  <xs:complexType name="financialPeriod--list">
+    <xs:sequence>
+      <xs:element name="financialPeriod" type="financialPeriod--type" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:anyAttribute />
+  </xs:complexType>
+  <xs:simpleType name="financialPeriodStatus--enum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Open" />
+      <xs:enumeration value="Closed" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="financialAccountBudgetType" type="financialAccountBudgetType--type" sme:role="resourceKind" sme:pluralName="financialAccountBudgetType" sme:compliance="may" sme:canGet="true" />
+  <xs:complexType name="financialAccountBudgetType--type">
+    <xs:all>
+      <xs:element name="active" type="xs:boolean" minOccurs="0" sme:label="Financial Account Budget Type Active Flag">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if the Financial Account Budget Type is an active one. Default = True
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reference" type="xs:normalizedString" minOccurs="0" sme:label="Financial Account Budget Type Reference" sme:isUniqueKey="true">
+        <xs:annotation>
+          <xs:documentation>Reference associated with the Financial Account Budget Type.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="name" type="xs:normalizedString" minOccurs="0" sme:label="Financial Account Budget Type Name">
+        <xs:annotation>
+          <xs:documentation>
+            The name of the Financial Account Budget Type
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="description" type="xs:string" nillable="true" minOccurs="0" sme:label="Financial Account Budget Type Description">
+        <xs:annotation>
+          <xs:documentation>
+            A longer textual description of Financial Account Budget Type.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="notes" type="note--list" nillable="true" minOccurs="0" sme:label="Financial Account Budget Type Note" sme:relationship="child" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>
+            Note associated with the Financial Account Budget Type. See Note definition.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+    <xs:anyAttribute />
+  </xs:complexType>
+  <xs:complexType name="financialAccountBudgetType--list">
+    <xs:sequence>
+      <xs:element name="financialAccountBudgetType" type="financialAccountBudgetType--type" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:anyAttribute />
+  </xs:complexType>
+  <xs:simpleType name="financialBudgetStatus--enum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Active" />
+      <xs:enumeration value="Hold" />
+      <xs:enumeration value="Closed" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

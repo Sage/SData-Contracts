@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/gcrmcontract/!svn/ver/185/trunk/Schema
+END
+sme.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/gcrmcontract/!svn/ver/160/trunk/Schema/sme.xsd
+END
+crmErp.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/gcrmcontract/!svn/ver/185/trunk/Schema/crmErp.xsd
+END
+common.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/gcrmcontract/!svn/ver/179/trunk/Schema/common.xsd
+END
+sdatasync.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/gcrmcontract/!svn/ver/169/trunk/Schema/sdatasync.xsd
+END
+sdata.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/gcrmcontract/!svn/ver/150/trunk/Schema/sdata.xsd
+END
+sdatahttp.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/gcrmcontract/!svn/ver/24/trunk/Schema/sdatahttp.xsd
+END
+hrmErp.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/gcrmcontract/!svn/ver/78/trunk/Schema/hrmErp.xsd
+END
+crmErp.html
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/gcrmcontract/!svn/ver/168/trunk/Schema/crmErp.html
+END
+common.html
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/gcrmcontract/!svn/ver/168/trunk/Schema/common.html
+END
+crmErp.doc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/gcrmcontract/!svn/ver/168/trunk/Schema/crmErp.doc
+END
+common.doc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/gcrmcontract/!svn/ver/168/trunk/Schema/common.doc
+END
+payErp.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/gcrmcontract/!svn/ver/152/trunk/Schema/payErp.xsd
+END
+hrmErp.html
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/gcrmcontract/!svn/ver/78/trunk/Schema/hrmErp.html
+END
+hrmErp.doc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/gcrmcontract/!svn/ver/78/trunk/Schema/hrmErp.doc
+END
+payErp.html
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/gcrmcontract/!svn/ver/153/trunk/Schema/payErp.html
+END
+payErp.doc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/gcrmcontract/!svn/ver/153/trunk/Schema/payErp.doc
+END
+registry.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/gcrmcontract/!svn/ver/46/trunk/Schema/registry.xsd
+END
+famErp.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/gcrmcontract/!svn/ver/78/trunk/Schema/famErp.xsd
+END
+famErp.html
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/gcrmcontract/!svn/ver/78/trunk/Schema/famErp.html
+END
+famErp.doc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/gcrmcontract/!svn/ver/78/trunk/Schema/famErp.doc
+END

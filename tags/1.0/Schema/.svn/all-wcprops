@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/Schema
+END
+sme.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/Schema/sme.xsd
+END
+common.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/Schema/common.xsd
+END
+crmErp.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/Schema/crmErp.xsd
+END
+registry.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/Schema/registry.xsd
+END
+sdatasync.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/Schema/sdatasync.xsd
+END
+famErp.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/Schema/famErp.xsd
+END
+sdata.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/Schema/sdata.xsd
+END
+sdatahttp.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/Schema/sdatahttp.xsd
+END
+hrmErp.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/Schema/hrmErp.xsd
+END

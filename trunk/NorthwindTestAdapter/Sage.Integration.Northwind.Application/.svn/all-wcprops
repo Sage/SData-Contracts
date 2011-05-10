@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Application
+END
+NorthwindConfig.cs
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Application/NorthwindConfig.cs
+END
+NorthwindConnector.cs
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Application/NorthwindConnector.cs
+END
+Sage.Integration.Northwind.Application.csproj
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Application/Sage.Integration.Northwind.Application.csproj
+END

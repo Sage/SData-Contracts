@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Requests/Performers/Services
+END
+IServicePerformer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Requests/Performers/Services/IServicePerformer.cs
+END
+ComputePriceServicePerformer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Requests/Performers/Services/ComputePriceServicePerformer.cs
+END

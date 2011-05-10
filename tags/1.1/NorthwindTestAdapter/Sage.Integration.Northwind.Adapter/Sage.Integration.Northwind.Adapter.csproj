@@ -1,0 +1,240 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B884FC33-40C3-4C84-817A-7A7683A95681}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sage.Integration.Northwind.Adapter</RootNamespace>
+    <AssemblyName>Sage.Integration.Northwind.Adapter</AssemblyName>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>NorthwindAdapter.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Sage.Common.Syndication, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c59b718b5ca510a8, processorArchitecture=MSIL" />
+    <Reference Include="Sage.Integration.Diagnostics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3f422f0ff54abde1, processorArchitecture=MSIL" />
+    <Reference Include="Sage.Integration.Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3f422f0ff54abde1, processorArchitecture=MSIL" />
+    <Reference Include="Sage.Integration.Server.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3f422f0ff54abde1, processorArchitecture=MSIL" />
+    <Reference Include="Sage.Utilities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c59b718b5ca510a8, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="Common\Helper.cs" />
+    <Compile Include="Common\Paging\PageController.cs" />
+    <Compile Include="Data\FeedFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Requests\FeedMetadataHelpers.cs" />
+    <Compile Include="Common\ResourceKindHelpers.cs" />
+    <Compile Include="Common\SdataTransactionResult.cs" />
+    <Compile Include="Common\SupportedResourceKinds.cs" />
+    <Compile Include="Common\TrackingPhase.cs" />
+    <Compile Include="Data\EntityWrapperBase.cs" />
+    <Compile Include="Data\EntityWrapperFactory.cs" />
+    <Compile Include="Data\IEntityQueryWrapper.cs" />
+    <Compile Include="Data\IEntityWrapper.cs" />
+    <Compile Include="Data\QueryFilterBuilder.cs" />
+    <Compile Include="Data\SalesOrders\CommodityGroupWrapper.cs" />
+    <Compile Include="Data\SalesOrders\CommodityWrapper.cs" />
+    <Compile Include="Data\SalesOrders\DataSets\Order.cs">
+      <DependentUpon>Order.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\SalesOrders\DataSets\Order.Designer.cs">
+      <DependentUpon>Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SalesOrders\DataSets\OrderTableAdapters.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\SalesOrders\PriceListWrapper.cs" />
+    <Compile Include="Data\SalesOrders\PriceWrapper.cs" />
+    <Compile Include="Data\SalesOrders\SalesInvoiceLineWrapper.cs" />
+    <Compile Include="Data\SalesOrders\SalesInvoicesWrapper.cs" />
+    <Compile Include="Data\SalesOrders\SalesOrderLineWrapper.cs" />
+    <Compile Include="Data\SalesOrders\SalesOrderWrapper.cs" />
+    <Compile Include="Data\SalesOrders\UnitOfMeasureGroupWrapper.cs" />
+    <Compile Include="Data\SalesOrders\UnitOfMeasureWrapper.cs" />
+    <Compile Include="Data\TradingAccounts\ContactWrapper.cs" />
+    <Compile Include="Data\TradingAccounts\EmailWrapper.cs" />
+    <Compile Include="Data\TradingAccounts\PhoneNumberWrapper.cs" />
+    <Compile Include="Data\TradingAccounts\PostalAddressWrapper.cs" />
+    <Compile Include="Data\TradingAccounts\TradingAccountWrapper.cs" />
+    <Compile Include="Installer\NorthwindInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Installer\NorthwindInstaller.Designer.cs">
+      <DependentUpon>NorthwindInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NorthwindAdapter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Requests\IRequestPerformer.cs" />
+    <Compile Include="Requests\ITrackingConsumer.cs" />
+    <Compile Include="Requests\ITrackingPerformer.cs" />
+    <Compile Include="Requests\Performers\DeleteLinkingRequestPerformer.cs" />
+    <Compile Include="Requests\Performers\GetContractRequestPerformer.cs" />
+    <Compile Include="Requests\Performers\DeleteResourceRequestPerformer.cs" />
+    <Compile Include="Requests\Performers\GetDatasetRequestPerformer.cs" />
+    <Compile Include="Requests\Performers\GetLinkingRequestPerformer.cs" />
+    <Compile Include="Requests\Performers\GetResourceCollectionRequestPerformer.cs" />
+    <Compile Include="Requests\Performers\GetResourceRequestPerformer.cs" />
+    <Compile Include="Requests\Performers\GetResourceSchemaRequestPerformer.cs" />
+    <Compile Include="Requests\Performers\GetSchemaImportRequestPerformer.cs" />
+    <Compile Include="Requests\Performers\GetSchemaRequestPerformer.cs" />
+    <Compile Include="Requests\Performers\GetServiceSchemaRequestPerformer.cs" />
+    <Compile Include="Requests\Performers\GetSyncDigestRequestPerformer.cs" />
+    <Compile Include="Requests\Performers\GetSyncSourceRequestPerformer.cs" />
+    <Compile Include="Requests\Performers\GetSyncTargetRequestPerformer.cs" />
+    <Compile Include="Requests\Performers\PostLinkingRequestPerformer.cs" />
+    <Compile Include="Requests\Performers\PostResourceRequestPerformer.cs" />
+    <Compile Include="Requests\Performers\PostServiceRequestPerformer.cs" />
+    <Compile Include="Requests\Performers\PostSyncResultsRequestPerformer.cs" />
+    <Compile Include="Requests\Performers\PostSyncSourceRequestPerformer.cs" />
+    <Compile Include="Requests\Performers\PostSyncTargetRequestPerformer.cs" />
+    <Compile Include="Requests\Performers\PutLinkingRequestPerformer.cs" />
+    <Compile Include="Requests\Performers\PutResourceRequestPerformer.cs" />
+    <Compile Include="Requests\Performers\Services\ComputePriceServicePerformer.cs" />
+    <Compile Include="Requests\Performers\Services\IServicePerformer.cs" />
+    <Compile Include="Requests\RequestContext.cs" />
+    <Compile Include="Requests\RequestException.cs" />
+    <Compile Include="Requests\RequestPerformerLocator.cs" />
+    <Compile Include="Requests\RequestReceiver.cs" />
+    <Compile Include="Requests\RequestType.cs" />
+    <Compile Include="Requests\SyncDigestInfoHelpers.cs" />
+    <Compile Include="Services\Data\CommodityPriceData.cs" />
+    <Compile Include="Services\Discount.cs" />
+    <Compile Include="Services\DiscountFactory.cs" />
+    <Compile Include="Services\EuroCurrencyConverter.cs" />
+    <Compile Include="Services\CurrencyFactory.cs" />
+    <Compile Include="Services\ICommodityPriceData.cs" />
+    <Compile Include="Services\PricingServices.cs" />
+    <Compile Include="Services\CommodityIdentity.cs" />
+    <Compile Include="Transformations\ITransformation.cs" />
+    <Compile Include="Transformations\SalesOrders\CommodityGroupTransformation.cs" />
+    <Compile Include="Transformations\SalesOrders\CommodityTransformation.cs" />
+    <Compile Include="Transformations\SalesOrders\PriceListTransformation.cs" />
+    <Compile Include="Transformations\SalesOrders\PriceTransformation.cs" />
+    <Compile Include="Transformations\SalesOrders\SalesOrderLineTransformation.cs" />
+    <Compile Include="Transformations\SalesOrders\SalesOrderTransformation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Transformations\SalesOrders\UnitOfMeasureGroupTransformation.cs" />
+    <Compile Include="Transformations\SalesOrders\UnitOfMeasureTransformation.cs" />
+    <Compile Include="Transformations\TradingAccounts\ContactTransformation.cs" />
+    <Compile Include="Transformations\TradingAccounts\EmailAdressTransformation.cs" />
+    <Compile Include="Transformations\TradingAccounts\PhoneNumberTransformation.cs" />
+    <Compile Include="Transformations\TradingAccounts\PostalAdressTransformation.cs" />
+    <Compile Include="Transformations\TradingAccounts\TradingAccountTransformation.cs" />
+    <Compile Include="Transformations\TransformationBase.cs" />
+    <Compile Include="Transformations\TransformationFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="crmErp.xsd" />
+    <EmbeddedResource Include="common.xsd" />
+    <None Include="Data\SalesOrders\DataSets\Order.xsc">
+      <DependentUpon>Order.xsd</DependentUpon>
+    </None>
+    <None Include="Data\SalesOrders\DataSets\Order.xsd">
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="Data\SalesOrders\DataSets\Order.xss">
+      <DependentUpon>Order.xsd</DependentUpon>
+    </None>
+    <None Include="NorthwindAdapter.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sage.Integration.Northwind.Application\Sage.Integration.Northwind.Application.csproj">
+      <Project>{F579CD13-5147-4EE0-8E90-39AE59C1ABEB}</Project>
+      <Name>Sage.Integration.Northwind.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.Integration.Northwind.Common\Sage.Integration.Northwind.Common.csproj">
+      <Project>{3C819437-8FB9-4D9B-AC4D-9B8DA65BEC0F}</Project>
+      <Name>Sage.Integration.Northwind.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.Integration.Northwind.Etag\Sage.Integration.Northwind.Etag.csproj">
+      <Project>{6504916D-7336-46CC-BB52-FC58461CB416}</Project>
+      <Name>Sage.Integration.Northwind.Etag</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.Integration.Northwind.Feeds\Sage.Integration.Northwind.Feeds.csproj">
+      <Project>{C38A76F4-E302-4819-82DC-B278DFDF48AD}</Project>
+      <Name>Sage.Integration.Northwind.Feeds</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.Integration.Northwind.Sync\Sage.Integration.Northwind.Sync.csproj">
+      <Project>{4D546910-910D-4B06-AF49-CDB42983F6F4}</Project>
+      <Name>Sage.Integration.Northwind.Sync</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.Sis.Common.Data\Sage.Sis.Common.Data.csproj">
+      <Project>{4FCA340F-6C11-4C37-9A30-AEED463B1342}</Project>
+      <Name>Sage.Sis.Common.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.Sis.Sdata.Etag.Crc\Sage.Sis.Sdata.Etag.Crc.csproj">
+      <Project>{B1372958-BCE3-46A0-8A84-579D2DEF1CE6}</Project>
+      <Name>Sage.Sis.Sdata.Etag.Crc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.Sis.Sdata.Etag\Sage.Sis.Sdata.Etag.csproj">
+      <Project>{6FBE8872-C3BC-4AFF-959A-21E90DD3A8EB}</Project>
+      <Name>Sage.Sis.Sdata.Etag</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.Sis.Sdata.Sync.Context\Sage.Sis.Sdata.Sync.Context.csproj">
+      <Project>{3F60D46A-CACD-4014-93CC-1FC40AA1FF3D}</Project>
+      <Name>Sage.Sis.Sdata.Sync.Context</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.Sis.Sdata.Sync.Results\Sage.Sis.Sdata.Sync.Results.csproj">
+      <Project>{83E87110-F2E5-491C-A4E6-53CDFA41FE45}</Project>
+      <Name>Sage.Sis.Sdata.Sync.Results</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.Sis.Sdata.Sync.Storage\Sage.Sis.Sdata.Sync.Storage.csproj">
+      <Project>{8302A3E6-9AF0-4F17-90F7-1780612D9977}</Project>
+      <Name>Sage.Sis.Sdata.Sync.Storage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.Sis.Sdata.Sync.Tick\Sage.Sis.Sdata.Sync.Tick.csproj">
+      <Project>{63AD8E69-2267-42FF-B5E4-F4E488185103}</Project>
+      <Name>Sage.Sis.Sdata.Sync.Tick</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>md "%25commonProgramfiles%25\Sage SData\Northwind"
+$(FrameworkDir)\installutil /u "%25commonProgramfiles%25\Sage SData\Northwind\Sage.Integration.Northwind.Adapter.dll"
+copy /Y "$(TargetDir)*.*" "%25commonProgramfiles%25\Sage SData\Northwind\"
+net start "Sage SData Service"
+$(FrameworkDir)\installutil "%25commonProgramfiles%25\Sage SData\Northwind\Sage.Integration.Northwind.Adapter.dll"
+</PostBuildEvent>
+    <PreBuildEvent>taskkill /F  /FI "STATUS eq RUNNING" /IM Sage.SData.Service.exe</PreBuildEvent>
+  </PropertyGroup>
+</Project>

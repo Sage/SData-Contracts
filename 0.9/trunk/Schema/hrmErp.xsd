@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="hrmErp" 
+           elementFormDefault="qualified" 
+           targetNamespace="http://schemas.sage.com/hrmErp/2008" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns:sme="http://schemas.sage.com/sdata/sme/2007" 
+           xmlns:tns="http://schemas.sage.com/hrmErp/2008"
+           xmlns="http://schemas.sage.com/hrmErp/2008" >
+  <xs:element name="employee" type="employee--type" sme:role="resourceKind" sme:pluralName="employees" sme:compliance="must" sme:canGet="true" sme:canPut="true" sme:canPost="true" sme:canDelete="true" />
+  <xs:complexType name="employee--type">
+    <xs:all>
+      <xs:element name="id" sme:label="Employee Application ID" minOccurs="0" type="xs:string" sme:isUniqueKey="true">
+        <xs:annotation>
+          <xs:documentation>The application specific identifier.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+</xs:schema>
+

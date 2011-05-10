@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Data/SalesOrders
+END
+SalesOrderLineWrapper.cs
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Data/SalesOrders/SalesOrderLineWrapper.cs
+END
+SalesInvoiceLineWrapper.cs
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Data/SalesOrders/SalesInvoiceLineWrapper.cs
+END
+PriceListWrapper.cs
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Data/SalesOrders/PriceListWrapper.cs
+END
+CommodityGroupWrapper.cs
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Data/SalesOrders/CommodityGroupWrapper.cs
+END
+PriceWrapper.cs
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Data/SalesOrders/PriceWrapper.cs
+END
+SalesOrderWrapper.cs
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Data/SalesOrders/SalesOrderWrapper.cs
+END
+UnitOfMeasureGroupWrapper.cs
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Data/SalesOrders/UnitOfMeasureGroupWrapper.cs
+END
+CommodityWrapper.cs
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Data/SalesOrders/CommodityWrapper.cs
+END
+UnitOfMeasureWrapper.cs
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Data/SalesOrders/UnitOfMeasureWrapper.cs
+END
+SalesInvoicesWrapper.cs
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Data/SalesOrders/SalesInvoicesWrapper.cs
+END

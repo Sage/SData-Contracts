@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter
+END
+SageCrmNorthwind.msi
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/SageCrmNorthwind.msi
+END
+Northwind.sln
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Northwind.sln
+END
+Northwind.mdb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Northwind.mdb
+END

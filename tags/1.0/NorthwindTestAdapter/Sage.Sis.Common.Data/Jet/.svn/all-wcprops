@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Sis.Common.Data/Jet
+END
+JetTableSchema.cs
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Sis.Common.Data/Jet/JetTableSchema.cs
+END
+IJetTransaction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Sis.Common.Data/Jet/IJetTransaction.cs
+END
+IJetTableSchema.cs
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Sis.Common.Data/Jet/IJetTableSchema.cs
+END
+JetHelpers.cs
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Sis.Common.Data/Jet/JetHelpers.cs
+END
+IJetConnectionProvider.cs
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Sis.Common.Data/Jet/IJetConnectionProvider.cs
+END
+SimpleJetConnectionProvider.cs
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Sis.Common.Data/Jet/SimpleJetConnectionProvider.cs
+END
+JetTransaction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Sis.Common.Data/Jet/JetTransaction.cs
+END

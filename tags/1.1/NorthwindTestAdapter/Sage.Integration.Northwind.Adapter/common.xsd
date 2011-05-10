@@ -1,0 +1,676 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="sc" 
+           elementFormDefault="qualified" 
+           targetNamespace="http://schemas.sage.com/sc/2009" 
+           xmlns:sc="http://schemas.sage.com/sc/2009" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns:sme="http://schemas.sage.com/sdata/sme/2007" 
+           xmlns:tns="http://schemas.sage.com/sc/2009"
+           >
+  <xs:element name="person" type="sc:person--type" sme:role="resourceKind" sme:pluralName="people" sme:compliance="must" sme:canGet="true" sme:canPut="true" sme:canPost="true" sme:canDelete="true" 
+              sme:unsupported="true"/>
+  <xs:complexType name="person--type">
+    <xs:all>
+      <xs:element name="applicationID" sme:label="Person Application ID" minOccurs="0" type="xs:string" sme:isUniqueKey="true">
+        <xs:annotation>
+          <xs:documentation>The application specific identifier.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  <xs:element name="postalAddress" type="sc:postalAddress--type" sme:role="resourceKind"
+    sme:pluralName="postalAddresses" sme:compliance="must" sme:canGet="true" sme:canPut="true"
+    sme:canPost="true" sme:canDelete="true" sme:isSyncSource="true" sme:isSyncTarget="true"
+              sme:canFilter="true" sme:canSort="true"
+              sme:unsupported="false"/>
+  <xs:complexType name="postalAddress--type">
+    <xs:all>
+      <xs:element name="uuid" type="sc:uuid--type" minOccurs="0" sme:label="PostalAddress Global ID"
+        sme:isUniqueKey="true" sme:isGlobalId="true"
+                  sme:isReadOnly="true"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="false">
+        <xs:annotation>
+          <xs:documentation> PostalAddress Global ID Globally unique identifier </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="applicationID" type="xs:string" minOccurs="0"
+        sme:label="PostalAddress Application ID" sme:isUniqueKey="true"
+                  sme:isReadOnly="true"
+                  sme:canFilter="true" sme:canSort="true"
+                  sme:unsupported="false">
+        <xs:annotation>
+          <xs:documentation> The application specific identifier.   </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="active" type="xs:boolean" minOccurs="0"
+        sme:label="PostalAddress Active Flag"
+                  sme:isReadOnly="true"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="false">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if the Postal Address is an ‘active’ one .   Default =
+            True
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="deleted" type="xs:boolean" minOccurs="0" sme:label="PostalAddress Deleted"
+                  sme:isReadOnly="true"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="false">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if Postal Address is (soft) deleted.   Default = False
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="label" type="xs:string" minOccurs="0" sme:label="PostalAddress Label"
+                  sme:isReadOnly="true"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="false">
+        <xs:annotation>
+          <xs:documentation>
+            The label for the resource to be presented in the user interface. To
+            support application-specific or language-specific descriptions of resources.   “Postal
+            Address”
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reference" type="xs:string" minOccurs="0"
+        sme:label="PostalAddress Reference"
+                  sme:isReadOnly="true"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="true">
+        <xs:annotation>
+          <xs:documentation> Reference for the Postal Address.   </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="name" type="xs:string" nillable="true" minOccurs="0"
+        sme:label="PostalAddress Name"
+                  sme:isReadOnly="true"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="true">
+        <xs:annotation>
+          <xs:documentation>
+            A name for the Postal Address (e.g. “Billing Address”).  
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="description" type="xs:string" nillable="true" minOccurs="0"
+        sme:label="PostalAddress Description"
+                  sme:isReadOnly="true"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="true">
+        <xs:annotation>
+          <xs:documentation>
+            A longer description of the postal Postal Address.  
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="address1" type="xs:string" nillable="true" minOccurs="0"
+        sme:label="PostalAddress Address 1"
+                  sme:isReadOnly="false"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="false">
+        <xs:annotation>
+          <xs:documentation> 1st Line of Postal Address   </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="address2" type="xs:string" nillable="true" minOccurs="0"
+        sme:label="PostalAddress Address 2"
+                  sme:isReadOnly="false"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="false">
+        <xs:annotation>
+          <xs:documentation> 2nd Line of Postal Address   </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="address3" type="xs:string" nillable="true" minOccurs="0"
+        sme:label="PostalAddress Address 3"
+                  sme:isReadOnly="false"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="false">
+        <xs:annotation>
+          <xs:documentation> 3rd Line of Postal Address   </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="address4" type="xs:string" nillable="true" minOccurs="0"
+        sme:label="PostalAddress Address 4"
+                  sme:isReadOnly="false"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="false">
+        <xs:annotation>
+          <xs:documentation> 4th Line of Postal Address   </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="townCity" type="xs:string" nillable="true" minOccurs="0"
+        sme:label="PostalAddress TownCity"
+                  sme:isReadOnly="false"
+                  sme:canFilter="true" sme:canSort="true"
+                  sme:unsupported="false">
+        <xs:annotation>
+          <xs:documentation> Town or City   </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="county" type="xs:string" nillable="true" minOccurs="0"
+        sme:label="PostalAddress County"
+                  sme:isReadOnly="false"
+                  sme:canFilter="true" sme:canSort="true"
+                  sme:unsupported="false">
+        <xs:annotation>
+          <xs:documentation> County   </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="stateRegion" type="xs:string" nillable="true" minOccurs="0"
+        sme:label="PostalAddress StateRegion"
+                  sme:isReadOnly="false"
+                  sme:canFilter="true" sme:canSort="true"
+                  sme:unsupported="false">
+        <xs:annotation>
+          <xs:documentation>
+            State/Region   For USA addresses use ISO 3166-2:US for state codes. For
+            UK addresses use ISO 3166-2:GB. For French addresses use ISO 3166-2:FR. For German
+            addresses use ISO 3166-2:DE. For Canada addresses use ISO 3166-2:CA.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="zipPostCode" type="xs:string" nillable="true" minOccurs="0"
+        sme:label="PostalAddress ZipPost Code"
+                  sme:isReadOnly="false"
+                  sme:canFilter="true" sme:canSort="true"
+                  sme:unsupported="false">
+        <xs:annotation>
+          <xs:documentation>
+            Zip or Post code. Should be formatted as raw text no formatting
+            included.  
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="country" type="xs:string" nillable="true" minOccurs="0"
+        sme:label="PostalAddress Country"
+                  sme:isReadOnly="false"
+                  sme:canFilter="true" sme:canSort="true"
+                  sme:unsupported="false">
+        <xs:annotation>
+          <xs:documentation> Country   ISO 3166-1 alpha-2 country codes only </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="primacyIndicator" type="xs:boolean" minOccurs="0"
+        sme:label="PostalAddress Primacy Indicator"
+                  sme:isReadOnly="true"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="false">
+        <xs:annotation>
+          <xs:documentation>
+            A flag to indicate if the Address is the primary/default Address.   One
+            ony Postal Address can have Primacy against an associated entity (e.g. Contact, Company,
+            etc). Default = False
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="type" type="sc:postalAddressType--enum" minOccurs="1"
+        sme:label="PostalAddress Type" sme:isMandatory="true"
+                  sme:isReadOnly="true"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="false">
+        <xs:annotation>
+          <xs:documentation>
+            The type of the Postal Address, e.g., billing, sales address, home,
+            etc.   A new Postal Address will be required for each type, even though the address
+            itself may be the same. Default = “Correspondance”
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="note" type="sc:note--list" nillable="true" minOccurs="0"
+        sme:label="PostalAddress Note" sme:relationship="child" sme:isCollection="true"
+                  sme:isReadOnly="true"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="true">
+        <xs:annotation>
+          <xs:documentation> Notes associated with the Postal Address.   </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="postalAddress--list">
+    <xs:sequence>
+      <xs:element name="postalAddress" type="sc:postalAddress--type" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="email" type="sc:email--type" sme:role="resourceKind" sme:pluralName="emails"
+    sme:compliance="must" sme:canGet="true" sme:canPut="true" sme:canPost="true"
+    sme:canDelete="true" sme:isSyncSource="true" sme:isSyncTarget="true"
+              sme:canFilter="true" sme:canSort="true"
+              sme:unsupported="false"/>
+  <xs:complexType name="email--type">
+    <xs:all>
+      <xs:element name="uuid" type="sc:uuid--type" minOccurs="0" sme:label="Email Global ID"
+        sme:isUniqueKey="true"
+                  sme:isReadOnly="true"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="false">
+        <xs:annotation>
+          <xs:documentation>
+            The Email unique identifier.   Globally unique identifier
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="applicationID" type="xs:string" minOccurs="0"
+        sme:label="Email Application ID" sme:isUniqueKey="true"
+                  sme:isReadOnly="true"
+                  sme:canFilter="true" sme:canSort="true"
+                  sme:unsupported="false">
+        <xs:annotation>
+          <xs:documentation> The application specific identifier.   </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="active" type="xs:boolean" minOccurs="0" sme:label="Email Active Flag"
+                  sme:isReadOnly="true"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="false">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if the Email is an ‘active’ one .   Default = True
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="deleted" type="xs:boolean" minOccurs="0" sme:label="Email Deleted"
+                  sme:isReadOnly="true"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="false">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if email is (soft) deleted.   Default = False
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="label" type="xs:string" minOccurs="0" sme:label="Email Label"
+                  sme:isReadOnly="true"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="true">
+        <xs:annotation>
+          <xs:documentation>
+            The label for the resource to be presented in the user interface. To
+            support application-specific or language-specific descriptions of resources.   “Email”
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reference" type="xs:string" minOccurs="0" sme:label="Email reference"
+        sme:isUniqueKey="true"
+                  sme:isReadOnly="true"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="true">
+        <xs:annotation>
+          <xs:documentation> reference associated with the Email.   </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reference2" type="xs:string" nillable="true" minOccurs="0"
+        sme:label="Email Reference2" sme:isExtension="true"
+                  sme:isReadOnly="true"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="true">
+        <xs:annotation>
+          <xs:documentation> Another reference associated with the email.   </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="type" type="xs:string" minOccurs="0" sme:label="Email Type"
+                  sme:isReadOnly="true"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="true">
+        <xs:annotation>
+          <xs:documentation>
+            A simple string value used to label this email address. It allows for
+            email addresses such as "Work", "Personal", "Preferred”, etc. Can also be used to
+            distinguish ‘instant messaging’ type addresses.  
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="address" type="xs:string" minOccurs="0" sme:label="Email Address"
+        sme:isMandatory="true"
+                  sme:isReadOnly="true"
+                  sme:canFilter="true" sme:canSort="true"
+                  sme:unsupported="false">
+        <xs:annotation>
+          <xs:documentation>
+            The Email address itself (e.g. joe.bloggs@acme.com).  
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="uRL" type="xs:string" minOccurs="0" sme:label="mailto:URL"
+        sme:isUniqueKey="true"
+                  sme:isReadOnly="true"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="true">
+        <xs:annotation>
+          <xs:documentation>
+            URL that allows an email to be automatically generated that is to be
+            set to the email address.   Could be created automatically.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="primacyIndicator" type="xs:boolean" minOccurs="0"
+        sme:label="Email Primacy Indicator"
+                  sme:isReadOnly="true"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="true">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if this Email is the primary one associated with the
+            linked resource.   Default = “False”
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="notes" type="sc:note--type" nillable="true" minOccurs="0"
+        sme:label="Email Note" sme:relationship="child" sme:isCollection="false"
+                  sme:isReadOnly="true"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="true">
+        <xs:annotation>
+          <xs:documentation> Notes associated with email.   </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="email--list">
+    <xs:sequence>
+      <xs:element name="email" type="sc:email--type" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="phoneNumber" type="sc:phoneNumber--type" sme:role="resourceKind"
+    sme:pluralName="phoneNumbers" sme:compliance="must" sme:canGet="true" sme:canPut="true"
+    sme:canPost="true" sme:canDelete="true" sme:isSyncSource="true" sme:isSyncTarget="true"
+              sme:canSort="true" sme:canFilter="true"
+              sme:unsupported="false"/>
+  <xs:complexType name="phoneNumber--type">
+    <xs:all>
+      <xs:element name="applicationID" type="xs:string" minOccurs="0"
+        sme:label="PhoneNumber Application ID" sme:isUniqueKey="true"
+                  sme:isReadOnly="true"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="false">
+        <xs:annotation>
+          <xs:documentation> The application specific identifier.   </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="active" type="xs:boolean" minOccurs="0" sme:label="PhoneNumber Active Flag"
+                  sme:isReadOnly="true"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="false">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if the phone number is an ‘active’ one .   Default =
+            True
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="deleted" type="xs:boolean" minOccurs="0" sme:label="PhoneNumber Deleted"
+                  sme:isReadOnly="true"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="false">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if phone number is (soft) deleted.   Default = False
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="label" type="xs:string" minOccurs="0" sme:label="PhoneNumber Label"
+                  sme:isReadOnly="false"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="false">
+        <xs:annotation>
+          <xs:documentation>
+            The label for the resource to be presented in the user interface. To
+            support application-specific or language-specific descriptions of resources.   “Phone
+            Number”
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reference" type="xs:string" minOccurs="0" sme:label="PhoneNumber reference"
+        sme:isUniqueKey="true"
+                  sme:isReadOnly="true"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="true">
+        <xs:annotation>
+          <xs:documentation> reference associated with the phone number.   </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reference2" type="xs:string" nillable="true" minOccurs="0"
+        sme:label="PhoneNumber Reference2" sme:isExtension="true"
+                  sme:isReadOnly="true"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="true">
+        <xs:annotation>
+          <xs:documentation>
+            Another reference associated with the phone number.  
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="uRI" type="xs:string" minOccurs="0" sme:label="PhoneNumber URI"
+        sme:isUniqueKey="true"
+                  sme:isReadOnly="true"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="true">
+        <xs:annotation>
+          <xs:documentation>
+            A phone unique reference number used to represent the number in a
+            formal way. Useful for programmatic access, such as a VoIP/PSTN/CTI.   Could be derived
+            by concatenating attributes.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="type" type="xs:string" minOccurs="0" sme:label="PhoneNumber Type"
+                  sme:isReadOnly="true"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="false">
+        <xs:annotation>
+          <xs:documentation>
+            A value that identifies the type of phone number (general, fax, car,
+            home, internal, mobile, other, pager, satellite, voip, work).  
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="name" type="xs:string" nillable="true" minOccurs="0"
+        sme:label="PhoneNumber Name"
+                  sme:isReadOnly="true"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="true">
+        <xs:annotation>
+          <xs:documentation>
+            A simple string value used to label this phone number. In most cases,
+            “Label” is not necessary as “Phone Type” uniquely identifies a number and allows UIs to
+            display a proper label such as "Mobile", "Home", "Work", etc. However, in the case where
+            one person has (for example) multiple mobile phones, this property can be used to
+            disambiguate them.   Could be derived from Phone Type
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="text" type="xs:string" minOccurs="0" sme:label="PhoneNumber Text"
+        sme:isMandatory="true"
+                  sme:isReadOnly="true"
+                  sme:canFilter="true" sme:canSort="true"
+                  sme:unsupported="false">
+        <xs:annotation>
+          <xs:documentation>
+            Human-readable phone number, containing all attributes.   Could be
+            derived by concatenating other properties.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="countryCode" type="xs:string" minOccurs="0"
+        sme:label="PhoneNumber Country Code"
+                  sme:isReadOnly="true"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="false">
+        <xs:annotation>
+          <xs:documentation>
+            Country code for the phone number based on ITU-T recommendation E.164
+            country codes.   ITU-T E. 164 country codes only.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="areaCode" type="xs:string" minOccurs="0" sme:label="PhoneNumber Area Code"
+                  sme:isReadOnly="true"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="false">
+        <xs:annotation>
+          <xs:documentation> Area code for the phone number   </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="number" type="xs:string" minOccurs="0" sme:label="PhoneNumber Number"
+                  sme:isReadOnly="true"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="false">
+        <xs:annotation>
+          <xs:documentation> Telephone number.   </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="extension" type="xs:string" nillable="true" minOccurs="0"
+        sme:label="PhoneNumber Extension"
+                  sme:isReadOnly="true"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="false">
+        <xs:annotation>
+          <xs:documentation> Any extension applicable to the phone number.   </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="primacyIndicator" type="xs:boolean" minOccurs="0"
+        sme:label="PhoneNumber Primacy Indicator"
+                  
+                  sme:isReadOnly="true"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="false">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if this Phone Number is the primary one associated
+            with the linked resource.   Default = “False”
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="notes" type="sc:note--list" nillable="true" minOccurs="0"
+        sme:label="PhoneNumber Note" sme:relationship="child" sme:isCollection="true"
+                  sme:isReadOnly="true"
+                  sme:canFilter="false" sme:canSort="false"
+                  sme:unsupported="true">
+        <xs:annotation>
+          <xs:documentation> Notes associated with phone number.   </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="phoneNumber--list">
+    <xs:sequence>
+      <xs:element name="phoneNumber" type="sc:phoneNumber--type" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="note" type="sc:note--type" sme:role="resourceKind" sme:pluralName="notes"
+    sme:compliance="may" sme:canGet="true" sme:unsupported="true"/>
+  <xs:complexType name="note--type">
+    <xs:all>
+      <xs:element name="uuid" type="sc:uuid--type" minOccurs="0" sme:label="Note Global ID"
+        sme:isUniqueKey="true">
+        <xs:annotation>
+          <xs:documentation>
+            The note unique identifier.   Globally unique identifier
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="applicationID" type="xs:string" minOccurs="0"
+        sme:label="Note Application ID" sme:isUniqueKey="true">
+        <xs:annotation>
+          <xs:documentation> The application specific identifier.   </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="active" type="xs:boolean" minOccurs="0" sme:label="Note Active Flag">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if the note is an ‘active’ one .   Default = True
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="deleted" type="xs:boolean" minOccurs="0" sme:label="Note Deleted">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if note is (soft) deleted.   Default = False
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="label" type="xs:string" minOccurs="0" sme:label="Note Label">
+        <xs:annotation>
+          <xs:documentation>
+            The label for the resource to be presented in the user interface. To
+            support application-specific or language-specific descriptions of resources.   “Note”
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reference" type="xs:string" minOccurs="0" sme:label="Note reference"
+        sme:isUniqueKey="true">
+        <xs:annotation>
+          <xs:documentation> reference associated with the note.   </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reference2" type="xs:string" nillable="true" minOccurs="0"
+        sme:label="NoteReference2" sme:isExtension="true">
+        <xs:annotation>
+          <xs:documentation> Another reference associated with the note.   </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="text" type="xs:string" minOccurs="0" sme:label="Note Text"
+        sme:isMandatory="true">
+        <xs:annotation>
+          <xs:documentation> The note text itself.   </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="privacyFlag" type="xs:boolean" minOccurs="0" sme:label="Note Privacy Flag">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if the note is public or private.   Default = “No”
+            (not private).
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="dateStamp" type="xs:date" minOccurs="0" sme:label="Note Date Stamp">
+        <xs:annotation>
+          <xs:documentation> Date and time of note   </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="primacyIndicator" type="xs:boolean" minOccurs="0"
+        sme:label="Note Primacy Indicator">
+        <xs:annotation>
+          <xs:documentation>
+            Flag to indicate if this Note is the primary one associated with the
+            linked resource.   Default = “False”
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="user" type="xs:string" minOccurs="0" sme:label="Note User">
+        <xs:annotation>
+          <xs:documentation> Details of the user who created the note.   </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="note--list">
+    <xs:sequence>
+      <xs:element name="note" type="sc:note--type" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="uuid--type">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9a-fA-F-]+"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="postalAddressType--enum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Shipping"/>
+      <xs:enumeration value="Billing"/>
+      <xs:enumeration value="Correspondance"/>
+      <xs:enumeration value="Home"/>
+      <xs:enumeration value="Office"/>
+      <xs:enumeration value="Work Site"/>
+      <xs:enumeration value="Other"/>
+      <xs:enumeration value="Unknown"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
+
