@@ -1,7 +1,7 @@
 10
 
 dir
-185
+186
 http://gforge.sageinternal.com/svn/gcrmcontract/tags/1.0/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet
 http://gforge.sageinternal.com/svn/gcrmcontract
 
@@ -26,73 +26,8 @@ john.perona
 
 4e8fb60e-e660-0410-a1f3-e4fe173e44cb
 
-app.config
-file
-
-
-
-
-2011-01-20T12:42:42.761421Z
-076a037418dd7806e7d04f503c7c9f22
-2009-07-15T18:59:31.171478Z
-45
-john.perona
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-841
-
-SyncDigestInfoStoreProvider.cs
-file
-
-
-
-
-2011-01-20T12:42:42.730221Z
-fc1d0998d981e528e7374d30a4323824
-2009-07-15T18:59:31.171478Z
-45
-john.perona
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7372
+Syndication
+dir
 
 TableAdapterFactory.cs
 file
@@ -128,17 +63,14 @@ john.perona
 
 8117
 
-Syndication
-dir
-
-AppBookmarkXmlSerializer.cs
+SyncDigestInfoStoreProvider.cs
 file
 
 
 
 
-2011-01-20T12:42:42.792621Z
-ff96d2e55b05ad1433b03259f23f0de3
+2011-01-20T12:42:42.730221Z
+fc1d0998d981e528e7374d30a4323824
 2009-07-15T18:59:31.171478Z
 45
 john.perona
@@ -163,7 +95,41 @@ john.perona
 
 
 
-1815
+7372
+
+app.config
+file
+
+
+
+
+2011-01-20T12:42:42.761421Z
+076a037418dd7806e7d04f503c7c9f22
+2009-07-15T18:59:31.171478Z
+45
+john.perona
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+841
 
 StoreEnvironment.cs
 file
@@ -198,6 +164,40 @@ john.perona
 
 
 5184
+
+AppBookmarkXmlSerializer.cs
+file
+
+
+
+
+2011-01-20T12:42:42.792621Z
+ff96d2e55b05ad1433b03259f23f0de3
+2009-07-15T18:59:31.171478Z
+45
+john.perona
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1815
 
 CorrelatedResSyncStoreProvider.cs
 file

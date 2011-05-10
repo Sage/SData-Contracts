@@ -907,23 +907,6 @@
       </td>
 </tr>
 <tr>
-<td><a href="#financialPeriod--type">financialPeriod</a></td>
-<td>financialPeriods</td>
-<td>may</td>
-<td>true 
-      </td>
-<td> 
-      </td>
-<td> 
-      </td>
-<td> 
-      </td>
-<td> 
-      </td>
-<td> 
-      </td>
-</tr>
-<tr>
 <td><a href="#computePrice--type">computePrice</a></td>
 <td></td>
 <td></td>
@@ -1012,7 +995,7 @@
 </tr>
 <tr>
 <td>companyPersonFlag</td>
-<td>normalizedString</td>
+<td><a href="#tradingAccountPersonFlag--enum">tradingAccountPersonFlag</a></td>
 <td>TradingAccount Company Person Flag</td>
 <td>
             
@@ -1576,7 +1559,7 @@
 <td>normalizedString</td>
 <td>TradingAccount Tax Reference</td>
 <td>
-            X
+            
           </td>
 <td>
             X
@@ -3241,7 +3224,7 @@
 </tr>
 <tr>
 <td>gender</td>
-<td>normalizedString</td>
+<td><a href="#contactGender--enum">contactGender</a></td>
 <td>Contact Gender</td>
 <td>
             
@@ -3258,7 +3241,7 @@
 <td> 
       </td>
 <td>
-            The gender of the Contact (e.g. Male, Female, Not Specified).
+            The gender of the Contact (e.g. Male, Female, Unknown).
            
       </td>
 </tr>
@@ -3602,7 +3585,8 @@
 <td> 
       </td>
 <td>
-            Language used (spoken) by the Contact (e.g. EN-GB). ISO 639-1
+            Language used (spoken) by the Contact in ISO 639-1 format
+            e.g. en for English, fr for French, de for German, etc.
            
       </td>
 </tr>
@@ -5130,7 +5114,7 @@
 <td>
              
           </td>
-<td>association 
+<td>child 
       </td>
 <td>
             Link to Postal Address(es) associated with the Sales Order. See
@@ -7687,7 +7671,7 @@
 <td>
              
           </td>
-<td>association 
+<td>child 
       </td>
 <td>
             Link to Postal Address(es) associated with the Sales Order Line (ship
@@ -8731,7 +8715,7 @@
 <td>
              
           </td>
-<td>association 
+<td>child 
       </td>
 <td>
             Link to Postal Address(es) associated with the Sales Quotation. See
@@ -10496,7 +10480,7 @@
 <td>
              
           </td>
-<td>association 
+<td>child 
       </td>
 <td>
             Link to Postal Address(es) associated with the Sales Quotation Line
@@ -17143,7 +17127,7 @@
 <td>
              
           </td>
-<td>association 
+<td>child 
       </td>
 <td>
             Link to Postal Address(es) associated with the Sales Invoice. See
@@ -20438,7 +20422,7 @@
 <td>
              
           </td>
-<td>association 
+<td>child 
       </td>
 <td>
             Link to Postal Address(es) associated with the Sales Credit. See
@@ -23607,7 +23591,7 @@
 <td>
              
           </td>
-<td>association 
+<td>child 
       </td>
 <td>
             Link to Postal Address(es) associated with the Sales Return. See
@@ -32818,7 +32802,7 @@
 <td>
              
           </td>
-<td>association 
+<td>child 
       </td>
 <td>
             Link to Postal Address(es) associated with the purchase order. See
@@ -36103,7 +36087,7 @@
 <td>
              
           </td>
-<td>association 
+<td>child 
       </td>
 <td>
             Link to Postal Address(es) associated with the Purchase Requisition.
@@ -38524,7 +38508,7 @@
 <td>
              
           </td>
-<td>association 
+<td>child 
       </td>
 <td>
             Link to Postal Address(es) associated with the purchase Invoice. See
@@ -41611,7 +41595,7 @@
 <td>
              
           </td>
-<td>association 
+<td>child 
       </td>
 <td>
             Link to Postal Address(es) associated with the Purchase Credit. See
@@ -44638,7 +44622,7 @@
 <td>
              
           </td>
-<td>association 
+<td>child 
       </td>
 <td>
             Link to Postal Address(es) associated with the purchase return. See
@@ -51601,6 +51585,52 @@
       </td>
 </tr>
 <tr>
+<td>reference2</td>
+<td>normalizedString</td>
+<td>ReceiptLine Reference2</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Additional reference for the Receipt Line (e.g. check or BACS number).
+           
+      </td>
+</tr>
+<tr>
+<td>number</td>
+<td>decimal</td>
+<td>ReceiptLine Number</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The number of the Receipt Line. For sequencing and ordering of lines.
+           
+      </td>
+</tr>
+<tr>
 <td>date</td>
 <td>date</td>
 <td>ReceiptLine Date</td>
@@ -53530,6 +53560,52 @@
       </td>
 </tr>
 <tr>
+<td>reference2</td>
+<td>normalizedString</td>
+<td>PaymentLine Reference2</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Additional reference for the Payment Line (e.g. check or BACS number).
+           
+      </td>
+</tr>
+<tr>
+<td>number</td>
+<td>decimal</td>
+<td>PaymentLine Number</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The number of the Payment Line. For sequencing and ordering of lines.
+           
+      </td>
+</tr>
+<tr>
 <td>date</td>
 <td>date</td>
 <td>PaymentLine Date</td>
@@ -54791,7 +54867,7 @@
 <td>
              
           </td>
-<td>association 
+<td>child 
       </td>
 <td>
             Address of the Project. See PostalAddress definition.
@@ -55100,6 +55176,29 @@
 <td> 
       </td>
 <td>Additional reference for the Project Line. 
+      </td>
+</tr>
+<tr>
+<td>number</td>
+<td>decimal</td>
+<td>ProjectLine Number</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The number of the Project Line. For sequencing and ordering of lines.
+           
       </td>
 </tr>
 <tr>
@@ -59898,301 +59997,6 @@
 </tr>
 </table>
 </div>
-<hr><a name="financialPeriod--type"></a><div style="float: right; clear: none;"><a href="#_top">Top</a>  
-    </div>
-<div id="bodyContainer">
-<p></p>
-<h1>
-        Resource financialPeriod</h1>
-<p></p>
-<table class="greyBorder" print-width="100%">
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Label</th>
-<th>Unique</th>
-<th>Nillable</th>
-<th>Extension</th>
-<th>Mandatory</th>
-<th>Relationship</th>
-<th>Documentation</th>
-</tr>
-<tr>
-<td>active</td>
-<td>boolean</td>
-<td>Financial Period Active Flag</td>
-<td>
-            
-          </td>
-<td>
-             
-          </td>
-<td>
-             
-          </td>
-<td>
-             
-          </td>
-<td> 
-      </td>
-<td>
-            Flag to indicate if the Financial Period is an active one. Default
-            = True
-           
-      </td>
-</tr>
-<tr>
-<td>reference</td>
-<td>normalizedString</td>
-<td>Financial Period Reference</td>
-<td>
-            X
-          </td>
-<td>
-             
-          </td>
-<td>
-             
-          </td>
-<td>
-             
-          </td>
-<td> 
-      </td>
-<td>Reference for the Financial Period. 
-      </td>
-</tr>
-<tr>
-<td>year</td>
-<td>normalizedString</td>
-<td>Financial Period Year</td>
-<td>
-            
-          </td>
-<td>
-             
-          </td>
-<td>
-             
-          </td>
-<td>
-             
-          </td>
-<td> 
-      </td>
-<td>Financial Period Year (e.g. 2008) 
-      </td>
-</tr>
-<tr>
-<td>quarterNumber</td>
-<td>decimal</td>
-<td>Financial Period Quarter Number</td>
-<td>
-            
-          </td>
-<td>
-            X
-          </td>
-<td>
-             
-          </td>
-<td>
-             
-          </td>
-<td> 
-      </td>
-<td>
-            Financial Period Quarter expressed as a number (e.g. 3)
-           
-      </td>
-</tr>
-<tr>
-<td>quarterText</td>
-<td>normalizedString</td>
-<td>Financial Period Quarter Text</td>
-<td>
-            
-          </td>
-<td>
-            X
-          </td>
-<td>
-             
-          </td>
-<td>
-             
-          </td>
-<td> 
-      </td>
-<td>
-            Financial Period Quarter expressed as text (e.g. Q3)
-           
-      </td>
-</tr>
-<tr>
-<td>monthNumber</td>
-<td>decimal</td>
-<td>Financial Period Month Number</td>
-<td>
-            
-          </td>
-<td>
-            X
-          </td>
-<td>
-             
-          </td>
-<td>
-             
-          </td>
-<td> 
-      </td>
-<td>
-            Financial Period Month expressed as a number (e.g. 1 to 12, or 1 - 13).
-           
-      </td>
-</tr>
-<tr>
-<td>monthText</td>
-<td>normalizedString</td>
-<td>Financial Period Month Text</td>
-<td>
-            
-          </td>
-<td>
-            X
-          </td>
-<td>
-             
-          </td>
-<td>
-             
-          </td>
-<td> 
-      </td>
-<td>
-            Financial Period Month expressed as text (e.g. January or Period 1).
-           
-      </td>
-</tr>
-<tr>
-<td>weekNumber</td>
-<td>decimal</td>
-<td>Financial Period Week Number</td>
-<td>
-            
-          </td>
-<td>
-            X
-          </td>
-<td>
-             
-          </td>
-<td>
-             
-          </td>
-<td> 
-      </td>
-<td>
-            Financial Period week expressed as a number (e.g. 26).
-           
-      </td>
-</tr>
-<tr>
-<td>weekText</td>
-<td>normalizedString</td>
-<td>Financial Period Week Text</td>
-<td>
-            
-          </td>
-<td>
-            X
-          </td>
-<td>
-             
-          </td>
-<td>
-             
-          </td>
-<td> 
-      </td>
-<td>
-            Financial Period week expressed as text (e.g. Week 26).
-           
-      </td>
-</tr>
-<tr>
-<td>startDate</td>
-<td>date</td>
-<td>Financial Period Start Date</td>
-<td>
-            
-          </td>
-<td>
-            X
-          </td>
-<td>
-             
-          </td>
-<td>
-             
-          </td>
-<td> 
-      </td>
-<td>
-            Start date of the Financial Period entry (e.g. if Year is 2008 and
-            Quarter is Q1 and Month is January then this would be 01/01/2008)
-           
-      </td>
-</tr>
-<tr>
-<td>endDate</td>
-<td>date</td>
-<td>Financial Period End Date</td>
-<td>
-            
-          </td>
-<td>
-            X
-          </td>
-<td>
-             
-          </td>
-<td>
-             
-          </td>
-<td> 
-      </td>
-<td>
-            End date of the Financial Period entry (e.g. if Year is 2008 and
-            Quarter is Q1 and Month is January then this would be 31/01/2008)
-           
-      </td>
-</tr>
-<tr>
-<td>notes</td>
-<td><a href="#sc:note--type">sc:note</a>*
-          </td>
-<td>Financial Period Note</td>
-<td>
-            
-          </td>
-<td>
-            X
-          </td>
-<td>
-             
-          </td>
-<td>
-             
-          </td>
-<td>child 
-      </td>
-<td>Notes associated with a Financial Period. 
-      </td>
-</tr>
-</table>
-</div>
 <hr><a name="computePrice--type"></a><div style="float: right; clear: none;"><a href="#_top">Top</a>  
     </div>
 <div id="bodyContainer">
@@ -62222,6 +62026,32 @@
       </td>
 </tr>
 <tr>
+<td>doNotChangePrice</td>
+<td>boolean</td>
+<td>Do Not Change Price</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Pricing Document Line Do Not Change Price Flag. Flag to indicate if the pricing request should change the price.
+            True means the user is requesting that the pricing request does not change the price.
+            False means the user wants the pricing request to change the price if necessary.
+            Default = False (price service can change Price).
+           
+      </td>
+</tr>
+<tr>
 <td>discountType</td>
 <td><a href="#discountType--enum">discountType</a></td>
 <td>Discount Type</td>
@@ -62591,6 +62421,52 @@
       </td>
 </tr>
 <tr>
+<td>reference2</td>
+<td>normalizedString</td>
+<td>Reference2</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Pricing Reference 2. Any additional reference returned by the pricing request.
+           
+      </td>
+</tr>
+<tr>
+<td>number</td>
+<td>decimal</td>
+<td>Number</td>
+<td>
+            
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Pricing Document Line Number. The number of the line. For sequencing and ordering of lines.
+           
+      </td>
+</tr>
+<tr>
 <td>priceChangeStatus</td>
 <td><a href="#priceChangeStatusType--enum">priceChangeStatusType</a></td>
 <td>Price Change Status</td>
@@ -62727,6 +62603,25 @@
 </tr>
 <tr>
 <td>Balance Forward</td>
+</tr>
+<tr>
+<td>Unknown</td>
+</tr>
+</table>
+</div>
+<hr>
+<div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p><a name="contactGender--enum"></a><h1>
+        Enumeration contactGender</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<td>Male</td>
+</tr>
+<tr>
+<td>Female</td>
 </tr>
 <tr>
 <td>Unknown</td>
@@ -63719,6 +63614,22 @@
 </tr>
 <tr>
 <td>Unknown</td>
+</tr>
+</table>
+</div>
+<hr>
+<div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p><a name="tradingAccountPersonFlag--enum"></a><h1>
+        Enumeration tradingAccountPersonFlag</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<td>Company</td>
+</tr>
+<tr>
+<td>Person</td>
 </tr>
 </table>
 </div>

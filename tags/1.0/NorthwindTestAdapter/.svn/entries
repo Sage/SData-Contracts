@@ -1,7 +1,7 @@
 10
 
 dir
-185
+186
 http://gforge.sageinternal.com/svn/gcrmcontract/tags/1.0/NorthwindTestAdapter
 http://gforge.sageinternal.com/svn/gcrmcontract
 
@@ -38,13 +38,13 @@ dir
 Sage.Integration.Northwind.Sync
 dir
 
-SimpleSyncStarter
+Sage.Integration.Northwind.Etag
 dir
 
 Sage.Integration.Northwind.Adapter
 dir
 
-Sage.Integration.Northwind.Etag
+SimpleSyncStarter
 dir
 
 Sage.Sis.Sdata.Etag.Crc
@@ -57,9 +57,6 @@ Sage.Integration.Northwind.Common
 dir
 
 Sage.Sis.Sdata.Sync.Storage.ClientSample
-dir
-
-Sage.Sis.Sdata.Sync.Context
 dir
 
 SageCrmNorthwind.msi
@@ -95,6 +92,9 @@ has-props
 
 
 2611200
+
+Sage.Sis.Sdata.Sync.Context
+dir
 
 Sage.Sis.Sdata.Sync.Storage.Jet
 dir
