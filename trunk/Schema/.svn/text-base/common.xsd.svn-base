@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="../Tools/XsdToHtml.xslt"?>
-<xs:schema xmlns:sme="http://schemas.sage.com/sdata/sme/2007" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.sage.com/sc/2009" targetNamespace="http://schemas.sage.com/sc/2009" elementFormDefault="qualified" id="sc" version="1.1.0">
+<xs:schema xmlns:sme="http://schemas.sage.com/sdata/sme/2007" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.sage.com/sc/2009" targetNamespace="http://schemas.sage.com/sc/2009" elementFormDefault="qualified" id="sc" version="1.1.1">
   <xs:element name="operatingCompany" type="operatingCompany--type" sme:role="resourceKind" sme:pluralName="operatingCompanies" sme:compliance="must" sme:hasUuid="true" sme:canGet="true" />
   <xs:complexType name="operatingCompany--type">
     <xs:all>
@@ -64,7 +64,7 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="postalAddresses" type="postalAddress--list" minOccurs="0" sme:label="Operating Company Postal Addresses" sme:isCollection="true" sme:relationship="association">
+      <xs:element name="postalAddresses" type="postalAddress--list" minOccurs="0" sme:label="Operating Company Postal Addresses" sme:isCollection="true" sme:relationship="child">
         <xs:annotation>
           <xs:documentation>
             Postal address(es) associated with the Operating Company. See PostalAddress definition.
@@ -956,7 +956,7 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="reference" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="FinancialAccountGroup Reference" sme:isUniqueKey="true">
+      <xs:element name="reference" type="xs:normalizedString" minOccurs="0" sme:label="FinancialAccountGroup Reference" sme:isUniqueKey="true">
         <xs:annotation>
           <xs:documentation>Reference for the Financial Account Group.</xs:documentation>
         </xs:annotation>

@@ -1,14 +1,14 @@
 10
 
 dir
-186
+194
 http://gforge.sageinternal.com/svn/gcrmcontract/trunk/Schema
 http://gforge.sageinternal.com/svn/gcrmcontract
 
 
 
-2011-05-10T14:43:46.494983Z
-186
+2011-05-16T13:40:29.827022Z
+194
 craigpearson004
 
 
@@ -66,10 +66,10 @@ file
 
 
 
-2011-05-09T08:01:00.820593Z
-24d86ee38067ffa85c0993b29326664f
-2011-04-15T10:40:06.185580Z
-179
+2011-05-16T13:40:40.454078Z
+cb106397cb9c557a6e4c80d45d6c7d61
+2011-05-16T03:24:20.776280Z
+192
 nbaulch
 
 
@@ -92,7 +92,7 @@ nbaulch
 
 
 
-99987
+99965
 
 crmErp.xsd
 file
@@ -100,10 +100,10 @@ file
 
 
 
-2011-05-09T08:01:00.789658Z
-6d90c9099c22447f398e68c942aa7e5e
-2011-04-18T06:24:04.738377Z
-185
+2011-05-16T13:40:40.438478Z
+d350aaedb6c175f12359d56dbf660f0d
+2011-05-16T03:24:20.776280Z
+192
 nbaulch
 
 
@@ -126,7 +126,7 @@ nbaulch
 
 
 
-1109431
+1116759
 
 sdatasync.xsd
 file
@@ -332,6 +332,40 @@ craigpearson004
 
 1220449
 
+MobileManifest.xsd
+file
+
+
+
+
+2011-05-16T11:43:57.763200Z
+0775c3657b053fac350868c3fb39b78d
+2011-05-16T13:40:29.827022Z
+194
+craigpearson004
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+67688
+
 common.doc
 file
 
@@ -468,6 +502,40 @@ craigpearson004
 
 594999
 
+mobileManifest.html
+file
+
+
+
+
+2011-05-16T11:53:16.877529Z
+39f8034291c5a6a202f3f62c487007c5
+2011-05-16T13:40:29.827022Z
+194
+craigpearson004
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+105457
+
 hrmErp.doc
 file
 
@@ -501,6 +569,40 @@ has-props
 
 
 3238912
+
+mobileManifest.doc
+file
+
+
+
+
+2011-05-16T13:10:34.148000Z
+9bc57c66703ffdefae1b86c885124235
+2011-05-16T13:40:29.827022Z
+194
+craigpearson004
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+600064
 
 payErp.html
 file

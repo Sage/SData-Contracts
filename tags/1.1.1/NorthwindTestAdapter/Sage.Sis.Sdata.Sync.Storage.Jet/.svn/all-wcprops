@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/gcrmcontract/!svn/ver/193/tags/1.1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet
+END
+Settings.settings
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/gcrmcontract/!svn/ver/193/tags/1.1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet/Settings.settings
+END
+Settings.Designer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/gcrmcontract/!svn/ver/193/tags/1.1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet/Settings.Designer.cs
+END
+TableAdapterFactory.cs
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/gcrmcontract/!svn/ver/193/tags/1.1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet/TableAdapterFactory.cs
+END
+SyncDigestInfoStoreProvider.cs
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/gcrmcontract/!svn/ver/193/tags/1.1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet/SyncDigestInfoStoreProvider.cs
+END
+app.config
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/gcrmcontract/!svn/ver/193/tags/1.1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet/app.config
+END
+StoreEnvironment.cs
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/gcrmcontract/!svn/ver/193/tags/1.1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet/StoreEnvironment.cs
+END
+AppBookmarkXmlSerializer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/gcrmcontract/!svn/ver/193/tags/1.1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet/AppBookmarkXmlSerializer.cs
+END
+Sage.Sis.Sdata.Sync.Storage.Jet.csproj
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/gcrmcontract/!svn/ver/193/tags/1.1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet/Sage.Sis.Sdata.Sync.Storage.Jet.csproj
+END
+SyncResultsInfoStoreProvider.cs
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/gcrmcontract/!svn/ver/193/tags/1.1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet/SyncResultsInfoStoreProvider.cs
+END
+CorrelatedResSyncStoreProvider.cs
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/gcrmcontract/!svn/ver/193/tags/1.1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet/CorrelatedResSyncStoreProvider.cs
+END
+Int32TickProvider.cs
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/gcrmcontract/!svn/ver/193/tags/1.1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet/Int32TickProvider.cs
+END
+IAppBookmarkSerializer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/gcrmcontract/!svn/ver/193/tags/1.1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet/IAppBookmarkSerializer.cs
+END
+CorrelatedResSyncInfoEnumerator.cs
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/gcrmcontract/!svn/ver/193/tags/1.1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet/CorrelatedResSyncInfoEnumerator.cs
+END
+AppBookmarkInfoStoreProvider.cs
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/gcrmcontract/!svn/ver/193/tags/1.1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet/AppBookmarkInfoStoreProvider.cs
+END

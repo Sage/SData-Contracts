@@ -1,15 +1,15 @@
 10
 
 dir
-186
+194
 http://gforge.sageinternal.com/svn/gcrmcontract/tags
 http://gforge.sageinternal.com/svn/gcrmcontract
 
 
 
-2011-02-15T13:23:31.601783Z
-168
-craigpearson004
+2011-05-16T03:26:08.317975Z
+193
+nbaulch
 
 
 
@@ -30,5 +30,8 @@ craigpearson004
 dir
 
 1.0
+dir
+
+1.1.1
 dir
 

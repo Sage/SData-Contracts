@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="../Tools/XsdToHtml.xslt"?>
-<xs:schema xmlns:sc="http://schemas.sage.com/sc/2009" xmlns="http://schemas.sage.com/crmErp/2008" xmlns:sme="http://schemas.sage.com/sdata/sme/2007" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.sage.com/crmErp/2008" elementFormDefault="qualified" id="crmErp" version="1.1.0">
+<xs:schema xmlns:sc="http://schemas.sage.com/sc/2009" xmlns="http://schemas.sage.com/crmErp/2008" xmlns:sme="http://schemas.sage.com/sdata/sme/2007" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.sage.com/crmErp/2008" elementFormDefault="qualified" id="crmErp" version="1.1.1">
   <xs:import namespace="http://schemas.sage.com/sc/2009" schemaLocation="common.xsd"/>
   <xs:element name="tradingAccount" type="tradingAccount--type" sme:role="resourceKind" sme:pluralName="tradingAccounts" sme:compliance="must" sme:canGet="true" sme:canPut="true" sme:canPost="true" sme:canDelete="true" sme:hasUuid="true" sme:isSyncSource="true" sme:isSyncTarget="true" sme:syncOrder="50"/>
   <xs:complexType name="tradingAccount--type">
@@ -754,7 +754,7 @@
       <xs:element name="gender" type="contactGender--enum" nillable="true" minOccurs="0" sme:label="Contact Gender">
         <xs:annotation>
           <xs:documentation>
-            The gender of the Contact (e.g. Male, Female, Unknown).
+            The gender of the Contact (e.g. Male, Female, Not Specified).
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -2541,6 +2541,76 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element name="carrierCompany" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="SalesXXX Carrier Company">
+        <xs:annotation>
+          <xs:documentation>
+            Link to the Company that will be the carrier / freight forwarder/
+            deliverer of the Sales Quotation. See Company definition. Carriers are not used by all
+            applications.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="carrierTradingAccounts" type="tradingAccount--list" nillable="true" minOccurs="0" sme:label="SalesXXX Carrier TradingAccounts" sme:relationship="association" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>
+            Link to the Trading Account associated with the Supplier that will be
+            the carrier / freight forwarder / deliverer of the Sales Quotation. See TradingAccount
+            definition. Carriers are not used by all application.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="carrierNetPrice" type="xs:decimal" nillable="true" minOccurs="0" sme:label="SalesXXX Carrier Net Price">
+        <xs:annotation>
+          <xs:documentation>
+            The price of Delivery/carriage. In Quotation currency.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="carrierTaxPrice" type="xs:decimal" nillable="true" minOccurs="0" sme:label="SalesXXX Carrier Tax Price">
+        <xs:annotation>
+          <xs:documentation>
+            The tax on Delivery/carriage. In Quotation currency.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="carrierTotalPrice" type="xs:decimal" nillable="true" minOccurs="0" sme:label="SalesXXX Carrier Gross Price">
+        <xs:annotation>
+          <xs:documentation>
+            The total price of Delivery/carriage (net + tax). In Quotation currency.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="carrierSalesInvoices" type="salesInvoice--list" nillable="true" minOccurs="0" sme:label="SalesXXX Carrier SalesInvoices" sme:relationship="association" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>
+            A link to the Sales Invoice generated to recharge the carriage to the
+            Customer. See SalesInvoice definition.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="carrierPurchaseInvoices" type="purchaseInvoice--list" nillable="true" minOccurs="0" sme:label="SalesXXX Carrier PurchaseInvoices" sme:relationship="association" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>
+            A link to the purchase Invoice charged by the carrier Company for the
+            Delivery to the Customer. See PurchaseInvoice definition.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="carrierTaxCodes" type="taxCode--list" nillable="true" minOccurs="0" sme:label="SalesXXX Carrier Tax Code" sme:relationship="association" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>
+            Tax code governing the tax regime applicable to the carriage on this
+            Sales Quotation. See TaxCode definition.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="carrierReference" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="SalesXXX Carrier Reference">
+        <xs:annotation>
+          <xs:documentation>
+            Reference number as used by the carrier during Delivery, e.g. for Delivery tracking.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
       <xs:element name="currency" type="xs:normalizedString" minOccurs="0" sme:label="SalesQuotation Currency">
         <xs:annotation>
           <xs:documentation>
@@ -3036,6 +3106,67 @@
           <xs:documentation>
             Date the Sales Quotation Line is due by the Customer. Delivery date
             may be different to the Customer due date.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="carrierTradingAccount" type="tradingAccount--type" nillable="true" minOccurs="0" sme:label="SalesXXXLine Carrier TradingAccount" sme:relationship="reference" sme:isCollection="false">
+        <xs:annotation>
+          <xs:documentation>
+            Link to the Trading Account associated with the Supplier that will be
+            the carrier / freight forwarder / deliverer of the Sales Quotation Line. See
+            TradingAccount definition. Carriers are not used by all application.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="carrierNetPrice" type="xs:decimal" nillable="true" minOccurs="0" sme:label="SalesXXXLine Carrier Net Price">
+        <xs:annotation>
+          <xs:documentation>
+            The price of Delivery/carriage. In Quotation currency.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="carrierTaxPrice" type="xs:decimal" nillable="true" minOccurs="0" sme:label="SalesXXXLine Carrier Tax Price">
+        <xs:annotation>
+          <xs:documentation>
+            The tax on Delivery/carriage. In Quotation currency.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="carrierTotalPrice" type="xs:decimal" nillable="true" minOccurs="0" sme:label="SalesXXXLine Carrier Gross Price">
+        <xs:annotation>
+          <xs:documentation>
+            The total price of Delivery/carriage (net + tax). In Quotation currency.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="carrierSalesInvoiceLine" type="salesInvoiceLine--type" nillable="true" minOccurs="0" sme:label="SalesXXXLine Carrier SalesInvoiceLine" sme:relationship="reference" sme:isCollection="false">
+        <xs:annotation>
+          <xs:documentation>
+            A link to the Sales Invoice Line generated to recharge the carriage to the
+            Customer. See SalesInvoiceLine definition.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="carrierPurchaseInvoiceLine" type="purchaseInvoiceLine--type" nillable="true" minOccurs="0" sme:label="SalesXXXLine Carrier PurchaseInvoiceLine" sme:relationship="reference" sme:isCollection="false">
+        <xs:annotation>
+          <xs:documentation>
+            A link to the purchase Invoice Line charged by the carrier Company for the
+            Delivery to the Customer. See PurchaseInvoiceLine definition.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="carrierTaxCodes" type="taxCode--list" nillable="true" minOccurs="0" sme:label="SalesXXXLine Carrier Tax Code" sme:relationship="association" sme:isCollection="true">
+        <xs:annotation>
+          <xs:documentation>
+            Tax code governing the tax regime applicable to the carriage on this
+            Sales Quotation Line. See TaxCode definition.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="carrierReference" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="SalesXXXLine Carrier Reference">
+        <xs:annotation>
+          <xs:documentation>
+            Reference number as used by the carrier during Delivery, e.g. for Delivery tracking.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -4181,7 +4312,7 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="postalAddress" type="sc:postalAddress--type" nillable="true" minOccurs="0" sme:label="Price PostalAddress" sme:relationship="reference" sme:isCollection="false">
+      <xs:element name="postalAddress" type="sc:postalAddress--type" nillable="true" minOccurs="0" sme:label="Price PostalAddress" sme:relationship="child" sme:isCollection="false">
         <xs:annotation>
           <xs:documentation>
             The Postal Address of the Customer (or Supplier) to which this Price
@@ -18673,7 +18804,7 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="reference" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="Variant Reference" sme:isUniqueKey="true">
+      <xs:element name="reference" type="xs:normalizedString" minOccurs="0" sme:label="Variant Reference" sme:isUniqueKey="true">
         <xs:annotation>
           <xs:documentation>Reference associated with the Variant.</xs:documentation>
         </xs:annotation>
@@ -19349,7 +19480,7 @@
     <xs:restriction base="xs:string">
       <xs:enumeration value="Male"/>
       <xs:enumeration value="Female"/>
-      <xs:enumeration value="Unknown"/>
+      <xs:enumeration value="Not Specified"/>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="contactCompanyContext--enum">
@@ -19826,7 +19957,7 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="shippingAddresses" type="sc:postalAddress--list" minOccurs="0" sme:isCollection="true" sme:relationship="association" sme:label="Pricing Shipping Addresses">
+      <xs:element name="shippingAddresses" type="sc:postalAddress--list" minOccurs="0" sme:isCollection="true" sme:relationship="child" sme:label="Pricing Shipping Addresses">
         <xs:annotation>
           <xs:documentation>
             Postal (shipping) Address(es) associated with the document.
@@ -20084,7 +20215,7 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="shippingAddresses" type="sc:postalAddress--list" minOccurs="0" sme:isCollection="true" sme:relationship="association" sme:label="Pricing Shipping Addresses">
+      <xs:element name="shippingAddresses" type="sc:postalAddress--list" minOccurs="0" sme:isCollection="true" sme:relationship="child" sme:label="Pricing Shipping Addresses">
         <xs:annotation>
           <xs:documentation>
             Postal (shipping) Address(es) associated with the document.
