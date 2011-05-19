@@ -1,7 +1,7 @@
 10
 
 dir
-194
+195
 http://gforge.sageinternal.com/svn/gcrmcontract/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Application/Entities/Product/DataSets
 http://gforge.sageinternal.com/svn/gcrmcontract
 
@@ -196,40 +196,6 @@ john.perona
 
 381
 
-Category.xss
-file
-
-
-
-
-2011-02-14T09:11:35.536349Z
-8540be65fda476725c8cb199e9a3a900
-2009-07-15T18:59:31.171478Z
-45
-john.perona
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1061
-
 AllProducts.xsd
 file
 
@@ -263,6 +229,40 @@ john.perona
 
 
 5587
+
+Category.xss
+file
+
+
+
+
+2011-02-14T09:11:35.536349Z
+8540be65fda476725c8cb199e9a3a900
+2009-07-15T18:59:31.171478Z
+45
+john.perona
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1061
 
 Product.xss
 file

@@ -8481,7 +8481,7 @@
           <xs:documentation>The Sales Order Delivery type.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="postalAddress" type="sc:postalAddress--type" nillable="true" minOccurs="0" sme:label="SalesOrderDelivery PostalAddress" sme:relationship="reference" sme:isCollection="false">
+      <xs:element name="postalAddress" type="sc:postalAddress--type" nillable="true" minOccurs="0" sme:label="SalesOrderDelivery PostalAddress" sme:relationship="child" sme:isCollection="false">
         <xs:annotation>
           <xs:documentation>
             Link to the actual Delivery (shipping) address for the Sales Order
@@ -9445,7 +9445,7 @@
           <xs:documentation>The Sales Return Delivery type.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="postalAddress" type="sc:postalAddress--type" nillable="true" minOccurs="0" sme:label="SalesReturnDelivery PostalAddress" sme:relationship="reference" sme:isCollection="false">
+      <xs:element name="postalAddress" type="sc:postalAddress--type" nillable="true" minOccurs="0" sme:label="SalesReturnDelivery PostalAddress" sme:relationship="child" sme:isCollection="false">
         <xs:annotation>
           <xs:documentation>
             Link to the actual Delivery (shipping) address for the Sales Return
@@ -15251,7 +15251,7 @@
           <xs:documentation>The Purchase Order Delivery type.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="postalAddress" type="sc:postalAddress--type" nillable="true" minOccurs="0" sme:label="PurchaseOrderDelivery PostalAddress" sme:relationship="reference" sme:isCollection="false">
+      <xs:element name="postalAddress" type="sc:postalAddress--type" nillable="true" minOccurs="0" sme:label="PurchaseOrderDelivery PostalAddress" sme:relationship="child" sme:isCollection="false">
         <xs:annotation>
           <xs:documentation>
             Link to the actual Delivery (shipping) address for the Purchase Order
@@ -15768,7 +15768,7 @@
           <xs:documentation>The Purchase Return Delivery type.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="postalAddress" type="sc:postalAddress--type" nillable="true" minOccurs="0" sme:label="PurchaseReturnDelivery PostalAddress" sme:relationship="reference" sme:isCollection="false">
+      <xs:element name="postalAddress" type="sc:postalAddress--type" nillable="true" minOccurs="0" sme:label="PurchaseReturnDelivery PostalAddress" sme:relationship="child" sme:isCollection="false">
         <xs:annotation>
           <xs:documentation>
             Link to the actual Delivery (shipping) address for the Purchase Return
@@ -18067,7 +18067,7 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="postalAddress" type="sc:postalAddress--type" nillable="true" minOccurs="0" sme:label="BankAccount PostalAddress" sme:relationship="reference" sme:isCollection="false">
+      <xs:element name="postalAddress" type="sc:postalAddress--type" nillable="true" minOccurs="0" sme:label="BankAccount PostalAddress" sme:relationship="child" sme:isCollection="false">
         <xs:annotation>
           <xs:documentation>
             PostalAddress of the bank holding the Bank Account. See
@@ -18227,7 +18227,7 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="postalAddress" type="sc:postalAddress--type" nillable="true" minOccurs="0" sme:label="Location PostalAddress" sme:relationship="reference" sme:isCollection="false">
+      <xs:element name="postalAddress" type="sc:postalAddress--type" nillable="true" minOccurs="0" sme:label="Location PostalAddress" sme:relationship="child" sme:isCollection="false">
         <xs:annotation>
           <xs:documentation>
             Link to the Location address. See PostalAddress definition.
@@ -18685,7 +18685,7 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="postalAddress" type="sc:postalAddress--type" nillable="true" minOccurs="0" sme:label="SalesPerson PostalAddress" sme:relationship="reference" sme:isCollection="false">
+      <xs:element name="postalAddress" type="sc:postalAddress--type" nillable="true" minOccurs="0" sme:label="SalesPerson PostalAddress" sme:relationship="child" sme:isCollection="false">
         <xs:annotation>
           <xs:documentation>
             The Postal Address of the sales person. See PostalAddress

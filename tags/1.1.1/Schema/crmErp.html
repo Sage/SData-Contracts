@@ -3241,7 +3241,7 @@
 <td> 
       </td>
 <td>
-            The gender of the Contact (e.g. Male, Female, Unknown).
+            The gender of the Contact (e.g. Male, Female, Not Specified).
            
       </td>
 </tr>
@@ -8840,6 +8840,224 @@
       </td>
 </tr>
 <tr>
+<td>carrierCompany</td>
+<td>normalizedString</td>
+<td>SalesXXX Carrier Company</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Link to the Company that will be the carrier / freight forwarder/
+            deliverer of the Sales Quotation. See Company definition. Carriers are not used by all
+            applications.
+           
+      </td>
+</tr>
+<tr>
+<td>carrierTradingAccounts</td>
+<td><a href="#tradingAccount--type">tradingAccount</a>*
+          </td>
+<td>SalesXXX Carrier TradingAccounts</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>association 
+      </td>
+<td>
+            Link to the Trading Account associated with the Supplier that will be
+            the carrier / freight forwarder / deliverer of the Sales Quotation. See TradingAccount
+            definition. Carriers are not used by all application.
+           
+      </td>
+</tr>
+<tr>
+<td>carrierNetPrice</td>
+<td>decimal</td>
+<td>SalesXXX Carrier Net Price</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The price of Delivery/carriage. In Quotation currency.
+           
+      </td>
+</tr>
+<tr>
+<td>carrierTaxPrice</td>
+<td>decimal</td>
+<td>SalesXXX Carrier Tax Price</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The tax on Delivery/carriage. In Quotation currency.
+           
+      </td>
+</tr>
+<tr>
+<td>carrierTotalPrice</td>
+<td>decimal</td>
+<td>SalesXXX Carrier Gross Price</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The total price of Delivery/carriage (net + tax). In Quotation currency.
+           
+      </td>
+</tr>
+<tr>
+<td>carrierSalesInvoices</td>
+<td><a href="#salesInvoice--type">salesInvoice</a>*
+          </td>
+<td>SalesXXX Carrier SalesInvoices</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>association 
+      </td>
+<td>
+            A link to the Sales Invoice generated to recharge the carriage to the
+            Customer. See SalesInvoice definition.
+           
+      </td>
+</tr>
+<tr>
+<td>carrierPurchaseInvoices</td>
+<td><a href="#purchaseInvoice--type">purchaseInvoice</a>*
+          </td>
+<td>SalesXXX Carrier PurchaseInvoices</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>association 
+      </td>
+<td>
+            A link to the purchase Invoice charged by the carrier Company for the
+            Delivery to the Customer. See PurchaseInvoice definition.
+           
+      </td>
+</tr>
+<tr>
+<td>carrierTaxCodes</td>
+<td><a href="#taxCode--type">taxCode</a>*
+          </td>
+<td>SalesXXX Carrier Tax Code</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>association 
+      </td>
+<td>
+            Tax code governing the tax regime applicable to the carriage on this
+            Sales Quotation. See TaxCode definition.
+           
+      </td>
+</tr>
+<tr>
+<td>carrierReference</td>
+<td>normalizedString</td>
+<td>SalesXXX Carrier Reference</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Reference number as used by the carrier during Delivery, e.g. for Delivery tracking.
+           
+      </td>
+</tr>
+<tr>
 <td>currency</td>
 <td>normalizedString</td>
 <td>SalesQuotation Currency</td>
@@ -10364,6 +10582,196 @@
 <td>
             Date the Sales Quotation Line is due by the Customer. Delivery date
             may be different to the Customer due date.
+           
+      </td>
+</tr>
+<tr>
+<td>carrierTradingAccount</td>
+<td><a href="#tradingAccount--type">tradingAccount</a></td>
+<td>SalesXXXLine Carrier TradingAccount</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>reference 
+      </td>
+<td>
+            Link to the Trading Account associated with the Supplier that will be
+            the carrier / freight forwarder / deliverer of the Sales Quotation Line. See
+            TradingAccount definition. Carriers are not used by all application.
+           
+      </td>
+</tr>
+<tr>
+<td>carrierNetPrice</td>
+<td>decimal</td>
+<td>SalesXXXLine Carrier Net Price</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The price of Delivery/carriage. In Quotation currency.
+           
+      </td>
+</tr>
+<tr>
+<td>carrierTaxPrice</td>
+<td>decimal</td>
+<td>SalesXXXLine Carrier Tax Price</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The tax on Delivery/carriage. In Quotation currency.
+           
+      </td>
+</tr>
+<tr>
+<td>carrierTotalPrice</td>
+<td>decimal</td>
+<td>SalesXXXLine Carrier Gross Price</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The total price of Delivery/carriage (net + tax). In Quotation currency.
+           
+      </td>
+</tr>
+<tr>
+<td>carrierSalesInvoiceLine</td>
+<td><a href="#salesInvoiceLine--type">salesInvoiceLine</a></td>
+<td>SalesXXXLine Carrier SalesInvoiceLine</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>reference 
+      </td>
+<td>
+            A link to the Sales Invoice Line generated to recharge the carriage to the
+            Customer. See SalesInvoiceLine definition.
+           
+      </td>
+</tr>
+<tr>
+<td>carrierPurchaseInvoiceLine</td>
+<td><a href="#purchaseInvoiceLine--type">purchaseInvoiceLine</a></td>
+<td>SalesXXXLine Carrier PurchaseInvoiceLine</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>reference 
+      </td>
+<td>
+            A link to the purchase Invoice Line charged by the carrier Company for the
+            Delivery to the Customer. See PurchaseInvoiceLine definition.
+           
+      </td>
+</tr>
+<tr>
+<td>carrierTaxCodes</td>
+<td><a href="#taxCode--type">taxCode</a>*
+          </td>
+<td>SalesXXXLine Carrier Tax Code</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>association 
+      </td>
+<td>
+            Tax code governing the tax regime applicable to the carriage on this
+            Sales Quotation Line. See TaxCode definition.
+           
+      </td>
+</tr>
+<tr>
+<td>carrierReference</td>
+<td>normalizedString</td>
+<td>SalesXXXLine Carrier Reference</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            Reference number as used by the carrier during Delivery, e.g. for Delivery tracking.
            
       </td>
 </tr>
@@ -13945,7 +14353,7 @@
 <td>
              
           </td>
-<td>reference 
+<td>child 
       </td>
 <td>
             The Postal Address of the Customer (or Supplier) to which this Price
@@ -26836,7 +27244,7 @@
 <td>
              
           </td>
-<td>reference 
+<td>child 
       </td>
 <td>
             Link to the actual Delivery (shipping) address for the Sales Order
@@ -29756,7 +30164,7 @@
 <td>
              
           </td>
-<td>reference 
+<td>child 
       </td>
 <td>
             Link to the actual Delivery (shipping) address for the Sales Return
@@ -47556,7 +47964,7 @@
 <td>
              
           </td>
-<td>reference 
+<td>child 
       </td>
 <td>
             Link to the actual Delivery (shipping) address for the Purchase Order
@@ -49088,7 +49496,7 @@
 <td>
              
           </td>
-<td>reference 
+<td>child 
       </td>
 <td>
             Link to the actual Delivery (shipping) address for the Purchase Return
@@ -56267,7 +56675,7 @@
 <td>
              
           </td>
-<td>reference 
+<td>child 
       </td>
 <td>
             PostalAddress of the bank holding the Bank Account. See
@@ -56792,7 +57200,7 @@
 <td>
              
           </td>
-<td>reference 
+<td>child 
       </td>
 <td>
             Link to the Location address. See PostalAddress definition.
@@ -58238,7 +58646,7 @@
 <td>
              
           </td>
-<td>reference 
+<td>child 
       </td>
 <td>
             The Postal Address of the sales person. See PostalAddress
@@ -58594,7 +59002,7 @@
             X
           </td>
 <td>
-            X
+             
           </td>
 <td>
              
@@ -60239,7 +60647,7 @@
 <td>
              
           </td>
-<td>association 
+<td>child 
       </td>
 <td>
             Postal (shipping) Address(es) associated with the document.
@@ -61094,7 +61502,7 @@
 <td>
              
           </td>
-<td>association 
+<td>child 
       </td>
 <td>
             Postal (shipping) Address(es) associated with the document.
@@ -62624,7 +63032,7 @@
 <td>Female</td>
 </tr>
 <tr>
-<td>Unknown</td>
+<td>Not Specified</td>
 </tr>
 </table>
 </div>

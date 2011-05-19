@@ -1,7 +1,7 @@
 10
 
 dir
-194
+195
 http://gforge.sageinternal.com/svn/gcrmcontract/tags/1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet/TableAdapters
 http://gforge.sageinternal.com/svn/gcrmcontract
 
@@ -94,40 +94,6 @@ john.perona
 
 974
 
-AppBookmarkTableAdapter.cs
-file
-
-
-
-
-2011-02-14T09:11:29.080704Z
-6897e4c05c4e546fc2953b19479798aa
-2009-07-15T18:59:31.171478Z
-45
-john.perona
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4244
-
 IResourceKindTableAdapter.cs
 file
 
@@ -161,6 +127,40 @@ john.perona
 
 
 584
+
+AppBookmarkTableAdapter.cs
+file
+
+
+
+
+2011-02-14T09:11:29.080704Z
+6897e4c05c4e546fc2953b19479798aa
+2009-07-15T18:59:31.171478Z
+45
+john.perona
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4244
 
 ISyncResultsTableAdapter.cs
 file
@@ -332,40 +332,6 @@ john.perona
 
 5423
 
-CachedResourceKindTableAdapter.cs
-file
-
-
-
-
-2011-02-14T09:11:29.399736Z
-64e6fb885d8b9bce258fc75085e797da
-2009-07-15T18:59:31.171478Z
-45
-john.perona
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2235
-
 ISyncDigestTableAdapter.cs
 file
 
@@ -399,6 +365,40 @@ john.perona
 
 
 915
+
+CachedResourceKindTableAdapter.cs
+file
+
+
+
+
+2011-02-14T09:11:29.399736Z
+64e6fb885d8b9bce258fc75085e797da
+2009-07-15T18:59:31.171478Z
+45
+john.perona
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2235
 
 ITableAdapter.cs
 file
