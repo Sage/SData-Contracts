@@ -1,15 +1,15 @@
 10
 
 dir
-195
+196
 http://gforge.sageinternal.com/svn/gcrmcontract/tags/1.1.1/Schema
 http://gforge.sageinternal.com/svn/gcrmcontract
 
 
 
-2011-05-17T15:51:36.763601Z
-195
-nbaulch
+2011-05-19T10:48:59.876310Z
+196
+craigpearson004
 
 
 
@@ -60,40 +60,6 @@ bjouhier
 
 14429
 
-common.xsd
-file
-
-
-
-
-2011-05-16T13:40:41.717678Z
-cb106397cb9c557a6e4c80d45d6c7d61
-2011-05-16T03:24:20.776280Z
-192
-nbaulch
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-99965
-
 crmErp.xsd
 file
 
@@ -127,6 +93,40 @@ nbaulch
 
 
 1116731
+
+common.xsd
+file
+
+
+
+
+2011-05-16T13:40:41.717678Z
+cb106397cb9c557a6e4c80d45d6c7d61
+2011-05-16T03:24:20.776280Z
+192
+nbaulch
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+99965
 
 sdatasync.xsd
 file
@@ -162,40 +162,6 @@ bjouhier
 
 1462
 
-sdatahttp.xsd
-file
-
-
-
-
-2011-05-16T13:40:41.780078Z
-f1f6fa64790ff285103b628bc95c3480
-2009-04-09T11:26:13.096884Z
-24
-bjouhier
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-934
-
 sdata.xsd
 file
 
@@ -229,6 +195,40 @@ bjouhier
 
 
 4103
+
+sdatahttp.xsd
+file
+
+
+
+
+2011-05-16T13:40:41.780078Z
+f1f6fa64790ff285103b628bc95c3480
+2009-04-09T11:26:13.096884Z
+24
+bjouhier
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+934
 
 hrmErp.xsd
 file
@@ -264,43 +264,9 @@ craigpearson004
 
 536486
 
-common.html
-file
-196
-
-
-
-2011-05-19T10:44:26.589847Z
-fd154817f79d3d588b0d211b008e56e8
-2011-05-19T10:48:59.876310Z
-196
-craigpearson004
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-113613
-
 crmErp.html
 file
-196
+
 
 
 
@@ -332,18 +298,17 @@ craigpearson004
 
 1228395
 
-common.doc
+common.html
 file
-196
 
 
 
-2011-05-19T10:45:43.243000Z
-33abf4e47a4da34c8b53ffa5ec8ab861
+
+2011-05-19T10:44:26.589847Z
+fd154817f79d3d588b0d211b008e56e8
 2011-05-19T10:48:59.876310Z
 196
 craigpearson004
-has-props
 
 
 
@@ -364,11 +329,12 @@ has-props
 
 
 
-543744
+
+113613
 
 crmErp.doc
 file
-196
+
 
 
 
@@ -399,6 +365,40 @@ has-props
 
 
 4675584
+
+common.doc
+file
+
+
+
+
+2011-05-19T10:45:43.243000Z
+33abf4e47a4da34c8b53ffa5ec8ab861
+2011-05-19T10:48:59.876310Z
+196
+craigpearson004
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+543744
 
 payErp.xsd
 file
