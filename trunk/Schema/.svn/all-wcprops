@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 43
-/svn/gcrmcontract/!svn/ver/196/trunk/Schema
+/svn/gcrmcontract/!svn/ver/197/trunk/Schema
 END
 sme.xsd
 K 25
@@ -19,7 +19,7 @@ common.xsd
 K 25
 svn:wc:ra_dav:version-url
 V 54
-/svn/gcrmcontract/!svn/ver/192/trunk/Schema/common.xsd
+/svn/gcrmcontract/!svn/ver/198/trunk/Schema/common.xsd
 END
 sdatasync.xsd
 K 25
@@ -61,7 +61,7 @@ common.html
 K 25
 svn:wc:ra_dav:version-url
 V 55
-/svn/gcrmcontract/!svn/ver/196/trunk/Schema/common.html
+/svn/gcrmcontract/!svn/ver/198/trunk/Schema/common.html
 END
 crmErp.doc
 K 25
@@ -73,7 +73,7 @@ common.doc
 K 25
 svn:wc:ra_dav:version-url
 V 54
-/svn/gcrmcontract/!svn/ver/196/trunk/Schema/common.doc
+/svn/gcrmcontract/!svn/ver/198/trunk/Schema/common.doc
 END
 payErp.xsd
 K 25

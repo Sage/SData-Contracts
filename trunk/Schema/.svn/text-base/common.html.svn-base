@@ -544,7 +544,7 @@
 <td>
              
           </td>
-<td>association 
+<td>child 
       </td>
 <td>
             Phone numbers associated with the Operating Company. See PhoneNumber definition.
@@ -1273,7 +1273,7 @@
 <td>normalizedString</td>
 <td>PhoneNumber URI</td>
 <td>
-            
+            X
           </td>
 <td>
              
@@ -3446,6 +3446,76 @@
 <td>Notes associated with a Financial Account Group. 
       </td>
 </tr>
+<tr>
+<td>accountGroupType</td>
+<td><a href="#financialAccountGroupType--enum">financialAccountGroupType</a></td>
+<td>Financial Account Group Type</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>
+            The Financial Account Group type applicable to this Financial Account Group, e.g. Layout, Category, Unknown, Other. Implementation teams should try and map to these where possible. However the list can be extended to add other account types. 
+      </td>
+</tr>
+<tr>
+<td>parentFinancialAccountGroup</td>
+<td><a href="#financialAccountGroup--type">financialAccountGroup</a></td>
+<td>Financial Account Group Parent Financial Account Group</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>parent 
+      </td>
+<td>
+            Link to a Financial Account Group which is the Parent of this Financial Account Group (e.g. Categories
+            Ranges, Layouts etc).
+           
+      </td>
+</tr>
+<tr>
+<td>childFinancialAccountGroups</td>
+<td><a href="#financialAccountGroup--type">financialAccountGroup</a>*
+          </td>
+<td>Financial Account Group Child Financial Account Groups</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td>child 
+      </td>
+<td>
+            Link to any Financial Account Groups that this Financial Account Group is the parent of.
+           
+      </td>
+</tr>
 </table>
 </div>
 <hr><a name="financialAccountHistory--type"></a><div style="float: right; clear: none;"><a href="#_top">Top</a>  
@@ -5306,6 +5376,34 @@
 <td>Notes associated with a Financial Period. 
       </td>
 </tr>
+<tr>
+<td>type</td>
+<td><a href="#financialPeriodType--enum">financialPeriodType</a></td>
+<td>Financial Period Type</td>
+<td>
+            
+          </td>
+<td>
+            X
+          </td>
+<td>
+             
+          </td>
+<td>
+             
+          </td>
+<td> 
+      </td>
+<td>Flag to indicate the type of financial period this entry relates to.  Allowable values are:
+					Year - this entry corresponds to a full year (e.g. 2008)
+					Quarter - this entry corresponds to a quarter within a year (e.g. Q1)
+					Period - this entry corresponds to a period within a year (e.g. 12)
+					Month - this entry corresonds to a month within a year (e.g. Jan)
+					Week - this entry corresponds to a week within a period/year (e.g. 52)
+					Day - this entry corresponds to an exact date within a week/period/year (e.g. 31/12/2008)
+					User Defined - this entry corrsponds to a user defined value, such as a date range that spans the normal calendar 
+      </td>
+</tr>
 </table>
 </div>
 <hr><a name="financialAccountBudgetType--type"></a><div style="float: right; clear: none;"><a href="#_top">Top</a>  
@@ -5977,6 +6075,59 @@
 </tr>
 <tr>
 <td>Closed</td>
+</tr>
+</table>
+</div>
+<hr>
+<div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p><a name="financialAccountGroupType--enum"></a><h1>
+        Enumeration financialAccountGroupType</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<td>Layout</td>
+</tr>
+<tr>
+<td>Category</td>
+</tr>
+<tr>
+<td>Unknown</td>
+</tr>
+<tr>
+<td>Other</td>
+</tr>
+</table>
+</div>
+<hr>
+<div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p><a name="financialPeriodType--enum"></a><h1>
+        Enumeration financialPeriodType</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<td>Year</td>
+</tr>
+<tr>
+<td>Quarter</td>
+</tr>
+<tr>
+<td>Period</td>
+</tr>
+<tr>
+<td>Month</td>
+</tr>
+<tr>
+<td>Week</td>
+</tr>
+<tr>
+<td>Day</td>
+</tr>
+<tr>
+<td>User Defined</td>
 </tr>
 </table>
 </div>
