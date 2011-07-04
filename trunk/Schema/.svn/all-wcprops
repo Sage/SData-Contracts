@@ -9,17 +9,17 @@ svn:wc:ra_dav:version-url
 V 51
 /svn/gcrmcontract/!svn/ver/160/trunk/Schema/sme.xsd
 END
-crmErp.xsd
-K 25
-svn:wc:ra_dav:version-url
-V 54
-/svn/gcrmcontract/!svn/ver/197/trunk/Schema/crmErp.xsd
-END
 common.xsd
 K 25
 svn:wc:ra_dav:version-url
 V 54
 /svn/gcrmcontract/!svn/ver/198/trunk/Schema/common.xsd
+END
+crmErp.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/gcrmcontract/!svn/ver/197/trunk/Schema/crmErp.xsd
 END
 sdatasync.xsd
 K 25
@@ -27,35 +27,23 @@ svn:wc:ra_dav:version-url
 V 57
 /svn/gcrmcontract/!svn/ver/169/trunk/Schema/sdatasync.xsd
 END
-sdata.xsd
-K 25
-svn:wc:ra_dav:version-url
-V 53
-/svn/gcrmcontract/!svn/ver/150/trunk/Schema/sdata.xsd
-END
 sdatahttp.xsd
 K 25
 svn:wc:ra_dav:version-url
 V 56
 /svn/gcrmcontract/!svn/ver/24/trunk/Schema/sdatahttp.xsd
 END
-hrmErp.xsd
+sdata.xsd
 K 25
 svn:wc:ra_dav:version-url
 V 53
-/svn/gcrmcontract/!svn/ver/78/trunk/Schema/hrmErp.xsd
+/svn/gcrmcontract/!svn/ver/150/trunk/Schema/sdata.xsd
 END
-MobileManifest.xsd
+hrmErp.xsd
 K 25
 svn:wc:ra_dav:version-url
-V 62
-/svn/gcrmcontract/!svn/ver/194/trunk/Schema/MobileManifest.xsd
-END
-crmErp.html
-K 25
-svn:wc:ra_dav:version-url
-V 55
-/svn/gcrmcontract/!svn/ver/197/trunk/Schema/crmErp.html
+V 54
+/svn/gcrmcontract/!svn/ver/199/trunk/Schema/hrmErp.xsd
 END
 common.html
 K 25
@@ -63,17 +51,29 @@ svn:wc:ra_dav:version-url
 V 55
 /svn/gcrmcontract/!svn/ver/198/trunk/Schema/common.html
 END
-crmErp.doc
+crmErp.html
 K 25
 svn:wc:ra_dav:version-url
-V 54
-/svn/gcrmcontract/!svn/ver/197/trunk/Schema/crmErp.doc
+V 55
+/svn/gcrmcontract/!svn/ver/197/trunk/Schema/crmErp.html
+END
+MobileManifest.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/gcrmcontract/!svn/ver/194/trunk/Schema/MobileManifest.xsd
 END
 common.doc
 K 25
 svn:wc:ra_dav:version-url
 V 54
 /svn/gcrmcontract/!svn/ver/198/trunk/Schema/common.doc
+END
+crmErp.doc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/gcrmcontract/!svn/ver/197/trunk/Schema/crmErp.doc
 END
 payErp.xsd
 K 25
@@ -84,14 +84,14 @@ END
 hrmErp.html
 K 25
 svn:wc:ra_dav:version-url
-V 54
-/svn/gcrmcontract/!svn/ver/78/trunk/Schema/hrmErp.html
+V 55
+/svn/gcrmcontract/!svn/ver/199/trunk/Schema/hrmErp.html
 END
 hrmErp.doc
 K 25
 svn:wc:ra_dav:version-url
-V 53
-/svn/gcrmcontract/!svn/ver/78/trunk/Schema/hrmErp.doc
+V 54
+/svn/gcrmcontract/!svn/ver/199/trunk/Schema/hrmErp.doc
 END
 mobileManifest.html
 K 25
