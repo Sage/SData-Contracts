@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="../Tools/XsdToHtml.xslt"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sme="http://schemas.sage.com/sdata/sme/2007" xmlns="http://schemas.sage.com/hrmErp/2009" xmlns:hrmErp="http://schemas.sage.com/hrmErp/2009" xmlns:sc="http://schemas.sage.com/sc/2009" xmlns:crmErp="http://schemas.sage.com/crmErp/2008" xmlns:famErp="http://schemas.sage.com/famErp/2009" targetNamespace="http://schemas.sage.com/hrmErp/2009" elementFormDefault="qualified" version="1.1.1" id="hrmErp">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sme="http://schemas.sage.com/sdata/sme/2007" xmlns="http://schemas.sage.com/hrmErp/2009" xmlns:hrmErp="http://schemas.sage.com/hrmErp/2009" xmlns:sc="http://schemas.sage.com/sc/2009" xmlns:crmErp="http://schemas.sage.com/crmErp/2008" xmlns:famErp="http://schemas.sage.com/famErp/2009" targetNamespace="http://schemas.sage.com/hrmErp/2009" elementFormDefault="qualified" version="1.1.2" id="hrmErp">
 	<xs:import namespace="http://schemas.sage.com/sc/2009" schemaLocation="common.xsd"/>
 	<xs:import namespace="http://schemas.sage.com/crmErp/2008" schemaLocation="crmErp.xsd"/>
 	<xs:import namespace="http://schemas.sage.com/famErp/2009" schemaLocation="famErp.xsd"/>

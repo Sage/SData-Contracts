@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="../Tools/XsdToHtml.xslt"?>
-<xs:schema xmlns:sme="http://schemas.sage.com/sdata/sme/2007" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.sage.com/sc/2009" targetNamespace="http://schemas.sage.com/sc/2009" elementFormDefault="qualified" version="1.1.1" id="sc">
+<xs:schema xmlns:sme="http://schemas.sage.com/sdata/sme/2007" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.sage.com/sc/2009" targetNamespace="http://schemas.sage.com/sc/2009" elementFormDefault="qualified" version="1.1.2" id="sc">
 	<xs:element name="operatingCompany" type="operatingCompany--type" sme:role="resourceKind" sme:pluralName="operatingCompanies" sme:compliance="must" sme:hasUuid="true" sme:canGet="true"/>
 	<xs:complexType name="operatingCompany--type">
 		<xs:all>
