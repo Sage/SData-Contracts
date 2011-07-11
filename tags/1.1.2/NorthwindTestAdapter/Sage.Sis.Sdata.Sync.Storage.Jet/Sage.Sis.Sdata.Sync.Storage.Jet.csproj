@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C2D466E2-8580-48DD-A005-04F33A5B9C0B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sage.Sis.Sdata.Sync.Storage.Jet</RootNamespace>
+    <AssemblyName>Sage.Sis.Sdata.Sync.Storage.Jet</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppBookmarkInfoStoreProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CorrelatedResSyncInfoEnumerator.cs" />
+    <Compile Include="CorrelatedResSyncStoreProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IAppBookmarkSerializer.cs" />
+    <Compile Include="StoreEnvironment.cs" />
+    <Compile Include="SyncDigestInfoStoreProvider.cs" />
+    <Compile Include="SyncResultsInfoStoreProvider.cs" />
+    <Compile Include="TableAdapterFactory.cs" />
+    <Compile Include="TableAdapters\AppBookmarkTableAdapter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TableAdapters\CorrelatedResSyncTableAdapter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TableAdapters\EndpointTableAdapter.cs" />
+    <Compile Include="TableAdapters\IAppBookmarkTableAdapter.cs" />
+    <Compile Include="TableAdapters\ICorrelatedResSyncTableAdapter.cs" />
+    <Compile Include="TableAdapters\IEndpointTableAdapter.cs" />
+    <Compile Include="TableAdapters\IResourceKindTableAdapter.cs" />
+    <Compile Include="TableAdapters\ISyncDigestTableAdapter.cs" />
+    <Compile Include="TableAdapters\ISyncResultsTableAdapter.cs" />
+    <Compile Include="TableAdapters\ITableAdapter.cs" />
+    <Compile Include="TableAdapters\ITickTableAdapter.cs" />
+    <Compile Include="TableAdapters\SyncDigestTableAdapter.cs" />
+    <Compile Include="TableAdapters\ResourceKindTableAdapter.cs" />
+    <Compile Include="TableAdapters\SyncResultsTableAdapter.cs" />
+    <Compile Include="TableAdapters\TickTableAdapter.cs" />
+    <Compile Include="Tables\AppBookmarkTable.cs" />
+    <Compile Include="Tables\CorrelatedResSyncTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tables\IAppBookmarkTable.cs" />
+    <Compile Include="Tables\ICorrelatedResSyncTable.cs" />
+    <Compile Include="Tables\IEndpointTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Syndication\EndpointInfo.cs" />
+    <Compile Include="Syndication\ResourceKindInfo.cs" />
+    <Compile Include="Tables\EndpointTable.cs" />
+    <Compile Include="Tables\IResourceKindTable.cs" />
+    <Compile Include="Tables\ISyncDigestTable.cs" />
+    <Compile Include="Tables\ISyncResultsTable.cs" />
+    <Compile Include="Tables\ITable.cs" />
+    <Compile Include="Tables\ITableFieldsUpdated.cs" />
+    <Compile Include="Tables\ITickTable.cs" />
+    <Compile Include="Tables\ResourceKindTable.cs" />
+    <Compile Include="Tables\SyncDigestTable.cs" />
+    <Compile Include="Tables\SyncResultsTable.cs" />
+    <Compile Include="Tables\TickTable.cs" />
+    <Compile Include="TestHelpers\Tables.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Int32TickProvider.cs" />
+    <Compile Include="AppBookmarkXmlSerializer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sage.Sis.Common.Data\Sage.Sis.Common.Data.csproj">
+      <Project>{4FCA340F-6C11-4C37-9A30-AEED463B1342}</Project>
+      <Name>Sage.Sis.Common.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.Sis.Sdata.Sync.Context\Sage.Sis.Sdata.Sync.Context.csproj">
+      <Project>{3F60D46A-CACD-4014-93CC-1FC40AA1FF3D}</Project>
+      <Name>Sage.Sis.Sdata.Sync.Context</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.Sis.Sdata.Sync.Results\Sage.Sis.Sdata.Sync.Results.csproj">
+      <Project>{83E87110-F2E5-491C-A4E6-53CDFA41FE45}</Project>
+      <Name>Sage.Sis.Sdata.Sync.Results</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.Sis.Sdata.Sync.Storage\Sage.Sis.Sdata.Sync.Storage.csproj">
+      <Project>{8302A3E6-9AF0-4F17-90F7-1780612D9977}</Project>
+      <Name>Sage.Sis.Sdata.Sync.Storage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.Sis.Sdata.Sync.Tick\Sage.Sis.Sdata.Sync.Tick.csproj">
+      <Project>{63AD8E69-2267-42FF-B5E4-F4E488185103}</Project>
+      <Name>Sage.Sis.Sdata.Sync.Tick</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

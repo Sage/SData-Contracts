@@ -1,0 +1,178 @@
+10
+
+dir
+204
+http://gforge.sageinternal.com/svn/gcrmcontract/tags/1.1.2/NorthwindTestAdapter
+http://gforge.sageinternal.com/svn/gcrmcontract
+
+
+
+2009-07-15T18:59:31.171478Z
+45
+john.perona
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4e8fb60e-e660-0410-a1f3-e4fe173e44cb
+
+Sage.Sis.Sdata.Sync.Results
+dir
+
+Sage.Sis.Sdata.Sync.Storage
+dir
+
+Sage.Sis.Sdata.Etag
+dir
+
+Sage.Integration.Northwind.Sync
+dir
+
+SimpleSyncStarter
+dir
+
+Sage.Integration.Northwind.Adapter
+dir
+
+Sage.Integration.Northwind.Etag
+dir
+
+Sage.Sis.Sdata.Etag.Crc
+dir
+
+Sage.Integration.Northwind.Feeds
+dir
+
+Sage.Integration.Northwind.Common
+dir
+
+Sage.Sis.Sdata.Sync.Storage.ClientSample
+dir
+
+Sage.Sis.Sdata.Sync.Context
+dir
+
+SageCrmNorthwind.msi
+file
+
+
+
+
+2011-07-11T16:40:59.578098Z
+4117e844c1ad50697568442cd51d9d09
+2009-07-15T18:59:31.171478Z
+45
+john.perona
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2611200
+
+Sage.Sis.Sdata.Sync.Storage.Jet
+dir
+
+Northwind.sln
+file
+
+
+
+
+2011-07-11T16:40:59.593698Z
+3691629b37de7141d044c9581adb0ba0
+2009-07-15T18:58:25.244436Z
+44
+john.perona
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+20475
+
+Sage.Sis.Sdata.Sync.Tick
+dir
+
+Sage.Sis.Common.Data
+dir
+
+Northwind.mdb
+file
+
+
+
+
+2011-07-11T16:40:59.640498Z
+8336299f88cb3e768f70809982938392
+2009-07-15T18:58:25.244436Z
+44
+john.perona
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6008832
+
+Sage.Integration.Northwind.Application
+dir
+

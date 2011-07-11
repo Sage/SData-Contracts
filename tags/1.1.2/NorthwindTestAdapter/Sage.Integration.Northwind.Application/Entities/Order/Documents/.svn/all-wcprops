@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Application/Entities/Order/Documents
+END
+LineItemsDocumentCollection.cs
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Application/Entities/Order/Documents/LineItemsDocumentCollection.cs
+END
+LineItemDocument.cs
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Application/Entities/Order/Documents/LineItemDocument.cs
+END
+OrderDocument.cs
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Application/Entities/Order/Documents/OrderDocument.cs
+END

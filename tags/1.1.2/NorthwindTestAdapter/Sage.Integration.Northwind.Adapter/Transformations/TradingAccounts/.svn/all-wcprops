@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Transformations/TradingAccounts
+END
+PostalAdressTransformation.cs
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Transformations/TradingAccounts/PostalAdressTransformation.cs
+END
+TradingAccountTransformation.cs
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Transformations/TradingAccounts/TradingAccountTransformation.cs
+END
+EmailAdressTransformation.cs
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Transformations/TradingAccounts/EmailAdressTransformation.cs
+END
+ContactTransformation.cs
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Transformations/TradingAccounts/ContactTransformation.cs
+END
+PhoneNumberTransformation.cs
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Transformations/TradingAccounts/PhoneNumberTransformation.cs
+END
