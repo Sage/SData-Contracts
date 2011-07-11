@@ -1,0 +1,1007 @@
+<xs:schema xmlns:tns="http://schemas.sage.com/MobileManifest" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sme="http://schemas.sage.com/sdata/sme/2007" xmlns:mobile="http://schemas.sage.com/mobile/2009" targetNamespace="http://schemas.sage.com/MobileManifest" elementFormDefault="qualified">
+	<!--
+      Sage Mobile SData Feeds
+        *1*  - Bank Account
+        *2*  - Customer
+		*3*  - Product
+        *4*  - Supplier
+        *5*  - Bank Account Activity
+        *6*  - Project
+        *7*  - Customer Activity
+        *8*  - Supplier Activity
+        *9*  - Customer Credit Control
+        *10* - Supplier Credit Control
+        *11* - Customer Disputed Item
+        *12* - Supplier Disputed Item
+        *13* - Diary
+        *14* - Price List
+        *15* - Price List Product
+        *16* - Quotation
+        *17* - Sales Order
+        *18* - Invoice
+        *19* - Purchase Order
+        *20* - Line Item
+        *21* - Company Headlines
+        *22* - Profit and Loss
+        *23* - Customer Cash Overview
+        *24* - Supplier Cash Overview
+        *25* - Country
+        *26* - Price List Customer
+      -->
+	<!-- *1* Bank Accounts -->
+	<xs:element name="bankAccount" type="tns:bankAccount--type" sme:label="Bank Account" sme:canGet="true" sme:pluralName="bankAccounts" sme:role="resourceKind"/>
+	<xs:complexType name="bankAccount--type">
+		<xs:all>
+			<xs:element name="accountRef" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="A/C"/>
+			<xs:element name="name" type="xs:string" mobile:isComparatorDescriptor="true" sme:groupName="general" sme:precedence="1" sme:label="Name"/>
+			<xs:element name="balance" type="xs:decimal" sme:groupName="general" sme:format="$(currencySymbol)###,###.00" mobile:isComparatorVariable="true" sme:precedence="1" sme:label="Balance"/>
+			<xs:element name="currencySymbol" type="xs:string" sme:precedence="0"/>
+			<xs:element name="bankName" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Bank Name"/>
+			<xs:element name="street1" type="xs:string" sme:groupName="address" mobile:lineBreak="\n" sme:precedence="1" sme:label="Street 1"/>
+			<xs:element name="street2" type="xs:string" sme:groupName="address" sme:precedence="1" sme:label="Street 2"/>
+			<xs:element name="city" type="xs:string" sme:groupName="address" sme:precedence="1" sme:label="Town"/>
+			<xs:element name="county" type="xs:string" sme:groupName="address" sme:precedence="1" sme:label="County"/>
+			<xs:element name="postcode" type="xs:string" sme:groupName="address" sme:precedence="1" sme:label="Postcode"/>
+			<xs:element name="telephone" type="xs:string" sme:groupName="address" sme:precedence="1" sme:label="Telephone"/>
+			<xs:element name="AccountNum" type="xs:string" sme:groupName="details" sme:precedence="1" sme:label="Account Number"/>
+			<xs:element name="sortCode" type="xs:string" sme:groupName="details" sme:precedence="1" sme:label="Sort Code"/>
+			<xs:element name="overDraftLimit" type="xs:string" mobile:comparatorBaseType="positive" sme:label="Overdraft Limit" sme:precedence="0" mobile:isComparatorBase="true"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="bankAccount--list">
+		<xs:sequence>
+			<xs:element name="bankAccount" type="tns:bankAccount--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- *2* Customer -->
+	<xs:element name="customer" type="tns:customer--type" sme:label="Customer" sme:canGet="true" sme:canPost="true" sme:canPut="true" sme:pluralName="customers" sme:role="resourceKind"/>
+	<xs:complexType name="customer--type">
+		<xs:all>
+			<xs:element name="accountRef" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Account" sme:isIdentifier="true"/>
+			<xs:element name="name" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Name" sme:mandatory="true" sme:isDescriptor="true"/>
+			<xs:element name="balance" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="general" sme:precedence="1" sme:label="Balance"/>
+			<xs:element name="currencySymbol" type="xs:string" sme:precedence="0"/>
+			<xs:element name="street1" type="tns:street--type" sme:groupName="address" sme:precedence="1" sme:label="Street 1"/>
+			<xs:element name="street2" type="tns:street--type" sme:groupName="address" sme:precedence="1" sme:label="Street 2"/>
+			<xs:element name="city" type="tns:city--type" sme:groupName="address" sme:precedence="1" sme:label="Town"/>
+			<xs:element name="county" type="tns:county--type" sme:groupName="address" sme:precedence="1" sme:label="County"/>
+			<xs:element name="postcode" type="tns:postcode--type" sme:groupName="address" sme:precedence="1" sme:label="Postcode"/>
+			<xs:element name="country" type="xs:string" sme:groupName="address" sme:precedence="1" sme:label="Country"/>
+			<!--xs:element name="countryCode" sme:groupName="address" sme:precedence="1" sme:label="Country" type="tns:countrytype" sme:mandatory="true" sme:relationship="reference" sme:copiedFrom="tns:countrytype/code" />
+        <xs:element name="countryName" sme:groupName="address" sme:precedence="1" sme:label="Country" type="tns:countrytype" sme:mandatory="true" sme:relationship="reference" sme:copiedFrom="tns:countrytype/name" /-->
+			<xs:element name="vatNumber" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="VAT Number"/>
+			<xs:element name="contactName" type="xs:string" sme:groupName="contact" sme:precedence="1" sme:label="Contact Name"/>
+			<xs:element name="website" type="xs:string" sme:groupName="contact" sme:precedence="1" sme:label="Website"/>
+			<xs:element name="email" type="xs:string" sme:groupName="contact" sme:precedence="1" sme:label="Email"/>
+			<xs:element name="telephone" type="xs:string" sme:groupName="contact" sme:precedence="1" sme:label="Telephone"/>
+			<xs:element name="telephone2" type="xs:string" sme:groupName="contact" sme:precedence="1" sme:label="Telephone 2"/>
+			<xs:element name="IsOverCreditLimit" type="xs:boolean" sme:precedence="0" sme:expressionType="booleanFalse"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="customer--list">
+		<xs:sequence>
+			<xs:element name="customer" type="tns:customer--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="street--type">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="city--type">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="county--type">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="postcode--type">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<!-- *3* Product -->
+	<xs:element name="product" type="tns:product--type" sme:label="Item" sme:canGet="true" sme:pluralName="products" sme:role="resourceKind"/>
+	<xs:complexType name="product--type">
+		<xs:all>
+			<xs:element name="Code" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Product Code" sme:isIdentifier="true"/>
+			<xs:element name="Description" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Description" sme:isDescriptor="true"/>
+			<xs:element name="itemType" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Item Type"/>
+			<xs:element name="QuantityInStock" type="xs:decimal" sme:groupName="quantity" sme:precedence="1" sme:label="Qty In Stock"/>
+			<xs:element name="QuantityAllocated" type="xs:integer" sme:groupName="quantity" sme:precedence="1" sme:label="Qty Allocated"/>
+			<xs:element name="QuantityFreeStock" type="xs:integer" sme:groupName="quantity" sme:precedence="1" sme:label="Qty Free Stock"/>
+			<xs:element name="QuantityOnOrder" type="xs:int" sme:groupName="quantity" sme:precedence="1" sme:label="Qty On Order"/>
+			<xs:element name="LastCostPrice" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="price" sme:precedence="1" sme:label="Last Cost Price"/>
+			<xs:element name="SalesPrice" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="price" sme:precedence="1" sme:label="Sales Price"/>
+			<xs:element name="currencySymbol" type="xs:string" sme:precedence="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="product--list">
+		<xs:sequence>
+			<xs:element name="product" type="tns:product--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- *4* Supplier -->
+	<xs:element name="supplier" type="tns:supplier--type" sme:label="Supplier" sme:canGet="true" sme:canPost="true" sme:canPut="true" sme:pluralName="suppliers" sme:role="resourceKind"/>
+	<xs:complexType name="supplier--type">
+		<xs:all>
+			<xs:element name="accountRef" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="A/C" sme:isIdentifier="true"/>
+			<xs:element name="name" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Name" sme:mandatory="true" sme:isDescriptor="true"/>
+			<xs:element name="balance" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="general" sme:precedence="1" sme:label="Balance"/>
+			<xs:element name="street1" type="xs:string" sme:groupName="address" sme:precedence="1" sme:label="Street 1"/>
+			<xs:element name="street2" type="xs:string" sme:groupName="address" sme:precedence="1" sme:label="Street 2"/>
+			<xs:element name="city" type="xs:string" sme:groupName="address" sme:precedence="1" sme:label="Town"/>
+			<xs:element name="county" type="xs:string" sme:groupName="address" sme:precedence="1" sme:label="County"/>
+			<xs:element name="postcode" type="xs:string" sme:groupName="address" sme:precedence="1" sme:label="Postcode"/>
+			<xs:element name="country" type="xs:string" sme:groupName="address" sme:precedence="1" sme:label="Country"/>
+			<xs:element name="vatNumber" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="VAT Number"/>
+			<xs:element name="contactName" type="xs:string" sme:groupName="contact" sme:precedence="1" sme:label="Contact Name"/>
+			<xs:element name="website" type="xs:string" sme:groupName="contact" sme:precedence="1" sme:label="Website"/>
+			<xs:element name="email" type="xs:string" sme:groupName="contact" sme:precedence="1" sme:label="Email"/>
+			<xs:element name="currencySymbol" type="xs:string" sme:precedence="0"/>
+			<xs:element name="telephone" type="xs:string" sme:groupName="contact" sme:precedence="1" sme:label="Telephone"/>
+			<xs:element name="telephone2" type="xs:string" sme:groupName="contact" sme:precedence="1" sme:label="Telephone 2"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="supplier--list">
+		<xs:sequence>
+			<xs:element name="supplier" type="tns:supplier--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- *5* Bank Account Activity -->
+	<xs:element name="bankAccountActivity" type="tns:bankAccountActivity--type" sme:label="Bank Account Activity" sme:canGet="true" sme:pluralName="bankAccountActivities" sme:role="resourceKind"/>
+	<xs:complexType name="bankAccountActivity--type">
+		<xs:all>
+			<xs:element name="type" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Type"/>
+			<xs:element name="date" type="xs:dateTime" sme:groupName="general" sme:precedence="1" sme:label="Date"/>
+			<xs:element name="reference" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Ref"/>
+			<xs:element name="number" type="xs:integer" sme:groupName="general" sme:precedence="1" sme:label="No"/>
+			<xs:element name="details" type="xs:string" sme:groupName="details" sme:precedence="1" sme:label="Details"/>
+			<xs:element name="debit" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="details" sme:precedence="1" sme:label="Debit"/>
+			<xs:element name="credit" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="details" sme:precedence="1" sme:label="Credit"/>
+			<xs:element name="currencySymbol" type="xs:string" sme:precedence="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="bankAccountActivity--list">
+		<xs:sequence>
+			<xs:element name="bankAccountActivity" type="tns:bankAccountActivity--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- *6* Project -->
+	<xs:element name="project" type="tns:project--type" sme:label="Project" sme:canGet="true" sme:pluralName="projects" sme:role="resourceKind"/>
+	<xs:complexType name="project--type">
+		<xs:all>
+			<xs:element name="reference" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Reference"/>
+			<xs:element name="name" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Name"/>
+			<xs:element name="status" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Status"/>
+			<xs:element name="customer" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Customer"/>
+			<xs:element name="totalBilled" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="costing" sme:precedence="1" sme:label="Total Billed"/>
+			<xs:element name="totalBudget" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="costing" sme:precedence="1" sme:label="Total Budget"/>
+			<xs:element name="actualVariance" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="costing" sme:precedence="1" sme:label="Actual Variance"/>
+			<xs:element name="priceQuoted" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="costing" sme:precedence="1" sme:label="Price Quoted"/>
+			<xs:element name="actualCost" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="costing" sme:precedence="1" sme:label="Actual Cost"/>
+			<xs:element name="committedCost" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="costing" sme:precedence="1" sme:label="Committed Cost"/>
+			<xs:element name="totalCost" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="costing" sme:precedence="1" sme:label="Total Cost"/>
+			<xs:element name="currencySymbol" type="xs:string" sme:precedence="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="project--list">
+		<xs:sequence>
+			<xs:element name="project" type="tns:project--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- *7* Customer Activity -->
+	<xs:element name="customerActivity" type="tns:customerActivity--type" sme:label="Customer Activity" sme:canGet="true" sme:pluralName="customerActivities" sme:role="resourceKind"/>
+	<xs:complexType name="customerActivity--type">
+		<xs:all>
+			<xs:element name="type" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Type"/>
+			<xs:element name="date" type="xs:dateTime" sme:groupName="general" sme:precedence="1" sme:label="Date"/>
+			<xs:element name="reference" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Ref"/>
+			<xs:element name="number" type="xs:integer" sme:groupName="general" sme:precedence="1" sme:label="No"/>
+			<xs:element name="details" type="xs:string" sme:groupName="details" sme:precedence="1" sme:label="Details"/>
+			<xs:element name="amount" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="details" sme:precedence="1" sme:label="Amount"/>
+			<xs:element name="currencySymbol" type="xs:string" sme:precedence="0"/>
+			<xs:element name="outstanding" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="details" sme:precedence="1" sme:label="Outstanding"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="customerActivity--list">
+		<xs:sequence>
+			<xs:element name="customerActivity" type="tns:customerActivity--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- *8* Supplier Activity -->
+	<xs:element name="supplierActivity" type="tns:supplierActivity--type" sme:label="Supplier Activity" sme:canGet="true" sme:pluralName="supplierActivities" sme:role="resourceKind"/>
+	<xs:complexType name="supplierActivity--type">
+		<xs:all>
+			<xs:element name="type" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Type"/>
+			<xs:element name="date" type="xs:dateTime" sme:groupName="general" sme:precedence="1" sme:label="Date"/>
+			<xs:element name="reference" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Ref"/>
+			<xs:element name="number" type="xs:integer" sme:groupName="general" sme:precedence="1" sme:label="No"/>
+			<xs:element name="details" type="xs:string" sme:groupName="details" sme:precedence="1" sme:label="Details"/>
+			<xs:element name="amount" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="details" sme:precedence="1" sme:label="Amount"/>
+			<xs:element name="outstanding" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="details" sme:precedence="1" sme:label="Outstanding"/>
+			<xs:element name="currencySymbol" type="xs:string" sme:precedence="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="supplierActivity--list">
+		<xs:sequence>
+			<xs:element name="supplierActivity" type="tns:supplierActivity--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- *9* Customer Credit Control -->
+	<xs:element name="customerCreditControl" type="tns:customerCreditControl--type" sme:label="Customer Credit Control" sme:canGet="true" sme:role="resourceKind"/>
+	<xs:complexType name="customerCreditControl--type">
+		<xs:all>
+			<xs:element name="termsAgreed" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Terms Agreed"/>
+			<xs:element name="currencySymbol" type="xs:string" sme:precedence="0"/>
+			<xs:element name="creditLimit" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="general" sme:precedence="1" sme:label="Credit Limit"/>
+			<xs:element name="settlementDueDays" type="xs:integer" sme:groupName="general" sme:precedence="1" sme:label="Settlement Due Days"/>
+			<xs:element name="paymentDueDays" type="xs:integer" sme:groupName="general" sme:precedence="1" sme:label="Payment Due Days"/>
+			<xs:element name="accountStatus" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Account Status"/>
+			<xs:element name="creditMemo" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Credit Memo"/>
+		</xs:all>
+	</xs:complexType>
+	<!-- *10* Supplier Credit Control -->
+	<xs:element name="supplierCreditControl" type="tns:supplierCreditControl--type" sme:label="Supplier Credit Control" sme:canGet="true" sme:role="resourceKind"/>
+	<xs:complexType name="supplierCreditControl--type">
+		<xs:all>
+			<xs:element name="termsAgreed" type="xs:boolean" sme:groupName="general" sme:precedence="1" sme:label="Terms Agreed"/>
+			<xs:element name="creditLimit" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="general" sme:precedence="1" sme:label="Credit Limit"/>
+			<xs:element name="settlementDueDays" type="xs:integer" sme:groupName="general" sme:precedence="1" sme:label="Settlement Due Days"/>
+			<xs:element name="paymentDueDays" type="xs:integer" sme:groupName="general" sme:precedence="1" sme:label="Payment Due Days"/>
+			<xs:element name="accountStatus" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Account Status"/>
+			<xs:element name="currencySymbol" type="xs:string" sme:precedence="0"/>
+		</xs:all>
+	</xs:complexType>
+	<!-- *11* Customer Disputed Item -->
+	<xs:element name="customerDisputedItem" type="tns:customerDisputedItem--type" sme:label="Customer Disputed Item" sme:canGet="true" sme:pluralName="customerDisputedItems" sme:role="resourceKind"/>
+	<xs:complexType name="customerDisputedItem--type">
+		<xs:all>
+			<xs:element name="date" type="xs:dateTime" sme:groupName="general" sme:precedence="1" sme:label="Date"/>
+			<xs:element name="reference" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Ref"/>
+			<xs:element name="disputeReason" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Reason"/>
+			<xs:element name="currencySymbol" type="xs:string" sme:precedence="0"/>
+			<xs:element name="amount" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="general" sme:precedence="1" sme:label="Amount"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="customerDisputedItem--list">
+		<xs:sequence>
+			<xs:element name="customerDisputedItem" type="tns:customerDisputedItem--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- *12* Supplier Disputed Item -->
+	<xs:element name="supplierDisputedItem" type="tns:supplierDisputedItem--type" sme:label="Supplier Disputed Item" sme:canGet="true" sme:pluralName="supplierDisputedItems" sme:role="resourceKind"/>
+	<xs:complexType name="supplierDisputedItem--type">
+		<xs:all>
+			<xs:element name="Date" type="xs:dateTime" sme:groupName="general" sme:precedence="1" sme:label="Date"/>
+			<xs:element name="Reference" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Ref"/>
+			<xs:element name="DisputeReason" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Reason"/>
+			<xs:element name="amount" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="general" sme:precedence="1" sme:label="Amount"/>
+			<xs:element name="currencySymbol" type="xs:string" sme:precedence="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="supplierDisputedItem--list">
+		<xs:sequence>
+			<xs:element name="supplierDisputedItem" type="tns:supplierDisputedItem--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- *13* Diary -->
+	<xs:element name="diaryEvent" type="tns:diaryEvent--type" sme:label="Diary" sme:canGet="true" sme:role="resourceKind"/>
+	<xs:complexType name="diaryEvent--type">
+		<xs:all>
+			<xs:element name="subject" type="xs:string" sme:precedence="1" sme:label="Subject"/>
+			<!-- JM 2009-1-02-12 Removed as per change request TFS 26250 -->
+			<!--xs:element name="location" sme:precedence="1" sme:label="Location" type="xs:string" /-->
+			<xs:element name="type" type="xs:string" sme:precedence="1" sme:label="Type"/>
+			<xs:element name="accountRef" type="xs:string" sme:precedence="1" sme:label="Account"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="diaryEvent--list">
+		<xs:sequence>
+			<xs:element name="diaryEvent" type="tns:diaryEvent--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- *14* Price List -->
+	<xs:element name="priceList" type="tns:priceList--type" sme:label="Price List" sme:canGet="true" sme:role="resourceKind"/>
+	<xs:complexType name="priceList--type">
+		<xs:all>
+			<xs:element name="PriceRef" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Name"/>
+			<xs:element name="description" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Description"/>
+			<xs:element name="type" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Type"/>
+			<xs:element name="NumberOfProducts" type="xs:integer" sme:groupName="general" sme:precedence="2" sme:label="Number of Products"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="priceList--list">
+		<xs:sequence>
+			<xs:element name="priceList" type="tns:priceList--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- *15* Price List Product -->
+	<xs:element name="priceListProduct" type="tns:priceListProduct--type" sme:label="Price List Product" sme:canGet="true" sme:role="resourceKind"/>
+	<xs:complexType name="priceListProduct--type">
+		<xs:all>
+			<xs:element name="Code" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Product Code"/>
+			<xs:element name="description" type="xs:string" sme:group="general" sme:precedence="1" sme:label="Description"/>
+			<xs:element name="price" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:group="general" sme:precedence="1" sme:label="Price"/>
+			<xs:element name="currencySymbol" type="xs:string" sme:precedence="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="priceListProduct--list">
+		<xs:sequence>
+			<xs:element name="priceListProduct" type="tns:priceListProduct--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- *16* Quotation -->
+	<xs:element name="quotation" type="tns:quotation--type" sme:label="Quotation" sme:canGet="true" sme:canPost="true" sme:canPut="true" sme:role="resourceKind"/>
+	<xs:complexType name="quotation--type">
+		<xs:all>
+			<xs:element name="QuoteNumber" type="xs:string" sme:groupName="account" sme:precedence="1" sme:label="Number" sme:isReadOnly="true"/>
+			<xs:element name="name" type="xs:string" sme:groupName="account" sme:precedence="1" sme:label="Name" sme:isReadOnly="true"/>
+			<xs:element name="type" type="xs:string" sme:groupName="account" sme:precedence="1" sme:label="Type" sme:isReadOnly="true"/>
+			<xs:element name="currencySymbol" type="xs:string" sme:precedence="0"/>
+			<xs:element name="accountRef" type="xs:string" sme:groupName="account" sme:precedence="1" sme:label="A/C" sme:isReadOnly="true"/>
+			<xs:element name="date" type="xs:dateTime" sme:groupName="general" sme:precedence="1" sme:isMandatory="true" sme:label="Date"/>
+			<xs:element name="gross" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="amount" sme:precedence="1" sme:label="Total" sme:isReadOnly="true"/>
+			<xs:element name="status" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Status" sme:isReadOnly="true"/>
+			<xs:element name="street1" type="tns:inputAddressField" sme:groupName="address" sme:precedence="1" sme:label="Street 1"/>
+			<xs:element name="street2" type="tns:inputAddressField" sme:groupName="address" sme:precedence="1" sme:label="Street 2"/>
+			<xs:element name="town" type="tns:inputAddressField" sme:groupName="address" sme:precedence="1" sme:label="Town"/>
+			<xs:element name="county" type="tns:inputAddressField" sme:groupName="address" sme:precedence="1" sme:label="County"/>
+			<xs:element name="postcode" type="xs:string" sme:groupName="address" sme:precedence="1" sme:label="Postcode"/>
+			<xs:element name="DeliveryName" type="xs:string" sme:groupName="deliveryaddress" sme:precedence="2" sme:label="Del. Name"/>
+			<xs:element name="DeliveryStreet1" type="xs:string" sme:groupName="deliveryaddress" sme:precedence="2" sme:label="Del. Street 1"/>
+			<xs:element name="DeliveryStreet2" type="xs:string" sme:groupName="deliveryaddress" sme:precedence="2" sme:label="Del. Street 2"/>
+			<xs:element name="DeliveryTown" type="xs:string" sme:groupName="deliveryaddress" sme:precedence="2" sme:label="Del. Town"/>
+			<xs:element name="DeliveryCounty" type="xs:string" sme:groupName="deliveryaddress" sme:precedence="2" sme:label="Del. County"/>
+			<xs:element name="DeliveryPostcode" type="xs:string" sme:groupName="deliveryaddress" sme:precedence="2" sme:label="Del. Postcode"/>
+			<xs:element name="Address" type="tns:address--type" minOccurs="0" sme:precedence="1" sme:isMandatory="false" sme:groupName="Addresses" sme:relationship="child" sme:label="Delivery Address" sme:canGet="false"/>
+			<xs:element name="lineItem" type="tns:lineItem--type" minOccurs="0" sme:precedence="1" sme:isMandatory="true" sme:groupName="lineItems" sme:relationship="child" sme:label="Line Items" sme:canGet="false"/>
+			<xs:element name="carriageNet" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="amount" sme:precedence="1" sme:label="Carriage Net"/>
+			<xs:element name="carriageVat" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="amount" sme:precedence="1" sme:label="Carriage VAT" sme:isReadOnly="true"/>
+			<xs:element name="carriageTotal" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="amount" sme:precedence="1" sme:label="Carriage Total" sme:isReadOnly="true"/>
+			<xs:element name="netValueDiscount" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="amount" sme:precedence="1" sme:label="Discount"/>
+			<xs:element name="net" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="amount" sme:precedence="1" sme:label="Net" sme:isReadOnly="true"/>
+			<xs:element name="vat" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="amount" sme:precedence="1" sme:label="VAT" sme:isReadOnly="true"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="quotation--list">
+		<xs:sequence>
+			<xs:element name="quotation" type="tns:quotation--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- *17* Sales Order -->
+	<xs:element name="salesOrder" type="tns:salesOrder--type" sme:label="Sales Orders" sme:canGet="true" sme:canPost="true" sme:canPut="true" sme:role="resourceKind"/>
+	<xs:complexType name="salesOrder--type">
+		<xs:all>
+			<xs:element name="orderNumber" type="xs:string" sme:groupName="account" sme:isReadOnly="true" sme:precedence="1" sme:label="Number"/>
+			<xs:element name="name" type="xs:string" sme:isReadOnly="true" sme:groupName="account" sme:precedence="1" sme:label="Name"/>
+			<xs:element name="accountRef" type="xs:string" sme:groupName="account" sme:precedence="1" sme:label="A/C" sme:isReadOnly="true"/>
+			<xs:element name="date" type="xs:dateTime" sme:groupName="general" sme:precedence="1" sme:label="Date"/>
+			<xs:element name="gross" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="amount" sme:precedence="1" sme:label="Total" sme:isReadOnly="true"/>
+			<xs:element name="orderTypeCode" type="xs:string" sme:isReadOnly="true" sme:groupName="general" sme:precedence="1" sme:label="Type"/>
+			<xs:element name="orderStatus" type="xs:string" sme:isReadOnly="true" sme:groupName="order" sme:precedence="1" sme:label="Order Status"/>
+			<xs:element name="street1" type="tns:inputAddressField" sme:groupName="address" sme:precedence="1" sme:label="Street 1"/>
+			<xs:element name="street2" type="tns:inputAddressField" sme:groupName="address" sme:precedence="1" sme:label="Street 2"/>
+			<xs:element name="town" type="tns:inputAddressField" sme:groupName="address" sme:precedence="1" sme:label="Town"/>
+			<xs:element name="county" type="tns:inputAddressField" sme:groupName="address" sme:precedence="1" sme:label="County"/>
+			<xs:element name="postcode" type="tns:inputAddressField" sme:groupName="address" sme:precedence="1" sme:label="Postcode"/>
+			<xs:element name="DeliveryName" type="xs:string" sme:groupName="deliveryaddress" sme:precedence="2" sme:label="Del. Name"/>
+			<xs:element name="DeliveryStreet1" type="xs:string" sme:groupName="deliveryaddress" sme:precedence="2" sme:label="Del. Street 1"/>
+			<xs:element name="DeliveryStreet2" type="xs:string" sme:groupName="deliveryaddress" sme:precedence="2" sme:label="Del. Street 2"/>
+			<xs:element name="DeliveryTown" type="xs:string" sme:groupName="deliveryaddress" sme:precedence="2" sme:label="Del. Town"/>
+			<xs:element name="DeliveryCounty" type="xs:string" sme:groupName="deliveryaddress" sme:precedence="2" sme:label="Del. County"/>
+			<xs:element name="DeliveryPostcode" type="xs:string" sme:groupName="deliveryaddress" sme:precedence="2" sme:label="Del. Postcode"/>
+			<xs:element name="Address" type="tns:address--type" minOccurs="0" sme:precedence="1" sme:isMandatory="false" sme:groupName="Addresses" sme:relationship="child" sme:label="Delivery Address" sme:canGet="false"/>
+			<xs:element name="lineItem" type="tns:lineItem--type" minOccurs="0" sme:precedence="1" sme:isMandatory="true" sme:groupName="lineItems" sme:relationship="child" sme:label="Line Items" sme:canGet="false"/>
+			<xs:element name="carriageNet" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="amount" sme:precedence="1" sme:label="Carriage Net"/>
+			<xs:element name="carriageVat" type="xs:decimal" sme:isReadOnly="true" sme:format="$(currencySymbol)###,###.00" sme:groupName="amount" sme:precedence="1" sme:label="Carriage VAT"/>
+			<xs:element name="carriageTotal" type="xs:decimal" sme:isReadOnly="true" sme:format="$(currencySymbol)###,###.00" sme:groupName="amount" sme:precedence="1" sme:label="Carriage Total"/>
+			<xs:element name="netValueDiscount" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="amount" sme:precedence="1" sme:label="Discount"/>
+			<xs:element name="currencySymbol" type="xs:string" sme:precedence="0"/>
+			<xs:element name="custOrderNumber" type="xs:string" sme:isReadOnly="true" sme:groupName="order" sme:precedence="1" sme:label="Customer Order Number"/>
+			<xs:element name="despatchStatus" type="xs:string" sme:isReadOnly="true" sme:groupName="order" sme:precedence="1" sme:label="Despatch Status"/>
+			<xs:element name="vat" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="amount" sme:precedence="1" sme:label="VAT" sme:isReadOnly="true"/>
+			<xs:element name="net" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="amount" sme:precedence="1" sme:label="Net" sme:isReadOnly="true"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="salesOrder--list">
+		<xs:sequence>
+			<xs:element name="salesOrder" type="tns:salesOrder--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- *18* Invoice -->
+	<xs:element name="invoice" type="tns:invoice--type" sme:label="Invoices" sme:canGet="true" sme:canPost="true" sme:canPut="true" sme:role="resourceKind"/>
+	<xs:complexType name="invoice--type">
+		<xs:all>
+			<xs:element name="invoiceNumber" type="xs:string" sme:isReadOnly="true" sme:groupName="account" sme:precedence="1" sme:label="Number"/>
+			<xs:element name="name" type="xs:string" sme:isReadOnly="true" sme:groupName="account" sme:precedence="1" sme:label="Name"/>
+			<xs:element name="currencySymbol" type="xs:string" sme:precedence="0"/>
+			<xs:element name="accountRef" type="xs:string" sme:groupName="account" sme:precedence="1" sme:label="A/C" sme:isReadOnly="true"/>
+			<xs:element name="date" type="xs:dateTime" sme:groupName="general" sme:precedence="1" sme:label="Date"/>
+			<xs:element name="gross" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:isReadOnly="true" sme:groupName="amount" sme:precedence="1" sme:label="Total"/>
+			<xs:element name="street1" type="tns:inputAddressField" sme:groupName="address" sme:precedence="1" sme:label="Street 1"/>
+			<xs:element name="street2" type="tns:inputAddressField" sme:groupName="address" sme:precedence="1" sme:label="Street 2"/>
+			<xs:element name="town" type="tns:inputAddressField" sme:groupName="address" sme:precedence="1" sme:label="Town"/>
+			<xs:element name="county" type="tns:inputAddressField" sme:groupName="address" sme:precedence="1" sme:label="County"/>
+			<xs:element name="postcode" type="tns:inputAddressField" sme:groupName="address" sme:precedence="1" sme:label="Postcode"/>
+			<xs:element name="DeliveryName" type="xs:string" sme:groupName="deliveryaddress" sme:precedence="2" sme:label="Del. Name"/>
+			<xs:element name="DeliveryStreet1" type="xs:string" sme:groupName="deliveryaddress" sme:precedence="2" sme:label="Del. Street 1"/>
+			<xs:element name="DeliveryStreet2" type="xs:string" sme:groupName="deliveryaddress" sme:precedence="2" sme:label="Del. Street 2"/>
+			<xs:element name="DeliveryTown" type="xs:string" sme:groupName="deliveryaddress" sme:precedence="2" sme:label="Del. Town"/>
+			<xs:element name="DeliveryCounty" type="xs:string" sme:groupName="deliveryaddress" sme:precedence="2" sme:label="Del. County"/>
+			<xs:element name="DeliveryPostcode" type="xs:string" sme:groupName="deliveryaddress" sme:precedence="2" sme:label="Del. Postcode"/>
+			<xs:element name="lineItem" type="tns:lineItem--type" minOccurs="0" sme:precedence="1" sme:isMandatory="true" sme:groupName="lineItems" sme:relationship="child" sme:label="Line Items" sme:canGet="false"/>
+			<xs:element name="Address" type="tns:address--type" minOccurs="0" sme:precedence="1" sme:isMandatory="false" sme:groupName="Addresses" sme:relationship="child" sme:label="Delivery Address" sme:canGet="false"/>
+			<xs:element name="carriageNet" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="amount" sme:precedence="1" sme:label="Carriage Net"/>
+			<xs:element name="carriageVat" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:isReadOnly="true" sme:groupName="amount" sme:precedence="1" sme:label="Carriage VAT"/>
+			<xs:element name="carriageTotal" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:isReadOnly="true" sme:groupName="amount" sme:precedence="1" sme:label="Carriage Total"/>
+			<xs:element name="netValueDiscount" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="amount" sme:precedence="1" sme:label="Discount"/>
+			<xs:element name="invoiceType" type="xs:string" sme:isReadOnly="true" sme:groupName="general" sme:precedence="1" sme:label="Type"/>
+			<xs:element name="vat" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="amount" sme:precedence="1" sme:label="VAT" sme:isReadOnly="true"/>
+			<xs:element name="net" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="amount" sme:precedence="1" sme:label="Net" sme:isReadOnly="true"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="invoice--list">
+		<xs:sequence>
+			<xs:element name="invoice" type="tns:invoice--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="address" type="tns:address--type" sme:label="Addresses" sme:canGet="true" sme:canPost="true" sme:canPut="true" sme:role="resourceKind"/>
+	<xs:complexType name="address--type">
+		<xs:all>
+			<xs:element name="addressOption" type="tns:addressOption--type" minOccurs="0" sme:isReadOnly="true" sme:precedence="1" sme:relationship="reference" sme:label="Option" sme:isMandatory="true"/>
+			<xs:element name="name" type="xs:string" sme:isReadOnly="false" sme:groupName="address" sme:precedence="1" sme:label="Name"/>
+			<xs:element name="street1" type="xs:string" sme:isReadOnly="false" sme:groupName="address" sme:precedence="1" sme:label="Street 1"/>
+			<xs:element name="street2" type="xs:string" sme:isReadOnly="false" sme:groupName="address" sme:precedence="1" sme:label="Street 2"/>
+			<xs:element name="town" type="xs:string" sme:isReadOnly="false" sme:groupName="address" sme:precedence="1" sme:label="Town"/>
+			<xs:element name="county" type="xs:string" sme:isReadOnly="false" sme:groupName="address" sme:precedence="1" sme:label="County"/>
+			<xs:element name="postcode" type="xs:string" sme:isReadOnly="false" sme:groupName="address" sme:precedence="1" sme:label="Postcode"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="address--list">
+		<xs:sequence>
+			<xs:element name="invoice" type="tns:address--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="addressOption" type="tns:addressOption--type" sme:label="Option" sme:canGet="true" sme:canPost="true" sme:canPut="true" sme:role="resourceKind"/>
+	<xs:complexType name="addressOption--type">
+		<xs:all>
+			<xs:element name="Description" type="xs:string" sme:groupName="address" sme:precedence="1" sme:label="Description" sme:isDescriptor="true"/>
+			<xs:element name="ident" sme:isReadOnly="true" sme:groupName="address" sme:precedence="1" sme:isIdentifier="true"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="addressOption--list">
+		<xs:sequence>
+			<xs:element name="invoice" type="tns:address--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- *19* Purchase Order -->
+	<xs:element name="purchaseOrder" type="tns:purchaseOrder--type" sme:label="Purchase Order" sme:canGet="true" sme:canPost="true" sme:canPut="true" sme:role="resourceKind"/>
+	<xs:complexType name="purchaseOrder--type">
+		<xs:all>
+			<xs:element name="orderNumber" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Number"/>
+			<xs:element name="date" type="xs:dateTime" sme:groupName="general" sme:precedence="1" sme:label="Date"/>
+			<xs:element name="gross" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="general" sme:precedence="1" sme:label="Total"/>
+			<xs:element name="reference" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Reference"/>
+			<xs:element name="accountRef" type="tns:supplier--type" sme:groupName="account" sme:precedence="1" sme:label="A/C" sme:copiedFrom="supplier--type/accountRef"/>
+			<xs:element name="name" type="xs:string" sme:groupName="account" sme:precedence="1" sme:label="Name"/>
+			<xs:element name="street1" type="xs:string" sme:groupName="account" sme:precedence="1" sme:label="Street 1"/>
+			<xs:element name="street2" type="xs:string" sme:groupName="account" sme:precedence="1" sme:label="Street 2"/>
+			<xs:element name="town" type="xs:string" sme:groupName="account" sme:precedence="1" sme:label="Town"/>
+			<xs:element name="county" type="xs:string" sme:groupName="account" sme:precedence="1" sme:label="County"/>
+			<xs:element name="postcode" type="xs:string" sme:groupName="account" sme:precedence="1" sme:label="Postcode"/>
+			<xs:element name="carriageNet" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="amount" sme:precedence="1" sme:label="Carriage Net"/>
+			<xs:element name="carriageVat" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="amount" sme:precedence="1" sme:label="Carriage VAT"/>
+			<xs:element name="carriageTotal" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="amount" sme:precedence="1" sme:label="Carriage Total"/>
+			<xs:element name="suppOrderNumber" type="xs:string" sme:groupName="order" sme:precedence="1" sme:label="Supplier Order Number"/>
+			<xs:element name="orderStatus" type="xs:string" sme:groupName="order" sme:precedence="1" sme:label="Order Status"/>
+			<xs:element name="deliveryStatus" type="xs:string" sme:groupName="order" sme:precedence="1" sme:label="Delivery Status"/>
+			<xs:element name="currencySymbol" type="xs:string" sme:precedence="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="purchaseOrder--list">
+		<xs:sequence>
+			<xs:element name="purchaseOrder" type="tns:purchaseOrder--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="quantity">
+		<xs:restriction base="xs:decimal">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="99999999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="amount">
+		<xs:restriction base="xs:decimal">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="99999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- *20* Line Item -->
+	<xs:element name="lineItem" type="tns:lineItem--type" sme:label="Line Items" sme:canGet="true" sme:canPost="true" sme:canPut="true" sme:role="resourceKind"/>
+	<xs:complexType name="lineItem--type">
+		<xs:all>
+			<xs:element name="product" type="tns:product--type" minOccurs="0" sme:isReadOnly="true" sme:precedence="1" sme:relationship="reference" sme:label="Product" sme:isMandatory="true"/>
+			<xs:element name="currencySymbol" type="xs:string" sme:precedence="0"/>
+			<xs:element name="productCode" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Product Code"/>
+			<xs:element name="quantity" type="tns:quantity" sme:groupName="general" sme:precedence="1" sme:isMandatory="true" sme:label="Quantity"/>
+			<xs:element name="description" type="xs:string" sme:isReadOnly="true" sme:groupName="general" sme:precedence="1" sme:label="Description"/>
+			<xs:element name="price" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:isReadOnly="true" sme:groupName="price" sme:precedence="1" sme:label="Price"/>
+			<xs:element name="net" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:isReadOnly="true" sme:groupName="price" sme:precedence="1" sme:label="Net"/>
+			<xs:element name="vat" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:isReadOnly="true" sme:groupName="price" sme:precedence="1" sme:label="Vat"/>
+			<xs:element name="discount" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:isReadOnly="true" sme:groupName="price" sme:precedence="1" sme:label="Discount"/>
+			<xs:element name="Value" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Description"/>
+			<xs:element name="Amount" type="tns:amount" sme:groupName="general" sme:precedence="1" sme:label="Amount"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="lineItem--list">
+		<xs:sequence>
+			<xs:element name="lineItem" type="tns:lineItem--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- *20a* Line Item -->
+	<xs:element name="lineItemsCreate" type="tns:lineItemCreate--type" sme:label="Line Items" sme:canGet="true" sme:canPost="true" sme:canPut="true" sme:role="resourceKind"/>
+	<xs:complexType name="lineItemCreate--type">
+		<xs:all>
+			<xs:element name="lineItem" type="tns:lineItem--type" minOccurs="0" sme:precedence="1" sme:isMandatory="true" sme:groupName="lineItems" sme:relationship="child" sme:label="Line Items" sme:canGet="false"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="lineItemCreate--list">
+		<xs:sequence>
+			<xs:element name="lineItemCreate" type="tns:lineItemCreate--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- *21* Company Headlines -->
+	<xs:element name="companyHeadlines" type="tns:companyHeadlines--type" sme:label="Company Headlines" sme:canGet="true" sme:canPost="false" sme:canPut="false" sme:role="resourceKind"/>
+	<xs:complexType name="companyHeadlines--type">
+		<xs:all>
+			<xs:element name="topProdDesc" type="xs:string" sme:groupName="product" sme:precedence="1" sme:label="Top Product"/>
+			<xs:element name="topProdUnits" type="xs:decimal" sme:groupName="product" sme:precedence="1" sme:label="Units Sold"/>
+			<xs:element name="topProdSalesVal" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="product" sme:precedence="1" sme:label="Top Product Sales"/>
+			<xs:element name="topCustDesc" type="xs:string" sme:groupName="customer" sme:precedence="1" sme:label="Top Customer"/>
+			<xs:element name="topCustSalesVal" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="customer" sme:precedence="1" sme:label="Top Customer Sales"/>
+			<xs:element name="currStockVal" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="stock" sme:precedence="1" sme:label="Current Stock Value"/>
+			<xs:element name="totalSales" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="financial" sme:precedence="1" sme:label="Total Sales"/>
+			<xs:element name="grossProfit" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="financial" sme:precedence="1" sme:label="Gross Profit"/>
+			<xs:element name="netProfit" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="financial" sme:precedence="1" sme:label="Net Profit"/>
+			<xs:element name="debtorsOweYou" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="financial" sme:precedence="1" sme:label="Debtors Owe You"/>
+			<xs:element name="youOweCreditors" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="financial" sme:precedence="1" sme:label="You Owe Creditors"/>
+			<xs:element name="currencySymbol" type="xs:string" sme:precedence="0"/>
+		</xs:all>
+	</xs:complexType>
+	<!-- *22* Profit and Loss -->
+	<xs:element name="profitAndLoss" type="tns:profitAndLoss--type" sme:label="Summary P and L" sme:canGet="true" sme:canPost="false" sme:canPut="false" sme:role="resourceKind"/>
+	<xs:complexType name="profitAndLoss--type">
+		<xs:all>
+			<xs:element name="name" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Category"/>
+			<xs:element name="currencySymbol" type="xs:string" sme:precedence="0"/>
+			<xs:element name="value" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="general" sme:precedence="1" sme:label="Value"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="profitAndLoss--list">
+		<xs:sequence>
+			<xs:element name="profitAndLoss" type="tns:profitAndLoss--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- *23* Customer Cash Overview -->
+	<xs:element name="customerCashOverview" type="tns:customerCashOverview--type" sme:label="Customer Overview" sme:canGet="true" sme:canPost="false" sme:canPut="false" sme:role="resourceKind"/>
+	<xs:complexType name="customerCashOverview--type">
+		<xs:all>
+			<xs:element name="account" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Account"/>
+			<xs:element name="overdue" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="general" sme:precedence="1" sme:label="Overdue"/>
+			<xs:element name="name" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Name"/>
+			<xs:element name="currencySymbol" type="xs:string" sme:precedence="0"/>
+			<xs:element name="balance" type="xs:string" sme:precedence="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="customerCashOverview--list">
+		<xs:sequence>
+			<xs:element name="customerCashOverview" type="tns:customerCashOverview--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- *24* Supplier Cash Overview -->
+	<xs:element name="supplierCashOverview" type="tns:supplierCashOverview--type" sme:label="Supplier Overview" sme:canGet="true" sme:canPost="false" sme:canPut="false" sme:role="resourceKind"/>
+	<xs:complexType name="supplierCashOverview--type">
+		<xs:all>
+			<xs:element name="account" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Account"/>
+			<xs:element name="overdue" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="general" sme:precedence="1" sme:label="Overdue"/>
+			<xs:element name="name" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Name"/>
+			<xs:element name="currencySymbol" type="xs:string" sme:precedence="0"/>
+			<xs:element name="balance" type="xs:string" sme:precedence="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="supplierCashOverview--list">
+		<xs:sequence>
+			<xs:element name="supplierCashOverview" type="tns:supplierCashOverview--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- *25* Country -->
+	<xs:element name="country" type="tns:country--type" sme:label="Country" sme:canGet="true" sme:canPost="false" sme:canPut="false" sme:role="resourceKind"/>
+	<xs:complexType name="country--type">
+		<xs:all>
+			<xs:element name="code" type="xs:string" sme:groupName="address" sme:precedence="1" sme:label="Country Code" sme:isIdentifier="true"/>
+			<xs:element name="name" type="xs:string" sme:groupName="address" sme:precedence="1" sme:label="Country" sme:isDescriptor="true"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="country--list">
+		<xs:sequence>
+			<xs:element name="country" type="tns:country--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- *26* Price List Customer -->
+	<xs:element name="priceListCustomer" type="tns:priceListCustomer--type" sme:label="Price List Customer" sme:canGet="true" sme:role="resourceKind"/>
+	<xs:complexType name="priceListCustomer--type">
+		<xs:all>
+			<xs:element name="accountRef" type="xs:string" sme:precedence="1" sme:label="Reference"/>
+			<xs:element name="name" type="xs:string" sme:precedence="1" sme:label="Name"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="priceListCustomer--list">
+		<xs:sequence>
+			<xs:element name="priceListCustomer" type="tns:priceListCustomer--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="inputAddressField">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0"/>
+			<xs:maxLength value="60"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- *24* Customer Aged Balances-->
+	<xs:element name="customerAgedBalances" type="tns:customerAgedBalances--type" sme:label="Customer Aged Balances" sme:canGet="true" sme:canPost="false" sme:canPut="false" sme:role="resourceKind"/>
+	<xs:complexType name="customerAgedBalances--type">
+		<xs:all>
+			<xs:element name="accountRef" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Account Ref"/>
+			<xs:element name="YTD" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="general" sme:precedence="1" sme:label="YTD"/>
+			<xs:element name="creditLimit" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="general" sme:precedence="1" sme:label="Credit Limit"/>
+			<xs:element name="balance" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="general" sme:precedence="1" sme:label="Balance"/>
+			<xs:element name="future" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="general" sme:precedence="1" sme:label="Future"/>
+			<xs:element name="current" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="general" sme:precedence="1" sme:label="Current"/>
+			<xs:element name="month1" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="general" sme:precedence="1" sme:label="Mth/Period 1"/>
+			<xs:element name="month2" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="general" sme:precedence="1" sme:label="Mth/Period 2"/>
+			<xs:element name="month3" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="general" sme:precedence="1" sme:label="Mth/Period 3"/>
+			<xs:element name="older" type="xs:decimal" sme:format="$(currencySymbol)###,###.00" sme:groupName="general" sme:precedence="1" sme:label="Older"/>
+			<xs:element name="currencySymbol" type="xs:string" sme:precedence="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="customerAgedBalances--list">
+		<xs:sequence>
+			<xs:element name="customerAgedBalances" type="tns:customerAgedBalances--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- *25* Customer Product Outstanding Orders-->
+	<xs:element name="customerOutstandingProductOrder" type="tns:customerOutstandingProductOrder--type" sme:label="Customer Product Outstanding Orders" sme:canGet="true" sme:canPost="false" sme:canPut="false" sme:role="resourceKind"/>
+	<xs:complexType name="customerOutstandingProductOrder--type">
+		<xs:all>
+			<xs:element name="Date" type="xs:dateTime" sme:groupName="general" sme:precedence="1" sme:label="Date"/>
+			<xs:element name="OrderNumber" type="xs:integer" sme:groupName="general" sme:precedence="1" sme:label="Order Number"/>
+			<xs:element name="ProductRef" type="xs:string" sme:groupName="general" sme:precedence="1" sme:label="Product Code"/>
+			<xs:element name="Gross" type="xs:decimal" sme:groupName="general" sme:format="$(currencySymbol)###,###.00" sme:precedence="1" sme:label="Order Total"/>
+			<xs:element name="OrderStatus" type="xs:string" sme:groupName="status" sme:precedence="2" sme:label="Order Status"/>
+			<xs:element name="ProductStock" type="xs:decimal" sme:groupName="stock" sme:precedence="2" sme:label="Product Stock"/>
+			<xs:element name="FreeStock" type="xs:decimal" sme:groupName="stock" sme:precedence="2" sme:label="Free Stock"/>
+			<xs:element name="QuantityOrdered" type="xs:decimal" sme:groupName="stock" sme:precedence="2" sme:label="Qty Ordered"/>
+			<xs:element name="ItemAllocated" type="xs:decimal" sme:groupName="stock" sme:precedence="2" sme:label="Qty Allocated"/>
+			<xs:element name="ItemDespatched" type="xs:decimal" sme:groupName="stock" sme:precedence="2" sme:label="Qty Despatched"/>
+			<xs:element name="ItemToDeliver" type="xs:decimal" sme:groupName="stock" sme:precedence="2" sme:label="Qty To Deliver"/>
+			<xs:element name="ItemDueDate" type="xs:dateTime" sme:groupName="stock" sme:precedence="2" sme:label="Item Due Date"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="customerOutstandingProductOrder--list">
+		<xs:sequence>
+			<xs:element name="customerAgedBalances" type="tns:customerAgedBalances--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="resources">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="tns:resource" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="base" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:anyURI">
+						<xs:enumeration value="http://localhost/SageMobileService/sdata/-/-/-/"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<!-- *A* Resource definition -->
+	<xs:element name="resource">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="tns:method"/>
+			</xs:sequence>
+			<xs:attribute name="sectionImage">
+				<xs:simpleType>
+					<xs:restriction base="xs:string"/>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="section">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Customers"/>
+						<xs:enumeration value="Suppliers"/>
+						<xs:enumeration value="My Company"/>
+						<xs:enumeration value="Finance"/>
+						<xs:enumeration value="Reports"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="path" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="bankaccounts?precedence=1"/>
+						<xs:enumeration value="companyheadlines"/>
+						<xs:enumeration value="customercashoverview"/>
+						<xs:enumeration value="customers"/>
+						<xs:enumeration value="pricelists"/>
+						<xs:enumeration value="pricelists?precedence=1"/>
+						<xs:enumeration value="products"/>
+						<xs:enumeration value="products?precedence=1"/>
+						<xs:enumeration value="profitandloss"/>
+						<xs:enumeration value="projects"/>
+						<xs:enumeration value="suppliercashoverview"/>
+						<xs:enumeration value="suppliers"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="image">
+				<xs:simpleType>
+					<xs:restriction base="xs:string"/>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="id">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Search Customer Cash"/>
+						<xs:enumeration value="Search Customers"/>
+						<xs:enumeration value="Search Price Lists"/>
+						<xs:enumeration value="Search Products"/>
+						<xs:enumeration value="Search Projects"/>
+						<xs:enumeration value="Search Supplier Cash"/>
+						<xs:enumeration value="Search Suppliers"/>
+						<xs:enumeration value="View Bank Accounts"/>
+						<xs:enumeration value="View Company Headlines"/>
+						<xs:enumeration value="View Customer Overview"/>
+						<xs:enumeration value="View Price Lists"/>
+						<xs:enumeration value="View Summary P &amp; L YTD"/>
+						<xs:enumeration value="View Supplier Overview"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="category">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="bankaccount"/>
+						<xs:enumeration value="companyheadlines"/>
+						<xs:enumeration value="customer"/>
+						<xs:enumeration value="customercashoverview"/>
+						<xs:enumeration value="customercashoverviewsearch"/>
+						<xs:enumeration value="pricelists"/>
+						<xs:enumeration value="product"/>
+						<xs:enumeration value="profitandlossreport"/>
+						<xs:enumeration value="project"/>
+						<xs:enumeration value="supplier"/>
+						<xs:enumeration value="suppliercashoverview"/>
+						<xs:enumeration value="suppliercashoverviewsearch"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="method">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="tns:request"/>
+				<xs:element ref="tns:response"/>
+			</xs:sequence>
+			<xs:attribute name="name" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="GET"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="id" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="linkedlookup"/>
+						<xs:enumeration value="lookup"/>
+						<xs:enumeration value="view"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="tns:param" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="response">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="tns:representation"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="representation">
+		<xs:complexType>
+			<xs:attribute name="responseType" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="entity"/>
+						<xs:enumeration value="list"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="mediaType" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="application/xml"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="param">
+		<xs:complexType>
+			<xs:attribute name="type" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="xs:int"/>
+						<xs:enumeration value="xs:string"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="style" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="query"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="required" type="xs:boolean" use="required"/>
+			<xs:attribute name="name" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="count"/>
+						<xs:enumeration value="precedence"/>
+						<xs:enumeration value="where"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="label">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Account Ref"/>
+						<xs:enumeration value="Description"/>
+						<xs:enumeration value="Name"/>
+						<xs:enumeration value="Postcode"/>
+						<xs:enumeration value="Product Code"/>
+						<xs:enumeration value="Reference"/>
+						<xs:enumeration value="Status"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="field">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="AccountRef"/>
+						<xs:enumeration value="Code"/>
+						<xs:enumeration value="Description"/>
+						<xs:enumeration value="Name"/>
+						<xs:enumeration value="Postcode"/>
+						<xs:enumeration value="PriceRef"/>
+						<xs:enumeration value="Reference"/>
+						<xs:enumeration value="Status"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<!-- *B* Mapping definition -->
+	<xs:element name="mappings">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="tns:mapping" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="mapping">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="tns:field" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="type" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Entity"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="resourceId" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Customer"/>
+						<xs:enumeration value="Supplier"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="localEntity" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Contact"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="label" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Add to Address Book"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="field">
+		<xs:complexType>
+			<xs:attribute name="sourceField" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="City"/>
+						<xs:enumeration value="ContactName"/>
+						<xs:enumeration value="County"/>
+						<xs:enumeration value="Email"/>
+						<xs:enumeration value="Name"/>
+						<xs:enumeration value="Postcode"/>
+						<xs:enumeration value="Street1"/>
+						<xs:enumeration value="Street2"/>
+						<xs:enumeration value="Telephone"/>
+						<xs:enumeration value="Website"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="localField" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Addr_Extra_Work"/>
+						<xs:enumeration value="Addr_Locality_Work"/>
+						<xs:enumeration value="Addr_PostalCode_Work"/>
+						<xs:enumeration value="Addr_Region_Work"/>
+						<xs:enumeration value="Addr_Street_Work"/>
+						<xs:enumeration value="Email_Work"/>
+						<xs:enumeration value="Name"/>
+						<xs:enumeration value="Org"/>
+						<xs:enumeration value="Tel_Work"/>
+						<xs:enumeration value="Website_Work"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<!-- *C* Application definition -->
+	<xs:element name="application">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="tns:doc" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="doc">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="serviceType"/>
+				<xs:enumeration value="userAgent"/>
+				<xs:enumeration value="created"/>
+				<xs:enumeration value="lastUpdate"/>
+				<xs:enumeration value="versionNumber"/>
+				<xs:enumeration value="applicationName"/>
+				<xs:enumeration value="supportWebsite"/>
+				<xs:enumeration value="supportTelephone"/>
+				<xs:enumeration value="supportEmail"/>
+				<xs:enumeration value="dateMask"/>
+				<xs:enumeration value="GoogleMapsWebsiteURL"/>
+				<xs:enumeration value="GoogleMapsApplicationURL"/>
+				<xs:enumeration value="RecommendAFriend"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+</xs:schema>

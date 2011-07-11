@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ErrorMessages_AccountIDMadatory" xml:space="preserve">
+    <value>AccountID is mandatory</value>
+  </data>
+  <data name="ErrorMessages_AccountNameNotSet" xml:space="preserve">
+    <value>Mandatory field Account Name not set.</value>
+  </data>
+  <data name="ErrorMessages_AccountNotFound" xml:space="preserve">
+    <value>The Linked Account does not exists.</value>
+  </data>
+  <data name="ErrorMessages_AccountTypeNotSupported" xml:space="preserve">
+    <value>The given account type was not supported.</value>
+  </data>
+  <data name="ErrorMessages_AddOrdersForCustomersOnly" xml:space="preserve">
+    <value>Only Customer can Add Orders</value>
+  </data>
+  <data name="ErrorMessages_AddressOnlyOneSupported" xml:space="preserve">
+    <value>Only one address is supported for Account.</value>
+  </data>
+  <data name="ErrorMessages_AddressTypeNotSupported" xml:space="preserve">
+    <value>The given address type was not supported.</value>
+  </data>
+  <data name="ErrorMessages_CurrencyNotSupported" xml:space="preserve">
+    <value>Currency not supported</value>
+  </data>
+  <data name="ErrorMessages_DocumentTypeNotSupported" xml:space="preserve">
+    <value>The passed document type is not supported by this operation.</value>
+  </data>
+  <data name="ErrorMessages_EmailNotFound" xml:space="preserve">
+    <value>The Linked Email does not exists.</value>
+  </data>
+  <data name="ErrorMessages_InvalidFieldNameForReport" xml:space="preserve">
+    <value>The value '{0}' is no valid field name for the report '{1}'.</value>
+  </data>
+  <data name="ErrorMessages_InvalidIDForEntity" xml:space="preserve">
+    <value>The value '{0}' is no valid ID for '{1}'.</value>
+  </data>
+  <data name="ErrorMessages_NotImplemented" xml:space="preserve">
+    <value>The method or operation is not implemented.</value>
+  </data>
+  <data name="ErrorMessages_OnlyCustomersSupported" xml:space="preserve">
+    <value>Only Customer are supported to receive orders.</value>
+  </data>
+  <data name="ErrorMessages_OperationNotImplementedForEntity" xml:space="preserve">
+    <value>The method or operation is not implemented for '{0}'.</value>
+  </data>
+  <data name="ErrorMessages_OperationTagNotSupported" xml:space="preserve">
+    <value>The operation tag '{0}' is not supported.</value>
+  </data>
+  <data name="ErrorMessages_OrderContainsProductTwice" xml:space="preserve">
+    <value>Order contains one product twice.</value>
+  </data>
+  <data name="ErrorMessages_OrderWithProductTwice" xml:space="preserve">
+    <value>Two lineitems with the same Product with Id {0} is not supported in ERP.</value>
+  </data>
+  <data name="ErrorMessages_PersonTypeNotSupported" xml:space="preserve">
+    <value>The given person type was not supported.</value>
+  </data>
+  <data name="ErrorMessages_PhoneTypeNotSupported" xml:space="preserve">
+    <value>The given phone type was not supported.</value>
+  </data>
+  <data name="ErrorMessages_PriceListNotSupported" xml:space="preserve">
+    <value>Price List not supported</value>
+  </data>
+  <data name="ErrorMessages_ProductIdNotFound" xml:space="preserve">
+    <value>Product with Id {0} not found in ERP.</value>
+  </data>
+  <data name="ErrorMessages_ProductIdWrongFormat" xml:space="preserve">
+    <value>ProductId {0} is in the wrong Format.</value>
+  </data>
+  <data name="ErrorMessages_ProductNotFound" xml:space="preserve">
+    <value>Product not found</value>
+  </data>
+  <data name="ErrorMessages_QueryFieldMissing" xml:space="preserve">
+    <value>Query field named '{0}' missing.</value>
+  </data>
+  <data name="ErrorMessages_RTDVInvalidPageNumber" xml:space="preserve">
+    <value>The requested page number is out of range. It must be &gt; 0.</value>
+  </data>
+  <data name="ErrorMessages_RTDVInvalidRowsPerPage" xml:space="preserve">
+    <value>The requested number of rows per page is out of range. It must be &gt;= 0.</value>
+  </data>
+  <data name="ErrorMessages_RTDVNotImplemented" xml:space="preserve">
+    <value>The report '{0}' is not implemented.</value>
+  </data>
+  <data name="ErrorMessages_RTDVNotSupported" xml:space="preserve">
+    <value>No report named '{0}' is supported.</value>
+  </data>
+  <data name="ErrorMessages_RTDVSQLQueryBuildError" xml:space="preserve">
+    <value>The SQL query for the report '{0}' could not be build.</value>
+  </data>
+  <data name="ErrorMessages_RTDVSQLQueryBuildError_Debug" xml:space="preserve">
+    <value>The SQL query for the report '{0}' could not be build: '{1}' could not be appended to '{2}'</value>
+  </data>
+</root>

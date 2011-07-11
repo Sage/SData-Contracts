@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://schemas.sage.com/sdata/sync/2008/1"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.sage.com/sdata/sync/2008/1"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="digest" type="digest--type"/>
+  <xs:element name="syncState" type="syncState--type"/>
+
+  <xs:complexType name="digest--type">
+    <xs:element name="origin" type="xs:anyURI"/>
+    <xs:element name="digestEntry" type="digestEntry--type" maxOccurs="unbounded"/>
+  </xs:complexType>
+
+  <xs:complexType name="syncState--type">
+    <xs:all>
+      <xs:element name="endpoint" type="xs:anyURI"/>
+      <xs:element name="tick" type="xs:integer"/>
+      <xs:element name="stamp" type="xs:dateTime"/>
+      <xs:element name="user" type="xs:string"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="digestEntry--type">
+    <xs:all>
+      <xs:element name="endpoint" type="xs:anyURI"/>
+      <xs:element name="tick" type="xs:integer"/>
+      <xs:element name="stamp" type="xs:dateTime"/>
+      <xs:element name="conflictPriority" type="xs:integer"/>
+    </xs:all>
+  </xs:complexType>
+
+</xs:schema>

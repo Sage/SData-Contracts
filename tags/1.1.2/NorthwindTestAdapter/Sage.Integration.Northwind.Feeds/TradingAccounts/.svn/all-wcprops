@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/TradingAccounts
+END
+PhoneNumberPayload.cs
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/TradingAccounts/PhoneNumberPayload.cs
+END
+TradingAccountPayload.cs
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/TradingAccounts/TradingAccountPayload.cs
+END
+EmailPayload.cs
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/TradingAccounts/EmailPayload.cs
+END
+PostalAddressPayload.cs
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/TradingAccounts/PostalAddressPayload.cs
+END
+ContactPayload.cs
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/TradingAccounts/ContactPayload.cs
+END

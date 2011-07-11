@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Integration.Northwind.Etag
+END
+DeepPayloadEtagSerializer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Integration.Northwind.Etag/DeepPayloadEtagSerializer.cs
+END
+EtagServices.cs
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Integration.Northwind.Etag/EtagServices.cs
+END
+PayloadEtagSerializer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Integration.Northwind.Etag/PayloadEtagSerializer.cs
+END
+Sage.Integration.Northwind.Etag.csproj
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Integration.Northwind.Etag/Sage.Integration.Northwind.Etag.csproj
+END
+EtagBuilder.cs
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Integration.Northwind.Etag/EtagBuilder.cs
+END

@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds
+END
+Payloads.cs
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/Payloads.cs
+END
+FeedComponentFactory.cs
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/FeedComponentFactory.cs
+END
+ResourceDescriptionAttribute.cs
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/ResourceDescriptionAttribute.cs
+END
+LinkedElement.cs
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/LinkedElement.cs
+END
+SyncFeedDigestEntry.cs
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/SyncFeedDigestEntry.cs
+END
+ContractFeedEntry.cs
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/ContractFeedEntry.cs
+END
+PayloadBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/PayloadBase.cs
+END
+FeedEntry.cs
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/FeedEntry.cs
+END
+SyncDigestPayload.cs
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/SyncDigestPayload.cs
+END
+SyncFeedSerializer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/SyncFeedSerializer.cs
+END
+FeedType_temp.cs
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/FeedType_temp.cs
+END
+DatasetFeedEntry.cs
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/DatasetFeedEntry.cs
+END
+Sage.Integration.Northwind.Feeds.csproj
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/Sage.Integration.Northwind.Feeds.csproj
+END
+ResourceFeedEntry.cs
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/ResourceFeedEntry.cs
+END
+SyncTracking.cs
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/SyncTracking.cs
+END
+SyncFeed.cs
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/SyncFeed.cs
+END
+SyncFeedDigest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/SyncFeedDigest.cs
+END
+SyncFeedEntryLink.cs
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/SyncFeedEntryLink.cs
+END
+createPayloads.bat
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/createPayloads.bat
+END

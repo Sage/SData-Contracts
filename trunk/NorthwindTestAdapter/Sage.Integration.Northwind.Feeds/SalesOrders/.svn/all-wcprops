@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/SalesOrders
+END
+CommodityGroupPayload.cs
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/SalesOrders/CommodityGroupPayload.cs
+END
+PricePayload.cs
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/SalesOrders/PricePayload.cs
+END
+SalesOrderPayload.cs
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/SalesOrders/SalesOrderPayload.cs
+END
+UnitOfMeasureGroupPayload.cs
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/SalesOrders/UnitOfMeasureGroupPayload.cs
+END
+CommodityPayload.cs
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/SalesOrders/CommodityPayload.cs
+END
+SalesInvoicePayload.cs
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/SalesOrders/SalesInvoicePayload.cs
+END
+UnitOfMeasurePayload.cs
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/SalesOrders/UnitOfMeasurePayload.cs
+END
+SalesOrderLinePayload.cs
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/SalesOrders/SalesOrderLinePayload.cs
+END
+SalesInvoiceLinePayload.cs
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/SalesOrders/SalesInvoiceLinePayload.cs
+END
+PriceListPayload.cs
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/SalesOrders/PriceListPayload.cs
+END

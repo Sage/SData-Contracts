@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Integration.Northwind.Application/RTDV
+END
+RTDVAdditionalStockDetails.cs
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Integration.Northwind.Application/RTDV/RTDVAdditionalStockDetails.cs
+END
+RTDVEmployees.cs
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Integration.Northwind.Application/RTDV/RTDVEmployees.cs
+END
+RTDVProductsPurchased.cs
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Integration.Northwind.Application/RTDV/RTDVProductsPurchased.cs
+END
+RTDVSalesOrderItems.cs
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Integration.Northwind.Application/RTDV/RTDVSalesOrderItems.cs
+END
+RTDVSalesOrders.cs
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Integration.Northwind.Application/RTDV/RTDVSalesOrders.cs
+END
+RTDVSalesInvoices.cs
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Integration.Northwind.Application/RTDV/RTDVSalesInvoices.cs
+END

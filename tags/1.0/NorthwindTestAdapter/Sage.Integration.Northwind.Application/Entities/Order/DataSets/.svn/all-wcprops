@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Integration.Northwind.Application/Entities/Order/DataSets
+END
+Order.cs
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Integration.Northwind.Application/Entities/Order/DataSets/Order.cs
+END
+Order.xsc
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Integration.Northwind.Application/Entities/Order/DataSets/Order.xsc
+END
+Order.xss
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Integration.Northwind.Application/Entities/Order/DataSets/Order.xss
+END
+Order.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Integration.Northwind.Application/Entities/Order/DataSets/Order.xsd
+END
+OrderTableAdapters.cs
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Integration.Northwind.Application/Entities/Order/DataSets/OrderTableAdapters.cs
+END
+Order.Designer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Integration.Northwind.Application/Entities/Order/DataSets/Order.Designer.cs
+END

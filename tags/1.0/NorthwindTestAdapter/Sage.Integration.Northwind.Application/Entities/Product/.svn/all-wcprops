@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Integration.Northwind.Application/Entities/Product
+END
+Product.cs
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Integration.Northwind.Application/Entities/Product/Product.cs
+END
+Price.cs
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Integration.Northwind.Application/Entities/Product/Price.cs
+END
+ProductFamily.cs
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Integration.Northwind.Application/Entities/Product/ProductFamily.cs
+END
+UnitOfMeasure.cs
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Integration.Northwind.Application/Entities/Product/UnitOfMeasure.cs
+END
+PricingList.cs
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Integration.Northwind.Application/Entities/Product/PricingList.cs
+END
+UnitOfMeasureFamily.cs
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Integration.Northwind.Application/Entities/Product/UnitOfMeasureFamily.cs
+END

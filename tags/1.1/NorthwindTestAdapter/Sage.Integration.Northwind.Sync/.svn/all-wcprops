@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Sync
+END
+ISyncSyncDigestInfoStore.cs
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Sync/ISyncSyncDigestInfoStore.cs
+END
+ISyncTickProvider.cs
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Sync/ISyncTickProvider.cs
+END
+AppBookmarkInfoStore.cs
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Sync/AppBookmarkInfoStore.cs
+END
+StoreLocator.cs
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Sync/StoreLocator.cs
+END
+Sage.Integration.Northwind.Sync.csproj
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Sync/Sage.Integration.Northwind.Sync.csproj
+END
+CorrelatedResSyncInfoStore.cs
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Sync/CorrelatedResSyncInfoStore.cs
+END
+SyncResultInfoStore.cs
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Sync/SyncResultInfoStore.cs
+END
+SyncDigestInfoStore.cs
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Sync/SyncDigestInfoStore.cs
+END
+TickProvider.cs
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Sync/TickProvider.cs
+END

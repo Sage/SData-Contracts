@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Sis.Common.Data
+END
+ITransaction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Sis.Common.Data/ITransaction.cs
+END
+ITableSchema.cs
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Sis.Common.Data/ITableSchema.cs
+END
+IConnectionProvider.cs
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Sis.Common.Data/IConnectionProvider.cs
+END
+Sage.Sis.Common.Data.csproj
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Sis.Common.Data/Sage.Sis.Common.Data.csproj
+END

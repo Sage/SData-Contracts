@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Data
+END
+FeedFactory.cs
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Data/FeedFactory.cs
+END
+IEntityQueryWrapper.cs
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Data/IEntityQueryWrapper.cs
+END
+QueryFilterBuilder.cs
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Data/QueryFilterBuilder.cs
+END
+EntityWrapperFactory.cs
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Data/EntityWrapperFactory.cs
+END
+IEntityWrapper.cs
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Data/IEntityWrapper.cs
+END
+EntityWrapperBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Data/EntityWrapperBase.cs
+END

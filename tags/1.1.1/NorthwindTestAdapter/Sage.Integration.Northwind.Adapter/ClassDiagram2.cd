@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Sage.Integration.Northwind.Application.API.Identity" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Sage.Integration.Northwind.Application.API.Token">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Sage.Integration.Northwind.Application.API.TransactionResult">
+    <Position X="3" Y="4.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Sage.Integration.Northwind.Application.Base.Document">
+    <Position X="3" Y="1.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Sage.Integration.Northwind.Application.Base.EntityBase">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <Members>
+      <Method Name="EntityBase" Hidden="true" />
+      <Method Name="ExecuteTransactions" Hidden="true" />
+      <Method Name="FillChangeLog" Hidden="true" />
+      <Method Name="GetDeletedDocument" Hidden="true" />
+      <Method Name="GetDocumentTemplate" Hidden="true" />
+    </Members>
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Sage.Integration.Northwind.Application.Base.Property">
+    <Position X="4.75" Y="1.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

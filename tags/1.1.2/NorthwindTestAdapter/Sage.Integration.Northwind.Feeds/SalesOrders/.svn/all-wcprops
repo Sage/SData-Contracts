@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/SalesOrders
+END
+CommodityGroupPayload.cs
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/SalesOrders/CommodityGroupPayload.cs
+END
+PricePayload.cs
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/SalesOrders/PricePayload.cs
+END
+SalesOrderPayload.cs
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/SalesOrders/SalesOrderPayload.cs
+END
+UnitOfMeasureGroupPayload.cs
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/SalesOrders/UnitOfMeasureGroupPayload.cs
+END
+CommodityPayload.cs
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/SalesOrders/CommodityPayload.cs
+END
+SalesInvoicePayload.cs
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/SalesOrders/SalesInvoicePayload.cs
+END
+UnitOfMeasurePayload.cs
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/SalesOrders/UnitOfMeasurePayload.cs
+END
+SalesOrderLinePayload.cs
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/SalesOrders/SalesOrderLinePayload.cs
+END
+SalesInvoiceLinePayload.cs
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/SalesOrders/SalesInvoiceLinePayload.cs
+END
+PriceListPayload.cs
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/gcrmcontract/!svn/ver/203/tags/1.1.2/NorthwindTestAdapter/Sage.Integration.Northwind.Feeds/SalesOrders/PriceListPayload.cs
+END

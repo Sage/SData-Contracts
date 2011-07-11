@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Sis.Sdata.Etag.Crc
+END
+IEtagSerializer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Sis.Sdata.Etag.Crc/IEtagSerializer.cs
+END
+Sage.Sis.Sdata.Etag.Crc.csproj
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Sis.Sdata.Etag.Crc/Sage.Sis.Sdata.Etag.Crc.csproj
+END
+Crc32EtagProvider.cs
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Sis.Sdata.Etag.Crc/Crc32EtagProvider.cs
+END

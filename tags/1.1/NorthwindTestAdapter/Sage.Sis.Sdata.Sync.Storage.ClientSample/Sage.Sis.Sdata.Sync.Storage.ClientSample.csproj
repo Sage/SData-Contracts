@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2236EA38-181B-4E0F-A472-C8946CBCBD0E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sage.Sis.Sdata.Sync.Storage.ClientSample</RootNamespace>
+    <AssemblyName>Sage.Sis.Sdata.Sync.Storage.ClientSample</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppBookmarkInfoStoreClient.cs" />
+    <Compile Include="CorrelatedResSyncInfoStoreClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SyncDigestInfoStoreClient.cs" />
+    <Compile Include="SyncStorage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sage.Sis.Common.Data\Sage.Sis.Common.Data.csproj">
+      <Project>{4FCA340F-6C11-4C37-9A30-AEED463B1342}</Project>
+      <Name>Sage.Sis.Common.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.Sis.Sdata.Sync.Context\Sage.Sis.Sdata.Sync.Context.csproj">
+      <Project>{3F60D46A-CACD-4014-93CC-1FC40AA1FF3D}</Project>
+      <Name>Sage.Sis.Sdata.Sync.Context</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.Sis.Sdata.Sync.Storage.Jet\Sage.Sis.Sdata.Sync.Storage.Jet.csproj">
+      <Project>{C2D466E2-8580-48DD-A005-04F33A5B9C0B}</Project>
+      <Name>Sage.Sis.Sdata.Sync.Storage.Jet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage.Sis.Sdata.Sync.Storage\Sage.Sis.Sdata.Sync.Storage.csproj">
+      <Project>{8302A3E6-9AF0-4F17-90F7-1780612D9977}</Project>
+      <Name>Sage.Sis.Sdata.Sync.Storage</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

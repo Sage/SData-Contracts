@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/gcrmcontract/!svn/ver/64/trunk/Tools
+END
+FamDocBookToXSD.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/gcrmcontract/!svn/ver/39/trunk/Tools/FamDocBookToXSD.xslt
+END
+XsdToHtml.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/gcrmcontract/!svn/ver/64/trunk/Tools/XsdToHtml.xslt
+END
+msxsl.exe
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/gcrmcontract/!svn/ver/4/trunk/Tools/msxsl.exe
+END
+FamDocBookToXsd.cmd
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/gcrmcontract/!svn/ver/39/trunk/Tools/FamDocBookToXsd.cmd
+END
+XsdToHtml.cmd
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/gcrmcontract/!svn/ver/4/trunk/Tools/XsdToHtml.cmd
+END
+DocBookToXSD.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/gcrmcontract/!svn/ver/58/trunk/Tools/DocBookToXSD.xslt
+END
+hrmErp.xml
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/gcrmcontract/!svn/ver/26/trunk/Tools/hrmErp.xml
+END
+fullContract.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/gcrmcontract/!svn/ver/4/trunk/Tools/fullContract.xsd
+END
+fullContract.xml
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/gcrmcontract/!svn/ver/4/trunk/Tools/fullContract.xml
+END
+GCRM Contract 2.1 for XSD.doc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/gcrmcontract/!svn/ver/4/trunk/Tools/GCRM%20Contract%202.1%20for%20XSD.doc
+END
+hrmErp.doc
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/gcrmcontract/!svn/ver/26/trunk/Tools/hrmErp.doc
+END
+HrmDocBookToXSD.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/gcrmcontract/!svn/ver/26/trunk/Tools/HrmDocBookToXSD.xslt
+END
+fullContract.html
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/gcrmcontract/!svn/ver/4/trunk/Tools/fullContract.html
+END
+DocBookToXsd.cmd
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/gcrmcontract/!svn/ver/4/trunk/Tools/DocBookToXsd.cmd
+END
+famErp.xml
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/gcrmcontract/!svn/ver/39/trunk/Tools/famErp.xml
+END
+HrmDocBookToXsd.cmd
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/gcrmcontract/!svn/ver/26/trunk/Tools/HrmDocBookToXsd.cmd
+END
+famErp.doc
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/gcrmcontract/!svn/ver/39/trunk/Tools/famErp.doc
+END

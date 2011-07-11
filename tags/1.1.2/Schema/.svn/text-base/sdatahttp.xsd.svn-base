@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="sdata"
+    targetNamespace="http://schemas.sage.com/sdata/http/2008/1"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.sage.com/sdata/http/2008/1"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <!-- Element Definitions -->
+  <xs:element name="httpMethod" type="httpMethodType"/>
+  <xs:element name="httpStatus" type="xs:integer"/>
+  <xs:element name="httpMessage" type="xs:string"/>
+  <xs:element name="location" type="xs:anyURI"/>
+  <xs:element name="etag" type="xs:string"/>
+  <xs:element name="ifMatch" type="xs:string"/>
+
+  <!-- Type Definitions -->
+  <xs:simpleType name="httpMethodType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="GET"/>
+      <xs:enumeration value="POST"/>
+      <xs:enumeration value="PUT"/>
+      <xs:enumeration value="DELETE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>
