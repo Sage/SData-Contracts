@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 2 (http://www.altova.com) by DAVE BANKS (SAGE UK LTD) -->
 <?xml-stylesheet type="text/xsl" href="../Tools/XsdToHtml.xslt"?>
 <xs:schema xmlns="http://schemas.sage.com/sageSchemas/2011" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sme="http://schemas.sage.com/sdata/sme/2007" xmlns:sc="http://schemas.sage.com/sc/2009" xmlns:crmErp="http://schemas.sage.com/crmErp/2008" xmlns:hrmErp="http://schemas.sage.com/hrmErp/2009" xmlns:famErp="http://schemas.sage.com/famErp/2009" xmlns:payErp="http://schemas.sage.com/payErp/2009" targetNamespace="http://schemas.sage.com/sageSchemas/2011" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.0.0" id="sageSchemas">
 	<?First part is the common schema (was common.xsd)?>
