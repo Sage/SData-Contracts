@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Results
+END
+ISyncResultsInfoStoreProvider.cs
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Results/ISyncResultsInfoStoreProvider.cs
+END
+ISyncResultInfoStore.cs
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Results/ISyncResultInfoStore.cs
+END
+Sage.Sis.Sdata.Sync.Results.csproj
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Results/Sage.Sis.Sdata.Sync.Results.csproj
+END

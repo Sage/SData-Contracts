@@ -1,0 +1,322 @@
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sme="http://schemas.sage.com/sdata/sme/2007">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>http://schemas.sage.com/payErp/2009</title>
+<link href="http://interop.sage.com/daisy/resources/skins/sageBranding2009/css/daisy.css" type="text/css" rel="stylesheet">
+<link href="http://interop.sage.com/daisy/resources/skins/sageBranding2009/css/basic.css" type="text/css" rel="stylesheet">
+</head>
+<body><a name="_top"></a><div id="bodyContainer">
+<p></p>
+<h1>
+            Contract http://schemas.sage.com/payErp/2009</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<th>Resource Kind</th>
+<th>Plural</th>
+<th>Compliance</th>
+<th>CanGet</th>
+<th>CanPost</th>
+<th>CanPut</th>
+<th>CanDelete</th>
+<th>isSyncSource</th>
+<th>isSyncTarget</th>
+</tr>
+<tr>
+<td><a href="#operatingCompany--type">operatingCompany</a></td>
+<td>operatingCompanies</td>
+<td>must</td>
+<td>true 
+      </td>
+<td>true 
+      </td>
+<td>true 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+</tr>
+<tr>
+<td><a href="#receipt--type">receipt</a></td>
+<td>receipts</td>
+<td>must</td>
+<td>true 
+      </td>
+<td>true 
+      </td>
+<td>true 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+</tr>
+<tr>
+<td><a href="#payment--type">payment</a></td>
+<td>payments</td>
+<td>should</td>
+<td>true 
+      </td>
+<td>true 
+      </td>
+<td>true 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+</tr>
+<tr>
+<td><a href="#interaction--type">interaction</a></td>
+<td>interactions</td>
+<td>may</td>
+<td>true 
+      </td>
+<td>true 
+      </td>
+<td>true 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+<td> 
+      </td>
+</tr>
+</table>
+</div>
+<hr>
+<div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p><a name="tenderTransactionType--enum"></a><h1>
+        Enumeration tenderTransactionType</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<td>Receipt</td>
+</tr>
+<tr>
+<td>Authenticate Receipt</td>
+</tr>
+<tr>
+<td>Deferred Receipt</td>
+</tr>
+<tr>
+<td>Payment</td>
+</tr>
+<tr>
+<td>Authenticate Payment</td>
+</tr>
+<tr>
+<td>Deferred Payment</td>
+</tr>
+</table>
+</div>
+<hr>
+<div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p><a name="tenderApplyEnum--enum"></a><h1>
+        Enumeration tenderApplyEnum</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+</tr>
+</table>
+</div>
+<hr>
+<div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p><a name="tenderAccountType--enum"></a><h1>
+        Enumeration tenderAccountType</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<td>E</td>
+</tr>
+<tr>
+<td>C</td>
+</tr>
+<tr>
+<td>M</td>
+</tr>
+</table>
+</div>
+<hr>
+<div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p><a name="tenderAVSCV2Response--enum"></a><h1>
+        Enumeration tenderAVSCV2Response</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<td>ALL MATCH</td>
+</tr>
+<tr>
+<td>SECURITY CODE MATCH ONLY</td>
+</tr>
+<tr>
+<td>ADDRESS MATCH ONLY</td>
+</tr>
+<tr>
+<td>NO DATA MATCHES</td>
+</tr>
+<tr>
+<td>DATA NOT CHECKED</td>
+</tr>
+</table>
+</div>
+<hr>
+<div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p><a name="tenderResult--enum"></a><h1>
+        Enumeration tenderResult</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<td>NOTPROVIDED</td>
+</tr>
+<tr>
+<td>NOTCHECKED</td>
+</tr>
+<tr>
+<td>MATCHED</td>
+</tr>
+<tr>
+<td>NOTMATCHED</td>
+</tr>
+</table>
+</div>
+<hr>
+<div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p><a name="tender3DSecureStatus--enum"></a><h1>
+        Enumeration tender3DSecureStatus</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<td>OK</td>
+</tr>
+<tr>
+<td>NOAUTH</td>
+</tr>
+<tr>
+<td>CANTAUTH</td>
+</tr>
+<tr>
+<td>NOTAUTHED</td>
+</tr>
+<tr>
+<td>ATTEMPTONLY</td>
+</tr>
+<tr>
+<td>NOTCHECKED</td>
+</tr>
+<tr>
+<td>INCOMPLETE</td>
+</tr>
+<tr>
+<td>MALFORMED</td>
+</tr>
+<tr>
+<td>INVALID</td>
+</tr>
+<tr>
+<td>ERROR</td>
+</tr>
+</table>
+</div>
+<hr>
+<div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p><a name="tenderAddressStatus--enum"></a><h1>
+        Enumeration tenderAddressStatus</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<td>NONE</td>
+</tr>
+<tr>
+<td>CONFIRMED</td>
+</tr>
+<tr>
+<td>UNCONFIRMED</td>
+</tr>
+</table>
+</div>
+<hr>
+<div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p><a name="tenderPayerStatus--enum"></a><h1>
+        Enumeration tenderPayerStatus</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<td>VERIFIED</td>
+</tr>
+<tr>
+<td>UNVERIFIED</td>
+</tr>
+</table>
+</div>
+<hr>
+<div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p><a name="tenderProfile--enum"></a><h1>
+        Enumeration tenderProfile</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<td>NORMAL</td>
+</tr>
+<tr>
+<td>LOW</td>
+</tr>
+</table>
+</div>
+<hr>
+<div style="float: right; clear: none;"><a href="#_top">Top</a>  
+    </div>
+<div id="bodyContainer">
+<p></p><a name="businessDayOverrideFlag--enum"></a><h1>
+        Enumeration businessDayOverrideFlag</h1>
+<p></p>
+<table class="greyBorder" print-width="100%">
+<tr>
+<td>None</td>
+</tr>
+<tr>
+<td>Before</td>
+</tr>
+<tr>
+<td>After</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

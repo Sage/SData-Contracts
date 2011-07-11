@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Transformations
+END
+TransformationFactory.cs
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Transformations/TransformationFactory.cs
+END
+ITransformation.cs
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Transformations/ITransformation.cs
+END
+TransformationBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Transformations/TransformationBase.cs
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Sis.Sdata.Etag
+END
+EtagComputeException.cs
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Sis.Sdata.Etag/EtagComputeException.cs
+END
+Sage.Sis.Sdata.Etag.csproj
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Sis.Sdata.Etag/Sage.Sis.Sdata.Etag.csproj
+END
+IEtagProvider.cs
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/gcrmcontract/!svn/ver/63/tags/1.0/NorthwindTestAdapter/Sage.Sis.Sdata.Etag/IEtagProvider.cs
+END

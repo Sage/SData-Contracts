@@ -1,0 +1,525 @@
+﻿#region Usings
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data.OleDb;
+using Sage.Integration.Northwind.Adapter.Common;
+using Sage.Integration.Northwind.Adapter.Common.Paging;
+using Sage.Integration.Northwind.Adapter.Requests;
+using Sage.Integration.Northwind.Adapter.Transformations;
+using Sage.Integration.Northwind.Application.API;
+using Sage.Integration.Northwind.Application.Base;
+using Sage.Integration.Northwind.Application.Entities.Account;
+using Sage.Integration.Northwind.Application.Entities.Account.Documents;
+using Sage.Integration.Northwind.Feeds;
+using Sage.Integration.Northwind.Feeds.TradingAccounts;
+using Sage.Sis.Sdata.Sync.Storage;
+using Sage.Sis.Sdata.Sync.Storage.Syndication;
+
+#endregion
+
+namespace Sage.Integration.Northwind.Adapter.Data
+{
+    public class PhoneNumberWrapper : EntityWrapperBase, IEntityWrapper, IEntityQueryWrapper
+    {
+        #region Class Variables
+
+        private ITransformation<PhoneDocument, PhoneNumberPayload> _transformation;
+        private string _tradingAccountUuidPayloadPath;
+
+        #endregion
+
+        #region Ctor.
+
+        public PhoneNumberWrapper(RequestContext context)
+            : base(context, SupportedResourceKinds.phoneNumbers)
+        {
+            _entity = new Account();
+            _transformation = TransformationFactory.GetTransformation<ITransformation<PhoneDocument, PhoneNumberPayload>>
+                (SupportedResourceKinds.phoneNumbers, context);
+            _tradingAccountUuidPayloadPath = _resourceKind.ToString() + "/" + SupportedResourceKinds.tradingAccounts.ToString();
+        }
+
+        #endregion
+
+        #region IEntityWrapper Members
+
+        public override Identity GetIdentity(string id)
+        {
+            string accountId = id;
+            if (id.EndsWith(Sage.Integration.Northwind.Application.API.Constants.PhoneIdPostfix))
+                accountId = id.Replace(Sage.Integration.Northwind.Application.API.Constants.PhoneIdPostfix, "");
+            else if (id.EndsWith(Sage.Integration.Northwind.Application.API.Constants.FaxIdPostfix))
+                accountId = id.Replace(Sage.Integration.Northwind.Application.API.Constants.FaxIdPostfix, "");
+            
+            return new Identity(_entity.EntityName, accountId);
+        }
+
+        public override Document GetTransformedDocument(PayloadBase payload, List<SyncFeedEntryLink> links)
+        {
+            Document result = _transformation.GetTransformedDocument(payload as PhoneNumberPayload, links);
+            return result;
+        }
+
+        public override PayloadBase GetTransformedPayload(Document document, out List<SyncFeedEntryLink> links)
+        {
+            PayloadBase result = _transformation.GetTransformedPayload(document as PhoneDocument,out links);
+            links = Helper.ExtendPayloadPath(links, "phoneNumber");
+            return result;
+        }
+
+
+        public override SyncFeedEntry GetFeedEntry(string id)
+        {
+            SyncFeedEntry result = new SyncFeedEntry();
+            result.Payload = PayloadFactory.CreatePayload(_resourceKind);
+
+            Identity identity;
+            AccountDocument accountDocument;
+            Account account = new Account();
+            string accountId;
+            if (id.EndsWith(Sage.Integration.Northwind.Application.API.Constants.PhoneIdPostfix))
+                accountId = id.Replace(Sage.Integration.Northwind.Application.API.Constants.PhoneIdPostfix, "");
+            else if (id.EndsWith(Sage.Integration.Northwind.Application.API.Constants.FaxIdPostfix))
+                accountId = id.Replace(Sage.Integration.Northwind.Application.API.Constants.FaxIdPostfix, "");
+            else
+                return null;
+
+            identity = new Identity(account.EntityName, accountId);
+            
+
+            accountDocument = (AccountDocument)_entity.GetDocument(identity, _emptyToken, _context.Config);
+            
+            if (accountDocument.LogState == LogState.Deleted)
+                return null;
+            if (accountDocument.addresses.documents.Count == 0)
+                return null;
+            Document document = null;
+            foreach (Document phoneDoc in accountDocument.phones.documents)
+            {
+                if (phoneDoc.Id.Equals(id, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    document = phoneDoc;
+                    break;
+                }
+            }
+            if (document == null)
+                return null;
+
+
+            List<SyncFeedEntryLink> links;
+            result.Payload = GetTransformedPayload(document, out links);
+
+            string taUuid = GetTradingAccountUuid(accountDocument.Id);
+            if (!String.IsNullOrEmpty(taUuid))
+            {
+                SyncFeedEntryLink tradingAccountLink = SyncFeedEntryLink.CreateRelatedLink(
+                    String.Format("{0}{1}('{2}')", _context.DatasetLink, SupportedResourceKinds.tradingAccounts.ToString(), accountDocument.Id),
+                    SupportedResourceKinds.tradingAccounts.ToString(),
+                     _tradingAccountUuidPayloadPath, taUuid);
+                links.Add(tradingAccountLink);
+
+            }
+            result.SyncLinks = links;
+            result.Id = String.Format("{0}{1}('{2}')", _context.DatasetLink, _resourceKind.ToString(), id);
+            result.Title = String.Format("{0}: {1}", _resourceKind.ToString(), id);
+            result.Updated = DateTime.Now;
+            return result;
+
+        }
+
+        public override SyncFeed GetFeed()
+        {
+            bool includeUuid;
+
+            string whereClause = string.Empty;
+            OleDbParameter[] oleDbParameters = null;
+
+            if (this is IEntityQueryWrapper)
+            {
+                QueryFilterBuilder queryFilterBuilder = new QueryFilterBuilder((IEntityQueryWrapper)this);
+
+                queryFilterBuilder.BuildSqlStatement(_context, out whereClause, out oleDbParameters);
+            }
+
+            SyncFeed feed = new SyncFeed();
+
+            feed.Title = _resourceKind.ToString() + ": " + DateTime.Now.ToString();
+
+            Token emptyToken = new Token();
+
+
+            List<Identity> identities = new List<Identity>();
+
+            if (String.IsNullOrEmpty(_context.ResourceKey))
+                identities = _entity.GetAll(_context.Config, whereClause, oleDbParameters);
+            else
+                identities.Add(new Identity(_entity.EntityName, _context.ResourceKey));
+
+            int totalResult = identities.Count;
+
+            #region PAGING & OPENSEARCH
+
+            /* PAGING */
+            feed.Links = FeedMetadataHelpers.CreatePageFeedLinks(_context, totalResult, FeedMetadataHelpers.RequestKeywordType.none);
+
+            /* OPENSEARCH */
+            PageController pageController = FeedMetadataHelpers.GetPageLinkBuilder(_context, totalResult, FeedMetadataHelpers.RequestKeywordType.none);
+
+            feed.Opensearch_ItemsPerPageElement = pageController.GetOpensearch_ItemsPerPageElement();
+            feed.Opensearch_StartIndexElement = pageController.GetOpensearch_StartIndexElement();
+            feed.Opensearch_TotalResultsElement = pageController.GetOpensearch_TotalResultsElement();
+
+            #endregion
+
+            feed.Id = _context.SdataUri.ToString();
+
+            string tmpValue;
+            // ?includeUuid
+            includeUuid = false;    // default value, but check for settings now
+            if (_context.SdataUri.QueryArgs.TryGetValue("includeUuid", out tmpValue))
+                includeUuid = System.Xml.XmlConvert.ToBoolean(tmpValue);
+
+            ICorrelatedResSyncInfoStore correlatedResSyncStore = null;
+            if (includeUuid)
+                // get store to request the correlations
+                correlatedResSyncStore = RequestReceiver.NorthwindAdapter.StoreLocator.GetCorrelatedResSyncStore(_context.SdataContext);
+
+            for (int pageIndex = pageController.StartIndex; pageIndex <= pageController.LastIndex; pageIndex++)
+            //for (int index = startIndex; index < startIndex + count; index++)
+            {
+                int zeroBasedIndex = pageIndex - 1;
+                Identity identity = identities[zeroBasedIndex];
+                Identity accountIdentity = GetIdentity(identity.Id);
+
+                AccountDocument accountDocument = (AccountDocument)_entity.GetDocument(accountIdentity, emptyToken, _context.Config);
+                if (accountDocument.LogState == LogState.Deleted)
+                    continue;
+
+
+                SyncFeedEntry entry = new SyncFeedEntry();
+                if (accountDocument.phones.documents.Count == 0)
+                    continue;
+
+
+                entry.Id = String.Format("{0}{1}('{2}')", _context.DatasetLink, _resourceKind.ToString(), identity.Id);
+
+                entry.Title = String.Format("{0}: {1}", _resourceKind.ToString(), identity.Id);
+                entry.Updated = DateTime.Now;
+                string taUuid;
+
+                if (_context.SdataUri.Precedence == null)
+                {
+                    List<SyncFeedEntryLink> links;
+                    Document document;
+                    if (accountIdentity.Id == identity.Id)
+                    {
+                        document = accountDocument.phones.documents[0];
+                        entry.Id = String.Format("{0}{1}('{2}')", _context.DatasetLink, _resourceKind.ToString(), document.Id);
+                        entry.Title = String.Format("{0}: {1}", _resourceKind.ToString(), document.Id);
+                        entry.Payload = GetTransformedPayload(document, out links);
+                        taUuid = GetTradingAccountUuid(accountDocument.Id);
+                        if (!String.IsNullOrEmpty(taUuid))
+                        {
+                            SyncFeedEntryLink tradingAccountLink = SyncFeedEntryLink.CreateRelatedLink(
+                                String.Format("{0}{1}('{2}')", _context.DatasetLink, SupportedResourceKinds.tradingAccounts.ToString(), accountDocument.Id),
+                                SupportedResourceKinds.tradingAccounts.ToString(),
+                                 _tradingAccountUuidPayloadPath, taUuid);
+                            links.Add(tradingAccountLink);
+                        }
+
+                        entry.SyncLinks = links;
+
+                        if (includeUuid)
+                        {
+                            CorrelatedResSyncInfo[] infos = correlatedResSyncStore.GetByLocalId(_context.ResourceKind.ToString(), new string[] { identity.Id });
+                            entry.Uuid = (infos.Length > 0) ? infos[0].ResSyncInfo.Uuid : Guid.Empty;
+                        }
+
+                        if (entry != null)
+                            feed.Entries.Add(entry);
+                    }
+                    else
+                    {
+                        for (int index2 = 0; index2 < accountDocument.phones.documents.Count; index2++)
+                        {
+                            if (accountDocument.phones.documents[index2].Id.Equals(identity.Id, StringComparison.InvariantCultureIgnoreCase))
+                            {
+                                document = accountDocument.phones.documents[0];
+                                entry.Payload = GetTransformedPayload(document, out links);
+                                taUuid = GetTradingAccountUuid(accountDocument.Id);
+                                if (!String.IsNullOrEmpty(taUuid))
+                                {
+                                    SyncFeedEntryLink tradingAccountLink = SyncFeedEntryLink.CreateRelatedLink(
+                                        String.Format("{0}{1}('{2}')", _context.DatasetLink, SupportedResourceKinds.tradingAccounts.ToString(), accountDocument.Id),
+                                        SupportedResourceKinds.tradingAccounts.ToString(),
+                                         _tradingAccountUuidPayloadPath, taUuid);
+                                    links.Add(tradingAccountLink);
+                                }
+
+                                entry.SyncLinks = links;
+
+                                if (includeUuid)
+                                {
+                                    CorrelatedResSyncInfo[] infos = correlatedResSyncStore.GetByLocalId(_context.ResourceKind.ToString(), new string[] { identity.Id });
+                                    entry.Uuid = (infos.Length > 0) ? infos[0].ResSyncInfo.Uuid : Guid.Empty;
+                                }
+
+                                if (entry != null)
+                                    feed.Entries.Add(entry);
+                                break;
+                            }
+
+                        }
+                    }
+
+                }
+                else
+                {
+                    if (includeUuid)
+                    {
+                        CorrelatedResSyncInfo[] infos = correlatedResSyncStore.GetByLocalId(_context.ResourceKind.ToString(), new string[] { identity.Id });
+                        entry.Uuid = (infos.Length > 0) ? infos[0].ResSyncInfo.Uuid : Guid.Empty;
+                    }
+
+                    feed.Entries.Add(entry);
+                }
+            }
+
+            return feed;
+        }
+
+        public override SdataTransactionResult Delete(string id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override SdataTransactionResult Add(PayloadBase payload, List<SyncFeedEntryLink> links)
+        {
+            string accountUuid = "";
+            SdataTransactionResult sdTrResult;
+            PhoneNumberPayload phoneNumberPayload = payload as PhoneNumberPayload;
+            bool isFax = false; ;
+            bool isPhone = false;
+
+
+            if (phoneNumberPayload.PhoneNumbertype.type.Equals("general", StringComparison.InvariantCultureIgnoreCase))
+                isPhone = true;
+            else if (phoneNumberPayload.PhoneNumbertype.type.Equals("fax", StringComparison.InvariantCultureIgnoreCase))
+                isFax = true;
+
+
+            else
+            {
+                sdTrResult = new SdataTransactionResult();
+                sdTrResult.HttpMessage = "Only primary phonenumbers with type general and fax where accepted";
+                sdTrResult.HttpMethod = "POST";
+                sdTrResult.HttpStatus = System.Net.HttpStatusCode.Forbidden;
+                sdTrResult.ResourceKind = _resourceKind;
+                sdTrResult.Uuid = phoneNumberPayload.SyncUuid;
+                return sdTrResult;
+            }
+
+            foreach (SyncFeedEntryLink link in links)
+            {
+                if ((!String.IsNullOrEmpty(link.PayloadPath)) &&
+                    link.PayloadPath.Equals(_tradingAccountUuidPayloadPath, 
+                    StringComparison.InvariantCultureIgnoreCase))
+                {
+                    accountUuid = link.Uuid;
+                    break;
+                }
+            }
+
+            if (String.IsNullOrEmpty(accountUuid))
+            {
+                sdTrResult = new SdataTransactionResult();
+                sdTrResult.HttpMessage = "Trading Account UUID was missing";
+                sdTrResult.HttpMethod = "POST";
+                sdTrResult.HttpStatus = System.Net.HttpStatusCode.Forbidden;
+                sdTrResult.ResourceKind = _resourceKind;
+                sdTrResult.Uuid = phoneNumberPayload.SyncUuid;
+                return sdTrResult;
+            }
+
+            
+            string accountId = GetTradingAccountLocalId(accountUuid);
+            
+            if (String.IsNullOrEmpty(accountId))
+            {
+                sdTrResult = new SdataTransactionResult();
+                sdTrResult.HttpMessage = String.Format("Trading Account UUID {0} was not linked", accountUuid);
+                sdTrResult.HttpMethod = "POST";
+                sdTrResult.HttpStatus = System.Net.HttpStatusCode.Forbidden;
+                sdTrResult.ResourceKind = _resourceKind;
+                sdTrResult.Uuid = phoneNumberPayload.SyncUuid;
+                return sdTrResult;
+            }
+
+
+            Account account = new Account();
+            Identity accIdentity = new Identity(account.EntityName, accountId);
+            AccountDocument accountDocument = account.GetDocument(
+                accIdentity, _emptyToken, _context.Config) as AccountDocument;
+
+            Document document = null;
+            bool doAdd = false;
+
+            document = GetTransformedDocument(payload, links);
+            if (isPhone)
+                document.Id = accountId + Sage.Integration.Northwind.Application.API.Constants.PhoneIdPostfix;
+            if (isFax)
+                document.Id = accountId + Sage.Integration.Northwind.Application.API.Constants.FaxIdPostfix;
+            if (accountDocument.addresses.documents.Count == 0)
+            {
+                accountDocument.CrmId = GetTradingAccountUuid(document.Id);
+                accountDocument.phones.documents.Add(document);
+                doAdd = true;
+            }
+            else
+            {
+                for (int index = 0; index < accountDocument.phones.documents.Count; index++)
+                {
+                    if (accountDocument.phones.documents[index].Id.Equals(document.Id, StringComparison.InvariantCultureIgnoreCase))
+                    {
+
+                        if (((PhoneDocument)accountDocument.phones.documents[index]).number.IsNull)
+                        {
+                            doAdd = true;
+                            accountDocument.phones.documents[index] = document;
+                        }
+                        break;
+                    }
+
+                }
+            }
+            if (!doAdd)
+            {
+                sdTrResult = new SdataTransactionResult();
+                sdTrResult.HttpMessage = "Trading Account has already this primary phone type";
+                sdTrResult.HttpMethod = "POST";
+                sdTrResult.HttpStatus = System.Net.HttpStatusCode.Forbidden;
+                sdTrResult.ResourceKind = _resourceKind;
+                sdTrResult.Uuid = phoneNumberPayload.SyncUuid;
+                return sdTrResult;
+            }
+
+            List<TransactionResult> transactionResults = new List<TransactionResult>();
+            account.Update(accountDocument, _context.Config, ref transactionResults);
+            sdTrResult = Helper.GetSdataTransactionResult(transactionResults,
+                _context.OriginEndPoint, SupportedResourceKinds.tradingAccounts);
+            if (sdTrResult != null)
+            {
+
+                sdTrResult.ResourceKind = _resourceKind;
+                sdTrResult.HttpMessage = "POST";
+            }
+            return sdTrResult;
+        }
+
+        public override SdataTransactionResult Update(PayloadBase payload, List<SyncFeedEntryLink> links)
+        {
+            //Transform account
+            Document document = GetTransformedDocument(payload, links);
+            string id;
+            string accountId;
+            id = document.Id;
+            if (id.EndsWith(Sage.Integration.Northwind.Application.API.Constants.PhoneIdPostfix))
+                accountId = id.Replace(Sage.Integration.Northwind.Application.API.Constants.PhoneIdPostfix, "");
+            else if (id.EndsWith(Sage.Integration.Northwind.Application.API.Constants.FaxIdPostfix))
+                accountId = id.Replace(Sage.Integration.Northwind.Application.API.Constants.FaxIdPostfix, "");
+            else
+                return null;
+
+            AccountDocument accountDocument = (AccountDocument)_entity.GetDocumentTemplate();
+            accountDocument.Id = accountId;
+            accountDocument.CrmId = GetTradingAccountUuid(document.Id);
+            accountDocument.phones.documents.Add(document);
+            // Update Document
+
+            List<TransactionResult> transactionResults = new List<TransactionResult>();
+            _entity.Update(accountDocument, _context.Config, ref transactionResults);
+            SdataTransactionResult sdTrResult = Helper.GetSdataTransactionResult(transactionResults,
+                _context.OriginEndPoint, SupportedResourceKinds.phoneNumbers);
+            if (sdTrResult != null)
+            {
+                sdTrResult.ResourceKind = _resourceKind;
+
+                sdTrResult.HttpMessage = "PUT";
+            }
+            return sdTrResult;
+
+        }
+
+
+        private Guid StringToGuid(string guid)
+        {
+            try
+            {
+                GuidConverter converter = new GuidConverter();
+
+                Guid result = (Guid)converter.ConvertFromString(guid);
+                return result;
+            }
+            catch
+            {
+                return Guid.Empty;
+            }
+
+        }
+
+        private string GetTradingAccountUuid(string localId)
+        {
+            if (String.IsNullOrEmpty(localId))
+            {
+                return null;
+            }
+            CorrelatedResSyncInfo[] results = _correlatedResSyncInfoStore.GetByLocalId(
+                SupportedResourceKinds.tradingAccounts.ToString(), new string[] { localId });
+            if (results.Length > 0)
+                return results[0].ResSyncInfo.Uuid.ToString();
+
+            return null;
+
+        }
+
+        private string GetTradingAccountLocalId(string uuidString)
+        {
+            GuidConverter converter = new GuidConverter();
+            try
+            {
+                Guid uuid = (Guid)converter.ConvertFromString(uuidString);
+                return GetTradingAccountLocalId(uuid);
+            }
+            catch (Exception)
+            {
+                return "";
+            }
+        }
+
+        private string GetTradingAccountLocalId(Guid uuid)
+        {
+            CorrelatedResSyncInfo[] results = _correlatedResSyncInfoStore.GetByUuid(
+                SupportedResourceKinds.tradingAccounts.ToString(), new Guid[] { uuid });
+            if (results.Length > 0)
+                return results[0].LocalId;
+            return null;
+        } 
+        #endregion
+
+        #region IEntityQueryWrapper Members
+
+        string IEntityQueryWrapper.GetDbFieldName(string propertyName)
+        {
+            if (propertyName.Equals("applicationID", StringComparison.InvariantCultureIgnoreCase))
+                return "id";
+            if (propertyName.Equals("text", StringComparison.InvariantCultureIgnoreCase))
+                return "Phone";
+
+            throw new InvalidOperationException(string.Format("Property {0} not supported.", propertyName));
+        }
+
+        #endregion
+    }
+}

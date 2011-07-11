@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Tick
+END
+TickCreateException.cs
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Tick/TickCreateException.cs
+END
+ITickProvider.cs
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Tick/ITickProvider.cs
+END
+Sage.Sis.Sdata.Sync.Tick.csproj
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Tick/Sage.Sis.Sdata.Sync.Tick.csproj
+END

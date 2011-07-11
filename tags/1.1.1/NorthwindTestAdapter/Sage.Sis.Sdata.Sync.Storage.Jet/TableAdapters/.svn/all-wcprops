@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/gcrmcontract/!svn/ver/193/tags/1.1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet/TableAdapters
+END
+ITickTableAdapter.cs
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/gcrmcontract/!svn/ver/193/tags/1.1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet/TableAdapters/ITickTableAdapter.cs
+END
+ICorrelatedResSyncTableAdapter.cs
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/gcrmcontract/!svn/ver/193/tags/1.1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet/TableAdapters/ICorrelatedResSyncTableAdapter.cs
+END
+AppBookmarkTableAdapter.cs
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/gcrmcontract/!svn/ver/193/tags/1.1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet/TableAdapters/AppBookmarkTableAdapter.cs
+END
+IResourceKindTableAdapter.cs
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/gcrmcontract/!svn/ver/193/tags/1.1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet/TableAdapters/IResourceKindTableAdapter.cs
+END
+ISyncResultsTableAdapter.cs
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/gcrmcontract/!svn/ver/193/tags/1.1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet/TableAdapters/ISyncResultsTableAdapter.cs
+END
+CachedEndpointTableAdapter.cs
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/gcrmcontract/!svn/ver/193/tags/1.1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet/TableAdapters/CachedEndpointTableAdapter.cs
+END
+SyncDigestTableAdapter.cs
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/gcrmcontract/!svn/ver/193/tags/1.1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet/TableAdapters/SyncDigestTableAdapter.cs
+END
+IAppBookmarkTableAdapter.cs
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/gcrmcontract/!svn/ver/193/tags/1.1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet/TableAdapters/IAppBookmarkTableAdapter.cs
+END
+EndpointTableAdapter.cs
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/gcrmcontract/!svn/ver/193/tags/1.1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet/TableAdapters/EndpointTableAdapter.cs
+END
+CachedResourceKindTableAdapter.cs
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/gcrmcontract/!svn/ver/193/tags/1.1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet/TableAdapters/CachedResourceKindTableAdapter.cs
+END
+ISyncDigestTableAdapter.cs
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/gcrmcontract/!svn/ver/193/tags/1.1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet/TableAdapters/ISyncDigestTableAdapter.cs
+END
+ITableAdapter.cs
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/gcrmcontract/!svn/ver/193/tags/1.1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet/TableAdapters/ITableAdapter.cs
+END
+IEndpointTableAdapter.cs
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/gcrmcontract/!svn/ver/193/tags/1.1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet/TableAdapters/IEndpointTableAdapter.cs
+END
+TickTableAdapter.cs
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/gcrmcontract/!svn/ver/193/tags/1.1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet/TableAdapters/TickTableAdapter.cs
+END
+CorrelatedResSyncTableAdapter.cs
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/gcrmcontract/!svn/ver/193/tags/1.1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet/TableAdapters/CorrelatedResSyncTableAdapter.cs
+END
+ResourceKindTableAdapter.cs
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/gcrmcontract/!svn/ver/193/tags/1.1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet/TableAdapters/ResourceKindTableAdapter.cs
+END
+SyncResultsTableAdapter.cs
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/gcrmcontract/!svn/ver/193/tags/1.1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage.Jet/TableAdapters/SyncResultsTableAdapter.cs
+END

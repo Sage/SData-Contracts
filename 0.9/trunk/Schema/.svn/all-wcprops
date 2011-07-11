@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/gcrmcontract/!svn/ver/11/0.9/trunk/Schema
+END
+sme.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/gcrmcontract/!svn/ver/11/0.9/trunk/Schema/sme.xsd
+END
+crmErp.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/gcrmcontract/!svn/ver/11/0.9/trunk/Schema/crmErp.xsd
+END
+registry.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/gcrmcontract/!svn/ver/11/0.9/trunk/Schema/registry.xsd
+END
+hrmErp.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/gcrmcontract/!svn/ver/11/0.9/trunk/Schema/hrmErp.xsd
+END

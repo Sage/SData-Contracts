@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://schemas.sage.com/sdata/sme/2007" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.sage.com/sdata/sme/2007" elementFormDefault="qualified" attributeFormDefault="unqualified" id="sme">
+  <!-- Attribute Definitions -->
+  <xs:attribute name="role" type="role--type">
+    <xs:annotation>
+      <xs:documentation>Describes the role that the XSD element plays in the contract.</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="path" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Relative URL to query resources or invoke the operation.</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="pluralName" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Name of the resource kind in plural form.</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="label" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Friendly name for the element (localized).</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="canGet" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Does the resource kind or relationship property support GET operations?</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="canPost" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Does the resource kind or relationship property support POST operations?</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="canPut" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Does the resource kind or relationship property support PUT operations?</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="canDelete" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Does the resource kind or relationship property support DELETE operations?</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="canPagePrevious" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Does the resource kind or relationship property support paging backwards?</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="canPageNext" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Does the resource kind or relationship property support paging forwards?</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="canPageIndex" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Does the resource kind or relationship property support indexed paging?</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="canSort" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Can the feed be sorted by this property?</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="canFilter" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Can the feed be filtered by this property?</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="canGroup" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Can feed entries be grouped by values of this property?</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="canSearch" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Does the resource kind support full-text search through the search query parameter?</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="hasUuid" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Does the resource kind use UUIDs to identify resources?</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="hasTemplate" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Does the resource kind, service operation or named query provide a $template URL?</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="supportsETag" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Does the resource kind support the ETag mechanism to control concurrent updates?</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="relationship" type="relationship--type">
+    <xs:annotation>
+      <xs:documentation>Type of relationship.</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="isCollection" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Does the property refer to a collection of resources or a single resource?</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="isMandatory" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Is the property value mandatory when creating a new resource?</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="isReadOnly" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Is the property read-only?</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="isLocalized" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Does the property contain localized text?</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="isUniqueKey" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>States that two resources are not allowed to have the same value for this property. Usually, resources have some kind of “id” property that identifies them uniquely. So this property should be marked with isUniqueKey=”true”, but a resource may have other properties that also have to be unique. For example the social security number of an employee should be unique and should also be marked with isUniqueKey=”true”. A typical employee resource kind will have at least 2 properties marked isUniqueKey: id and ssNumber.</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="precedence" type="xs:integer">
+    <xs:annotation>
+      <xs:documentation>Controls the visibility of properties on small screens.</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="groupName" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>A group (category) name to group related properties.</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="maxLength" type="xs:int">
+    <xs:annotation>
+      <xs:documentation>Represents the maximum length of the string</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="averageLength" type="xs:int" >
+    <xs:annotation>
+      <xs:documentation>Represents the average display length needed</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="totalDigits" type="xs:int">
+    <xs:annotation>
+      <xs:documentation>Maximum overall number of digits for a decimal property value.</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="fractionDigits" type="xs:int">
+    <xs:annotation>
+      <xs:documentation>Maximum number of digits to the right of the decimal point for a decimal property value.</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="unsupported" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Is the element part of a global contract that it is not supported by this specific provider?</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="compliance" type="compliance--type">
+    <xs:annotation>
+      <xs:documentation>Applies to elements that are part of a global contract. Defines the compliance requirement for providers that implement the contract.</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="batchingMode" type="syncModes--type">
+    <xs:annotation>
+      <xs:documentation>Does the resource kind support batching? If so, which invocation modes does it support?</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="invocationMode" type="syncModes--type">
+    <xs:annotation>
+      <xs:documentation>The supported invocation modes.</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="isSyncSource" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>
+        : Indicates if the resource kind can be used as source in a sync operation (can send sync updates to another application)
+        Similar to the canGet, canPut, etc. They advertize the fact that the resources can be synced outbounds and inbounds.  isSyncTarget =true means that resources can be synched from another application to the provider that implements the contract. In the GCRM contract, the contract provider is the ERP application. So, for example, the “commodities” resource kind will have isSyncSource=true and isSyncTarget=false because commodities may be synced from ERP to CRM but not in the reverse direction. From a protocol standpoint, this means that the ERP provider will have a commodities/$syncSource URL (that the CRM engine will call to get changes on commodities) but it will not have any commodities/$syncTarget URL).
+      </xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="isSyncTarget" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Indicates if the resource kind can be used as target in a sync operation (can receive sync updates from another application) </xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="syncConflictPriority" type="xs:integer">
+    <xs:annotation>
+      <xs:documentation>
+        Numeric priority to solve conflicts. Smalllest wins. In case of equality on priorities, last modified resource wins (this rule is built into the SData sync protocol).
+        Advertises the conflict priority that the sync engine will be using to solve conflicts. This is only useful when sync is bidirectional (isSyncSource and isSyncTarget are both true).
+        The syncConflictPriority advertises the conflict priority on the provider side (ERP). The conflict resolution algorithm also needs the conflict priority from the other side (CRM) to resolve conflicts. But we cannot advertise the consumer’s priority in the schema (except maybe as a hint), as the schema describes the provider, not its consumers.
+
+        Note: the conflict priority is passed as part of the sync payload. So the sync framework will use the priority that it gets from the payloads, not the priorities that it may get from the schemas, in order to make its conflict resolution decisions. So, I am not so sure that we really need to advertize the conflict priority in the schema. If we do so, we have to be aware that this attribute has an informative rather than operative nature. On the other hand, the isSyncSource/isSyncTarget attributes are necessary because they advertise the presence of some protocol features.
+
+      </xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="isGlobalId" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Deprecated. Used for resources that are linked and synced. These resources will have two ids: an id which is the internal id used by the application and a uuid which is the global id use for linking and syncing. If the uuid property is present in the schema, it should be marked with isGlobalId=”true”.</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="isIdentifier" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Deprecated. Used to single out the property that holds the primary key of the resource. </xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="isDescriptor" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Deprecated. Is the property a descriptor for the resource?</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="copiedFrom" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Deprecated. Indicates that the property is dependent upon a related resource and gives the XPath expression for the corresponding property in the related resource. </xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+
+  <!-- Type Definitions -->
+  <xs:simpleType name="role--type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="resourceKind"/>
+      <xs:enumeration value="serviceOperation"/>
+      <xs:enumeration value="query"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="compliance--type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="may"/>
+      <xs:enumeration value="should"/>
+      <xs:enumeration value="must"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="syncModes--type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="none"/>
+      <xs:enumeration value="sync"/>
+      <xs:enumeration value="async"/>
+      <xs:enumeration value="syncOrAsync"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="relationship--type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="parent"/>
+      <xs:enumeration value="child"/>
+      <xs:enumeration value="reference"/>
+      <xs:enumeration value="association"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

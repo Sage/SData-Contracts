@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Application/API
+END
+Constants.cs
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Application/API/Constants.cs
+END
+INorthwindConnector.cs
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Application/API/INorthwindConnector.cs
+END
+Token.cs
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Application/API/Token.cs
+END
+RTDVBaseFactory.cs
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Application/API/RTDVBaseFactory.cs
+END
+EntityFactory.cs
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Application/API/EntityFactory.cs
+END
+Enums.cs
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Application/API/Enums.cs
+END
+ISageCrmApplicationConnector.cs
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Application/API/ISageCrmApplicationConnector.cs
+END
+Identity.cs
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Application/API/Identity.cs
+END

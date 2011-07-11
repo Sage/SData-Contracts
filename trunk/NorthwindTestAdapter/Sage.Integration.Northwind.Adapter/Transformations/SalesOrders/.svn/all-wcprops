@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Transformations/SalesOrders
+END
+CommodityTransformation.cs
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Transformations/SalesOrders/CommodityTransformation.cs
+END
+UnitOfMeasureTransformation.cs
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Transformations/SalesOrders/UnitOfMeasureTransformation.cs
+END
+SalesOrderLineTransformation.cs
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Transformations/SalesOrders/SalesOrderLineTransformation.cs
+END
+PriceListTransformation.cs
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Transformations/SalesOrders/PriceListTransformation.cs
+END
+CommodityGroupTransformation.cs
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Transformations/SalesOrders/CommodityGroupTransformation.cs
+END
+PriceTransformation.cs
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Transformations/SalesOrders/PriceTransformation.cs
+END
+SalesOrderTransformation.cs
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Transformations/SalesOrders/SalesOrderTransformation.cs
+END
+UnitOfMeasureGroupTransformation.cs
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/gcrmcontract/!svn/ver/45/trunk/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Transformations/SalesOrders/UnitOfMeasureGroupTransformation.cs
+END

@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by John Perona (Sage) -->
+<?xml-stylesheet type="text/xsl" href="../Tools/XsdToHtml.xslt"?>
+<xs:schema xmlns:sme="http://schemas.sage.com/sdata/sme/2007" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.sage.com/sc/2009" targetNamespace="http://schemas.sage.com/sc/2009" elementFormDefault="qualified" id="sc">
+	<xs:element name="operatingCompany" type="operatingCompany--type" sme:role="resourceKind" sme:pluralName="operatingCompanies" sme:compliance="must" sme:hasUuid="true" sme:canGet="true"/>
+	<xs:complexType name="operatingCompany--type">
+		<xs:all>
+			<xs:element name="active" type="xs:boolean" minOccurs="0" sme:label="Operating Company Active Flag">
+				<xs:annotation>
+					<xs:documentation>
+            Flag to indicate if the Company is an ‘active’ Company .
+             
+            Default = True
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="name" type="xs:string" minOccurs="0" sme:label="Operating Company Name" sme:isMandatory="true">
+				<xs:annotation>
+					<xs:documentation>
+            The entity name (e.g. “Homestyle Kitchens”).
+             
+
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="shortName" type="xs:string" nillable="true" minOccurs="0" sme:label="Operating Company Short Name">
+				<xs:annotation>
+					<xs:documentation>
+            A shorter name for the Company.
+             
+
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="currency" type="xs:string" nillable="true" minOccurs="0" sme:label="Operating Company Currency">
+				<xs:annotation>
+					<xs:documentation>
+            The Company currency (e.g. GBP, USD, EUR).
+             
+            ISO 4217.
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="identifier" type="xs:string" nillable="true" minOccurs="0" sme:label="Operating Company Identifier" sme:isUniqueKey="true">
+				<xs:annotation>
+					<xs:documentation>
+            Identifier(s) of the Company as used by the third parties (e.g. Company Registration Number, DUNS number, 1099 type, CIS number, siret number, Trading Number, etc).
+             
+
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="taxLocale" type="xs:string" minOccurs="0" sme:label="Operating Company Tax Locale">
+				<xs:annotation>
+					<xs:documentation>
+            The tax-locale applicable to the Operating Company (e.g. District)
+             
+
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="taxReference" type="xs:string" nillable="true" minOccurs="0" sme:label="Operating Company Tax reference" sme:isUniqueKey="true">
+				<xs:annotation>
+					<xs:documentation>
+            Tax reference associated with the Company (e.g. VAT number, numero intracommnunautaire, FEIN)
+             
+            NIF (Sp)
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="language" type="xs:string" nillable="true" minOccurs="0" sme:label="Operating Company Language" sme:isExtension="true">
+				<xs:annotation>
+					<xs:documentation>
+            Language used by the Company (e.g. EN-GB)
+             
+            ISO 639-1
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="postalAddresses" type="postalAddress--list" sme:label="Postal Addresses" sme:isCollection="true" sme:relationship="association"/>
+			<xs:element name="phoneNumbers" type="phoneNumber--list" sme:label="Phone Numbers" sme:isCollection="true" sme:relationship="association"/>
+		</xs:all>
+		<xs:anyAttribute/>
+	</xs:complexType>
+	<xs:complexType name="operatingCompany--list">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="operatingCompany" type="operatingCompany--type"/>
+		</xs:sequence>
+		<xs:anyAttribute/>
+	</xs:complexType>
+	<xs:element name="person" type="person--type" sme:role="resourceKind" sme:pluralName="people" sme:compliance="must" sme:canGet="true" sme:canPut="true" sme:canPost="true" sme:canDelete="true"/>
+	<xs:complexType name="person--type">
+		<xs:all/>
+		<xs:anyAttribute/>
+	</xs:complexType>
+	<xs:element name="postalAddress" type="postalAddress--type" sme:role="resourceKind" sme:pluralName="postalAddresses" sme:compliance="must" sme:canGet="true" sme:canPut="true" sme:canPost="true" sme:canDelete="true" sme:hasUuid="true" sme:isSyncSource="true" sme:isSyncTarget="true"/>
+	<xs:complexType name="postalAddress--type">
+		<xs:all>
+			<xs:element name="active" type="xs:boolean" minOccurs="0" sme:label="PostalAddress Active Flag">
+				<xs:annotation>
+					<xs:documentation>
+            Flag to indicate if the Postal Address is an ‘active’ one .   Default =
+            True
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="reference" type="xs:string" minOccurs="0" sme:label="PostalAddress Reference">
+				<xs:annotation>
+					<xs:documentation> Reference for the Postal Address.   </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="name" type="xs:string" nillable="true" minOccurs="0" sme:label="PostalAddress Name">
+				<xs:annotation>
+					<xs:documentation>
+            A name for the Postal Address (e.g. “Billing Address”).  
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="description" type="xs:string" nillable="true" minOccurs="0" sme:label="PostalAddress Description">
+				<xs:annotation>
+					<xs:documentation>
+            A longer description of the postal Postal Address.  
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="address1" type="xs:string" nillable="true" minOccurs="0" sme:label="PostalAddress Address 1">
+				<xs:annotation>
+					<xs:documentation> 1st Line of Postal Address   </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="address2" type="xs:string" nillable="true" minOccurs="0" sme:label="PostalAddress Address 2">
+				<xs:annotation>
+					<xs:documentation> 2nd Line of Postal Address   </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="address3" type="xs:string" nillable="true" minOccurs="0" sme:label="PostalAddress Address 3">
+				<xs:annotation>
+					<xs:documentation> 3rd Line of Postal Address   </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="address4" type="xs:string" nillable="true" minOccurs="0" sme:label="PostalAddress Address 4">
+				<xs:annotation>
+					<xs:documentation> 4th Line of Postal Address   </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="townCity" type="xs:string" nillable="true" minOccurs="0" sme:label="PostalAddress TownCity">
+				<xs:annotation>
+					<xs:documentation> Town or City   </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="county" type="xs:string" nillable="true" minOccurs="0" sme:label="PostalAddress County">
+				<xs:annotation>
+					<xs:documentation> County   </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="stateRegion" type="xs:string" nillable="true" minOccurs="0" sme:label="PostalAddress StateRegion">
+				<xs:annotation>
+					<xs:documentation>
+            State/Region   For USA addresses use ISO 3166-2:US for state codes. For
+            UK addresses use ISO 3166-2:GB. For French addresses use ISO 3166-2:FR. For German
+            addresses use ISO 3166-2:DE. For Canada addresses use ISO 3166-2:CA.
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="zipPostCode" type="xs:string" nillable="true" minOccurs="0" sme:label="PostalAddress ZipPost Code">
+				<xs:annotation>
+					<xs:documentation>
+            Zip or Post code. Should be formatted as raw text no formatting
+            included.  
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="country" type="xs:string" nillable="true" minOccurs="0" sme:label="PostalAddress Country">
+				<xs:annotation>
+					<xs:documentation> Country   ISO 3166-1 alpha-2 country codes only </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="primacyIndicator" type="xs:boolean" minOccurs="0" sme:label="PostalAddress Primacy Indicator">
+				<xs:annotation>
+					<xs:documentation>
+            A flag to indicate if the Address is the primary/default Address.   One
+            ony Postal Address can have Primacy against an associated entity (e.g. Contact, Company,
+            etc). Default = False
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="type" type="postalAddressType--enum" sme:label="PostalAddress Type" sme:isMandatory="true">
+				<xs:annotation>
+					<xs:documentation>
+            The type of the Postal Address, e.g., billing, sales address, home,
+            etc.   A new Postal Address will be required for each type, even though the address
+            itself may be the same. Default = “Correspondance”
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="note" type="note--list" nillable="true" minOccurs="0" sme:label="PostalAddress Note" sme:relationship="child" sme:isCollection="true">
+				<xs:annotation>
+					<xs:documentation> Notes associated with the Postal Address.   </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+		<xs:anyAttribute/>
+	</xs:complexType>
+	<xs:complexType name="postalAddress--list">
+		<xs:sequence>
+			<xs:element name="postalAddress" type="postalAddress--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:anyAttribute/>
+	</xs:complexType>
+	<xs:element name="email" type="email--type" sme:role="resourceKind" sme:pluralName="emails" sme:compliance="must" sme:canGet="true" sme:canPut="true" sme:canPost="true" sme:canDelete="true" sme:hasUuid="true" sme:isSyncSource="true" sme:isSyncTarget="true"/>
+	<xs:complexType name="email--type">
+		<xs:all>
+			<xs:element name="active" type="xs:boolean" minOccurs="0" sme:label="Email Active Flag">
+				<xs:annotation>
+					<xs:documentation>
+            Flag to indicate if the Email is an ‘active’ one .   Default = True
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="reference" type="xs:string" minOccurs="0" sme:label="Email reference" sme:isUniqueKey="true">
+				<xs:annotation>
+					<xs:documentation> reference associated with the Email.   </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="reference2" type="xs:string" nillable="true" minOccurs="0" sme:label="Email Reference2" sme:isExtension="true">
+				<xs:annotation>
+					<xs:documentation> Another reference associated with the email.   </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="type" type="emailType--enum" minOccurs="0" sme:label="Email Type">
+				<xs:annotation>
+					<xs:documentation>
+            A simple string value used to label this email address. It allows for
+            email addresses such as "Work", "Personal", "Preferred”, etc. Can also be used to
+            distinguish ‘instant messaging’ type addresses.  
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="address" type="xs:string" minOccurs="0" sme:label="Email Address" sme:isMandatory="true">
+				<xs:annotation>
+					<xs:documentation>
+            The Email address itself (e.g. joe.bloggs@acme.com).  
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="url" type="xs:string" minOccurs="0" sme:label="mailto:URL" sme:isUniqueKey="true">
+				<xs:annotation>
+					<xs:documentation>
+            URL that allows an email to be automatically generated that is to be
+            set to the email address.   Could be created automatically.
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="primacyIndicator" type="xs:boolean" minOccurs="0" sme:label="Email Primacy Indicator">
+				<xs:annotation>
+					<xs:documentation>
+            Flag to indicate if this Email is the primary one associated with the
+            linked resource.   Default = “False”
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="notes" type="note--type" nillable="true" minOccurs="0" sme:label="Email Note" sme:relationship="child" sme:isCollection="false">
+				<xs:annotation>
+					<xs:documentation> Notes associated with email.   </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+		<xs:anyAttribute/>
+	</xs:complexType>
+	<xs:complexType name="email--list">
+		<xs:sequence>
+			<xs:element name="email" type="email--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:anyAttribute/>
+	</xs:complexType>
+	<xs:element name="phoneNumber" type="phoneNumber--type" sme:role="resourceKind" sme:pluralName="phoneNumbers" sme:compliance="must" sme:canGet="true" sme:canPut="true" sme:canPost="true" sme:canDelete="true" sme:hasUuid="true" sme:isSyncSource="true" sme:isSyncTarget="true"/>
+	<xs:complexType name="phoneNumber--type">
+		<xs:all>
+			<xs:element name="active" type="xs:boolean" minOccurs="0" sme:label="PhoneNumber Active Flag">
+				<xs:annotation>
+					<xs:documentation>
+            Flag to indicate if the phone number is an ‘active’ one .   Default =
+            True
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="reference" type="xs:string" minOccurs="0" sme:label="PhoneNumber reference" sme:isUniqueKey="true">
+				<xs:annotation>
+					<xs:documentation> reference associated with the phone number.   </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="reference2" type="xs:string" nillable="true" minOccurs="0" sme:label="PhoneNumber Reference2" sme:isExtension="true">
+				<xs:annotation>
+					<xs:documentation>
+            Another reference associated with the phone number.  
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="uRI" type="xs:string" minOccurs="0" sme:label="PhoneNumber URI" sme:isUniqueKey="true">
+				<xs:annotation>
+					<xs:documentation>
+            A phone unique reference number used to represent the number in a
+            formal way. Useful for programmatic access, such as a VoIP/PSTN/CTI.   Could be derived
+            by concatenating attributes.
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="type" type="phoneNumberType--enum" minOccurs="0" sme:label="PhoneNumber Type">
+				<xs:annotation>
+					<xs:documentation>
+            A value that identifies the type of phone number (general, fax, car,
+            home, internal, mobile, other, pager, satellite, voip, work).  
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="name" type="xs:string" nillable="true" minOccurs="0" sme:label="PhoneNumber Name">
+				<xs:annotation>
+					<xs:documentation>
+            A simple string value used to label this phone number. In most cases,
+            “Label” is not necessary as “Phone Type” uniquely identifies a number and allows UIs to
+            display a proper label such as "Mobile", "Home", "Work", etc. However, in the case where
+            one person has (for example) multiple mobile phones, this property can be used to
+            disambiguate them.   Could be derived from Phone Type
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="text" type="xs:string" minOccurs="0" sme:label="PhoneNumber Text" sme:isMandatory="true">
+				<xs:annotation>
+					<xs:documentation>
+            Human-readable phone number, containing all attributes.   Could be
+            derived by concatenating other properties.
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="countryCode" type="xs:string" minOccurs="0" sme:label="PhoneNumber Country Code">
+				<xs:annotation>
+					<xs:documentation>
+            Country code for the phone number based on ITU-T recommendation E.164
+            country codes.   ITU-T E. 164 country codes only.
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="areaCode" type="xs:string" minOccurs="0" sme:label="PhoneNumber Area Code">
+				<xs:annotation>
+					<xs:documentation> Area code for the phone number   </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="number" type="xs:string" minOccurs="0" sme:label="PhoneNumber Number">
+				<xs:annotation>
+					<xs:documentation> Telephone number.   </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="extension" type="xs:string" nillable="true" minOccurs="0" sme:label="PhoneNumber Extension">
+				<xs:annotation>
+					<xs:documentation> Any extension applicable to the phone number.   </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="primacyIndicator" type="xs:boolean" minOccurs="0" sme:label="PhoneNumber Primacy Indicator">
+				<xs:annotation>
+					<xs:documentation>
+            Flag to indicate if this Phone Number is the primary one associated
+            with the linked resource.   Default = “False”
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="notes" type="note--list" nillable="true" minOccurs="0" sme:label="PhoneNumber Note" sme:relationship="child" sme:isCollection="true">
+				<xs:annotation>
+					<xs:documentation> Notes associated with phone number.   </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+		<xs:anyAttribute/>
+	</xs:complexType>
+	<xs:complexType name="phoneNumber--list">
+		<xs:sequence>
+			<xs:element name="phoneNumber" type="phoneNumber--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:anyAttribute/>
+	</xs:complexType>
+	<xs:element name="note" type="note--type" sme:role="resourceKind" sme:pluralName="notes" sme:compliance="may" sme:canGet="true"/>
+	<xs:complexType name="note--type">
+		<xs:all>
+			<xs:element name="active" type="xs:boolean" minOccurs="0" sme:label="Note Active Flag">
+				<xs:annotation>
+					<xs:documentation>
+            Flag to indicate if the note is an ‘active’ one .   Default = True
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="reference" type="xs:string" minOccurs="0" sme:label="Note reference" sme:isUniqueKey="true">
+				<xs:annotation>
+					<xs:documentation> reference associated with the note.   </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="reference2" type="xs:string" nillable="true" minOccurs="0" sme:label="NoteReference2" sme:isExtension="true">
+				<xs:annotation>
+					<xs:documentation> Another reference associated with the note.   </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="text" type="xs:string" minOccurs="0" sme:label="Note Text" sme:isMandatory="true">
+				<xs:annotation>
+					<xs:documentation> The note text itself.   </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="privacyFlag" type="xs:boolean" minOccurs="0" sme:label="Note Privacy Flag">
+				<xs:annotation>
+					<xs:documentation>
+            Flag to indicate if the note is public or private.   Default = “No”
+            (not private).
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="dateStamp" type="xs:date" minOccurs="0" sme:label="Note Date Stamp">
+				<xs:annotation>
+					<xs:documentation> Date and time of note   </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="primacyIndicator" type="xs:boolean" minOccurs="0" sme:label="Note Primacy Indicator">
+				<xs:annotation>
+					<xs:documentation>
+            Flag to indicate if this Note is the primary one associated with the
+            linked resource.   Default = “False”
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="user" type="xs:string" minOccurs="0" sme:label="Note User">
+				<xs:annotation>
+					<xs:documentation> Details of the user who created the note.   </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+		<xs:anyAttribute/>
+	</xs:complexType>
+	<xs:complexType name="note--list">
+		<xs:sequence>
+			<xs:element name="note" type="note--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:anyAttribute/>
+	</xs:complexType>
+	<xs:element name="financialAccount" type="financialAccount--type" sme:role="resourceKind" sme:pluralName="financialAccounts" sme:compliance="may" sme:canGet="true"/>
+	<xs:complexType name="financialAccount--type">
+		<xs:all>
+			<xs:element name="active" type="xs:boolean" minOccurs="0" sme:label="FinancialAccount Active Flag">
+				<xs:annotation>
+					<xs:documentation>
+            Flag to indicate if the FinancialAccount is an ‘active’ one .   Default
+            = True
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="reference" type="xs:string" minOccurs="0" sme:label="FinancialAccount reference" sme:isUniqueKey="true">
+				<xs:annotation>
+					<xs:documentation> Reference associated with the Financial Account.   </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="reference2" type="xs:string" nillable="true" minOccurs="0" sme:label="FinancialAccount Reference2" sme:isExtension="true">
+				<xs:annotation>
+					<xs:documentation>
+            Another reference associated with the Financial Account.
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="type" type="financialAccountType--enum" nillable="true" minOccurs="0" sme:label="FinancialAccount Type">
+				<xs:annotation>
+					<xs:documentation>
+            The type of the FinancialAccount (memo, posting, grouping)   Default =
+            “Unknown”
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="reportingType" type="financialAccountReportingType--enum" nillable="true" minOccurs="0" sme:label="FinancialAccount Reporting Type">
+				<xs:annotation>
+					<xs:documentation>
+            The reporting type applicalbe to the Financial Account (P&amp;L or
+            BS)   Default = “Unknown”
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="accountingType" type="financialAccountAccountingType--enum" nillable="true" minOccurs="0" sme:label="FinancialAccount Accounting Type">
+				<xs:annotation>
+					<xs:documentation>
+            A flag that indicates the type of accounting applicable to the
+            Financial Account.   Default = “Unknown”
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="name" type="xs:string" minOccurs="0" sme:label="FinancialAccount Name">
+				<xs:annotation>
+					<xs:documentation>
+            The name of the FinancialAccount (e.g. Cost of sales, Inventory,
+            Debtors Control, etc).  
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="description" type="xs:string" nillable="true" minOccurs="0" sme:label="FinancialAccount Description">
+				<xs:annotation>
+					<xs:documentation>
+            A longer textual description of the FinancialAccount.  
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="account" type="xs:string" nillable="true" minOccurs="0" sme:label="FinancialAccount Account">
+				<xs:annotation>
+					<xs:documentation> Financial accounting code or ‘natural’ account.   </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="costCentre" type="costCentre--list" nillable="true" minOccurs="0" sme:relationship="association" sme:isCollection="true" sme:label="Financial Cost Centre">
+				<xs:annotation>
+					<xs:documentation>
+            Analysis code (cost centre) applicable to the financial account.   If
+            cost centres are used, then they should be used here.
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="department" type="department--list" nillable="true" minOccurs="0" sme:relationship="association" sme:isCollection="true" sme:label="Financial Department">
+				<xs:annotation>
+					<xs:documentation>
+            Analysis code (department) applicable to the financial account.   If
+            departments are used, then they should be used here.
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="analysis01" type="xs:string" nillable="true" minOccurs="0" sme:label="Financial Account Analysis 01">
+				<xs:annotation>
+					<xs:documentation>
+            Analysis code (1) applicable to the financial account.
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="analysis02" type="xs:string" nillable="true" minOccurs="0" sme:label="Financial Account Analysis 02">
+				<xs:annotation>
+					<xs:documentation>
+            Analysis code (2) applicable to the financial account.
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="analysis03" type="xs:string" nillable="true" minOccurs="0" sme:label="Financial Account Analysis 03" sme:isExtension="true">
+				<xs:annotation>
+					<xs:documentation>
+            Analysis code (3) applicable to the financial account.  
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="analysis04" type="xs:string" nillable="true" minOccurs="0" sme:label="Financial Account Analysis 04" sme:isExtension="true">
+				<xs:annotation>
+					<xs:documentation>
+            Analysis code (4) applicable to the financial account.  
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="analysis05" type="xs:string" nillable="true" minOccurs="0" sme:label="Financial Account Analysis 05" sme:isExtension="true">
+				<xs:annotation>
+					<xs:documentation>
+            Analysis code (5) applicable to the financial account.  
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="analysis06" type="xs:string" nillable="true" minOccurs="0" sme:label="Financial Account Analysis 06" sme:isExtension="true">
+				<xs:annotation>
+					<xs:documentation>
+            Analysis code (6) applicable to the financial account.  
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="analysis07" type="xs:string" nillable="true" minOccurs="0" sme:label="Financial Account Analysis 07" sme:isExtension="true">
+				<xs:annotation>
+					<xs:documentation>
+            Analysis code (7) applicable to the financial account.  
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="analysis08" type="xs:string" nillable="true" minOccurs="0" sme:label="Financial Account Analysis 08" sme:isExtension="true">
+				<xs:annotation>
+					<xs:documentation>
+            Analysis code (8) applicable to the financial account.  
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="analysis09" type="xs:string" nillable="true" minOccurs="0" sme:label="Financial Account Analysis 09" sme:isExtension="true">
+				<xs:annotation>
+					<xs:documentation>
+            Analysis code (9) applicable to the financial account.  
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="analysis10" type="xs:string" nillable="true" minOccurs="0" sme:label="Financial Account Analysis 10" sme:isExtension="true">
+				<xs:annotation>
+					<xs:documentation>
+            Analysis code (10) applicable to the financial account.  
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="analysis11" type="xs:string" nillable="true" minOccurs="0" sme:label="Financial Account Analysis 11" sme:isExtension="true">
+				<xs:annotation>
+					<xs:documentation>
+            Analysis code (11) applicable to the financial account.  
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="analysis12" type="xs:string" nillable="true" minOccurs="0" sme:label="Financial Account Analysis 12" sme:isExtension="true">
+				<xs:annotation>
+					<xs:documentation>
+            Analysis code (12) applicable to the financial account.  
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="analysis13" type="xs:string" nillable="true" minOccurs="0" sme:label="Financial Account Analysis 13" sme:isExtension="true">
+				<xs:annotation>
+					<xs:documentation>
+            Analysis code (13) applicable to the financial account.  
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="analysis14" type="xs:string" nillable="true" minOccurs="0" sme:label="Financial Account Analysis 14" sme:isExtension="true">
+				<xs:annotation>
+					<xs:documentation>
+            Analysis code (14) applicable to the financial account.  
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="analysis15" type="xs:string" nillable="true" minOccurs="0" sme:label="Financial Account Analysis 15" sme:isExtension="true">
+				<xs:annotation>
+					<xs:documentation>
+            Analysis code (15) applicable to the financial account.  
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="currency" type="xs:string" minOccurs="0" sme:label="FinancialAccount Currency">
+				<xs:annotation>
+					<xs:documentation>
+            The financial account currency (e.g. GBP, USD, EUR).   ISO 4217.
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="balance" type="xs:decimal" nillable="true" minOccurs="0" sme:label="FinancialAccount Balance">
+				<xs:annotation>
+					<xs:documentation> Financial account balance.   In account currency. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="balanceDate" type="xs:date" nillable="true" minOccurs="0" sme:label="FinancialAccount Balance Date">
+				<xs:annotation>
+					<xs:documentation>
+            The date upon which the balance was based.   Default to system date if
+            not used,
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="lastTransactionDate" type="xs:date" nillable="true" minOccurs="0" sme:label="FinancialAccount Last Transaction Date">
+				<xs:annotation>
+					<xs:documentation>
+            Date the last transaction was posted to the account.  
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="primacyIndicator" type="xs:boolean" minOccurs="0" sme:label="FinancialAccount Primacy Indicator">
+				<xs:annotation>
+					<xs:documentation>
+            Flag to indicate if this Financial Account is the primary Financial
+            Account in cases where there are multiple.   Default = False
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="notes" nillable="true" minOccurs="0" sme:label="FinancialAccount Note" sme:relationship="child" sme:isCollection="true">
+				<xs:annotation>
+					<xs:documentation>
+            Note associated with the FinancialAccount   See “Note” definition.
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+		<xs:anyAttribute/>
+	</xs:complexType>
+	<xs:complexType name="financialAccount--list">
+		<xs:sequence>
+			<xs:element name="financialAccount" type="financialAccount--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:anyAttribute/>
+	</xs:complexType>
+	<xs:element name="costCentre" type="costCentre--type" sme:role="resourceKind" sme:pluralName="costCentres" sme:compliance="may" sme:canGet="true"/>
+	<xs:complexType name="costCentre--type">
+		<xs:all>
+			<xs:element name="active" type="xs:boolean" minOccurs="0" sme:label="costCentre Active Flag">
+				<xs:annotation>
+					<xs:documentation>
+            Flag to indicate if the costCentre is an ‘active’ one .   Default
+            = True
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="reference" type="xs:string" minOccurs="0" sme:label="costCentre reference" sme:isUniqueKey="true">
+				<xs:annotation>
+					<xs:documentation> Reference associated with the Financial Account.   </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="reference2" type="xs:string" nillable="true" minOccurs="0" sme:label="costCentre Reference2" sme:isExtension="true">
+				<xs:annotation>
+					<xs:documentation>
+            Another reference associated with the Financial Account.
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="type" type="xs:string" nillable="true" minOccurs="0" sme:label="costCentre Type">
+				<xs:annotation>
+					<xs:documentation>
+            The type of the costCentre
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="name" type="xs:string" minOccurs="0" sme:label="costCentre Name">
+				<xs:annotation>
+					<xs:documentation>
+            The name of the costCentre
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="description" type="xs:string" nillable="true" minOccurs="0" sme:label="costCentre Description">
+				<xs:annotation>
+					<xs:documentation>
+            A longer textual description of the costCentre.  
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="notes" type="note--list" nillable="true" minOccurs="0" sme:label="CostCentre Note" sme:relationship="child" sme:isCollection="true">
+				<xs:annotation>
+					<xs:documentation>
+            Note associated with the costCentre   See “Note” definition.
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+		<xs:anyAttribute/>
+	</xs:complexType>
+	<xs:complexType name="costCentre--list">
+		<xs:sequence>
+			<xs:element name="costCentre" type="costCentre--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:anyAttribute/>
+	</xs:complexType>
+	<xs:element name="department" type="department--type" sme:role="resourceKind" sme:pluralName="departments" sme:compliance="may" sme:canGet="true"/>
+	<xs:complexType name="department--type">
+		<xs:all>
+			<xs:element name="active" type="xs:boolean" minOccurs="0" sme:label="Department Active Flag">
+				<xs:annotation>
+					<xs:documentation>
+            Flag to indicate if the Department is an ‘active’ one .   Default
+            = True
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="reference" type="xs:string" minOccurs="0" sme:label="Department reference" sme:isUniqueKey="true">
+				<xs:annotation>
+					<xs:documentation> Reference associated with the Financial Account.   </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="reference2" type="xs:string" nillable="true" minOccurs="0" sme:label="Department Reference2" sme:isExtension="true">
+				<xs:annotation>
+					<xs:documentation>
+            Another reference associated with the Financial Account.
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="type" type="xs:string" nillable="true" minOccurs="0" sme:label="Department Type">
+				<xs:annotation>
+					<xs:documentation>
+            The type of the Department
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="name" type="xs:string" minOccurs="0" sme:label="Department Name">
+				<xs:annotation>
+					<xs:documentation>
+            The name of the Department
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="description" type="xs:string" nillable="true" minOccurs="0" sme:label="Department Description">
+				<xs:annotation>
+					<xs:documentation>
+            A longer textual description of the Department.  
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="notes" type="note--list" nillable="true" minOccurs="0" sme:label="Department Note" sme:relationship="child" sme:isCollection="true">
+				<xs:annotation>
+					<xs:documentation>
+            Note associated with the Department   See “Note” definition.
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+		<xs:anyAttribute/>
+	</xs:complexType>
+	<xs:complexType name="department--list">
+		<xs:sequence>
+			<xs:element name="department" type="department--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:anyAttribute/>
+	</xs:complexType>
+	<xs:simpleType name="uuid--type">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9a-fA-F-]+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="postalAddressType--enum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Shipping"/>
+			<xs:enumeration value="Billing"/>
+			<xs:enumeration value="Correspondence"/>
+			<xs:enumeration value="Home"/>
+			<xs:enumeration value="Office"/>
+			<xs:enumeration value="Work Site"/>
+			<xs:enumeration value="Other"/>
+			<xs:enumeration value="Unknown"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="phoneNumberType--enum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Business Phone"/>
+			<xs:enumeration value="Business Fax"/>
+			<xs:enumeration value="Business Mobile"/>
+			<xs:enumeration value="Personal Phone"/>
+			<xs:enumeration value="Personal Fax"/>
+			<xs:enumeration value="Personal Mobile"/>
+			<xs:enumeration value="Pager"/>
+			<xs:enumeration value="Toll Free"/>
+			<xs:enumeration value="Other Phone"/>
+			<xs:enumeration value="Other Fax"/>
+			<xs:enumeration value="Unknown"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="emailType--enum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Business"/>
+			<xs:enumeration value="Personal"/>
+			<xs:enumeration value="Other"/>
+			<xs:enumeration value="Unknown"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="financialAccountType--enum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Memo"/>
+			<xs:enumeration value="Posting"/>
+			<xs:enumeration value="Grouping"/>
+			<xs:enumeration value="Unknown"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="financialAccountReportingType--enum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Profit &amp; Loss"/>
+			<xs:enumeration value="Balance Sheet"/>
+			<xs:enumeration value="User Defined"/>
+			<xs:enumeration value="Unknown"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="financialAccountAccountingType--enum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Revenue"/>
+			<xs:enumeration value="Expense"/>
+			<xs:enumeration value="User Defined"/>
+			<xs:enumeration value="Unknown"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

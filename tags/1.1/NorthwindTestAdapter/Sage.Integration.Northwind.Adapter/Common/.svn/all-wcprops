@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Common
+END
+Constants.cs
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Common/Constants.cs
+END
+Helper.cs
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Common/Helper.cs
+END
+ResourceKindHelpers.cs
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Common/ResourceKindHelpers.cs
+END
+SdataTransactionResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Common/SdataTransactionResult.cs
+END
+TrackingPhase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Common/TrackingPhase.cs
+END
+SupportedResourceKinds.cs
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Adapter/Common/SupportedResourceKinds.cs
+END

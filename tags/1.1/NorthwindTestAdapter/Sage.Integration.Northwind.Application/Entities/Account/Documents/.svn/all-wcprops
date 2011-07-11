@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Application/Entities/Account/Documents
+END
+AccountDocument.cs
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Application/Entities/Account/Documents/AccountDocument.cs
+END
+PeopleDocumentCollection.cs
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Application/Entities/Account/Documents/PeopleDocumentCollection.cs
+END
+AddressDocumentCollection.cs
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Application/Entities/Account/Documents/AddressDocumentCollection.cs
+END
+AddressDocument.cs
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Application/Entities/Account/Documents/AddressDocument.cs
+END
+CompanyDocument.cs
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Application/Entities/Account/Documents/CompanyDocument.cs
+END
+EmailsDocumentCollection.cs
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Application/Entities/Account/Documents/EmailsDocumentCollection.cs
+END
+PersonDocument.cs
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Application/Entities/Account/Documents/PersonDocument.cs
+END
+EmailDocument.cs
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Application/Entities/Account/Documents/EmailDocument.cs
+END
+AccountDocumentCollection.cs
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Application/Entities/Account/Documents/AccountDocumentCollection.cs
+END
+PhonesDocumentCollection.cs
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Application/Entities/Account/Documents/PhonesDocumentCollection.cs
+END
+PhoneDocument.cs
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Integration.Northwind.Application/Entities/Account/Documents/PhoneDocument.cs
+END

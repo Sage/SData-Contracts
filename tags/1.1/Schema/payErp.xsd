@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Schema to import and extend elements from other schema crmErp, sc-->
+<?xml-stylesheet type="text/xsl" href="../Tools/XsdToHtml.xslt"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sme="http://schemas.sage.com/sdata/sme/2007" xmlns="http://schemas.sage.com/payErp/2009" xmlns:sc="http://schemas.sage.com/sc/2009" xmlns:crmErp="http://schemas.sage.com/crmErp/2008" targetNamespace="http://schemas.sage.com/payErp/2009" elementFormDefault="qualified" id="payErp">
+	<xs:import namespace="http://schemas.sage.com/sc/2009" schemaLocation="common.xsd"/>
+	<xs:import namespace="http://schemas.sage.com/crmErp/2008" schemaLocation="crmErp.xsd"/>
+	<xs:element name="operatingCompany" type="operatingCompany--type" sme:role="resourceKind" sme:pluralName="operatingCompanies" sme:compliance="must" sme:hasUuid="true" sme:canGet="true" sme:canPut="true" sme:canPost="true"/>
+	<xs:complexType name="operatingCompany--type" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="sc:operatingCompany--type">
+				<xs:all>
+					<xs:element name="paymentIdentifier" type="xs:string" nillable="true" minOccurs="0" sme:label="Operating Company Payment (Processing) Identifier" sme:isUniqueKey="true">
+						<xs:annotation>
+							<xs:documentation>
+              Identifier(s) of the Company as used by the payment processing provider.
+             
+
+          </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="bankAccount" type="crmErp:bankAccount--type" nillable="true" minOccurs="0" sme:label="Receipt BankAccount" sme:relationship="reference" sme:isCollection="false">
+						<xs:annotation>
+							<xs:documentation>Bank account associated with the Operating Company.  Used when monies are transferred by bank-to-bank transfer (e.g. BACS/ACS).  This is the bank account into which customer monies are paid or from which customer monies are refunded (or vice-versa for suppliers/vendors).    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:all>
+				<xs:anyAttribute/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="operatingCompany--list">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="operatingCompany" type="operatingCompany--type"/>
+		</xs:sequence>
+		<xs:anyAttribute/>
+	</xs:complexType>
+	<xs:element name="receipt" type="receipt--type" sme:role="resourceKind" sme:pluralName="receipts" sme:compliance="must" sme:hasUuid="true" sme:canGet="true" sme:canPut="true" sme:canPost="true"/>
+	<xs:complexType name="receipt--type" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="crmErp:receipt--type">
+				<xs:all>
+					<xs:element name="tenderTransactionType" type="tenderTransactionType--enum" nillable="true" minOccurs="0" sme:label="Receipt Tender Transaction Type">
+						<xs:annotation>
+							<xs:documentation>The type of transaction associated with the receipt tender (e.g. credit card) e.g. credit card receipt, credit card authenticate (only), </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderStartDate" type="xs:string" nillable="true" minOccurs="0" sme:label="Receipt Tender Start Date">
+						<xs:annotation>
+							<xs:documentation>The Start date (required for some Maestro, Solo and Amex card) in MMYY format.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderExpiryDate" type="xs:string" nillable="true" minOccurs="0" sme:label="Receipt Tender Expiry Date">
+						<xs:annotation>
+							<xs:documentation>The Expiry date (required for ALL cards) in MMYY format.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderCV2Number" type="xs:string" nillable="true" minOccurs="0" sme:label="Receipt Tender CV2 Number">
+						<xs:annotation>
+							<xs:documentation>The extra security 3 digits on the signature strip of the card, or the extra 4 digits on the front for American Express Cards</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderIssueNumber" type="xs:decimal" nillable="true" minOccurs="0" sme:label="Receipt Tender Issue Number">
+						<xs:annotation>
+							<xs:documentation>The card Issue Number (some Maestro and Solo cards only)</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderPayPalCallBackURL" type="xs:string" nillable="true" minOccurs="0" sme:label="Receipt Pay Pal Call Back URL">
+						<xs:annotation>
+							<xs:documentation>Full qualified domain name of the URL to which customers are redirected upon completion of a PayPal transaction</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderGiftAidFlag" type="xs:boolean" minOccurs="0" sme:label="Receipt Gift Aid Flag">
+						<xs:annotation>
+							<xs:documentation>FALSE = This transaction is not a Gift Aid charitable donation (default)
+TRUE = This payment is a Gift Aid charitable donation and the customer has AGREED to donate the tax.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderApplyAVSCV2" type="tenderApplyEnum--enum" nillable="true" minOccurs="0" sme:label="Receipt Tender Apply AVS CV2">
+						<xs:annotation>
+							<xs:documentation>AVS = address verification service, CV2 = extra 3 security digits on cards.
+0 = If AVS/CV2 enabled then check them. If rules apply, use rules (default).
+1 = Force AVS/CV2 checks even if not enabled for the account. If rules apply, use rules.
+2 = Force NO AVS/CV2 checks even if enabled on account.
+3 = Force AVS/CV2 checks even if not enabled for the account but DON’T apply any rules.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderClientIPAddress" type="xs:string" nillable="true" minOccurs="0" sme:label="Receipt Tender Client IP Address">
+						<xs:annotation>
+							<xs:documentation>The IP address of the client connecting to the server making the payment.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderApply3DSecure" type="tenderApplyEnum--enum" nillable="true" minOccurs="0" sme:label="Receipt Tender Apply 3D Secure">
+						<xs:annotation>
+							<xs:documentation>0 = If 3D-Secure checks are possible and rules allow, perform the checks and apply the authorisation rules (default).
+1 = Force 3D-Secure checks for this transaction only (if your account is 3D-enabled) and apply rules for authorisation.
+2 = Do not perform 3D-Secure checks for this transaction only and always authorise.
+3 = Force 3D-Secure checks for this transaction (if your account is 3D-enabled) but ALWAYS obtain an auth code, irrespective of rule base.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderAccountType" type="tenderAccountType--enum" nillable="true" minOccurs="0" sme:label="Receipt Tender Account Type">
+						<xs:annotation>
+							<xs:documentation>E = Use the e-commerce merchant account (default).
+C = Use the continuous authority merchant account (if present).
+M = Use the mail order, telephone order account (if present).</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderPayPalBillingAgreement" type="xs:boolean" minOccurs="0" sme:label="Receipt Tender PayPal Billing Agreement">
+						<xs:annotation>
+							<xs:documentation>FALSE = This is a normal PayPal transaction, not the first in a series of payments (default)
+TRUE = This is the first in a series of PayPal payments. Subsequent payments can be taken using REPEAT.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="statusText" type="xs:string" nillable="true" minOccurs="0" sme:label="Receipt Status Text">
+						<xs:annotation>
+							<xs:documentation>Human readable text associated with the status</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderSecurityKey " type="xs:string" nillable="true" minOccurs="0" sme:label="Receipt Tender Security Key ">
+						<xs:annotation>
+							<xs:documentation>Security key to be used to generate an MD5 Hash to sign the transaction. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderTransactionAuthNo" type="xs:decimal" nillable="true" minOccurs="0" sme:label="Receipt Tender Transaction Auth No">
+						<xs:annotation>
+							<xs:documentation>The Sage Pay authorisation code (also called VPSAuthCode) for this transaction. Sage Pay name is TXAuthNo.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderAVSCV2Response" type="tenderAVSCV2Response--enum" nillable="true" minOccurs="0" sme:label="Receipt Tender AVSCV2 Response">
+						<xs:annotation>
+							<xs:documentation>Response from AVS and CV2 checks. Will be one of the following: ALL MATCH, SECURITY CODE MATCH ONLY, ADDRESS MATCH ONLY, NO DATA MATCHES or DATA NOT CHECKED. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderAddressResult " type="tenderResult--enum" nillable="true" minOccurs="0" sme:label="Receipt Tender Address Result">
+						<xs:annotation>
+							<xs:documentation>NOTPROVIDED, NOTCHECKED, MATCHED, NOTMATCHED</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderPostCodeResult " type="tenderResult--enum" nillable="true" minOccurs="0" sme:label="Receipt Tender PostCode Result">
+						<xs:annotation>
+							<xs:documentation>NOTPROVIDED, NOTCHECKED, MATCHED, NOTMATCHED</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderCV2Result" type="tenderResult--enum" nillable="true" minOccurs="0" sme:label="Receipt Tender CV2 Result">
+						<xs:annotation>
+							<xs:documentation>NOTPROVIDED, NOTCHECKED, MATCHED, NOTMATCHED</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tender3DSecureStatus" type="tender3DSecureStatus--enum" nillable="true" minOccurs="0" sme:label="Receipt Tender 3D Secure Status">
+						<xs:annotation>
+							<xs:documentation>OK – The 3D-Authentication step completed successfully. If the Status field is OK too, then this indicates that the authorized transaction was also 3D-authenticated and a CAVV will be returned. Liability shift occurs.
+NOAUTH – This means the card is not in the 3D-Secure scheme.
+CANTAUTH - This normally means the card Issuer is not part of the scheme.
+NOTAUTHED – The cardholder failed to authenticate themselves with their Issuing Bank.
+ATTEMPTONLY – The cardholder attempted to authenticate themselves but the process did not complete. A CAVV is returned, therefore a liability shift may occur for non-Maestro cards. Check your Merchant Agreement.
+NOTCHECKED - No 3D Authentication was attempted for this transaction. Always returned if 3D-Secure is not active on your account.
+INCOMPLETE – 3D-Secure authentication was unable to complete (normally at the card issuer site). No authentication occurred.
+MALFORMED,INVALID,ERROR – These statuses indicate a problem with creating or receiving the 3D-Secure data. These should not occur on the live environment.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderCAVV" type="xs:string" nillable="true" minOccurs="0" sme:label="Receipt Tender CAVV">
+						<xs:annotation>
+							<xs:documentation>The encoded result code from the 3D-Secure checks. Holds the Visa CAVV or the MasterCard UCAF depending on the card type used in the transaction.
+CAVV = Cardholder Authentication Verification Value</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderMD" type="xs:string" nillable="true" minOccurs="0" sme:label="Receipt Tender MD">
+						<xs:annotation>
+							<xs:documentation>A unique reference for the 3D-Authentication attempt.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderACSURL" type="xs:string" nillable="true" minOccurs="0" sme:label="Receipt Tender ACS URL">
+						<xs:annotation>
+							<xs:documentation>A fully qualified URL that points to the 3D-Authentication system at the Cardholder’s Issuing Bank.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderPaRequest" type="xs:string" nillable="true" minOccurs="0" sme:label="Receipt Tender Pa Request">
+						<xs:annotation>
+							<xs:documentation>A Base64 encoded, encrypted message to be passed to the Issuing Bank as part of the 3D-Authentication.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderPaResult" type="xs:string" nillable="true" minOccurs="0" sme:label="Receipt Tender Pa Result">
+						<xs:annotation>
+							<xs:documentation>A Base64 encoded, encrypted message sent back by Issuing Bank to your Terminal URL at the end of the 3D-Authentication process.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderPayPalRedirectURL" type="xs:string" nillable="true" minOccurs="0" sme:label="Receipt Tender PayPal Redirect URL">
+						<xs:annotation>
+							<xs:documentation>A fully qualified domain name URL to which you should redirect the customer. Contain the PayPal token which should not be stripped out.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderAddressStatus" type="tenderAddressStatus--enum" nillable="true" minOccurs="0" sme:label="Receipt Tender Address Status">
+						<xs:annotation>
+							<xs:documentation>Either NONE, CONFIRMED or UNCONFIRMED</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderPayerStatus" type="tenderPayerStatus--enum" nillable="true" minOccurs="0" sme:label="Receipt Tender Payer Status">
+						<xs:annotation>
+							<xs:documentation>Either VERIFIED or UNVERIFIED</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderPayerID" type="xs:string" nillable="true" minOccurs="0" sme:label="Receipt Tender Payer ID">
+						<xs:annotation>
+							<xs:documentation>Unique Pay Pal User Reference ID</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderAccept" type="xs:boolean" minOccurs="0" sme:label="Receipt Tender Accept ">
+						<xs:annotation>
+							<xs:documentation>TRUE if you wish to proceed with the PayPal transaction, FALSE if you wish to cancel based on the information returned.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderNotificationURL" type="xs:string" nillable="true" minOccurs="0" sme:label="Receipt Tender Notification URL">
+						<xs:annotation>
+							<xs:documentation>Callback URL to which Notification POSTs are sent. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderProfile" type="tenderProfile--enum" nillable="true" minOccurs="0" sme:label="Receipt Tender Profile">
+						<xs:annotation>
+							<xs:documentation>NORMAL (Default)
+LOW</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderNextURL" type="xs:string" nillable="true" minOccurs="0" sme:label="Receipt Tender Next URL">
+						<xs:annotation>
+							<xs:documentation>URL to which the Vendor must redirect the Customer to continue the Transaction.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderLast4Digits" type="xs:decimal" nillable="true" minOccurs="0" sme:label="Receipt Tender Last 4 Digits">
+						<xs:annotation>
+							<xs:documentation>The last 4 digits of the card number used in this transaction. PayPal transactions have 0000.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderSignature" type="xs:string" nillable="true" minOccurs="0" sme:label="Receipt Tender Signature">
+						<xs:annotation>
+							<xs:documentation>Electronic signature of the receipt.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderRedirectURL" type="xs:string" nillable="true" minOccurs="0" sme:label="Receipt Tender Redirect URL">
+						<xs:annotation>
+							<xs:documentation>Full qualified URL (including http:// or https:// header) to which you’d like the customer redirected on completion of the transaction.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="accepted" type="xs:boolean" minOccurs="0" sme:label="Receipt Accepted Flag">
+						<xs:annotation>
+							<xs:documentation>Flag to indicate if the Receipt Tender is ‘Accepted’ ie. complete.
+          </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderFirst6Digits" type="xs:decimal" nillable="true" minOccurs="0" sme:label="Receipt Tender First 6 Digits">
+						<xs:annotation>
+							<xs:documentation>The first 6 digits of the card number used in this transaction. PayPal transactions have 000000.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="operatingCompany" type="operatingCompany--type" minOccurs="0" sme:label="Receipt OperatingCompany" sme:relationship="reference" sme:isCollection="false">
+						<xs:annotation>
+							<xs:documentation>Link to the OperatingCompany associated with the receipt (customer payment).
+</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:all>
+				<xs:anyAttribute/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="receipt--list">
+		<xs:sequence>
+			<xs:element name="receipt" type="receipt--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:anyAttribute/>
+	</xs:complexType>
+	<xs:element name="payment" type="payment--type" sme:role="resourceKind" sme:pluralName="payments" sme:compliance="should" sme:hasUuid="true" sme:canGet="true" sme:canPut="true" sme:canPost="true"/>
+	<xs:complexType name="payment--type" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="crmErp:payment--type">
+				<xs:all>
+					<xs:element name="tenderTransactionType" type="tenderTransactionType--enum" nillable="true" minOccurs="0" sme:label="Payment Tender Transaction Type">
+						<xs:annotation>
+							<xs:documentation>The type of transaction associated with the receipt tender (e.g. credit card) e.g. credit card receipt, credit card authenticate (only), </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="statusText" type="xs:string" nillable="true" minOccurs="0" sme:label="Payment Status Text">
+						<xs:annotation>
+							<xs:documentation>Human readable text associated with the status</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderTransactionAuthNo" type="xs:decimal" nillable="true" minOccurs="0" sme:label="Payment Tender Transaction Auth No">
+						<xs:annotation>
+							<xs:documentation>The Sage Pay authorisation code (also called VPSAuthCode) for this transaction. Sage Pay name is TXAuthNo.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderRelatedExternalReference" type="xs:string" nillable="true" minOccurs="0" sme:label="Payment Tender Related External Reference">
+						<xs:annotation>
+							<xs:documentation>Transaction ID the original Transaction (e.g. if this is a refund against a previous transaction).</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderRelatedReference2" type="xs:string" nillable="true" minOccurs="0" sme:label="Payment Tender Related Reference 2">
+						<xs:annotation>
+							<xs:documentation>Another reference to the original Transaction (e.g. if this is a refund against a previous transaction).</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderRelatedTenderSecurityKey " type="xs:string" nillable="true" minOccurs="0" sme:label="Payment Related Tender Security Key ">
+						<xs:annotation>
+							<xs:documentation>the Security key to be used to generate an MD5 Hash to sign the original transaction. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tenderRelatedTenderTransactionAuthNo" type="xs:decimal" nillable="true" minOccurs="0" sme:label="Payment Related Tender Transaction Auth No">
+						<xs:annotation>
+							<xs:documentation>The Original transaction Sage Pay authorisation code (also called VPSAuthCode) for this transaction. Sage Pay name is TXAuthNo.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="operatingCompany" type="operatingCompany--type" minOccurs="0" sme:label="Payment OperatingCompany" sme:relationship="reference" sme:isCollection="false">
+						<xs:annotation>
+							<xs:documentation>Link to the OperatingCompany associated with the payment (refund).
+</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:all>
+				<xs:anyAttribute/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="payment--list">
+		<xs:sequence>
+			<xs:element name="payment" type="payment--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:anyAttribute/>
+	</xs:complexType>
+	<xs:element name="interaction" type="interaction--type" sme:role="resourceKind" sme:pluralName="interactions" sme:compliance="may" sme:hasUuid="true" sme:canGet="true" sme:canPut="true" sme:canPost="true"/>
+	<xs:complexType name="interaction--type" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="crmErp:interaction--type">
+				<xs:all>
+					<xs:element name="receipt" type="receipt--list" minOccurs="0" sme:label="Interaction Receipt" sme:relationship="association" sme:isCollection="true">
+						<xs:annotation>
+							<xs:documentation>Link to the Receipt(s) this Interactions is for (e.g. for recurring receipts, or if the sale invoice associated with this interaction has been paid.   See “Receipt” definition.
+          </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="payment" type="payment--list" minOccurs="0" sme:label="Interaction Payment" sme:relationship="association" sme:isCollection="true">
+						<xs:annotation>
+							<xs:documentation>Link to the Payment(s) this Interactions is for (e.g. for recurring payments.   See “Payment” definition.
+          </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="recurrenceNumber" type="xs:decimal" minOccurs="0" sme:label="Interaction Recurrence Number">
+						<xs:annotation>
+							<xs:documentation>For interactions that are recurring, this is the Number of recurrences (e.g. 3), relative to recurrenceFrequency.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="interaction" type="interaction--list" minOccurs="0" sme:label="Interaction Interaction(s)" sme:relationship="association" sme:isCollection="true">
+						<xs:annotation>
+							<xs:documentation>Link to other interactions associated with this interaction (e.g. for scheduled/repeating interactions or for past recurring receipts/payments).</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="businessDayOverrideFlag" type="businessDayOverrideFlag--enum" minOccurs="0" sme:label="Interaction Business Day Override Flag">
+						<xs:annotation>
+							<xs:documentation>Flag to indicate what happens if this occurrence of an interaction is scheduled for a non-business day. Options are "None" (schedule for non-business day), "Before" or "After" (indicating use business day before or after. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="reference2" type="xs:string" minOccurs="0" sme:label="Interaction Reference2">
+						<xs:annotation>
+							<xs:documentation>second reference for the Interaction.   </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="recurrenceType" type="xs:string" minOccurs="0" sme:label="Interaction Recurrence Type">
+						<xs:annotation>
+							<xs:documentation>For interactions that are recurring, this is the type of recurrence.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:all>
+				<xs:anyAttribute/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="interaction--list">
+		<xs:sequence>
+			<xs:element name="interaction" type="interaction--type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:anyAttribute/>
+	</xs:complexType>
+	<xs:simpleType name="tenderTransactionType--enum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Receipt"/>
+			<xs:enumeration value="Authenticate Receipt"/>
+			<xs:enumeration value="Deferred Receipt"/>
+			<xs:enumeration value="Payment"/>
+			<xs:enumeration value="Authenticate Payment"/>
+			<xs:enumeration value="Deferred Payment"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tenderApplyEnum--enum">
+		<xs:restriction base="xs:decimal">
+			<xs:enumeration value="0"/>
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tenderAccountType--enum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="E"/>
+			<xs:enumeration value="C"/>
+			<xs:enumeration value="M"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tenderAVSCV2Response--enum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ALL MATCH"/>
+			<xs:enumeration value="SECURITY CODE MATCH ONLY"/>
+			<xs:enumeration value="ADDRESS MATCH ONLY"/>
+			<xs:enumeration value="NO DATA MATCHES"/>
+			<xs:enumeration value="DATA NOT CHECKED"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tenderResult--enum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="NOTPROVIDED"/>
+			<xs:enumeration value="NOTCHECKED"/>
+			<xs:enumeration value="MATCHED"/>
+			<xs:enumeration value="NOTMATCHED"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tender3DSecureStatus--enum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="OK"/>
+			<xs:enumeration value="NOAUTH"/>
+			<xs:enumeration value="CANTAUTH"/>
+			<xs:enumeration value="NOTAUTHED"/>
+			<xs:enumeration value="ATTEMPTONLY"/>
+			<xs:enumeration value="NOTCHECKED"/>
+			<xs:enumeration value="INCOMPLETE"/>
+			<xs:enumeration value="MALFORMED"/>
+			<xs:enumeration value="INVALID"/>
+			<xs:enumeration value="ERROR"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tenderAddressStatus--enum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="NONE"/>
+			<xs:enumeration value="CONFIRMED"/>
+			<xs:enumeration value="UNCONFIRMED"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tenderPayerStatus--enum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="VERIFIED"/>
+			<xs:enumeration value="UNVERIFIED"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tenderProfile--enum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="NORMAL"/>
+			<xs:enumeration value="LOW"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="businessDayOverrideFlag--enum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="None"/>
+			<xs:enumeration value="Before"/>
+			<xs:enumeration value="After"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

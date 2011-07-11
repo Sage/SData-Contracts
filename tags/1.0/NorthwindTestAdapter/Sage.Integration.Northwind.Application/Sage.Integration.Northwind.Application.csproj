@@ -1,0 +1,271 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F579CD13-5147-4EE0-8E90-39AE59C1ABEB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sage.Integration.Northwind.Application</RootNamespace>
+    <AssemblyName>Sage.Integration.Northwind.Application</AssemblyName>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="API\Constants.cs" />
+    <Compile Include="API\EntityFactory.cs" />
+    <Compile Include="API\Enums.cs" />
+    <Compile Include="API\Identity.cs" />
+    <Compile Include="API\INorthwindConnector.cs" />
+    <Compile Include="API\ISageCrmApplicationConnector.cs" />
+    <Compile Include="API\RTDVBaseFactory.cs" />
+    <Compile Include="API\Token.cs" />
+    <Compile Include="Base\CRMDocumentProperties.cs" />
+    <Compile Include="Base\Document.cs" />
+    <Compile Include="Base\DocumentCollection.cs" />
+    <Compile Include="Base\EntityBase.cs" />
+    <Compile Include="Base\Property.cs" />
+    <Compile Include="Base\RTDVBase.cs" />
+    <Compile Include="Base\RTDVField.cs" />
+    <Compile Include="Entities\Account\Account.cs" />
+    <Compile Include="Entities\Account\DataSets\AccountDataset.cs">
+      <DependentUpon>AccountDataset.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Entities\Account\DataSets\AccountDataset1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Account\DataSets\DeleteHistoryDataset.cs">
+      <DependentUpon>DeleteHistoryDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Account\DataSets\DeleteHistoryDataset.Designer.cs">
+      <DependentUpon>DeleteHistoryDataset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Account\DataSets\Emails.cs">
+      <DependentUpon>Emails.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Entities\Account\DataSets\Emails1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Emails.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Account\Documents\AccountDocument.cs" />
+    <Compile Include="Entities\Account\Documents\AccountDocumentCollection.cs" />
+    <Compile Include="Entities\Account\Documents\AddressDocument.cs" />
+    <Compile Include="Entities\Account\Documents\AddressDocumentCollection.cs" />
+    <Compile Include="Entities\Account\Documents\CompanyDocument.cs" />
+    <Compile Include="Entities\Account\Documents\EmailDocument.cs" />
+    <Compile Include="Entities\Account\Documents\EmailsDocumentCollection.cs" />
+    <Compile Include="Entities\Account\Documents\PeopleDocumentCollection.cs" />
+    <Compile Include="Entities\Account\Documents\PersonDocument.cs" />
+    <Compile Include="Entities\Account\Documents\PhoneDocument.cs" />
+    <Compile Include="Entities\Account\Documents\PhonesDocumentCollection.cs" />
+    <Compile Include="Entities\Account\Email.cs" />
+    <Compile Include="Entities\Order\DataSets\Order.cs">
+      <DependentUpon>Order.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Order\DataSets\Order.Designer.cs">
+      <DependentUpon>Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Order\DataSets\OrderTableAdapters.cs" />
+    <Compile Include="Entities\Order\Documents\LineItemDocument.cs" />
+    <Compile Include="Entities\Order\Documents\LineItemsDocumentCollection.cs" />
+    <Compile Include="Entities\Order\Documents\OrderDocument.cs" />
+    <Compile Include="Entities\Order\Order.cs" />
+    <Compile Include="Entities\Product\DataSets\AllProducts.cs">
+      <DependentUpon>AllProducts.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Product\DataSets\AllProducts.Designer.cs">
+      <DependentUpon>AllProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Product\DataSets\Category.cs">
+      <DependentUpon>Category.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Product\DataSets\Category.Designer.cs" />
+    <Compile Include="Entities\Product\DataSets\Product.cs">
+      <DependentUpon>Product.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Product\DataSets\Product.Designer.cs">
+      <DependentUpon>Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Product\Documents\PriceDocument.cs" />
+    <Compile Include="Entities\Product\Documents\PricingListsDocument.cs" />
+    <Compile Include="Entities\Product\Documents\ProductDocument.cs" />
+    <Compile Include="Entities\Product\Documents\ProductFamilyDocument.cs" />
+    <Compile Include="Entities\Product\Documents\ProductPriceDocument.cs" />
+    <Compile Include="Entities\Product\Documents\UnitOfMeasureDocument.cs" />
+    <Compile Include="Entities\Product\Documents\UnitOfMeasureFamilyDocument.cs" />
+    <Compile Include="Entities\Product\Price.cs" />
+    <Compile Include="Entities\Product\PricingList.cs" />
+    <Compile Include="Entities\Product\Product.cs" />
+    <Compile Include="Entities\Product\ProductFamily.cs" />
+    <Compile Include="Entities\Product\UnitOfMeasure.cs" />
+    <Compile Include="Entities\Product\UnitOfMeasureFamily.cs" />
+    <Compile Include="NorthwindConfig.cs" />
+    <Compile Include="NorthwindConnector.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="EntityResources\CRMSelections.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRMSelections.resx</DependentUpon>
+    </Compile>
+    <Compile Include="EntityResources\DocumentPropertyCaption.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentPropertyCaption.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RTDV\RTDVAdditionalStockDetails.cs" />
+    <Compile Include="RTDV\RTDVEmployees.cs" />
+    <Compile Include="RTDV\RTDVProductsPurchased.cs" />
+    <Compile Include="RTDV\RTDVSalesInvoices.cs" />
+    <Compile Include="RTDV\RTDVSalesOrderItems.cs" />
+    <Compile Include="RTDV\RTDVSalesOrders.cs" />
+    <Compile Include="Toolkit\Address.cs" />
+    <Compile Include="Toolkit\ContactName.cs" />
+    <Compile Include="Toolkit\CountryCodes.cs" />
+    <Compile Include="Toolkit\OrderAddress.cs" />
+    <Compile Include="Toolkit\Phone.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Entities\Account\DataSets\AccountDataset.xsc">
+      <DependentUpon>AccountDataset.xsd</DependentUpon>
+    </None>
+    <None Include="Entities\Account\DataSets\AccountDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AccountDataset1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Entities\Account\DataSets\AccountDataset.xss">
+      <DependentUpon>AccountDataset.xsd</DependentUpon>
+    </None>
+    <None Include="Entities\Account\DataSets\DeleteHistoryDataset.xsc">
+      <DependentUpon>DeleteHistoryDataset.xsd</DependentUpon>
+    </None>
+    <None Include="Entities\Account\DataSets\DeleteHistoryDataset.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Entities\Account\DataSets\DeleteHistoryDataset.xss">
+      <DependentUpon>DeleteHistoryDataset.xsd</DependentUpon>
+    </None>
+    <None Include="Entities\Account\DataSets\Emails.xsc">
+      <DependentUpon>Emails.xsd</DependentUpon>
+    </None>
+    <None Include="Entities\Account\DataSets\Emails.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Emails1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Entities\Account\DataSets\Emails.xss">
+      <DependentUpon>Emails.xsd</DependentUpon>
+    </None>
+    <None Include="Entities\Order\DataSets\Order.xsc">
+      <DependentUpon>Order.xsd</DependentUpon>
+    </None>
+    <None Include="Entities\Order\DataSets\Order.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Entities\Order\DataSets\Order.xss">
+      <DependentUpon>Order.xsd</DependentUpon>
+    </None>
+    <None Include="Entities\Product\DataSets\AllProducts.xsc">
+      <DependentUpon>AllProducts.xsd</DependentUpon>
+    </None>
+    <None Include="Entities\Product\DataSets\AllProducts.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Entities\Product\DataSets\AllProducts.xss">
+      <DependentUpon>AllProducts.xsd</DependentUpon>
+    </None>
+    <None Include="Entities\Product\DataSets\Category.xsc">
+      <DependentUpon>Category.xsd</DependentUpon>
+    </None>
+    <None Include="Entities\Product\DataSets\Category.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Entities\Product\DataSets\Category.xss">
+      <DependentUpon>Category.xsd</DependentUpon>
+    </None>
+    <None Include="Entities\Product\DataSets\Product.xsc">
+      <DependentUpon>Product.xsd</DependentUpon>
+    </None>
+    <None Include="Entities\Product\DataSets\Product.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Entities\Product\DataSets\Product.xss">
+      <DependentUpon>Product.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sage.Integration.Northwind.Common\Sage.Integration.Northwind.Common.csproj">
+      <Project>{3C819437-8FB9-4D9B-AC4D-9B8DA65BEC0F}</Project>
+      <Name>Sage.Integration.Northwind.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EntityResources\CRMSelections.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CRMSelections.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EntityResources\DocumentPropertyCaption.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DocumentPropertyCaption.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

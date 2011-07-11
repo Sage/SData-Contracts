@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="sme"
+    targetNamespace="http://schemas.sage.com/sdata/sme/2007"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.sage.com/sdata/sme/2007"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <!-- Attribute Definitions -->
+  <xs:attribute name="role" type="roleType"/>
+  <xs:attribute name="path" type="xs:string"/>
+  <xs:attribute name="pluralName" type="xs:string"/>
+  <xs:attribute name="label" type="xs:string"/>
+  <xs:attribute name="canGet" type="xs:boolean"/>
+  <xs:attribute name="canPost" type="xs:boolean"/>
+  <xs:attribute name="canPut" type="xs:boolean"/>
+  <xs:attribute name="canDelete" type="xs:boolean"/>
+  <xs:attribute name="canPagePrevious" type="xs:boolean"/>
+  <xs:attribute name="canPageNext" type="xs:boolean"/>
+  <xs:attribute name="canPageIndex" type="xs:boolean"/>
+  <xs:attribute name="supportsETag" type="xs:boolean"/>
+  <xs:attribute name="batchingMode" type="syncModesType"/>
+  <xs:attribute name="invocationMode" type="syncModesType"/>
+  <xs:attribute name="canSort" type="xs:boolean"/>
+  <xs:attribute name="canFilter" type="xs:boolean"/>
+  <xs:attribute name="canGroup" type="xs:boolean"/>
+  <xs:attribute name="precedence" type="xs:integer"/>
+  <xs:attribute name="groupName" type="xs:string"/>
+  <xs:attribute name="relationship" type="relationshipType"/>
+  <xs:attribute name="isCollection" type="xs:boolean"/>
+  <xs:attribute name="mandatory" type="xs:boolean"/>
+  <xs:attribute name="isUniqueKey" type="xs:boolean"/>
+  <xs:attribute name="isGlobalId" type="xs:boolean"/>
+  <xs:attribute name="isLocalized" type="xs:boolean"/>
+  <xs:attribute name="isIdentifier" type="xs:boolean"/>
+  <xs:attribute name="isDescriptor" type="xs:boolean"/>
+  <xs:attribute name="isReadOnly" type="xs:boolean"/>
+  <xs:attribute name="copiedFrom" type="xs:string"/>
+  <xs:attribute name="envelope" type="envelopeType"/>
+  <xs:attribute name="isExtension" type="xs:boolean"/>
+
+  <!-- Type Definitions -->
+  <xs:simpleType name="roleType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="resourceKind"/>
+      <xs:enumeration value="serviceOperation"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="syncModesType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="none"/>
+      <xs:enumeration value="sync"/>
+      <xs:enumeration value="async"/>
+      <xs:enumeration value="syncOrAsync"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="relationshipType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="parent"/>
+      <xs:enumeration value="child"/>
+      <xs:enumeration value="reference"/>
+      <xs:enumeration value="association"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="envelopeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="feed"/>
+      <xs:enumeration value="entry"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

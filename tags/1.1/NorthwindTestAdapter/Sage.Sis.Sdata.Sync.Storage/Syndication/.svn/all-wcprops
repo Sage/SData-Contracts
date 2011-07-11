@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage/Syndication
+END
+CorrelationInfo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage/Syndication/CorrelationInfo.cs
+END
+ICorrelatedResSyncInfoEnumerator.cs
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage/Syndication/ICorrelatedResSyncInfoEnumerator.cs
+END
+ResSyncInfo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage/Syndication/ResSyncInfo.cs
+END
+CorrelatedResSyncInfo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage/Syndication/CorrelatedResSyncInfo.cs
+END
+SyncDigestInfo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage/Syndication/SyncDigestInfo.cs
+END
+SyncDigestEntryInfo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/gcrmcontract/!svn/ver/167/tags/1.1/NorthwindTestAdapter/Sage.Sis.Sdata.Sync.Storage/Syndication/SyncDigestEntryInfo.cs
+END
