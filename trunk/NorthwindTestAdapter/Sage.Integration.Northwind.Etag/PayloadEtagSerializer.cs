@@ -4,12 +4,12 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Sage.Sis.Sdata.Etag.Crc;
-using Sage.Integration.Northwind.Feeds;
 using System.Collections;
 using System.Reflection;
 using Sage.Integration.Northwind.Common;
 using System.Xml.Serialization;
 using Sage.Sis.Sdata.Etag;
+using Sage.Common.Syndication;
 
 #endregion
 
@@ -29,7 +29,7 @@ namespace Sage.Integration.Northwind.Etag
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="obj">must be of type <see cref="PayloadBase"/>.</param>
+        /// <param name="obj">must be of type <see cref="PayloaContainer"/>.</param>
         /// <returns></returns>
         
         public string Serialize(object obj)
@@ -38,19 +38,19 @@ namespace Sage.Integration.Northwind.Etag
             if (null == obj)
                 return NULL;
 
-            PayloadBase payloadObj = obj as PayloadBase;
+            FeedEntry payloadObj = obj as FeedEntry;
 
             if (null == payloadObj)
-                throw new ArgumentException(string.Format("The object given must implement {0}.", typeof(PayloadBase).FullName), "obj");
+                throw new ArgumentException(string.Format("The object given must implement {0}.", typeof(FeedEntry).FullName), "obj");
 
 
 #warning WORKAROUND: Problems with enum types
             try
             {
-                object compositeObj = this.GetPayloadObject(payloadObj);
+                //object compositeObj = this.GetPayloadObject(payloadObj);
 
                 // serialize the composite payload object
-                return this.SerializeCompositeObject(compositeObj);
+                return this.SerializeCompositeObject(payloadObj);
             }
             catch
             {
@@ -82,6 +82,25 @@ namespace Sage.Integration.Northwind.Etag
                 while (arrayEnumerator.MoveNext())
                     resultString += this.SerializeProperties(arrayEnumerator.Current.GetType().GetProperties(), arrayEnumerator.Current);
             }
+            else if (compositeObj is FeedEntryCollection<FeedEntry>)
+                {
+                    arrayEnumerator = ((IEnumerable)compositeObj).GetEnumerator();
+
+                    while (arrayEnumerator.MoveNext())
+                        resultString += this.Serialize(arrayEnumerator.Current);
+                }
+              else if (compositeObj is IFeed)
+                {
+                    arrayEnumerator = ((IFeed)compositeObj).Entries.GetEnumerator();
+
+                    while (arrayEnumerator.MoveNext())
+                        resultString += this.Serialize(arrayEnumerator.Current);
+                }
+              //  typeof(IFeed).IsAssignableFrom(propInfo.PropertyType)
+           /* else if (compositeObj is FeedEntry)
+            {
+                resultString = this.Serialize(compositeObj);
+            }*/
             else
             {
                 resultString = this.SerializeProperties(compositeObjType.GetProperties(), compositeObj);
@@ -102,33 +121,68 @@ namespace Sage.Integration.Northwind.Etag
             // iterate through all properties that are declared 'public' and support 'get'
             foreach (PropertyInfo propInfo in objType.GetProperties())
             {
-                // ignore properties with XmlIgnore attribute
-                if (!ReflectionHelpers.HasCustomAttribute<XmlIgnoreAttribute>(propInfo))
+                Type proptype = propInfo.GetType();
+
+                if ((propInfo.Name != "IsEmpty") &&
+                       (propInfo.Name != "IsDeleted") &&
+                       (propInfo.Name != "Url") &&
+                       (propInfo.Name != "Key") &&
+                       (propInfo.Name != "Uuid") &&
+                       (propInfo.Name != "Author") &&
+                       (propInfo.Name != "Categories") &&
+                       (propInfo.Name != "ContainsPayload") &&
+                       (propInfo.Name != "Content") &&
+                       (propInfo.Name != "DeleteMissing") &&
+                       (propInfo.Name != "Descriptor") &&
+                       (propInfo.Name != "Diagnoses") &&
+                       (propInfo.Name != "HttpETag") &&
+                       (propInfo.Name != "HttpIfMatch") &&
+                       (propInfo.Name != "HttpLocation") &&
+                       (propInfo.Name != "HttpMessage") &&
+                       (propInfo.Name != "HttpMethod") &&
+                       (propInfo.Name != "HttpStatusCode") &&
+                       (propInfo.Name != "Id") &&
+                       (propInfo.Name != "IsDeleted") &&
+                       (propInfo.Name != "Key") &&
+                       (propInfo.Name != "Links") &&
+                       (propInfo.Name != "Published") &&
+                       (propInfo.Name != "Source") &&
+                       (propInfo.Name != "Summary") &&
+                       (propInfo.Name != "SyncState") &&
+                       (propInfo.Name != "Title") &&
+                       (propInfo.Name != "Updated") &&
+                       (propInfo.Name != "UpdateOperation") &&
+                       (propInfo.Name != "Uri") &&
+                       (propInfo.Name != "UUID"))
                 {
-                    // get the value of the property
-                    // (values of type Nullable<T> will be boxed automatically, and return either null or an object of type T. see Nullable<T> in MSDN).
-                    propertyValue = propInfo.GetValue(obj, null);
-
-                    if (null == propertyValue)
+                    // ignore properties with XmlIgnore attribute
+                    if (!ReflectionHelpers.HasCustomAttribute<XmlIgnoreAttribute>(propInfo))
                     {
-                        resultString += NULL;
-                    }
-                    else
-                    {
-                        // get the type of the property value
-                        propertyValueType = propInfo.PropertyType;
+                        // get the value of the property
+                        // (values of type Nullable<T> will be boxed automatically, and return either null or an object of type T. see Nullable<T> in MSDN).
+                        propertyValue = propInfo.GetValue(obj, null);
 
-                        // the property is in general a simple xml type that can be converted to a xml string.
-                        if (propertyValueType.IsArray)
+                        if (null == propertyValue)
                         {
-                            arrayEnumerator = ((IEnumerable)propertyValue).GetEnumerator();
-
-                            while (arrayEnumerator.MoveNext())
-                                resultString += GetSerializedValue(arrayEnumerator.Current);
+                            resultString += NULL;
                         }
                         else
                         {
-                            resultString += GetSerializedValue(propertyValue);
+                            // get the type of the property value
+                            propertyValueType = propInfo.PropertyType;
+
+                            // the property is in general a simple xml type that can be converted to a xml string.
+                            if (propertyValueType.IsArray)
+                            {
+                                arrayEnumerator = ((IEnumerable)propertyValue).GetEnumerator();
+
+                                while (arrayEnumerator.MoveNext())
+                                    resultString += GetSerializedValue(arrayEnumerator.Current);
+                            }
+                            else
+                            {
+                                resultString += GetSerializedValue(propertyValue);
+                            }
                         }
                     }
                 }
@@ -151,9 +205,37 @@ namespace Sage.Integration.Northwind.Etag
             // get value of composite payload property
             foreach (PropertyInfo prop in propInfos)
             {
-                if ((prop.Name != "SyncUuid") && 
-                    (prop.Name != "LocalID") &&
-                    (prop.Name != "ForeignIds"))
+                if ((prop.Name != "IsEmpty") && 
+                    (prop.Name != "IsDeleted") &&
+                    (prop.Name != "Url") &&
+                    (prop.Name != "Key") &&
+                    (prop.Name != "Uuid") &&
+                    (prop.Name != "Author") && 
+                    (prop.Name != "Categories") && 
+                    (prop.Name != "ContainsPayload") && 
+                    (prop.Name != "Content") && 
+                    (prop.Name != "DeleteMissing") &&  
+                    (prop.Name != "Descriptor") && 
+                    (prop.Name != "Diagnoses") && 
+                    (prop.Name != "HttpETag") && 
+                    (prop.Name != "HttpIfMatch") &&  
+                    (prop.Name != "HttpLocation") &&  
+                    (prop.Name != "HttpMessage") &&  
+                    (prop.Name != "HttpMethod") &&  
+                    (prop.Name != "HttpStatusCode") &&  
+                    (prop.Name != "Id") && 
+                    (prop.Name != "IsDeleted") &&  
+                    (prop.Name != "Key") && 
+                    (prop.Name != "Links") && 
+                    (prop.Name != "Published") && 
+                    (prop.Name != "Source") && 
+                    (prop.Name != "Summary") &&  
+                    (prop.Name != "SyncState") && 
+                    (prop.Name != "Title") &&  
+                    (prop.Name != "Updated") && 
+                    (prop.Name != "UpdateOperation") &&  
+                    (prop.Name != "Uri") &&  
+                    (prop.Name != "UUID"))
                     return prop.GetValue(obj, null);
 
             }

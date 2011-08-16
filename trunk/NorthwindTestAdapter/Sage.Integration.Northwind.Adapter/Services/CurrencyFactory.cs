@@ -1,7 +1,7 @@
 ﻿#region Usings
 
 using System;
-using Sage.Integration.Northwind.Feeds;
+using Sage.Integration.Northwind.Adapter.Feeds;
 
 #endregion
 
@@ -17,12 +17,18 @@ namespace Sage.Integration.Northwind.Adapter.Services
         }
 
         // returns a CurrencyConverter from EUR to currency parsed from computePriceRequest
-        public static EuroCurrencyConverter Create(computePriceRequesttype computePriceRequest)
+
+        public static EuroCurrencyConverter Create(ComputePriceRequestFeedEntry computePriceRequest)
+        {
+            return Create(computePriceRequest.pricingDocumentCurrency);
+        }
+
+        public static EuroCurrencyConverter Create(string pricingDocumentCurrency)
         {
             // Currency
             CurrencyCodes iso4217CurrencyCode = DEFAULT_CODE; // default
 
-            if (string.IsNullOrEmpty(computePriceRequest.pricingDocumentCurrency))
+            if (string.IsNullOrEmpty(pricingDocumentCurrency))
             {
                 iso4217CurrencyCode = DEFAULT_CODE;
             }
@@ -30,7 +36,7 @@ namespace Sage.Integration.Northwind.Adapter.Services
             {
                 try
                 {
-                    iso4217CurrencyCode = (CurrencyCodes)Enum.Parse(typeof(CurrencyCodes), computePriceRequest.pricingDocumentCurrency);
+                    iso4217CurrencyCode = (CurrencyCodes)Enum.Parse(typeof(CurrencyCodes), pricingDocumentCurrency);
                 }
                 catch (ArgumentException)
                 {

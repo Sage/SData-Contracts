@@ -12,9 +12,9 @@ namespace Sage.Sis.Sdata.Sync.Storage.Syndication
     {        
         #region Ctor.
 
-        public SyncDigestEntryInfo(string endpoint, int tick, int conflictPriority, DateTime stamp)
+        public SyncDigestEntryInfo(string EndPoint, long tick, int conflictPriority, DateTime stamp)
         {
-            this.Endpoint = endpoint;
+            this.EndPoint = EndPoint;
             this.Tick = tick;
             this.ConflictPriority = conflictPriority;
             this.Stamp = stamp;
@@ -24,8 +24,8 @@ namespace Sage.Sis.Sdata.Sync.Storage.Syndication
 
         #region Properties
 
-        public string Endpoint { get; private set; }
-        public int Tick { get; set; }
+        public string EndPoint { get; private set; }
+        public long Tick { get; set; }
         public DateTime Stamp { get; set; }
         public int ConflictPriority { get; set; }
 

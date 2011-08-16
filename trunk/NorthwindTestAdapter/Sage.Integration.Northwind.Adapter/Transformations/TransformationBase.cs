@@ -39,7 +39,7 @@ namespace Sage.Integration.Northwind.Adapter.Transformations
             _resourceKindString = _resourceKind.ToString();
             _originApplication = _datasetLink + _resourceKindString;
 
-            _correlatedResSyncInfoStore = RequestReceiver.NorthwindAdapter.StoreLocator.GetCorrelatedResSyncStore(_context.SdataContext);
+            _correlatedResSyncInfoStore = NorthwindAdapter.StoreLocator.GetCorrelatedResSyncStore(_context.SdataContext);
         }
 
         #endregion
@@ -59,17 +59,17 @@ namespace Sage.Integration.Northwind.Adapter.Transformations
             }
 
         }
-
-        protected Guid GetUuid(string localId, string uuidString)
+        
+        protected CorrelatedResSyncInfo GetUuidAsGuid(string localId, string uuidString)
         {
             if (String.IsNullOrEmpty(localId))
             {
-                return Guid.Empty;
+                return null;
             }
 
            CorrelatedResSyncInfo[] results =  _correlatedResSyncInfoStore.GetByLocalId(_resourceKindString, new string[]{localId});
            if (results.Length > 0)
-               return results[0].ResSyncInfo.Uuid;
+               return results[0];
             Guid result;
             if (string.IsNullOrEmpty(uuidString))
                    result = Guid.NewGuid();
@@ -85,12 +85,10 @@ namespace Sage.Integration.Northwind.Adapter.Transformations
                 {
                     result = Guid.NewGuid();
                 }
-
                 ResSyncInfo newResSyncInfo = new ResSyncInfo(result, _originApplication, 0, string.Empty, DateTime.Now);
-                CorrelatedResSyncInfo newCorrelation = new CorrelatedResSyncInfo(localId, newResSyncInfo);
-                _correlatedResSyncInfoStore.Put(_resourceKindString, newCorrelation);
-           return result;
-
+                CorrelatedResSyncInfo syncInfo = new CorrelatedResSyncInfo(localId, newResSyncInfo);
+                _correlatedResSyncInfoStore.Put(_resourceKindString, syncInfo);
+                return syncInfo;
         }
 
         protected string GetLocalId(string uuidString)
@@ -113,6 +111,26 @@ namespace Sage.Integration.Northwind.Adapter.Transformations
             if (results.Length > 0)
                 return results[0].LocalId;
             return null;
-        }        
+        }
+
+        protected bool GuidIsNullOrEmpty(Guid guid)
+        {
+            return guid == null || guid == Guid.Empty;
+        }
+
+        protected string GetSDataId(string id)
+        {
+            return String.Format("{0}{1}('{2}')", _context.DatasetLink, _resourceKind.ToString(), id);
+        }
+
+        protected void SetCommonProperties(Sage.Integration.Northwind.Application.Base.Document document, string descriptor, Sage.Common.Syndication.FeedEntry entry)
+        {
+            entry.Id = GetSDataId(document.Id);
+            entry.Key = document.Id;
+            CorrelatedResSyncInfo syncInfo = GetUuidAsGuid(document.Id, document.CrmId);
+            entry.UUID = syncInfo.ResSyncInfo.Uuid;
+            entry.Updated = syncInfo.ResSyncInfo.ModifiedStamp.ToLocalTime();
+            entry.Descriptor = descriptor;
+        }
     }
 }

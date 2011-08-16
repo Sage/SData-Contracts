@@ -23,6 +23,8 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet
 
         private readonly IJetConnectionProvider _jetConnectionProvider;
         private readonly SdataContext _context;
+        private string _runName = null;
+        private string _runStamp = null;
 
         #endregion
 
@@ -47,9 +49,7 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet
             
             using (IJetTransaction jetTransaction = _jetConnectionProvider.GetTransaction(false))
             {
-                //ResourceKindInfo resourceKindInfo = resourceKindTableAdapter.GetOrCreate(resourceKind, jetTransaction);
-
-                syncResultsTableAdapter.Insert(syncResultEntryInfos, jetTransaction);
+                syncResultsTableAdapter.Insert(syncResultEntryInfos, _runName, _runStamp, jetTransaction);
                 
                 jetTransaction.Commit();
             }
@@ -75,6 +75,15 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet
 
                 jetTransaction.Commit();
             }
+        }
+
+        public void SetRunName(string runName)
+        {
+            _runName = runName;
+        }
+        public void SetRunStamp(string runStamp)
+        {
+            _runStamp = runStamp;
         }
 
         #endregion

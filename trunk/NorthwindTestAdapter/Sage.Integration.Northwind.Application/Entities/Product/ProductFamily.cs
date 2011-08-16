@@ -247,16 +247,17 @@ namespace Sage.Integration.Northwind.Application.Entities.Product
 
                 try
                 {
+                    if(!productFamilyDoc.name.NotSet)
+                        if (productFamilyDoc.name.IsNull)
+                            row.SetCategoryNameNull();
+                        else
+                            row.CategoryName = (string)productFamilyDoc.name.Value;
 
-                    if (productFamilyDoc.name.IsNull)
-                        row.SetCategoryNameNull();
-                    else
-                        row.CategoryName = (string)productFamilyDoc.name.Value;
-
-                    if (productFamilyDoc.description.IsNull)
-                        row.SetDescriptionNull();
-                    else
-                        row.Description = (string)productFamilyDoc.description.Value;
+                    if(!productFamilyDoc.description.NotSet)
+                        if (productFamilyDoc.description.IsNull)
+                            row.SetDescriptionNull();
+                        else
+                            row.Description = (string)productFamilyDoc.description.Value;
 
                     row.ModifyID = config.SequenceNumber;
                     row.ModifyUser = config.CrmUser;

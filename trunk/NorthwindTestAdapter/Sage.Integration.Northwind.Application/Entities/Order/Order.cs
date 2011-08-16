@@ -356,7 +356,7 @@ namespace Sage.Integration.Northwind.Application.Entities.Order
             using (OleDbConnection connection = new OleDbConnection(config.ConnectionString))
             {
                 tableAdapter.Connection = connection;
-                recordCount = tableAdapter.FillBy(order.CalculatedOrders, id);
+                recordCount = tableAdapter.FillBy(order.CalculatedOrders, id, id);
                 if (recordCount == 0)
                     return GetDeletedDocument(identity);
 

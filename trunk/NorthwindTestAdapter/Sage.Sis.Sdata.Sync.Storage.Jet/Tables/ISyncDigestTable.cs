@@ -12,6 +12,6 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet.Tables
     interface ISyncDigestTable : ITable
     {
         IResourceKindTable ResourceKindTable { get; }
-        IEndpointTable EndpointTable { get; }
+        IEndPointTable EndPointTable { get; }
     }
 }

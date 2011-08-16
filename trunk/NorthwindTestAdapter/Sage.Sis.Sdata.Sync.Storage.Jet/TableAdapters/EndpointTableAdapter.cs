@@ -14,57 +14,58 @@ using Sage.Sis.Sdata.Sync.Context;
 
 namespace Sage.Sis.Sdata.Sync.Storage.Jet.TableAdapters
 {
-    class EndpointTableAdapter : IEndpointTableAdapter
+    class EndPointTableAdapter : IEndPointTableAdapter
     {
         #region Class Variables
 
-        private readonly IEndpointTable _endpointTable;
+        private readonly IEndPointTable _EndPointTable;
 
         #endregion
 
         #region Ctor.
 
-        public EndpointTableAdapter(IEndpointTable endpointTable, SdataContext context)
+        public EndPointTableAdapter(IEndPointTable EndPointTable, SdataContext context)
         {
-            _endpointTable = endpointTable;
+            _EndPointTable = EndPointTable;
             this.Context = context;
         }
 
         #endregion
 
-        #region IEndpointTableAdapter Members
+        #region IEndPointTableAdapter Members
 
 
-        public void SetOriginEndPoint(string endPointBaseUrl, IJetTransaction jetTransaction)
+        public void SetOriginEndPoint(string EndPointBaseUrl, IJetTransaction jetTransaction)
         {
-            List<EndpointInfo> updateInfos = new List<EndpointInfo>();
-            if (String.IsNullOrEmpty(endPointBaseUrl))
+            List<EndPointInfo> updateInfos = new List<EndPointInfo>();
+            if (String.IsNullOrEmpty(EndPointBaseUrl))
                 return;
-            if (!endPointBaseUrl.EndsWith("/"))
-                endPointBaseUrl += "/";
+            if (!EndPointBaseUrl.EndsWith("/"))
+                EndPointBaseUrl += "/";
             string localHost = "localhost/";
 
             OleDbCommand selectCommand = jetTransaction.CreateOleCommand();
-            selectCommand.CommandText = string.Format(@"SELECT [ID], Endpoint FROM {0} WHERE (((Endpoint) Like ""{1}%""));", _endpointTable.TableName, localHost);
-            OleDbDataReader reader = selectCommand.ExecuteReader();
-            int tmpId;
-            string tmpEndpoint;
-            while (reader.Read())
+            selectCommand.CommandText = string.Format(@"SELECT [ID], EndPoint FROM {0} WHERE (((EndPoint) Like ""{1}%""));", _EndPointTable.TableName, localHost);
+            using (OleDbDataReader reader = selectCommand.ExecuteReader())
             {
-                tmpId = Convert.ToInt32(reader["ID"]);
-                tmpEndpoint = Convert.ToString(reader["Endpoint"]);
-                tmpEndpoint = tmpEndpoint.Replace(localHost, endPointBaseUrl);
-                updateInfos.Add(new EndpointInfo(tmpId, tmpEndpoint));
+                int tmpId;
+                string tmpEndPoint;
+                while (reader.Read())
+                {
+                    tmpId = Convert.ToInt32(reader["ID"]);
+                    tmpEndPoint = Convert.ToString(reader["EndPoint"]);
+                    tmpEndPoint = tmpEndPoint.Replace(localHost, EndPointBaseUrl);
+                    updateInfos.Add(new EndPointInfo(tmpId, tmpEndPoint));
+                }
             }
 
-
-            foreach (EndpointInfo info in updateInfos)
+            foreach (EndPointInfo info in updateInfos)
             {
 
                 OleDbCommand oleDbCommand = jetTransaction.CreateOleCommand();
 
-                oleDbCommand.CommandText = string.Format("UPDATE {0} SET [Endpoint] = @Endpoint WHERE [ID]=@ID;", _endpointTable.TableName);
-                oleDbCommand.Parameters.AddWithValue("@Endpoint", info.Endpoint);
+                oleDbCommand.CommandText = string.Format("UPDATE {0} SET [EndPoint] = @EndPoint WHERE [ID]=@ID;", _EndPointTable.TableName);
+                oleDbCommand.Parameters.AddWithValue("@EndPoint", info.EndPoint);
                 oleDbCommand.Parameters.AddWithValue("@ID", info.Id);
 
                 oleDbCommand.ExecuteNonQuery();
@@ -72,53 +73,56 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet.TableAdapters
 
         }
 
-        public EndpointInfo GetOrCreate(string endpoint, IJetTransaction jetTransaction)
+        public EndPointInfo GetOrCreate(string EndPoint, IJetTransaction jetTransaction)
         {
-            EndpointInfo resultInfo = null;
+            EndPointInfo resultInfo = null;
             OleDbCommand oleDbCommand = jetTransaction.CreateOleCommand();
 
-            oleDbCommand.CommandText = string.Format("SELECT [ID] FROM {0} WHERE [Endpoint]=@Endpoint;", _endpointTable.TableName);
-            oleDbCommand.Parameters.AddWithValue("@Endpoint", endpoint);
+            oleDbCommand.CommandText = string.Format("SELECT [ID] FROM {0} WHERE [EndPoint]=@EndPoint;", _EndPointTable.TableName);
+            oleDbCommand.Parameters.AddWithValue("@EndPoint", EndPoint);
 
-            OleDbDataReader reader = oleDbCommand.ExecuteReader(CommandBehavior.SingleRow);
-
-            if (!reader.HasRows)
+            using (OleDbDataReader reader = oleDbCommand.ExecuteReader(CommandBehavior.SingleRow))
             {
-                resultInfo = this.Add(endpoint, jetTransaction);
-            }
-            else
-            {
-                reader.Read();
 
-                int id = Convert.ToInt32(reader["ID"]);
-                resultInfo = new EndpointInfo(id, endpoint);
+                if (!reader.HasRows)
+                {
+                    resultInfo = this.Add(EndPoint, jetTransaction);
+                }
+                else
+                {
+                    reader.Read();
+
+                    int id = Convert.ToInt32(reader["ID"]);
+                    resultInfo = new EndPointInfo(id, EndPoint);
+                }
             }
 
             return resultInfo;
         }
 
-        public EndpointInfo[] GetAll(IJetTransaction jetTransaction)
+        public EndPointInfo[] GetAll(IJetTransaction jetTransaction)
         {
-            List<EndpointInfo> resultInfos = new List<EndpointInfo>();
+            List<EndPointInfo> resultInfos = new List<EndPointInfo>();
             OleDbCommand oleDbCommand = jetTransaction.CreateOleCommand();
 
-            oleDbCommand.CommandText = string.Format("SELECT [ID], [Endpoint] FROM {0};", _endpointTable.TableName);
+            oleDbCommand.CommandText = string.Format("SELECT [ID], [EndPoint] FROM {0};", _EndPointTable.TableName);
 
-            OleDbDataReader reader = oleDbCommand.ExecuteReader();
-
-            int tmpId;
-            string tmpEndpoint;
-            while(reader.Read())
+            using (OleDbDataReader reader = oleDbCommand.ExecuteReader())
             {
-                tmpId = Convert.ToInt32(reader["ID"]);
-                tmpEndpoint = Convert.ToString(reader["Endpoint"]);
-                resultInfos.Add(new EndpointInfo(tmpId, tmpEndpoint));
+                int tmpId;
+                string tmpEndPoint;
+                while (reader.Read())
+                {
+                    tmpId = Convert.ToInt32(reader["ID"]);
+                    tmpEndPoint = Convert.ToString(reader["EndPoint"]);
+                    resultInfos.Add(new EndPointInfo(tmpId, tmpEndPoint));
+                }
             }
 
             return resultInfos.ToArray();
         }
 
-        public IEndpointTable Table { get { return _endpointTable; } }
+        public IEndPointTable Table { get { return _EndPointTable; } }
 
         #endregion
 
@@ -132,23 +136,23 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet.TableAdapters
 
         #region Private Helpers
 
-        private EndpointInfo Add(string endpoint, IJetTransaction jetTransaction)
+        private EndPointInfo Add(string EndPoint, IJetTransaction jetTransaction)
         {
-            EndpointInfo resultInfo = null;
+            EndPointInfo resultInfo = null;
             OleDbCommand oleDbCommand = jetTransaction.CreateOleCommand();
-            oleDbCommand.CommandText = string.Format("INSERT INTO [{0}] ([Endpoint]) VALUES (@Endpoint);", _endpointTable.TableName);
+            oleDbCommand.CommandText = string.Format("INSERT INTO [{0}] ([EndPoint]) VALUES (@EndPoint);", _EndPointTable.TableName);
 
-            oleDbCommand.Parameters.AddWithValue("@Endpoint", endpoint);
+            oleDbCommand.Parameters.AddWithValue("@EndPoint", EndPoint);
 
             oleDbCommand.ExecuteNonQuery();
 
             oleDbCommand.Parameters.Clear();
-            oleDbCommand.CommandText = string.Format("SELECT @@IDENTITY FROM [{0}];", _endpointTable.TableName);
+            oleDbCommand.CommandText = string.Format("SELECT @@IDENTITY FROM [{0}];", _EndPointTable.TableName);
             oleDbCommand.CommandType = CommandType.Text;
 
             int newId = (int)oleDbCommand.ExecuteScalar();
 
-            resultInfo = new EndpointInfo(newId, endpoint);
+            resultInfo = new EndPointInfo(newId, EndPoint);
 
             return resultInfo;
         }

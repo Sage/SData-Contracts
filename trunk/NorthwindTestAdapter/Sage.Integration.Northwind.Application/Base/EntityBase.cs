@@ -39,6 +39,13 @@ namespace Sage.Integration.Northwind.Application.Base
     public abstract class EntityBase
     {
         private string entityName;
+        private string delimiterClause;
+
+        public string DelimiterClause
+        {
+            get { return delimiterClause; }
+            set { delimiterClause = value; }
+        }
         #region constructor
 
 /// <summary>
@@ -48,6 +55,13 @@ namespace Sage.Integration.Northwind.Application.Base
         public EntityBase(string entityName)
         {
             this.entityName = entityName;
+            this.delimiterClause = string.Empty;
+        }
+
+        public EntityBase(string entityName, string delimiterClause)
+        {
+            this.entityName = entityName;
+            this.delimiterClause = delimiterClause;
         }
 
         #endregion
@@ -334,6 +348,20 @@ namespace Sage.Integration.Northwind.Application.Base
 
         #endregion
 
+        protected void HandleDelimiterClause(ref string whereExpression)
+        {
+            if (!string.IsNullOrEmpty(this.DelimiterClause))
+            {
+                if (string.IsNullOrEmpty(whereExpression))
+                {
+                    whereExpression = string.Format("where ({0})", this.DelimiterClause);
+                }
+                else
+                {
+                    whereExpression = whereExpression + " AND (" + this.DelimiterClause + ")";
+                }
+            }
+        }
 
     }
 }

@@ -1,0 +1,25 @@
+Version 1.1.1 (12 Aug 2011)
+
+- integrate the latest contract from github (crmErp.xsd and common.xsd)
+
+- support the latest SiF version 1.0.0.206
+	- need to set “hasuuid” attribute
+	- correct property name changes of Sif
+	- set content type manually on each response (Sif will not recognize this automatically anymore)
+	- remove the feedentry id from the syncdigest response because Sif automatically set 
+		the payload URL from the entry id
+	- ensure to set tick and conflict priority to a value greater than zero
+	- embed linked data by default when the linked information is needed by the syncronisation
+	- set basic feed elements like author and category in syncsource and sync target result
+
+- correct id in linking responses
+- introduce sample emails into the default database to support this entity from scratch
+
+	
+Known issues:
+
+- tracking implementation of the SIF is not compatible to sdatasync.xsd because of using type decimal instead of integer. This will normally not prevent to use a SIF based Adapter in a integration
+
+- SIF will currently delete links from the payload, when the content of the related entity is not included into the payload. See: http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataFeed/190-DSY.html Embedding works but no linking. For this case all relevant data is embedded instead of linked.
+
+- SIF will delete following some elements (conflictPriority and Tick) from the sync digest and sync state response when this is set to zero.

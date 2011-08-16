@@ -34,12 +34,12 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet
                 IResourceKindTableAdapter resourceKindTableAdapter = tableAdapterFactory.CreateResourceKindTableAdapter();
                 item.Register<IResourceKindTableAdapter>(resourceKindTableAdapter);
 
-                IEndpointTableAdapter endpointTableAdapter = tableAdapterFactory.CreateEndpointTableAdapter();
-                item.Register<IEndpointTableAdapter>(endpointTableAdapter);
+                IEndPointTableAdapter EndPointTableAdapter = tableAdapterFactory.CreateEndPointTableAdapter();
+                item.Register<IEndPointTableAdapter>(EndPointTableAdapter);
 
-                item.Register<ISyncDigestTableAdapter>(tableAdapterFactory.CreateSyncDigestTableAdapter(resourceKindTableAdapter, endpointTableAdapter));
+                item.Register<ISyncDigestTableAdapter>(tableAdapterFactory.CreateSyncDigestTableAdapter(resourceKindTableAdapter, EndPointTableAdapter));
                 item.Register<IAppBookmarkTableAdapter>(tableAdapterFactory.CreateAppBookmarkTableAdapter(resourceKindTableAdapter));
-                item.Register<ITickTableAdapter>(tableAdapterFactory.CreateTickTableAdapter(resourceKindTableAdapter));
+                item.Register<ItickTableAdapter>(tableAdapterFactory.CreatetickTableAdapter(resourceKindTableAdapter));
                 
 
                 Dictionary<string, ICorrelatedResSyncTableAdapter> correlatedResSyncTableAdapters = new Dictionary<string,ICorrelatedResSyncTableAdapter>();

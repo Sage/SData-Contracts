@@ -11,13 +11,13 @@ using Sage.Sis.Sdata.Sync.Storage.Jet.Tables;
 
 namespace Sage.Sis.Sdata.Sync.Storage.Jet.TableAdapters
 {
-    interface IEndpointTableAdapter : ITableAdapter
+    interface IEndPointTableAdapter : ITableAdapter
     {
 
-        void SetOriginEndPoint(string endPointBaseUrl, IJetTransaction jetTransaction);
-        EndpointInfo GetOrCreate(string endpoint, IJetTransaction jetTransaction);
-        EndpointInfo[] GetAll(IJetTransaction jetTransaction);
+        void SetOriginEndPoint(string EndPointBaseUrl, IJetTransaction jetTransaction);
+        EndPointInfo GetOrCreate(string EndPoint, IJetTransaction jetTransaction);
+        EndPointInfo[] GetAll(IJetTransaction jetTransaction);
 
-        new IEndpointTable Table { get; }
+        new IEndPointTable Table { get; }
     }
 }

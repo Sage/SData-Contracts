@@ -9,6 +9,9 @@ namespace Sage.Integration.Northwind.Common
         public const string northwindNamespace = @"http://schemas.sage.com/crmErp/2008";
         public const string northwindPrefix = @"nw";
 
+        public const string sc = @"http://schemas.sage.com/sc/2009";
+        public const string scPrefix = @"sc";
+
         public const string smeNamespace = @"http://schemas.sage.com/sdata/sme/2007";
         public const string smePrefix = @"sme";
 

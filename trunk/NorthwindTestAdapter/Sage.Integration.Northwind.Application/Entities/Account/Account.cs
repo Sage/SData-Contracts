@@ -271,10 +271,11 @@ namespace Sage.Integration.Northwind.Application.Entities.Account
                 StoreSupplier(accDoc, row, config, ref result);
 
            // for any other account type, set the transactionstatus to not supported
-            else 
-                result.Add(accDoc.SetTransactionStatus(
-                TransactionStatus.UnRecoverableError,
-                Resources.ErrorMessages_AccountTypeNotSupported));
+            else
+            {
+                result.Add(accDoc.SetTransactionStatus(TransactionStatus.UnRecoverableError, Resources.ErrorMessages_AccountTypeNotSupported));
+            }
+
 
         }
 
@@ -460,7 +461,7 @@ namespace Sage.Integration.Northwind.Application.Entities.Account
             persDoc.SetTransactionStatus(TransactionStatus.Success);
 
             // set the first and lst name to null if the contact in northwind is null
-            if (row.IsContactNameNull())
+            if (row.IsContactNameNull() || string.IsNullOrEmpty(row.ContactName))
             {
                 persDoc.firstname.Value = null;
                 persDoc.lastname.Value = null;
@@ -514,27 +515,17 @@ namespace Sage.Integration.Northwind.Application.Entities.Account
             
             phoneDoc.SetTransactionStatus(TransactionStatus.Success);
 
-            if (row.IsPhoneNull())
-            {
-                phoneDoc.countrycode.Value = null;
-                phoneDoc.areacode.Value = null;
-                phoneDoc.number.Value = null;
-                phoneDoc.fullnumber.Value = null;
-            }
-            else
+            if (!row.IsPhoneNull())
             {
                 phoneDoc.fullnumber.Value = row.Phone;
-                
+
                 phone = new Phone();
                 phone.NorthwindPhone = row.Phone;
                 phoneDoc.countrycode.Value = phone.CrmCountryCode;
                 phoneDoc.areacode.Value = phone.CrmAreaCode;
                 phoneDoc.number.Value = phone.CrmPhone;
-                
+                accDoc.phones.Add(phoneDoc);
             }
-
-
-            accDoc.phones.Add(phoneDoc);
 
             // create Fax Doc
             phoneDoc = new PhoneDocument();
@@ -543,14 +534,7 @@ namespace Sage.Integration.Northwind.Application.Entities.Account
                 phoneDoc.LogState = accDoc.LogState;
             phoneDoc.type.Value = CRMSelections.Link_PersPhon_Fax;
             phoneDoc.SetTransactionStatus(TransactionStatus.Success);
-            if (row.IsFaxNull())
-            {
-                phoneDoc.countrycode.Value = null;
-                phoneDoc.areacode.Value = null;
-                phoneDoc.number.Value = null;
-                phoneDoc.fullnumber.Value = null;
-            }
-            else
+            if (!row.IsFaxNull())
             {
                 phoneDoc.fullnumber.Value = row.Fax;
                 phone = new Phone();
@@ -558,10 +542,9 @@ namespace Sage.Integration.Northwind.Application.Entities.Account
                 phoneDoc.countrycode.Value = phone.CrmCountryCode;
                 phoneDoc.areacode.Value = phone.CrmAreaCode;
                 phoneDoc.number.Value = phone.CrmPhone;
-
+                accDoc.phones.Add(phoneDoc);
             }
-            accDoc.phones.Add(phoneDoc);
-
+            
             // create Address Doc
             addrDoc = new AddressDocument();
             addrDoc.Id = identity;
@@ -762,13 +745,16 @@ namespace Sage.Integration.Northwind.Application.Entities.Account
             foreach (PhoneDocument phoneDoc in accDoc.phones)
             {
                 // check if the phone is from the supported type
-                if ((phoneDoc.type.IsNull) ||
-                    !((phoneDoc.type.Value.ToString() == CRMSelections.Link_PersPhon_Business)))
+                if (phoneDoc.type.Value != null)
                 {
-                    // set the transactionsstatus to none to remove this status from the result
-                    if(!((phoneDoc.type.Value.ToString() == CRMSelections.Link_PersPhon_Fax)))
-                    phoneDoc.ClearTransactionStatus();
-                    continue;
+                    if ((phoneDoc.type.IsNull) ||
+                        !((phoneDoc.type.Value.ToString() == CRMSelections.Link_PersPhon_Business)))
+                    {
+                        // set the transactionsstatus to none to remove this status from the result
+                        if (!((phoneDoc.type.Value.ToString() == CRMSelections.Link_PersPhon_Fax)))
+                            phoneDoc.ClearTransactionStatus();
+                        continue;
+                    }
                 }
 
                 // get a new phone Object to convert beween the systems
@@ -794,13 +780,16 @@ namespace Sage.Integration.Northwind.Application.Entities.Account
             foreach (PhoneDocument phoneDoc in accDoc.phones)
             {
                 // check if the phone is from the supported type
-                if ((phoneDoc.type.IsNull) ||
-                    !((phoneDoc.type.Value.ToString() == CRMSelections.Link_PersPhon_Fax)))
+                if (phoneDoc.type.Value != null)
                 {
-                    // set the transactionsstatus to none to remove this status from the result
-                    if (!((phoneDoc.type.Value.ToString() == CRMSelections.Link_PersPhon_Business)))
-                    phoneDoc.ClearTransactionStatus();
-                    continue;
+                    if ((phoneDoc.type.IsNull) ||
+                        !((phoneDoc.type.Value.ToString() == CRMSelections.Link_PersPhon_Fax)))
+                    {
+                        // set the transactionsstatus to none to remove this status from the result
+                        if (!((phoneDoc.type.Value.ToString() == CRMSelections.Link_PersPhon_Business)))
+                            phoneDoc.ClearTransactionStatus();
+                        continue;
+                    }
                 }
 
                 // get a new phone Object to convert beween the systems
@@ -1291,7 +1280,8 @@ namespace Sage.Integration.Northwind.Application.Entities.Account
                 tableAdapter = new AccountsTableAdapter();
 
                 tableAdapter.Connection = connection;
-              
+
+                HandleDelimiterClause(ref whereExpression);
                 if (string.IsNullOrEmpty(whereExpression))
                     recordCount = tableAdapter.Fill(dataset.Accounts);
                 else

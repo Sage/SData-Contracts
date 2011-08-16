@@ -21,14 +21,15 @@ namespace Sage.Integration.Northwind.Adapter
 {
 	[RequestPath(Common.Constants.RootPath)]
 	[Description(Common.Constants.AdapterDescription)]
+    [Contract(Common.Constants.gcrmContract)]
 	public class NorthwindAdapter : Sage.Integration.Adapter.Adapter
 	{
         #region Ctor.
 
         public NorthwindAdapter()
 		{
-            this.StoreLocator = new StoreLocator();
-            this.RequestPerformerLocator = new RequestPerformerLocator();
+            StoreLocator = new StoreLocator();
+            RequestPerformerLocator = new RequestPerformerLocator();
         }
 
         #endregion
@@ -57,8 +58,8 @@ namespace Sage.Integration.Northwind.Adapter
 
         #region Properties
 
-        internal StoreLocator StoreLocator { get; private set; }
-        internal RequestPerformerLocator RequestPerformerLocator { get; private set; }
+        internal static StoreLocator StoreLocator { get; private set; }
+        internal static RequestPerformerLocator RequestPerformerLocator { get; private set; }
 
         #endregion
     }

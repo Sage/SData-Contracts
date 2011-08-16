@@ -57,7 +57,7 @@ namespace Sage.Integration.Northwind.Sync
             }
         }
 
-        public ICorrelatedResSyncInfoEnumerator GetSinceTick(string resourceKind, string endpoint, int tick)
+        public ICorrelatedResSyncInfoEnumerator GetSincetick(string resourceKind, string EndPoint, int tick)
         {
             if (null == resourceKind)
                 throw new ArgumentNullException("resourceKind");
@@ -66,7 +66,7 @@ namespace Sage.Integration.Northwind.Sync
 
             lock (lockObj)
             {
-                return _provider.GetSinceTick(resourceKind, endpoint, tick);
+                return _provider.GetSincetick(resourceKind, EndPoint, tick);
             }
         }
 

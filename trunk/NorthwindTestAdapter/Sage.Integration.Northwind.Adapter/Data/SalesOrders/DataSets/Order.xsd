@@ -4,12 +4,12 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="NorthwindConnectionString" IsAppSettingsProperty="true" Modifier="Public" Name="NorthwindConnectionString (Settings)" PropertyReference="ApplicationSettings.Sage.Integration.Northwind.Adapter.Properties.Settings.GlobalReference.Default.NorthwindConnectionString" Provider="System.Data.OleDb" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="NorthwindConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Public" Name="NorthwindConnectionString (Settings)" PropertyReference="ApplicationSettings.Sage.Integration.Northwind.Adapter.Properties.Settings.GlobalReference.Default.NorthwindConnectionString" Provider="System.Data.OleDb" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OrdersTableAdapter" GeneratorDataComponentClassName="OrdersTableAdapter" Name="Orders" UserDataComponentName="OrdersTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="NorthwindConnectionString (Settings)" DbObjectName="Orders" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="NorthwindConnectionString (Settings)" DbObjectName="Orders" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Orders` WHERE ((`OrderID` = ?) AND ((? = 1 AND `CustomerID` IS NULL) OR (`CustomerID` = ?)) AND ((? = 1 AND `EmployeeID` IS NULL) OR (`EmployeeID` = ?)) AND ((? = 1 AND `OrderDate` IS NULL) OR (`OrderDate` = ?)) AND ((? = 1 AND `RequiredDate` IS NULL) OR (`RequiredDate` = ?)) AND ((? = 1 AND `ShippedDate` IS NULL) OR (`ShippedDate` = ?)) AND ((? = 1 AND `ShipVia` IS NULL) OR (`ShipVia` = ?)) AND ((? = 1 AND `Freight` IS NULL) OR (`Freight` = ?)) AND ((? = 1 AND `ShipName` IS NULL) OR (`ShipName` = ?)) AND ((? = 1 AND `ShipAddress` IS NULL) OR (`ShipAddress` = ?)) AND ((? = 1 AND `ShipCity` IS NULL) OR (`ShipCity` = ?)) AND ((? = 1 AND `ShipRegion` IS NULL) OR (`ShipRegion` = ?)) AND ((? = 1 AND `ShipPostalCode` IS NULL) OR (`ShipPostalCode` = ?)) AND ((? = 1 AND `ShipCountry` IS NULL) OR (`ShipCountry` = ?)) AND ((? = 1 AND `CreateID` IS NULL) OR (`CreateID` = ?)) AND ((? = 1 AND `CreateUser` IS NULL) OR (`CreateUser` = ?)) AND ((? = 1 AND `ModifyID` IS NULL) OR (`ModifyID` = ?)) AND ((? = 1 AND `ModifyUser` IS NULL) OR (`ModifyUser` = ?)))</CommandText>
@@ -164,7 +164,7 @@
               <Mapping SourceColumn="ModifyUser" DataSetColumn="ModifyUser" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="NorthwindConnectionString (Settings)" DbObjectName="Orders" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+              <DbSource ConnectionRef="NorthwindConnectionString (Settings)" DbObjectName="Orders" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT OrderID, CustomerID, EmployeeID, OrderDate, RequiredDate, ShippedDate, ShipVia, Freight, ShipName, ShipAddress, ShipCity, ShipRegion, ShipPostalCode, ShipCountry, CreateID, CreateUser, ModifyID, ModifyUser FROM Orders
@@ -179,7 +179,7 @@ where OrderID = ?</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Order DetailsTableAdapter" GeneratorDataComponentClassName="Order_DetailsTableAdapter" Name="Order Details" UserDataComponentName="Order DetailsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="NorthwindConnectionString (Settings)" DbObjectName="Order Details" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="NorthwindConnectionString (Settings)" DbObjectName="Order Details" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Order Details` WHERE ((`OrderID` = ?) AND (`ProductID` = ?) AND ((? = 1 AND `UnitPrice` IS NULL) OR (`UnitPrice` = ?)) AND ((? = 1 AND `Quantity` IS NULL) OR (`Quantity` = ?)) AND ((? = 1 AND `Discount` IS NULL) OR (`Discount` = ?)) AND ((? = 1 AND `CreateID` IS NULL) OR (`CreateID` = ?)) AND ((? = 1 AND `CreateUser` IS NULL) OR (`CreateUser` = ?)) AND ((? = 1 AND `ModifyID` IS NULL) OR (`ModifyID` = ?)) AND ((? = 1 AND `ModifyUser` IS NULL) OR (`ModifyUser` = ?)))</CommandText>
@@ -271,7 +271,7 @@ where OrderID = ?</CommandText>
               <Mapping SourceColumn="ModifyUser" DataSetColumn="ModifyUser" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="NorthwindConnectionString (Settings)" DbObjectName="Order Details" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+              <DbSource ConnectionRef="NorthwindConnectionString (Settings)" DbObjectName="Order Details" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT OrderID, ProductID, UnitPrice, Quantity, Discount, CreateID, CreateUser, ModifyID, ModifyUser FROM [Order Details]
@@ -286,4 +286,460 @@ where OrderID = ?</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ChangeLogsTableAdapter" GeneratorDataComponentClassName="ChangeLogsTableAdapter" Name="ChangeLogs" UserDataComponentName="ChangeLogsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="NorthwindConnectionString (Settings)" DbObjectName="SELECT OrderID AS ID, CreateID AS SequenceNumber, CreateUser AS ChangeUser FROM Orders UNION SELECT OrderID AS ID, ModifyID AS SequenceNumber, ModifyUser AS ChangeUser FROM Orders UNION SELECT [Identity] AS ID, DeleteID AS SequenceNumber, DeleteUser AS Change
+              <DbSource ConnectionRef="NorthwindConnectionString (Settings)" DbObjectName="SELECT OrderID AS ID, CreateID AS SequenceNumber, CreateUser AS ChangeUser FROM Orders UNION SELECT OrderID AS ID, ModifyID AS SequenceNumber, ModifyUser AS ChangeUser FROM Orders UNION SELECT [Identity] AS ID, DeleteID AS SequenceNumber, DeleteUser AS ChangeUser FROM DeleteHistory WHERE (TableName = 'Orders') UNION SELECT OrderID AS ID, CreateID AS SequenceNumber, CreateUser AS ChangeUser FROM [Order Details] UNION SELECT OrderID AS ID, ModifyID AS SequenceNumber, ModifyUser AS ChangeUser FROM [Order Details] UNION SELECT [ParentIdentity] AS ID, DeleteID AS SequenceNumber, DeleteUser AS ChangeUser FROM DeleteHistory WHERE (ParentTableName = 'Orders')" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     TOP 11 a.ID as ID, MAX(a.SequenceNumber) AS SequenceNumber
+FROM       (SELECT     OrderID AS ID, CreateID AS SequenceNumber, CreateUser AS ChangeUser
+                       FROM          Orders
+                       UNION
+                       SELECT    OrderID AS ID, ModifyID AS SequenceNumber, ModifyUser AS ChangeUser
+                       FROM         Orders
+                       UNION
+                       SELECT      [Identity] AS ID, DeleteID AS SequenceNumber, DeleteUser AS ChangeUser
+                       FROM         DeleteHistory
+                       WHERE     (TableName = 'Orders')
+UNION
+SELECT     OrderID AS ID, CreateID AS SequenceNumber, CreateUser AS ChangeUser
+                       FROM          [Order Details]
+                       UNION
+                       SELECT    OrderID AS ID, ModifyID AS SequenceNumber, ModifyUser AS ChangeUser
+                       FROM          [Order Details]
+                       UNION
+                       SELECT      [ParentIdentity] AS ID, DeleteID AS SequenceNumber, DeleteUser AS ChangeUser
+                       FROM         DeleteHistory
+                       WHERE     (ParentTableName = 'Orders')
+
+) a
+WHERE
+((a.ID &gt; ?  AND a.SequenceNumber = ?) OR a.SequenceNumber &gt; ?)
+GROUP BY a.ID, a.ChangeUser 
+HAVING a.ChangeUser &lt;&gt; ?
+ORDER BY MAX(a.SequenceNumber),ID</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="ID" DataSourceName="SELECT OrderID AS ID, CreateID AS SequenceNumber, CreateUser AS ChangeUser FROM Orders UNION SELECT OrderID AS ID, ModifyID AS SequenceNumber, ModifyUser AS ChangeUser FROM Orders UNION SELECT [Identity] AS ID, DeleteID AS SequenceNumber, DeleteUser AS ChangeUser FROM DeleteHistory WHERE (TableName = 'Orders') UNION SELECT OrderID AS ID, CreateID AS SequenceNumber, CreateUser AS ChangeUser FROM [Order Details] UNION SELECT OrderID AS ID, ModifyID AS SequenceNumber, ModifyUser AS ChangeUser FROM [Order Details] UNION SELECT [ParentIdentity] AS ID, DeleteID AS SequenceNumber, DeleteUser AS ChangeUser FROM DeleteHistory WHERE (ParentTableName = 'Orders')" DataTypeServer="DbType.Int32" DbType="Int32" Direction="Input" ParameterName="ID" Precision="0" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param2" ColumnName="MAX(SequenceNumber)" DataSourceName="" DataTypeServer="DbType.Int32" DbType="Int32" Direction="Input" ParameterName="MAX_SequenceNumber_" Precision="0" Scale="0" Size="0" SourceColumn="SequenceNumber" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param3" ColumnName="MAX(SequenceNumber)" DataSourceName="" DataTypeServer="DbType.Int32" DbType="Int32" Direction="Input" ParameterName="MAX_SequenceNumber_1" Precision="0" Scale="0" Size="0" SourceColumn="SequenceNumber" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param4" ColumnName="ChangeUser" DataSourceName="SELECT OrderID AS ID, CreateID AS SequenceNumber, CreateUser AS ChangeUser FROM Orders UNION SELECT OrderID AS ID, ModifyID AS SequenceNumber, ModifyUser AS ChangeUser FROM Orders UNION SELECT [Identity] AS ID, DeleteID AS SequenceNumber, DeleteUser AS ChangeUser FROM DeleteHistory WHERE (TableName = 'Orders') UNION SELECT OrderID AS ID, CreateID AS SequenceNumber, CreateUser AS ChangeUser FROM [Order Details] UNION SELECT OrderID AS ID, ModifyID AS SequenceNumber, ModifyUser AS ChangeUser FROM [Order Details] UNION SELECT [ParentIdentity] AS ID, DeleteID AS SequenceNumber, DeleteUser AS ChangeUser FROM DeleteHistory WHERE (ParentTableName = 'Orders')" DataTypeServer="DbType.StringFixedLength(20)" DbType="String" Direction="Input" ParameterName="ChangeUser" Precision="0" Scale="0" Size="20" SourceColumn="ChangeUser" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="SequenceNumber" DataSetColumn="SequenceNumber" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CalculatedOrderDetailsTableAdapter" GeneratorDataComponentClassName="CalculatedOrderDetailsTableAdapter" Name="CalculatedOrderDetails" UserDataComponentName="CalculatedOrderDetailsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NorthwindConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     [Order Details].OrderID, [Order Details].ProductID, [Order Details].UnitPrice, [Order Details].Quantity, 
+                      [Order Details].UnitPrice * [Order Details].Quantity AS QuotePrice, [Order Details].Discount, [Order Details].CreateID, [Order Details].CreateUser, 
+                      [Order Details].ModifyID, [Order Details].ModifyUser, Products.QuantityPerUnit AS UOMID
+FROM         ([Order Details] INNER JOIN
+                      Products ON [Order Details].ProductID = Products.ProductID)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="OrderID" DataSetColumn="OrderID" />
+              <Mapping SourceColumn="ProductID" DataSetColumn="ProductID" />
+              <Mapping SourceColumn="UnitPrice" DataSetColumn="UnitPrice" />
+              <Mapping SourceColumn="Quantity" DataSetColumn="Quantity" />
+              <Mapping SourceColumn="QuotePrice" DataSetColumn="QuotePrice" />
+              <Mapping SourceColumn="Discount" DataSetColumn="Discount" />
+              <Mapping SourceColumn="CreateID" DataSetColumn="CreateID" />
+              <Mapping SourceColumn="CreateUser" DataSetColumn="CreateUser" />
+              <Mapping SourceColumn="ModifyID" DataSetColumn="ModifyID" />
+              <Mapping SourceColumn="ModifyUser" DataSetColumn="ModifyUser" />
+              <Mapping SourceColumn="UOMID" DataSetColumn="UOMID" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="NorthwindConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     [Order Details].OrderID, [Order Details].ProductID, [Order Details].UnitPrice, [Order Details].Quantity, 
+                      [Order Details].UnitPrice * [Order Details].Quantity AS QuotePrice, [Order Details].Discount, [Order Details].CreateID, [Order Details].CreateUser, 
+                      [Order Details].ModifyID, [Order Details].ModifyUser, Products.QuantityPerUnit AS UOMID
+FROM         ([Order Details] INNER JOIN
+                      Products ON [Order Details].ProductID = Products.ProductID)
+Where [Order Details].OrderID = ?</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param1" ColumnName="OrderID" DataSourceName="Order Details" DataTypeServer="DbType.Int32" DbType="Int32" Direction="Input" ParameterName="OrderID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="OrderID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CalculatedOrdersTableAdapter" GeneratorDataComponentClassName="CalculatedOrdersTableAdapter" Name="CalculatedOrders" UserDataComponentName="CalculatedOrdersTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NorthwindConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        Orders.OrderID, Orders.CustomerID, Orders.EmployeeID, Orders.OrderDate, Orders.RequiredDate, Orders.ShippedDate, Orders.ShipVia, Orders.Freight, 
+                         Orders.ShipName, Orders.ShipAddress, Orders.ShipCity, Orders.ShipRegion, Orders.ShipPostalCode, Orders.ShipCountry, Orders.CreateID, Orders.CreateUser, 
+                         Orders.ModifyID, Orders.ModifyUser, Calculated.TotalQuotedPrice, Calculated.TotalNetPrice, Calculated.DiscountAmount
+FROM            (Orders LEFT OUTER JOIN
+                             (SELECT        OrderID, SUM(UnitPrice * Quantity) AS TotalQuotedPrice, SUM((UnitPrice * Quantity) * (1 - Discount)) AS TotalNetPrice, 
+                                                         SUM(UnitPrice * Quantity * Discount) AS DiscountAmount
+                               FROM            [Order Details]
+                               GROUP BY OrderID) Calculated ON Orders.OrderID = Calculated.OrderID)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="OrderID" DataSetColumn="OrderID" />
+              <Mapping SourceColumn="CustomerID" DataSetColumn="CustomerID" />
+              <Mapping SourceColumn="EmployeeID" DataSetColumn="EmployeeID" />
+              <Mapping SourceColumn="OrderDate" DataSetColumn="OrderDate" />
+              <Mapping SourceColumn="RequiredDate" DataSetColumn="RequiredDate" />
+              <Mapping SourceColumn="ShippedDate" DataSetColumn="ShippedDate" />
+              <Mapping SourceColumn="ShipVia" DataSetColumn="ShipVia" />
+              <Mapping SourceColumn="Freight" DataSetColumn="Freight" />
+              <Mapping SourceColumn="ShipName" DataSetColumn="ShipName" />
+              <Mapping SourceColumn="ShipAddress" DataSetColumn="ShipAddress" />
+              <Mapping SourceColumn="ShipCity" DataSetColumn="ShipCity" />
+              <Mapping SourceColumn="ShipRegion" DataSetColumn="ShipRegion" />
+              <Mapping SourceColumn="ShipPostalCode" DataSetColumn="ShipPostalCode" />
+              <Mapping SourceColumn="ShipCountry" DataSetColumn="ShipCountry" />
+              <Mapping SourceColumn="CreateID" DataSetColumn="CreateID" />
+              <Mapping SourceColumn="CreateUser" DataSetColumn="CreateUser" />
+              <Mapping SourceColumn="ModifyID" DataSetColumn="ModifyID" />
+              <Mapping SourceColumn="ModifyUser" DataSetColumn="ModifyUser" />
+              <Mapping SourceColumn="TotalQuotedPrice" DataSetColumn="TotalQuotedPrice" />
+              <Mapping SourceColumn="TotalNetPrice" DataSetColumn="TotalNetPrice" />
+              <Mapping SourceColumn="DiscountAmount" DataSetColumn="DiscountAmount" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="NorthwindConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Orders.OrderID, Orders.CustomerID, Orders.EmployeeID, Orders.OrderDate, Orders.RequiredDate, Orders.ShippedDate, Orders.ShipVia, Orders.Freight, 
+                         Orders.ShipName, Orders.ShipAddress, Orders.ShipCity, Orders.ShipRegion, Orders.ShipPostalCode, Orders.ShipCountry, Orders.CreateID, Orders.CreateUser, 
+                         Orders.ModifyID, Orders.ModifyUser, Calculated.TotalQuotedPrice, Calculated.TotalNetPrice, Calculated.DiscountAmount
+FROM            (Orders LEFT OUTER JOIN
+                             (SELECT        OrderID, SUM(UnitPrice * Quantity) AS TotalQuotedPrice, SUM((UnitPrice * Quantity) * (1 - Discount)) AS TotalNetPrice, 
+                                                         SUM(UnitPrice * Quantity * Discount) AS DiscountAmount
+                               FROM            [Order Details]
+                               WHERE        (OrderID = ?)
+                               GROUP BY OrderID) Calculated ON Orders.OrderID = Calculated.OrderID)
+WHERE        (Orders.OrderID = ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="OrderID" DataSourceName="Orders" DataTypeServer="DbType.Int32" DbType="Int32" Direction="Input" ParameterName="OrderID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="OrderID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param2" ColumnName="" DataSourceName="" DataTypeServer="DbType.Int32" DbType="Int32" Direction="Input" ParameterName="Param2" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DeletedOrderDetailsTableAdapter" GeneratorDataComponentClassName="DeletedOrderDetailsTableAdapter" Name="DeletedOrderDetails" UserDataComponentName="DeletedOrderDetailsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NorthwindConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     ParentIdentity &amp; '-' &amp; [Identity] AS ID
+FROM         DeleteHistory
+WHERE     (ParentTableName = 'Orders') AND (ParentIdentity = ?) AND (DeleteID &gt;= ?) AND (DeleteUser &lt;&gt; ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param1" ColumnName="ParentIdentity" DataSourceName="DeleteHistory" DataTypeServer="DbType.StringFixedLength(50)" DbType="String" Direction="Input" ParameterName="ParentIdentity" Precision="0" ProviderType="WChar" Scale="0" Size="50" SourceColumn="ParentIdentity" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param2" ColumnName="DeleteID" DataSourceName="DeleteHistory" DataTypeServer="DbType.Int32" DbType="Int32" Direction="Input" ParameterName="DeleteID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="DeleteID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param3" ColumnName="DeleteUser" DataSourceName="DeleteHistory" DataTypeServer="DbType.StringFixedLength(20)" DbType="String" Direction="Input" ParameterName="DeleteUser" Precision="0" ProviderType="WChar" Scale="0" Size="20" SourceColumn="DeleteUser" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Order" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="Order" msprop:Generator_UserDSName="Order">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Orders" msprop:Generator_UserTableName="Orders" msprop:Generator_RowEvArgName="OrdersRowChangeEvent" msprop:Generator_TableVarName="tableOrders" msprop:Generator_TablePropName="Orders" msprop:Generator_RowDeletingName="OrdersRowDeleting" msprop:Generator_RowChangingName="OrdersRowChanging" msprop:Generator_RowDeletedName="OrdersRowDeleted" msprop:Generator_TableClassName="OrdersDataTable" msprop:Generator_RowChangedName="OrdersRowChanged" msprop:Generator_RowEvHandlerName="OrdersRowChangeEventHandler" msprop:Generator_RowClassName="OrdersRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OrderID" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnOrderID" msprop:Generator_ColumnPropNameInRow="OrderID" msprop:Generator_ColumnPropNameInTable="OrderIDColumn" msprop:Generator_UserColumnName="OrderID" type="xs:int" />
+              <xs:element name="CustomerID" msprop:Generator_ColumnVarNameInTable="columnCustomerID" msprop:Generator_ColumnPropNameInRow="CustomerID" msprop:Generator_ColumnPropNameInTable="CustomerIDColumn" msprop:Generator_UserColumnName="CustomerID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmployeeID" msprop:Generator_ColumnVarNameInTable="columnEmployeeID" msprop:Generator_ColumnPropNameInRow="EmployeeID" msprop:Generator_ColumnPropNameInTable="EmployeeIDColumn" msprop:Generator_UserColumnName="EmployeeID" type="xs:int" minOccurs="0" />
+              <xs:element name="OrderDate" msprop:Generator_ColumnVarNameInTable="columnOrderDate" msprop:Generator_ColumnPropNameInRow="OrderDate" msprop:Generator_ColumnPropNameInTable="OrderDateColumn" msprop:Generator_UserColumnName="OrderDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="RequiredDate" msprop:Generator_ColumnVarNameInTable="columnRequiredDate" msprop:Generator_ColumnPropNameInRow="RequiredDate" msprop:Generator_ColumnPropNameInTable="RequiredDateColumn" msprop:Generator_UserColumnName="RequiredDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ShippedDate" msprop:Generator_ColumnVarNameInTable="columnShippedDate" msprop:Generator_ColumnPropNameInRow="ShippedDate" msprop:Generator_ColumnPropNameInTable="ShippedDateColumn" msprop:Generator_UserColumnName="ShippedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ShipVia" msprop:Generator_ColumnVarNameInTable="columnShipVia" msprop:Generator_ColumnPropNameInRow="ShipVia" msprop:Generator_ColumnPropNameInTable="ShipViaColumn" msprop:Generator_UserColumnName="ShipVia" type="xs:int" minOccurs="0" />
+              <xs:element name="Freight" msprop:Generator_ColumnVarNameInTable="columnFreight" msprop:Generator_ColumnPropNameInRow="Freight" msprop:Generator_ColumnPropNameInTable="FreightColumn" msprop:Generator_UserColumnName="Freight" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ShipName" msprop:Generator_ColumnVarNameInTable="columnShipName" msprop:Generator_ColumnPropNameInRow="ShipName" msprop:Generator_ColumnPropNameInTable="ShipNameColumn" msprop:Generator_UserColumnName="ShipName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ShipAddress" msprop:Generator_ColumnVarNameInTable="columnShipAddress" msprop:Generator_ColumnPropNameInRow="ShipAddress" msprop:Generator_ColumnPropNameInTable="ShipAddressColumn" msprop:Generator_UserColumnName="ShipAddress" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ShipCity" msprop:Generator_ColumnVarNameInTable="columnShipCity" msprop:Generator_ColumnPropNameInRow="ShipCity" msprop:Generator_ColumnPropNameInTable="ShipCityColumn" msprop:Generator_UserColumnName="ShipCity" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ShipRegion" msprop:Generator_ColumnVarNameInTable="columnShipRegion" msprop:Generator_ColumnPropNameInRow="ShipRegion" msprop:Generator_ColumnPropNameInTable="ShipRegionColumn" msprop:Generator_UserColumnName="ShipRegion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ShipPostalCode" msprop:Generator_ColumnVarNameInTable="columnShipPostalCode" msprop:Generator_ColumnPropNameInRow="ShipPostalCode" msprop:Generator_ColumnPropNameInTable="ShipPostalCodeColumn" msprop:Generator_UserColumnName="ShipPostalCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ShipCountry" msprop:Generator_ColumnVarNameInTable="columnShipCountry" msprop:Generator_ColumnPropNameInRow="ShipCountry" msprop:Generator_ColumnPropNameInTable="ShipCountryColumn" msprop:Generator_UserColumnName="ShipCountry" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CreateID" msprop:Generator_ColumnVarNameInTable="columnCreateID" msprop:Generator_ColumnPropNameInRow="CreateID" msprop:Generator_ColumnPropNameInTable="CreateIDColumn" msprop:Generator_UserColumnName="CreateID" type="xs:int" minOccurs="0" />
+              <xs:element name="CreateUser" msprop:Generator_ColumnVarNameInTable="columnCreateUser" msprop:Generator_ColumnPropNameInRow="CreateUser" msprop:Generator_ColumnPropNameInTable="CreateUserColumn" msprop:Generator_UserColumnName="CreateUser" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ModifyID" msprop:Generator_ColumnVarNameInTable="columnModifyID" msprop:Generator_ColumnPropNameInRow="ModifyID" msprop:Generator_ColumnPropNameInTable="ModifyIDColumn" msprop:Generator_UserColumnName="ModifyID" type="xs:int" minOccurs="0" />
+              <xs:element name="ModifyUser" msprop:Generator_ColumnVarNameInTable="columnModifyUser" msprop:Generator_ColumnPropNameInRow="ModifyUser" msprop:Generator_ColumnPropNameInTable="ModifyUserColumn" msprop:Generator_UserColumnName="ModifyUser" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Order_x0020_Details" msprop:Generator_UserTableName="Order Details" msprop:Generator_RowEvArgName="Order_DetailsRowChangeEvent" msprop:Generator_TableVarName="tableOrder_Details" msprop:Generator_TablePropName="Order_Details" msprop:Generator_RowDeletingName="Order_DetailsRowDeleting" msprop:Generator_RowChangingName="Order_DetailsRowChanging" msprop:Generator_RowDeletedName="Order_DetailsRowDeleted" msprop:Generator_TableClassName="Order_DetailsDataTable" msprop:Generator_RowChangedName="Order_DetailsRowChanged" msprop:Generator_RowEvHandlerName="Order_DetailsRowChangeEventHandler" msprop:Generator_RowClassName="Order_DetailsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OrderID" msprop:Generator_ColumnVarNameInTable="columnOrderID" msprop:Generator_ColumnPropNameInRow="OrderID" msprop:Generator_ColumnPropNameInTable="OrderIDColumn" msprop:Generator_UserColumnName="OrderID" type="xs:int" />
+              <xs:element name="ProductID" msprop:Generator_ColumnVarNameInTable="columnProductID" msprop:Generator_ColumnPropNameInRow="ProductID" msprop:Generator_ColumnPropNameInTable="ProductIDColumn" msprop:Generator_UserColumnName="ProductID" type="xs:int" />
+              <xs:element name="UnitPrice" msprop:Generator_ColumnVarNameInTable="columnUnitPrice" msprop:Generator_ColumnPropNameInRow="UnitPrice" msprop:Generator_ColumnPropNameInTable="UnitPriceColumn" msprop:Generator_UserColumnName="UnitPrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Quantity" msprop:Generator_ColumnVarNameInTable="columnQuantity" msprop:Generator_ColumnPropNameInRow="Quantity" msprop:Generator_ColumnPropNameInTable="QuantityColumn" msprop:Generator_UserColumnName="Quantity" type="xs:short" minOccurs="0" />
+              <xs:element name="Discount" msprop:Generator_ColumnVarNameInTable="columnDiscount" msprop:Generator_ColumnPropNameInRow="Discount" msprop:Generator_ColumnPropNameInTable="DiscountColumn" msprop:Generator_UserColumnName="Discount" type="xs:float" minOccurs="0" />
+              <xs:element name="CreateID" msprop:Generator_ColumnVarNameInTable="columnCreateID" msprop:Generator_ColumnPropNameInRow="CreateID" msprop:Generator_ColumnPropNameInTable="CreateIDColumn" msprop:Generator_UserColumnName="CreateID" type="xs:int" minOccurs="0" />
+              <xs:element name="CreateUser" msprop:Generator_ColumnVarNameInTable="columnCreateUser" msprop:Generator_ColumnPropNameInRow="CreateUser" msprop:Generator_ColumnPropNameInTable="CreateUserColumn" msprop:Generator_UserColumnName="CreateUser" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ModifyID" msprop:Generator_ColumnVarNameInTable="columnModifyID" msprop:Generator_ColumnPropNameInRow="ModifyID" msprop:Generator_ColumnPropNameInTable="ModifyIDColumn" msprop:Generator_UserColumnName="ModifyID" type="xs:int" minOccurs="0" />
+              <xs:element name="ModifyUser" msprop:Generator_ColumnVarNameInTable="columnModifyUser" msprop:Generator_ColumnPropNameInRow="ModifyUser" msprop:Generator_ColumnPropNameInTable="ModifyUserColumn" msprop:Generator_UserColumnName="ModifyUser" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ChangeLogs" msprop:Generator_UserTableName="ChangeLogs" msprop:Generator_RowEvArgName="ChangeLogsRowChangeEvent" msprop:Generator_TableVarName="tableChangeLogs" msprop:Generator_TablePropName="ChangeLogs" msprop:Generator_RowDeletingName="ChangeLogsRowDeleting" msprop:Generator_RowChangingName="ChangeLogsRowChanging" msprop:Generator_RowDeletedName="ChangeLogsRowDeleted" msprop:Generator_TableClassName="ChangeLogsDataTable" msprop:Generator_RowChangedName="ChangeLogsRowChanged" msprop:Generator_RowEvHandlerName="ChangeLogsRowChangeEventHandler" msprop:Generator_RowClassName="ChangeLogsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SequenceNumber" msprop:Generator_ColumnVarNameInTable="columnSequenceNumber" msprop:Generator_ColumnPropNameInRow="SequenceNumber" msprop:Generator_ColumnPropNameInTable="SequenceNumberColumn" msprop:Generator_UserColumnName="SequenceNumber" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CalculatedOrderDetails" msprop:Generator_UserTableName="CalculatedOrderDetails" msprop:Generator_RowEvArgName="CalculatedOrderDetailsRowChangeEvent" msprop:Generator_TableVarName="tableCalculatedOrderDetails" msprop:Generator_TablePropName="CalculatedOrderDetails" msprop:Generator_RowDeletingName="CalculatedOrderDetailsRowDeleting" msprop:Generator_RowChangingName="CalculatedOrderDetailsRowChanging" msprop:Generator_RowDeletedName="CalculatedOrderDetailsRowDeleted" msprop:Generator_TableClassName="CalculatedOrderDetailsDataTable" msprop:Generator_RowChangedName="CalculatedOrderDetailsRowChanged" msprop:Generator_RowEvHandlerName="CalculatedOrderDetailsRowChangeEventHandler" msprop:Generator_RowClassName="CalculatedOrderDetailsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OrderID" msprop:Generator_ColumnVarNameInTable="columnOrderID" msprop:Generator_ColumnPropNameInRow="OrderID" msprop:Generator_ColumnPropNameInTable="OrderIDColumn" msprop:Generator_UserColumnName="OrderID" type="xs:int" minOccurs="0" />
+              <xs:element name="ProductID" msprop:Generator_ColumnVarNameInTable="columnProductID" msprop:Generator_ColumnPropNameInRow="ProductID" msprop:Generator_ColumnPropNameInTable="ProductIDColumn" msprop:Generator_UserColumnName="ProductID" type="xs:int" minOccurs="0" />
+              <xs:element name="UnitPrice" msprop:Generator_ColumnVarNameInTable="columnUnitPrice" msprop:Generator_ColumnPropNameInRow="UnitPrice" msprop:Generator_ColumnPropNameInTable="UnitPriceColumn" msprop:Generator_UserColumnName="UnitPrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Quantity" msprop:Generator_ColumnVarNameInTable="columnQuantity" msprop:Generator_ColumnPropNameInRow="Quantity" msprop:Generator_ColumnPropNameInTable="QuantityColumn" msprop:Generator_UserColumnName="Quantity" type="xs:short" minOccurs="0" />
+              <xs:element name="QuotePrice" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnQuotePrice" msprop:Generator_ColumnPropNameInRow="QuotePrice" msprop:Generator_ColumnPropNameInTable="QuotePriceColumn" msprop:Generator_UserColumnName="QuotePrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Discount" msprop:Generator_ColumnVarNameInTable="columnDiscount" msprop:Generator_ColumnPropNameInRow="Discount" msprop:Generator_ColumnPropNameInTable="DiscountColumn" msprop:Generator_UserColumnName="Discount" type="xs:float" minOccurs="0" />
+              <xs:element name="CreateID" msprop:Generator_ColumnVarNameInTable="columnCreateID" msprop:Generator_ColumnPropNameInRow="CreateID" msprop:Generator_ColumnPropNameInTable="CreateIDColumn" msprop:Generator_UserColumnName="CreateID" type="xs:int" minOccurs="0" />
+              <xs:element name="CreateUser" msprop:Generator_ColumnVarNameInTable="columnCreateUser" msprop:Generator_ColumnPropNameInRow="CreateUser" msprop:Generator_ColumnPropNameInTable="CreateUserColumn" msprop:Generator_UserColumnName="CreateUser" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ModifyID" msprop:Generator_ColumnVarNameInTable="columnModifyID" msprop:Generator_ColumnPropNameInRow="ModifyID" msprop:Generator_ColumnPropNameInTable="ModifyIDColumn" msprop:Generator_UserColumnName="ModifyID" type="xs:int" minOccurs="0" />
+              <xs:element name="ModifyUser" msprop:Generator_ColumnVarNameInTable="columnModifyUser" msprop:Generator_ColumnPropNameInRow="ModifyUser" msprop:Generator_ColumnPropNameInTable="ModifyUserColumn" msprop:Generator_UserColumnName="ModifyUser" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UOMID" msprop:Generator_ColumnVarNameInTable="columnUOMID" msprop:Generator_ColumnPropNameInRow="UOMID" msprop:Generator_ColumnPropNameInTable="UOMIDColumn" msprop:Generator_UserColumnName="UOMID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CalculatedOrders" msprop:Generator_UserTableName="CalculatedOrders" msprop:Generator_RowEvArgName="CalculatedOrdersRowChangeEvent" msprop:Generator_TableVarName="tableCalculatedOrders" msprop:Generator_TablePropName="CalculatedOrders" msprop:Generator_RowDeletingName="CalculatedOrdersRowDeleting" msprop:Generator_RowChangingName="CalculatedOrdersRowChanging" msprop:Generator_RowDeletedName="CalculatedOrdersRowDeleted" msprop:Generator_TableClassName="CalculatedOrdersDataTable" msprop:Generator_RowChangedName="CalculatedOrdersRowChanged" msprop:Generator_RowEvHandlerName="CalculatedOrdersRowChangeEventHandler" msprop:Generator_RowClassName="CalculatedOrdersRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OrderID" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnOrderID" msprop:Generator_ColumnPropNameInRow="OrderID" msprop:Generator_ColumnPropNameInTable="OrderIDColumn" msprop:Generator_UserColumnName="OrderID" type="xs:int" />
+              <xs:element name="CustomerID" msprop:Generator_ColumnVarNameInTable="columnCustomerID" msprop:Generator_ColumnPropNameInRow="CustomerID" msprop:Generator_ColumnPropNameInTable="CustomerIDColumn" msprop:Generator_UserColumnName="CustomerID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmployeeID" msprop:Generator_ColumnVarNameInTable="columnEmployeeID" msprop:Generator_ColumnPropNameInRow="EmployeeID" msprop:Generator_ColumnPropNameInTable="EmployeeIDColumn" msprop:Generator_UserColumnName="EmployeeID" type="xs:int" minOccurs="0" />
+              <xs:element name="OrderDate" msprop:Generator_ColumnVarNameInTable="columnOrderDate" msprop:Generator_ColumnPropNameInRow="OrderDate" msprop:Generator_ColumnPropNameInTable="OrderDateColumn" msprop:Generator_UserColumnName="OrderDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="RequiredDate" msprop:Generator_ColumnVarNameInTable="columnRequiredDate" msprop:Generator_ColumnPropNameInRow="RequiredDate" msprop:Generator_ColumnPropNameInTable="RequiredDateColumn" msprop:Generator_UserColumnName="RequiredDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ShippedDate" msprop:Generator_ColumnVarNameInTable="columnShippedDate" msprop:Generator_ColumnPropNameInRow="ShippedDate" msprop:Generator_ColumnPropNameInTable="ShippedDateColumn" msprop:Generator_UserColumnName="ShippedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ShipVia" msprop:Generator_ColumnVarNameInTable="columnShipVia" msprop:Generator_ColumnPropNameInRow="ShipVia" msprop:Generator_ColumnPropNameInTable="ShipViaColumn" msprop:Generator_UserColumnName="ShipVia" type="xs:int" minOccurs="0" />
+              <xs:element name="Freight" msprop:Generator_ColumnVarNameInTable="columnFreight" msprop:Generator_ColumnPropNameInRow="Freight" msprop:Generator_ColumnPropNameInTable="FreightColumn" msprop:Generator_UserColumnName="Freight" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ShipName" msprop:Generator_ColumnVarNameInTable="columnShipName" msprop:Generator_ColumnPropNameInRow="ShipName" msprop:Generator_ColumnPropNameInTable="ShipNameColumn" msprop:Generator_UserColumnName="ShipName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ShipAddress" msprop:Generator_ColumnVarNameInTable="columnShipAddress" msprop:Generator_ColumnPropNameInRow="ShipAddress" msprop:Generator_ColumnPropNameInTable="ShipAddressColumn" msprop:Generator_UserColumnName="ShipAddress" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ShipCity" msprop:Generator_ColumnVarNameInTable="columnShipCity" msprop:Generator_ColumnPropNameInRow="ShipCity" msprop:Generator_ColumnPropNameInTable="ShipCityColumn" msprop:Generator_UserColumnName="ShipCity" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ShipRegion" msprop:Generator_ColumnVarNameInTable="columnShipRegion" msprop:Generator_ColumnPropNameInRow="ShipRegion" msprop:Generator_ColumnPropNameInTable="ShipRegionColumn" msprop:Generator_UserColumnName="ShipRegion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ShipPostalCode" msprop:Generator_ColumnVarNameInTable="columnShipPostalCode" msprop:Generator_ColumnPropNameInRow="ShipPostalCode" msprop:Generator_ColumnPropNameInTable="ShipPostalCodeColumn" msprop:Generator_UserColumnName="ShipPostalCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ShipCountry" msprop:Generator_ColumnVarNameInTable="columnShipCountry" msprop:Generator_ColumnPropNameInRow="ShipCountry" msprop:Generator_ColumnPropNameInTable="ShipCountryColumn" msprop:Generator_UserColumnName="ShipCountry" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CreateID" msprop:Generator_ColumnVarNameInTable="columnCreateID" msprop:Generator_ColumnPropNameInRow="CreateID" msprop:Generator_ColumnPropNameInTable="CreateIDColumn" msprop:Generator_UserColumnName="CreateID" type="xs:int" minOccurs="0" />
+              <xs:element name="CreateUser" msprop:Generator_ColumnVarNameInTable="columnCreateUser" msprop:Generator_ColumnPropNameInRow="CreateUser" msprop:Generator_ColumnPropNameInTable="CreateUserColumn" msprop:Generator_UserColumnName="CreateUser" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ModifyID" msprop:Generator_ColumnVarNameInTable="columnModifyID" msprop:Generator_ColumnPropNameInRow="ModifyID" msprop:Generator_ColumnPropNameInTable="ModifyIDColumn" msprop:Generator_UserColumnName="ModifyID" type="xs:int" minOccurs="0" />
+              <xs:element name="ModifyUser" msprop:Generator_ColumnVarNameInTable="columnModifyUser" msprop:Generator_ColumnPropNameInRow="ModifyUser" msprop:Generator_ColumnPropNameInTable="ModifyUserColumn" msprop:Generator_UserColumnName="ModifyUser" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TotalQuotedPrice" msprop:Generator_ColumnVarNameInTable="columnTotalQuotedPrice" msprop:Generator_ColumnPropNameInRow="TotalQuotedPrice" msprop:Generator_ColumnPropNameInTable="TotalQuotedPriceColumn" msprop:Generator_UserColumnName="TotalQuotedPrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalNetPrice" msprop:Generator_ColumnVarNameInTable="columnTotalNetPrice" msprop:Generator_ColumnPropNameInRow="TotalNetPrice" msprop:Generator_ColumnPropNameInTable="TotalNetPriceColumn" msprop:Generator_UserColumnName="TotalNetPrice" type="xs:double" minOccurs="0" />
+              <xs:element name="DiscountAmount" msprop:Generator_ColumnVarNameInTable="columnDiscountAmount" msprop:Generator_ColumnPropNameInRow="DiscountAmount" msprop:Generator_ColumnPropNameInTable="DiscountAmountColumn" msprop:Generator_UserColumnName="DiscountAmount" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DeletedOrderDetails" msprop:Generator_UserTableName="DeletedOrderDetails" msprop:Generator_RowEvArgName="DeletedOrderDetailsRowChangeEvent" msprop:Generator_TableVarName="tableDeletedOrderDetails" msprop:Generator_TablePropName="DeletedOrderDetails" msprop:Generator_RowDeletingName="DeletedOrderDetailsRowDeleting" msprop:Generator_RowChangingName="DeletedOrderDetailsRowChanging" msprop:Generator_RowDeletedName="DeletedOrderDetailsRowDeleted" msprop:Generator_TableClassName="DeletedOrderDetailsDataTable" msprop:Generator_RowChangedName="DeletedOrderDetailsRowChanged" msprop:Generator_RowEvHandlerName="DeletedOrderDetailsRowChangeEventHandler" msprop:Generator_RowClassName="DeletedOrderDetailsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Orders" />
+      <xs:field xpath="mstns:OrderID" />
+    </xs:unique>
+    <xs:unique name="Order_x0020_Details_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Order_x0020_Details" />
+      <xs:field xpath="mstns:OrderID" />
+      <xs:field xpath="mstns:ProductID" />
+    </xs:unique>
+    <xs:unique name="CalculatedOrders_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:CalculatedOrders" />
+      <xs:field xpath="mstns:OrderID" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="OrdersOrder_x0020_Details" msdata:parent="Orders" msdata:child="Order_x0020_Details" msdata:parentkey="OrderID" msdata:childkey="OrderID" msprop:Generator_UserChildTable="Order Details" msprop:Generator_ChildPropName="GetOrder_DetailsRows" msprop:Generator_UserParentTable="Orders" msprop:Generator_UserRelationName="OrdersOrder Details" msprop:Generator_RelationVarName="relationOrdersOrder_Details" msprop:Generator_ParentPropName="OrdersRow" />
+      <msdata:Relationship name="CalculatedOrders_CalculatedOrderDetails" msdata:parent="CalculatedOrders" msdata:child="CalculatedOrderDetails" msdata:parentkey="OrderID" msdata:childkey="OrderID" msprop:Generator_UserChildTable="CalculatedOrderDetails" msprop:Generator_ChildPropName="GetCalculatedOrderDetailsRows" msprop:Generator_UserParentTable="CalculatedOrders" msprop:Generator_UserRelationName="CalculatedOrders_CalculatedOrderDetails" msprop:Generator_RelationVarName="relationCalculatedOrders_CalculatedOrderDetails" msprop:Generator_ParentPropName="CalculatedOrdersRow" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

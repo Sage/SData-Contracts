@@ -14,6 +14,6 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet.Tables
         int ResourceKindId { get; }
 
         IResourceKindTable ResourceKindTable { get; }
-        IEndpointTable EndpointTable { get; }
+        IEndPointTable EndPointTable { get; }
     }
 }

@@ -2,7 +2,8 @@
 
 using System.Collections.Generic;
 using Sage.Integration.Northwind.Application.Base;
-using Sage.Integration.Northwind.Feeds;
+
+using Sage.Common.Syndication;
 
 #endregion
 
@@ -18,12 +19,20 @@ namespace Sage.Integration.Northwind.Adapter.Transformations
 
     #region INTERFACE: ITransformation<D, P>
 
-    public interface ITransformation<D, P> : ITransformation
+/*public interface ITransformation<D, P> : ITransformation
         where D : Document
-        where P : PayloadBase
+        where P : ResourcePayloadContainer
     {
-        D GetTransformedDocument(P payload, List<SyncFeedEntryLink> links);
-        P GetTransformedPayload(D document, out List<SyncFeedEntryLink> links);
+        D GetTransformedDocument(P payload);
+        P GetTransformedPayload(D document);
+    }*/
+
+    public interface IFeedEntryTransformation<D, F> : ITransformation
+        where D : Document
+        where F: FeedEntry
+    {
+        D GetTransformedDocument(F feedEntry);
+        F GetTransformedPayload(D document);
     }
 
     #endregion
