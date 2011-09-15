@@ -12,10 +12,10 @@ namespace Sage.Sis.Sdata.Sync.Storage.Syndication
     {
         #region Ctor.
 
-        public ResSyncInfo(Guid uuid, string endpoint, int tick, string etag, DateTime modifiedStamp)
+        public ResSyncInfo(Guid uuid, string EndPoint, long tick, string etag, DateTime modifiedStamp)
         {
             this.Uuid = uuid;
-            this.Endpoint = endpoint;
+            this.EndPoint = EndPoint;
             this.Tick = tick;
             this.Etag = etag;
             this.ModifiedStamp = modifiedStamp;
@@ -26,8 +26,8 @@ namespace Sage.Sis.Sdata.Sync.Storage.Syndication
         #region Properties
 
         public Guid Uuid { get; private set; }
-        public string Endpoint { get; set; }
-        public int Tick { get; set; }
+        public string EndPoint { get; set; }
+        public long Tick { get; set; }
         public string Etag { get; set; }
         public DateTime ModifiedStamp { get; set; }
 

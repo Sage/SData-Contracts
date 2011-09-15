@@ -3,7 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Sage.Sis.Sdata.Sync.Tick;
+using Sage.Sis.Sdata.Sync;
 using Sage.Sis.Common.Data.OleDb;
 using Sage.Sis.Sdata.Sync.Storage.Jet.TableAdapters;
 using Sage.Sis.Sdata.Sync.Context;
@@ -14,12 +14,12 @@ using Sage.Sis.Sdata.Sync.Storage.Jet.Syndication;
 namespace Sage.Sis.Sdata.Sync.Storage.Jet
 {
     /// <summary>
-    /// Tick Provider that increments an Int32 value beginning at 0 and stores the resource kind dependent value into 
+    /// tick Provider that increments an Int32 value beginning at 0 and stores the resource kind dependent value into 
     /// to the store.
     /// </summary>
-    public class Int32TickProvider : ITickProvider
+    public class Int32tickProvider : Sage.Sis.Sdata.Sync.tick.ItickProvider
     {
-        private const int STARTTICK = 0;
+        private const int STARTtick = 0;
 
         #region Class Variables
 
@@ -30,7 +30,7 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet
 
         #region Ctor.
 
-        public Int32TickProvider(IJetConnectionProvider jetConnectionProvider, SdataContext context)
+        public Int32tickProvider(IJetConnectionProvider jetConnectionProvider, SdataContext context)
         {
             _jetConnectionProvider = jetConnectionProvider;
             _context = context;
@@ -40,50 +40,50 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet
 
         #endregion
 
-        internal int CreateNextTick(string resourceKind)
+        internal int CreateNexttick(string resourceKind)
         {
-            int nextTick;
-            int currentTick;
+            int nexttick;
+            int currenttick;
 
-            ITickTableAdapter tickTableAdapter = StoreEnvironment.Resolve<ITickTableAdapter>(_context);
+            ItickTableAdapter tickTableAdapter = StoreEnvironment.Resolve<ItickTableAdapter>(_context);
             IResourceKindTableAdapter resourceKindTableAdapter = StoreEnvironment.Resolve<IResourceKindTableAdapter>(_context);
 
             using (IJetTransaction jetTransaction = _jetConnectionProvider.GetTransaction(false))
             {
                 ResourceKindInfo resourceKindInfo = resourceKindTableAdapter.GetOrCreate(resourceKind, jetTransaction);
 
-                if (!tickTableAdapter.TryGet(resourceKindInfo.Id, out currentTick, jetTransaction))
+                if (!tickTableAdapter.TryGet(resourceKindInfo.Id, out currenttick, jetTransaction))
                 {
-                    currentTick = STARTTICK;
+                    currenttick = STARTtick;
 
-                    tickTableAdapter.Insert(resourceKindInfo.Id, currentTick, jetTransaction);
-                    nextTick = currentTick;
+                    tickTableAdapter.Insert(resourceKindInfo.Id, currenttick, jetTransaction);
+                    nexttick = currenttick;
                 }
                 else
                 {
-                    currentTick++;
-                    tickTableAdapter.Update(resourceKindInfo.Id, currentTick, jetTransaction);
+                    currenttick++;
+                    tickTableAdapter.Update(resourceKindInfo.Id, currenttick, jetTransaction);
 
-                    nextTick = currentTick;
+                    nexttick = currenttick;
                 }
 
                 jetTransaction.Commit();
             }
 
-            return nextTick;
+            return nexttick;
         }
 
-        #region ITickProvider Members
+        #region ItickProvider Members
 
-        object ITickProvider.CreateNextTick(string resourceKind)
+        object Sage.Sis.Sdata.Sync.tick.ItickProvider.CreateNexttick(string resourceKind)
         {
             try
             {
-                return this.CreateNextTick(resourceKind);
+                return this.CreateNexttick(resourceKind);
             }
             catch (Exception exception)
             {
-                throw new TickCreateException(string.Format("Failed to create next tick."), exception);
+                throw new Sage.Sis.Sdata.Sync.tick.tickCreateException(string.Format("Failed to create next tick."), exception);
             }
         }
 

@@ -6,9 +6,9 @@ using System.Text;
 
 #endregion
 
-namespace Sage.Sis.Sdata.Sync.Tick
+namespace Sage.Sis.Sdata.Sync.tick
 {
-    public interface ITickProvider
+    public interface ItickProvider
     {
         /// <summary>
         /// Creates a new tick for a given resource kind.
@@ -16,6 +16,6 @@ namespace Sage.Sis.Sdata.Sync.Tick
         /// <param name="resourceKind">Kind of the resource. (I.e. account, contact, salesOrder, etc.)</param>
         /// <returns>The next tick.</returns>
         /// <remarks>Each call of this method returns a new value in the tick sequence.</remarks>
-        object CreateNextTick(string resourceKind);
+        object CreateNexttick(string resourceKind);
     }
 }

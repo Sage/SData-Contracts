@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Sage.Sis.Sdata.Sync.Tick")]
+[assembly: AssemblyTitle("Sage.Sis.Sdata.Sync.tick")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Sage")]
-[assembly: AssemblyProduct("Sage.Sis.Sdata.Sync.Tick")]
-[assembly: AssemblyCopyright("Copyright © Sage 2009")]
+[assembly: AssemblyProduct("Sage.Sis.Sdata.Sync.tick")]
+[assembly: AssemblyCopyright("Copyright © Sage 2009 -2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -31,6 +31,6 @@ using System.Runtime.InteropServices;
 //
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
-// [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.9.5.*")]
-[assembly: AssemblyFileVersion("0.9.5.0")]
+
+[assembly: AssemblyVersion("1.1.1.*")]
+[assembly: AssemblyFileVersion("1.1.1.0")]

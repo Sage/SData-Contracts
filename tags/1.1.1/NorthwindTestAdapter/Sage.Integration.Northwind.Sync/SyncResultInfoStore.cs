@@ -47,6 +47,22 @@ namespace Sage.Integration.Northwind.Sync
             }
         }
 
+
+        public void SetRunName(string runName)
+        {
+            lock (lockObj)
+            {
+                _provider.SetRunName(runName);
+            }
+        }
+        public void SetRunStamp(string runStamp)
+        {
+            lock (lockObj)
+            {
+                _provider.SetRunStamp(runStamp);
+            }
+        }
+
         #endregion
     }
 }

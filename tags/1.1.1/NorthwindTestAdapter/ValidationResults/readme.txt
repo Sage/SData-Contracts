@@ -1,0 +1,1 @@
+to see the result, please copy the local Northwind folder to your "test sets" folder of your local validation tool instalation and open this test set

@@ -47,15 +47,15 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet.TableAdapters
 
             oleDbCommand.Parameters.AddWithValue("@ResourceKindId", resourceKindId);
 
-            OleDbDataReader reader = oleDbCommand.ExecuteReader(CommandBehavior.SingleRow | CommandBehavior.SequentialAccess);
+            using (OleDbDataReader reader = oleDbCommand.ExecuteReader(CommandBehavior.SingleRow | CommandBehavior.SequentialAccess))
+            {
+                if (!reader.HasRows)
+                    return false;
 
-            if (!reader.HasRows)
-                return false;
-
-            reader.Read();  // only one row accepted
-            assemblyQualifiedName = Convert.ToString(reader["Type"]);
-            applicationBookmark = JetHelpers.ReadBlob(reader, 1);
-
+                reader.Read();  // only one row accepted
+                assemblyQualifiedName = Convert.ToString(reader["Type"]);
+                applicationBookmark = JetHelpers.ReadBlob(reader, 1);
+            }
             return true;
         }
 

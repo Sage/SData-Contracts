@@ -19,7 +19,7 @@ namespace Sage.Sis.Sdata.Sync.Results.Syndication
 
         public string PayloadXml { get; private set; }
 
-        public string Endpoint { get; private set; }
+        public string EndPoint { get; private set; }
 
         public DateTime Stamp { get; private set; }
 
@@ -35,7 +35,7 @@ namespace Sage.Sis.Sdata.Sync.Results.Syndication
             string diagnosisXml,
             string payloadXml,
             DateTime stamp,
-            string endpoint)
+            string EndPoint)
         {
             this.HttpMethod = httpMethod;
             this.HttpStatus = httpStatus;
@@ -44,11 +44,11 @@ namespace Sage.Sis.Sdata.Sync.Results.Syndication
             this.DiagnosisXml = diagnosisXml;
             this.PayloadXml = payloadXml;
             this.Stamp = stamp;
-            this.Endpoint = endpoint;
+            this.EndPoint = EndPoint;
         }
 
-        public SyncResultEntryInfo(string httpMethod, int httpStatus, string endpoint)
-            : this(httpMethod, httpStatus, null, null, null, null, DateTime.Now, endpoint)
+        public SyncResultEntryInfo(string httpMethod, int httpStatus, string EndPoint)
+            : this(httpMethod, httpStatus, null, null, null, null, DateTime.Now, EndPoint)
         {
         }
 

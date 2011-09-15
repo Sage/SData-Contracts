@@ -21,10 +21,10 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet.Tables
 
         #region Ctor.
 
-        public SyncDigestTable(IResourceKindTable resourceKindTable, IEndpointTable endpointTable)
+        public SyncDigestTable(IResourceKindTable resourceKindTable, IEndPointTable EndPointTable)
         {
             this.ResourceKindTable = resourceKindTable;
-            this.EndpointTable = endpointTable;
+            this.EndPointTable = EndPointTable;
 
             string tableName;
             string[] sqlQueries = new string[4];
@@ -32,15 +32,15 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet.Tables
             tableName = string.Format("{0}tblSyncDigest", Settings.Default.TablePrefix);
 
             sqlQueries[0] = string.Format("CREATE TABLE [{0}] ", tableName);
-            sqlQueries[0] += "([Tick]                   INTEGER NOT NULL, ";
+            sqlQueries[0] += "([tick]                   INTEGER NOT NULL, ";
             sqlQueries[0] += " [ConflictPriority]       INTEGER NOT NULL, ";
             sqlQueries[0] += " [Stamp]                  TIMESTAMP NOT NULL, ";
-            sqlQueries[0] += " [FKEndpointId]           INTEGER NOT NULL, ";
+            sqlQueries[0] += " [FKEndPointId]           INTEGER NOT NULL, ";
             sqlQueries[0] += " [FKResourceKindId]       INTEGER NOT NULL);";
 
-            sqlQueries[1] = string.Format("CREATE UNIQUE INDEX PK_ID ON [{0}] ([FKEndpointId],[FKResourceKindId]) WITH PRIMARY;", tableName);
+            sqlQueries[1] = string.Format("CREATE UNIQUE INDEX PK_ID ON [{0}] ([FKEndPointId],[FKResourceKindId]) WITH PRIMARY;", tableName);
 
-            sqlQueries[2] = string.Format("ALTER TABLE {0} ADD CONSTRAINT FK_{0}_FKEndpointId FOREIGN KEY (FKEndpointId) REFERENCES {1} (ID)", tableName, endpointTable.TableName);
+            sqlQueries[2] = string.Format("ALTER TABLE {0} ADD CONSTRAINT FK_{0}_FKEndPointId FOREIGN KEY (FKEndPointId) REFERENCES {1} (ID)", tableName, EndPointTable.TableName);
             sqlQueries[3] = string.Format("ALTER TABLE {0} ADD CONSTRAINT FK_{0}_FKResourceKindId FOREIGN KEY (FKResourceKindId) REFERENCES {1} (ID)", tableName, resourceKindTable.TableName);
 
             _jetTableImp = new JetTableSchema(tableName, sqlQueries);
@@ -65,7 +65,7 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet.Tables
         #region ISyncDigestTable Members
 
         public IResourceKindTable ResourceKindTable { get; private set; }
-        public IEndpointTable EndpointTable { get; private set; }
+        public IEndPointTable EndPointTable { get; private set; }
 
         #endregion
 

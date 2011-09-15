@@ -43,20 +43,20 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet.TableAdapters
             oleDbCommand.CommandText = string.Format("SELECT [ID] FROM {0} WHERE [Name]=@Name;", _resourceKindTable.TableName);
             oleDbCommand.Parameters.AddWithValue("@Name", resourceKind);
 
-            OleDbDataReader reader = oleDbCommand.ExecuteReader(CommandBehavior.SingleRow);
+            using (OleDbDataReader reader = oleDbCommand.ExecuteReader(CommandBehavior.SingleRow))
+            {
+                if (!reader.HasRows)
+                {
+                    resourceKindInfo = this.Add(resourceKind, jetTransaction);
+                }
+                else
+                {
+                    reader.Read();
 
-            if (!reader.HasRows)
-            {
-                resourceKindInfo = this.Add(resourceKind, jetTransaction);
+                    int id = Convert.ToInt32(reader["ID"]);
+                    resourceKindInfo = new ResourceKindInfo(id, resourceKind);
+                }
             }
-            else
-            {
-                reader.Read();
-            
-                int id = Convert.ToInt32(reader["ID"]);
-                resourceKindInfo = new ResourceKindInfo(id, resourceKind);
-            }
-            
 
             return resourceKindInfo;            
         }
@@ -68,17 +68,17 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet.TableAdapters
 
             oleDbCommand.CommandText = string.Format("SELECT [ID], [Name] FROM {0};", _resourceKindTable.TableName);
 
-            OleDbDataReader reader = oleDbCommand.ExecuteReader();
-
-            int tmpId;
-            string tmpName;
-            while (reader.Read())
+            using (OleDbDataReader reader = oleDbCommand.ExecuteReader())
             {
-                tmpId = Convert.ToInt32(reader["ID"]);
-                tmpName = Convert.ToString(reader["Name"]);
-                resultInfos.Add(new ResourceKindInfo(tmpId, tmpName));
+                int tmpId;
+                string tmpName;
+                while (reader.Read())
+                {
+                    tmpId = Convert.ToInt32(reader["ID"]);
+                    tmpName = Convert.ToString(reader["Name"]);
+                    resultInfos.Add(new ResourceKindInfo(tmpId, tmpName));
+                }
             }
-
             return resultInfos.ToArray();
         }
 

@@ -10,14 +10,13 @@ namespace Sage.Integration.Northwind.Adapter.Common
         phoneNumbers,
         emails,
         commodityGroups,
-        unitsOfMeasureGroup,
         unitsOfMeasure,
         commodities,
         priceLists,
         prices,
         salesOrders,
         salesOrderLines,
-        salesInvoices,
-        salesInvoiceLines
+        /*salesInvoices,
+        salesInvoiceLines*/
     }
 }

@@ -297,15 +297,17 @@ namespace Sage.Integration.Northwind.Application.Entities.Product
 
                     // defaultvalue ???
 
-                    if (uomFamilyDoc.name.IsNull)
-                        row.SetQuantityPerUnitNull();
-                    else
-                        row.QuantityPerUnit = (string)uomFamilyDoc.name.Value;
+                    if(!uomFamilyDoc.name.NotSet)
+                        if (uomFamilyDoc.name.IsNull)
+                            row.SetQuantityPerUnitNull();
+                        else
+                            row.QuantityPerUnit = (string)uomFamilyDoc.name.Value;
 
-                    if (uomFamilyDoc.description.IsNull)
-                        row.SetProductNameNull();
-                    else
-                        row.ProductName = (string)uomFamilyDoc.description.Value;
+                    if(!uomFamilyDoc.description.NotSet)
+                        if (uomFamilyDoc.description.IsNull)
+                            row.SetProductNameNull();
+                        else
+                            row.ProductName = (string)uomFamilyDoc.description.Value;
 
                     // ModifyID
                     row.ModifyID = config.SequenceNumber;

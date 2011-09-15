@@ -118,18 +118,18 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet
             return destinationArray;
         }
 
-        public ICorrelatedResSyncInfoEnumerator GetSinceTick(string resourceKind, string endpoint, int tick)
+        public ICorrelatedResSyncInfoEnumerator GetSincetick(string resourceKind, string EndPoint, int tick)
         {
             CorrelatedResSyncInfo[] resultInfos;
 
             ICorrelatedResSyncTableAdapter correlatedResSyncTableAdapter = this.GetAdapter(resourceKind);
-            IEndpointTableAdapter endpointTableAdapter = StoreEnvironment.Resolve<IEndpointTableAdapter>(_context);
+            IEndPointTableAdapter EndPointTableAdapter = StoreEnvironment.Resolve<IEndPointTableAdapter>(_context);
 
             using (IJetTransaction jetTransaction = _jetConnectionProvider.GetTransaction(false))
             {
-                EndpointInfo endpointInfo = endpointTableAdapter.GetOrCreate(endpoint, jetTransaction);
+                EndPointInfo EndPointInfo = EndPointTableAdapter.GetOrCreate(EndPoint, jetTransaction);
 
-                resultInfos = correlatedResSyncTableAdapter.GetSinceTick(endpointInfo.Id, tick, jetTransaction);
+                resultInfos = correlatedResSyncTableAdapter.GetSincetick(EndPointInfo.Id, tick, jetTransaction);
 
                 jetTransaction.Commit();
             }
@@ -197,14 +197,14 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet
         {
             ICorrelatedResSyncTableAdapter correlatedResSyncTableAdapter;
 
-            IEndpointTableAdapter endpointTableAdapter = StoreEnvironment.Resolve<IEndpointTableAdapter>(_context);
+            IEndPointTableAdapter EndPointTableAdapter = StoreEnvironment.Resolve<IEndPointTableAdapter>(_context);
             IResourceKindTableAdapter resourceKindTableAdapter = StoreEnvironment.Resolve<IResourceKindTableAdapter>(_context);
 
             Dictionary<string, ICorrelatedResSyncTableAdapter> adapters = StoreEnvironment.Resolve<Dictionary<string, ICorrelatedResSyncTableAdapter>>(_context);
             if (!adapters.TryGetValue(resourceKind, out correlatedResSyncTableAdapter))
             {
                 TableAdapterFactory factory = new TableAdapterFactory(_context, _jetConnectionProvider);
-                correlatedResSyncTableAdapter = factory.CreateCorrelatedResSyncTableAdapter(resourceKind, endpointTableAdapter, resourceKindTableAdapter);
+                correlatedResSyncTableAdapter = factory.CreateCorrelatedResSyncTableAdapter(resourceKind, EndPointTableAdapter, resourceKindTableAdapter);
                 adapters.Add(resourceKind, correlatedResSyncTableAdapter);
                 StoreEnvironment.Set<Dictionary<string, ICorrelatedResSyncTableAdapter>>(_context, adapters);
             }

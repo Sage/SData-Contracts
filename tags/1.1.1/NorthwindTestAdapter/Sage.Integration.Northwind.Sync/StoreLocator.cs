@@ -21,19 +21,12 @@ namespace Sage.Integration.Northwind.Sync
 
         private static class ConnStringFactory
         {
-            private static string stat_connectionString;
-
-            static ConnStringFactory()
-            {
-                // TEMPORARY
-                NorthwindConfig config = new NorthwindConfig();
-                config.CurrencyCode = "EUR";
-                config.Path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Northwind");
-                stat_connectionString = config.ConnectionString;    
-            }
             public static string GetConnectionString(SdataContext context)
             {
-                return stat_connectionString;
+                NorthwindConfig config = new NorthwindConfig(context.DataSet);
+                config.CurrencyCode = "EUR";
+                config.Path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Northwind");
+                return config.ConnectionString;
             }
         }
 
@@ -139,19 +132,19 @@ namespace Sage.Integration.Northwind.Sync
             return store;
         }
 
-        public ISyncTickProvider GetTickProvider(SdataContext context)
+        public ISynctickProvider GettickProvider(SdataContext context)
         {
-            ISyncTickProvider tickProvider;
+            ISynctickProvider tickProvider;
 
             string connectionString = ConnStringFactory.GetConnectionString(context);
 
-            if (!ContextStoreResolver.TryResolve<ISyncTickProvider>(context, out tickProvider))
+            if (!ContextStoreResolver.TryResolve<ISynctickProvider>(context, out tickProvider))
             {
                 IJetConnectionProvider connectionProvider = new SimpleJetConnectionProvider(connectionString);
                 
-                tickProvider = new TickProvider(connectionProvider, context);
+                tickProvider = new tickProvider(connectionProvider, context);
 
-                ContextStoreResolver.Register<ISyncTickProvider>(context, tickProvider);
+                ContextStoreResolver.Register<ISynctickProvider>(context, tickProvider);
             }
 
             return tickProvider;

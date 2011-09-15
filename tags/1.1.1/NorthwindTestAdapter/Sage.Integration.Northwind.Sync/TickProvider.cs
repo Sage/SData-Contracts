@@ -3,7 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Sage.Sis.Sdata.Sync.Tick;
+using Sage.Sis.Sdata.Sync.tick;
 using Sage.Sis.Sdata.Sync.Storage.Jet;
 using Sage.Sis.Common.Data.OleDb;
 using Sage.Sis.Sdata.Sync.Context;
@@ -12,41 +12,41 @@ using Sage.Sis.Sdata.Sync.Context;
 
 namespace Sage.Integration.Northwind.Adapter.Sync
 {
-    internal class TickProvider : ISyncTickProvider
+    internal class tickProvider : ISynctickProvider
     {
         #region Class Variables
 
-        private readonly ITickProvider _tickProvider;
+        private readonly ItickProvider _tickProvider;
         private readonly object lockObj = new object();
 
         #endregion
 
         #region Ctor.
 
-        public TickProvider(IJetConnectionProvider jetConnectionProvider, SdataContext context)
+        public tickProvider(IJetConnectionProvider jetConnectionProvider, SdataContext context)
         {
-            _tickProvider = new Int32TickProvider(jetConnectionProvider, context);
+            _tickProvider = new Int32tickProvider(jetConnectionProvider, context);
         }
 
         #endregion
 
-        #region ISyncTickProvider Members
+        #region ISynctickProvider Members
 
-        public int CreateNextTick(string resourceKind)
+        public int CreateNexttick(string resourceKind)
         {
             lock (lockObj)
             {
-                return (int)_tickProvider.CreateNextTick(resourceKind);
+                return (int)_tickProvider.CreateNexttick(resourceKind);
             }
         }
 
         #endregion
 
-        #region ITickProvider Members
+        #region ItickProvider Members
 
-        object ITickProvider.CreateNextTick(string resourceKind)
+        object ItickProvider.CreateNexttick(string resourceKind)
         {
-            return this.CreateNextTick(resourceKind);
+            return this.CreateNexttick(resourceKind);
         }
 
         #endregion

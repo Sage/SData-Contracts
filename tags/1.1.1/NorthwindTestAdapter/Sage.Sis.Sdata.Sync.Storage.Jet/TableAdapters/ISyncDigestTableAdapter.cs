@@ -15,7 +15,7 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet.TableAdapters
     {
         SyncDigestInfo Get(int resourceKindId, IJetTransaction jetTransaction);
 
-        SyncDigestEntryInfo Get(int resourceKindId, int endPointId, IJetTransaction jetTransaction);
+        SyncDigestEntryInfo Get(int resourceKindId, int EndPointId, IJetTransaction jetTransaction);
 
         void Insert(int resourceKindId, SyncDigestEntryInfo[] syncDigestEntryInfo, IJetTransaction jetTransaction);
 

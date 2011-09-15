@@ -143,12 +143,12 @@ namespace Sage.Integration.Northwind.Application.Toolkit
         private string CombineAddress(string address1, string address2,
             string address3, string address4)
         {
-            string tmpAdress1 = address1;
-
             address1 = (address1 == null) ? "" : address1;
             address2 = (address2 == null) ? "" : address2;
             address3 = (address3 == null) ? "" : address3;
             address4 = (address4 == null) ? "" : address4;
+
+            string tmpAdress1 = address1;
 
             if (address4.Length > 0)
                 return address1 + Constants.crlf +

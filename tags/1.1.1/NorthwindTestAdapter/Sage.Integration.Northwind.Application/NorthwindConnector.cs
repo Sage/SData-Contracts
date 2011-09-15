@@ -1,25 +1,18 @@
+#region Usings
+
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Data.OleDb;
-using System.Xml;
-using Sage.Integration.Northwind.Application.Toolkit;
-using System.IO;
-using System.Xml.Schema;
-using Sage.Integration.Northwind.Application.Entities.Product;
-using Sage.Integration.Northwind.Application.EntityResources;
-using Sage.Integration.Northwind.Application.API;
-
-using Sage.Integration.Northwind.Application.Entities;
-using Sage.Integration.Northwind.Application.Base;
-
-using Sage.Integration.Northwind.Application.RTDV;
-using System.Xml.Serialization;
 using System.Data;
-
+using System.Data.OleDb;
+using System.IO;
+using System.Xml;
+using System.Xml.Schema;
+using Sage.Integration.Northwind.Application.API;
+using Sage.Integration.Northwind.Application.Base;
+using Sage.Integration.Northwind.Application.Entities.Product;
 using Sage.Integration.Northwind.Application.Properties;
-using Sage.Integration.Northwind.Common;
 
+#endregion
 
 namespace Sage.Integration.Northwind.Application
 {
@@ -51,7 +44,7 @@ namespace Sage.Integration.Northwind.Application
         public NorthwindConnector()
         {
 
-            _config = new NorthwindConfig();
+            _config = new NorthwindConfig("-");
 
         }
 

@@ -1,0 +1,2697 @@
+<?xml version="1.0"?>
+<TestSuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.sage.com/SData/FeedValidator/2008/11/TestSuite/">
+  <State>Checked</State>
+  <Collapsed>false</Collapsed>
+  <DisplayName />
+  <Description />
+  <Tests>
+    <TestInfo xsi:type="TestCategoryInfo" xmlns="">
+      <State>Checked</State>
+      <Collapsed>false</Collapsed>
+      <Category>ResourceGeneral</Category>
+      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+      <FullName>Sage.Sis.Sdata.Validation.TestCases, Version=0.9.65.27797, Culture=neutral, PublicKeyToken=null</FullName>
+      <Label>SData Validation Tests</Label>
+      <Removable>No</Removable>
+      <Description>The SData Validation Tests is a collection of tests that check the various aspects mandated by the SData standard. &lt;br&gt;A detailed description of the SData standard can be found under:&lt;br&gt;&lt;a href="http://interop.sage.com/daisy/sdata-0_9/SDataProtocolDescription.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata-0_9/SDataProtocolDescription.html&lt;/a&gt;</Description>
+      <TestParent />
+      <Order>-1</Order>
+      <GroupID>Sage.Sis.Sdata.Validation.TestCases, Version=0.9.65.27797, Culture=neutral, PublicKeyToken=null</GroupID>
+      <Nodes>
+        <TestInfo xsi:type="TestCategoryInfo">
+          <State>Checked</State>
+          <Collapsed>false</Collapsed>
+          <Category>Application</Category>
+          <AssemblyPath />
+          <FullName />
+          <Label>Application level tests</Label>
+          <Removable>NotSet</Removable>
+          <Description>The tests grouped in this collection operate on a URL that points to an application. &lt;br&gt;
+They check various aspects of the SData standard such as URL structure, discoverability and application-wide schema. &lt;br&gt; &lt;br&gt;
+A detailed description of the SData standard can be found under: &lt;br&gt; 
+&lt;a href="http://interop.sage.com/daisy/sdata-0_9/SDataProtocolDescription.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata-0_9/SDataProtocolDescription.html&lt;/a&gt;</Description>
+          <TestParent />
+          <Order>-1</Order>
+          <GroupID>Application</GroupID>
+          <Nodes>
+            <TestInfo xsi:type="TestCategoryInfo">
+              <State>Checked</State>
+              <Collapsed>false</Collapsed>
+              <Category>Application</Category>
+              <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+              <FullName>Sage.Sis.Sdata.Validation.TestCases.Fundamental.UrlSyntax.UrlSyntaxGroup</FullName>
+              <Label>URL syntax</Label>
+              <Removable>NotSet</Removable>
+              <Description>The tests grouped in this collection operate on a URL that points to an application.&lt;br&gt;
+They check various aspects mandated by the SData standard regarding the URL structure.&lt;br&gt; &lt;br&gt; 
+A detailed description of the SData standard can be found under: &lt;br&gt;  
+&lt;a href="http://interop.sage.com/daisy/sdata/SDataProtocolDescription.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/SDataProtocolDescription.html&lt;/a&gt;
+</Description>
+              <TestParent />
+              <Order>1</Order>
+              <GroupID>UrlSyntaxGroup</GroupID>
+              <Nodes>
+                <TestInfo xsi:type="TestCaseInfo">
+                  <State>Checked</State>
+                  <Collapsed>false</Collapsed>
+                  <Category>Application</Category>
+                  <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                  <FullName>Sage.Sis.Sdata.Validation.TestCases.Fundamental.UrlSyntax.SDataSegment</FullName>
+                  <Label>SData Segment</Label>
+                  <Removable>NotSet</Removable>
+                  <Description>The test checks for the presence of the ‘sdata’ segment is present in the URL provided. &lt;br&gt; &lt;br&gt; 
+The presence of this segment is mandatory for sdata feeds (unless the technical framework imposes something different). &lt;br&gt; &lt;br&gt; 
+The corresponding specification can be found under: &lt;br&gt; 
+&lt;a href="http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/ResourceCollectionURL.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/ResourceCollectionURL.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;Check by means of a regular expression whether the ‘sdata’ is at the correct position in the URL
+</Description>
+                  <TestParent>UrlSyntaxGroup</TestParent>
+                  <Order>1</Order>
+                  <Feature>Required</Feature>
+                </TestInfo>
+                <TestInfo xsi:type="TestCaseInfo">
+                  <State>Checked</State>
+                  <Collapsed>false</Collapsed>
+                  <Category>Application</Category>
+                  <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                  <FullName>Sage.Sis.Sdata.Validation.TestCases.Fundamental.UrlSyntax.ApplicationSegment</FullName>
+                  <Label>Application Segment</Label>
+                  <Removable>NotSet</Removable>
+                  <Description>The test checks for the presence of the segment naming the application in the URL provided.  &lt;br&gt;&lt;br&gt;
+The application name succeeds the ‘sdata’ segment in the URL. &lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under:  &lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/ResourceCollectionURL.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/ResourceCollectionURL.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;Check by means of a regular expression whether the application segment is at the correct position in the URL
+</Description>
+                  <TestParent>UrlSyntaxGroup</TestParent>
+                  <Order>2</Order>
+                  <Feature>Required</Feature>
+                </TestInfo>
+                <TestInfo xsi:type="TestCaseInfo">
+                  <State>Checked</State>
+                  <Collapsed>false</Collapsed>
+                  <Category>Application</Category>
+                  <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                  <FullName>Sage.Sis.Sdata.Validation.TestCases.Fundamental.UrlSyntax.DatasetSegment</FullName>
+                  <Label>Dataset Segment</Label>
+                  <Removable>NotSet</Removable>
+                  <Description>The test checks for the presence of the optional dataset specification within the application segment of the provided URL.  &lt;br&gt;&lt;br&gt;
+The dataset specification allows the identification of a specific dataset of the application to be tested. If several parameters are required to specify the dataset (for example database name and company id), they should be formatted as a single parameter in the URL (for example sageApp('demodb;acme') -- the semicolon separator is application specific, not imposed by SData).&lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under:  &lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/SDataProtocolDescription/AnatomyOfAnSDataURL/ResourceCollectionURL.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/SDataProtocolDescription/AnatomyOfAnSDataURL/ResourceCollectionURL.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Preconditions:&lt;/b&gt;&lt;br&gt;Application Segment is present
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;Check by means of a regular expression within the application segment for the presence of a specification enclosed by brackets and quotes.</Description>
+                  <TestParent>UrlSyntaxGroup</TestParent>
+                  <Order>3</Order>
+                  <Feature>Required</Feature>
+                </TestInfo>
+                <TestInfo xsi:type="TestCaseInfo">
+                  <State>Checked</State>
+                  <Collapsed>false</Collapsed>
+                  <Category>Application</Category>
+                  <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                  <FullName>Sage.Sis.Sdata.Validation.TestCases.Fundamental.UrlSyntax.ContractSegment</FullName>
+                  <Label>Contract Segment</Label>
+                  <Removable>NotSet</Removable>
+                  <Description>The test checks for the presence of the contract segment within the provided URL. &lt;br&gt; &lt;br&gt;
+A given SData service may support several “integration contracts” side by side, for example, a typical Sage ERP service will support a crmErp contract which exposes the resources required by CRM integration (with schemas imposed by the
+CRM/ERP contract) and a native or default contract which exposes all the resources of the ERP in their native format. &lt;br&gt; &lt;br&gt;
+If the contract exposes a large number of resources kinds, the contract name may be followed by a functional group (eventually a hierarchy of functional groups) which will act as a folder (a hierarchy of folders) to organize the resources.&lt;br&gt; &lt;br&gt;
+Typical functional groups would be default/financials, default/commercials, default/HR, etc. &lt;br&gt; &lt;br&gt;
+The corresponding specification can be found under:  &lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/ResourceCollectionURL.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/ResourceCollectionURL.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Preconditions:&lt;/b&gt;&lt;br&gt;Application Segment is present
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;Check by means of a regular expression the URL for a third segment. This is interpreted to be the contract segment.</Description>
+                  <TestParent>UrlSyntaxGroup</TestParent>
+                  <Order>4</Order>
+                  <Feature>Required</Feature>
+                </TestInfo>
+                <State>Checked</State>
+                <Collapsed>true</Collapsed>
+              </Nodes>
+            </TestInfo>
+            <TestInfo xsi:type="TestCaseInfo">
+              <State>Checked</State>
+              <Collapsed>false</Collapsed>
+              <Category>Application</Category>
+              <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+              <FullName>Sage.Sis.Sdata.Validation.TestCases.Fundamental.UrlSyntax.Schema</FullName>
+              <Label>Schema existence</Label>
+              <Removable>NotSet</Removable>
+              <Description>The test checks whether under the provided URL the schema for the application is available for retrieval. The schema is provided under the $schema segment, which can be specified at both the application and the resource level.  &lt;br&gt;    &lt;br&gt;  
+Every contract should have an associated schema that describes the XML payloads for the resources and service operations exposed by the service. So, every contract hould have a $schema URL.  &lt;br&gt;    &lt;br&gt;  
+The corresponding specification can be found under :  &lt;br&gt;  
+&lt;a href="http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/ResourceSchemaURL.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/ResourceSchemaURL.html&lt;/a&gt; &lt;br&gt;    &lt;br&gt;  
+NOTE: The presence of a correct schema describing the resources and services of an application along with their payloads is a precondition for most of the tests performed by the validation tool. 
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows:  &lt;br&gt;  
+- Append the “/$schema” to the original URL   &lt;br&gt;  
+- Perform an http GET operation on the resulting URL  &lt;br&gt;  
+- Check response for a 200 status code  &lt;br&gt;  
+- On successful retrieval, the result of the GET operation is read into a .Net XmlSchema object. 
+</Description>
+              <TestParent />
+              <Order>2</Order>
+              <Feature>Required</Feature>
+            </TestInfo>
+            <TestInfo xsi:type="TestCaseInfo">
+              <State>Checked</State>
+              <Collapsed>false</Collapsed>
+              <Category>Application</Category>
+              <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+              <FullName>Sage.Sis.Sdata.Validation.TestCases.Fundamental.Schema.SyntacticValidation.ResourceKindDefinition</FullName>
+              <Label>ResourceKind Definition Correctness</Label>
+              <Removable>NotSet</Removable>
+              <Description>SData imposes some rules on schemas, one relates to the definition of resource kinds 
+(see &lt;a href="http://interop.sage.com/daisy/sdata/Metadata/XSDStructure.htm" target="_blank"&gt;http://interop.sage.com/daisy/sdata/Metadata/XSDStructure.htm&lt;/a&gt;).  
+All resource kinds must have a name be defined directly under the root xs:schema element.
+&lt;br/&gt;&lt;br/&gt;
+The validation tool checks that all resource kinds are defined correctly, 
+that is they have a name and are defined as xs:element directly beneath the xs:schema root element.  
+The validation tool checks all resource kinds including relationships.
+&lt;br/&gt;&lt;br/&gt;
+&lt;b&gt;Test Flow: &lt;/b&gt;
+&lt;br/&gt;&lt;br/&gt;
+The test proceeds as follows:
+&lt;ul&gt;
+&lt;li&gt;Append the “/$schema” to the original URL &lt;/li&gt;
+&lt;li&gt;Perform an http GET operation on the resulting URL &lt;/li&gt;
+&lt;li&gt;Check response for a 200 status code &lt;/li&gt;
+&lt;li&gt;On successful retrieval, the result of the GET operation is read into a .Net XmlSchema object. &lt;/li&gt;
+&lt;li&gt;Iterate through all the xs:element elements&lt;/li&gt; 
+&lt;li&gt;Check that if the &lt;b&gt;sme:role="resourceKind"&lt;/b&gt; attribute is set, the respective element is declared directly under the parent node&lt;/li&gt;
+&lt;li&gt;Check that every resourceKind has defined &lt;b&gt;sme:pluralName&lt;/b&gt;&lt;/li&gt;
+&lt;/ul&gt;</Description>
+              <TestParent />
+              <Order>3</Order>
+              <Feature>Required</Feature>
+            </TestInfo>
+            <TestInfo xsi:type="TestCaseInfo">
+              <State>Checked</State>
+              <Collapsed>false</Collapsed>
+              <Category>Application</Category>
+              <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+              <FullName>Sage.Sis.Sdata.Validation.TestCases.Fundamental.UrlSyntax.Service</FullName>
+              <Label>Contract Services discoverable</Label>
+              <Removable>NotSet</Removable>
+              <Description>The test checks whether services are available under the URL provided.  &lt;br&gt; 
+Services are exposed under the $service segment which is assumed to be immediately succeeding the provided URL. &lt;br&gt;  &lt;br&gt; 
+The corresponding specification can be found under : &lt;br&gt; 
+&lt;a href="http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/ServiceOperationURL.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/ServiceOperationURL.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows: &lt;br&gt;  
+- Append the “/$service” to the original URL  &lt;br&gt;  
+- Perform an http GET operation on the resulting URL &lt;br&gt;  
+- Check response for a 200 status code  &lt;br&gt;  
+- Check the response content type to be one of: application/atom+xml or application/atom+xml;type=feed  &lt;br&gt;  
+- Check for the existence of a valid feed element in the response  &lt;br&gt;  </Description>
+              <TestParent />
+              <Order>4</Order>
+              <Feature>Optional</Feature>
+            </TestInfo>
+            <State>Checked</State>
+            <Collapsed>true</Collapsed>
+          </Nodes>
+        </TestInfo>
+        <TestInfo xsi:type="TestCategoryInfo">
+          <State>Checked</State>
+          <Collapsed>false</Collapsed>
+          <Category>ResourceGeneral</Category>
+          <AssemblyPath />
+          <FullName />
+          <Label>Resource level tests</Label>
+          <Removable>NotSet</Removable>
+          <Description>The tests grouped in this collection operate on a URL that points to an individual resource kind. &lt;br&gt; 
+They check various aspects mandated by the SData standard such as metadata, format compliance and correctness of the various operations available at the resource kind level. &lt;br&gt; &lt;br&gt; 
+A detailed description can be found under: &lt;br&gt; 
+&lt;a href="http://interop.sage.com/daisy/sdata-0_9/SDataProtocolDescription.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata-0_9/SDataProtocolDescription.html&lt;/a&gt;
+</Description>
+          <TestParent />
+          <Order>-1</Order>
+          <GroupID>ResourceGeneral</GroupID>
+          <Nodes>
+            <TestInfo xsi:type="TestCaseInfo">
+              <State>Checked</State>
+              <Collapsed>false</Collapsed>
+              <Category>ResourceGeneral</Category>
+              <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+              <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Basic.Service</FullName>
+              <Label>Service existence</Label>
+              <Removable>NotSet</Removable>
+              <Description>The test checks whether services are available under the URL accessing a resource kind.&lt;br&gt;&lt;br&gt;
+Resource specific services are exposed under the $service segment which is assumed to be immediately succeeding the resource kind URL.&lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under :&lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/ServiceOperationURL.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/ServiceOperationURL.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows:&lt;br&gt;
+- Append the “/$service” to the original URL &lt;br&gt;
+- Perform an http GET operation on the resulting URL&lt;br&gt;
+- Check response for a 200 status code&lt;br&gt;
+- Check the response content type to be one of: application/atom+xml oder application/atom+xml;type=feed&lt;br&gt;
+- Check for the existence of a valid feed element in the response&lt;br&gt;
+</Description>
+              <TestParent />
+              <Order>-1</Order>
+              <Feature>Optional</Feature>
+            </TestInfo>
+            <TestInfo xsi:type="TestCategoryInfo">
+              <State>Checked</State>
+              <Collapsed>true</Collapsed>
+              <Category>ResourceGeneral</Category>
+              <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+              <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Groups.ResourceSchemaGroup</FullName>
+              <Label>Resource schema</Label>
+              <Removable>NotSet</Removable>
+              <Description>The tests grouped in this collection operate on a URL that points to an individual resource kind. They check various aspects mandated by the SData standard regarding the metadata of the associated resource kind. &lt;br&gt; &lt;br&gt; A detailed description can be found under: &lt;br&gt; &lt;br&gt; &lt;a href="http://interop.sage.com/daisy/sdata/Metadata.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/Metadata.html&lt;/a&gt;
+</Description>
+              <TestParent />
+              <Order>1</Order>
+              <GroupID>ResourceSchemaGroup</GroupID>
+              <Nodes>
+                <TestInfo xsi:type="TestCaseInfo">
+                  <State>Checked</State>
+                  <Collapsed>false</Collapsed>
+                  <Category>ResourceGeneral</Category>
+                  <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                  <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Schema.Existence</FullName>
+                  <Label>Schema existence</Label>
+                  <Removable>NotSet</Removable>
+                  <Description>The test checks whether under the provided URL the schema for the application is available for retrieval. The schema is provided under the $schema segment, which can be specified at both the application and the resource level. &lt;br&gt; &lt;br&gt; 
+Every contract should have an associated schema that describes the XML payloads for the resources and service operations exposed by the service. So, every contract should have a $schema URL. &lt;br&gt; &lt;br&gt; 
+The corresponding specification can be found under :  &lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/ResourceSchemaURL.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/ResourceSchemaURL.html&lt;/a&gt; &lt;br&gt; &lt;br&gt;
+NOTE: The presence of a correct schema describing the resources and services of an application along with their payloads is a precondition for most of the tests performed by the validation tool.
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows:  &lt;br&gt;
+- Append the “/$schema” to the original URL   &lt;br&gt;
+- Perform an http GET operation on the resulting URL  &lt;br&gt;
+- Check response for a 200 status code  &lt;br&gt;
+- On successful retrieval, the result of the GET operation is read into a .Net XmlSchema object. </Description>
+                  <TestParent>ResourceSchemaGroup</TestParent>
+                  <Order>1</Order>
+                  <Feature>Required</Feature>
+                </TestInfo>
+                <TestInfo xsi:type="TestCategoryInfo">
+                  <State>Checked</State>
+                  <Collapsed>false</Collapsed>
+                  <Category>ResourceGeneral</Category>
+                  <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                  <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Groups.SchemaValidityGroup</FullName>
+                  <Label>Schema validity</Label>
+                  <Removable>NotSet</Removable>
+                  <Description>The tests grouped in this collection operate on a URL that points to an individual resource kind. They check formal syntactic aspects mandated by the SData standard regarding the metadata of the associated resource kind.&lt;br&gt; &lt;br&gt; 
+A detailed description can be found under: &lt;br&gt; &lt;br&gt; 
+&lt;a href="http://interop.sage.com/daisy/sdata/Metadata.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/Metadata.html&lt;/a&gt;
+</Description>
+                  <TestParent>ResourceSchemaGroup</TestParent>
+                  <Order>2</Order>
+                  <GroupID>SchemaValidityGroup</GroupID>
+                  <Nodes>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Schema.SyntacticValidation.ComplexTypeAllStructure</FullName>
+                      <Label>Complex type All structure</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>The Schema defines the resource structure as a set of property elements below  the complexType definition. SData recommends that these elements be grouped under an &lt;b&gt;xs:all&lt;/b&gt; element rather than an &lt;b&gt;xs:sequence&lt;/b&gt; element because SData producers and consumers should not rely on a specific ordering of property values.&lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under: &lt;br&gt;&lt;a href="http://interop.sage.com/daisy/sdata/Metadata/191-DSY.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/Metadata/191-DSY.html&lt;/a&gt;
+&lt;br&gt; &lt;br&gt; 
+&lt;b&gt;Test Flow: &lt;/b&gt;
+&lt;br&gt;&lt;br&gt;
+
+The test proceeds as follows:
+&lt;ul&gt;
+
+&lt;li&gt;Append the “/$schema” to the original URL &lt;/li&gt;
+&lt;li&gt;Perform an http GET operation on the resulting URL &lt;/li&gt;
+&lt;li&gt;Check response for a 200 status code &lt;/li&gt;
+&lt;li&gt;On successful retrieval, the result of the GET operation is read into a .Net XmlSchema object. &lt;/li&gt;
+&lt;li&gt;Iterate through all complexType elements and check that the child element &lt;b&gt;xs:all&lt;/b&gt; is defined &lt;/li&gt;
+   &lt;/ul&gt; </Description>
+                      <TestParent>SchemaValidityGroup</TestParent>
+                      <Order>5</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Schema.SyntacticValidation.SmeConformance</FullName>
+                      <Label>SME Conformance</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>This element definition contains a mix of standard XSD attributes and SData extensions. The following table describes the attributes that are relevant in a resource kind definition.
+&lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under: &lt;br&gt;&lt;a href="http://interop.sage.com/daisy/sdata/Metadata/191-DSY.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/Metadata/191-DSY.html&lt;/a&gt; 
+&lt;br&gt; &lt;br&gt; 
+&lt;b&gt;Test Flow: &lt;/b&gt;
+&lt;br&gt;&lt;br&gt;
+The test proceeds as follows:
+&lt;ul&gt;
+&lt;li&gt;Append the “/$schema” to the original URL &lt;/li&gt;
+&lt;li&gt;Perform an http GET operation on the resulting URL &lt;/li&gt;
+&lt;li&gt;Check response for a 200 status code &lt;/li&gt;
+&lt;li&gt;On successful retrieval, the result of the GET operation is read into a .Net XmlSchema object. &lt;/li&gt;
+&lt;li&gt;Check whether all sme attributes are defined within the &lt;b&gt;sme&lt;/b&gt; namespace.&lt;/li&gt; &lt;/ul&gt; </Description>
+                      <TestParent>SchemaValidityGroup</TestParent>
+                      <Order>6</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Schema.SyntacticValidation.ResourceKindDuplicity</FullName>
+                      <Label>ResourceKind Duplicity</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>The validation tool checks that all resource kinds are uniquely named, that is the same resource kind name cannot appear twice in any given namespace.  The same name can be used subject to separate namespace qualification.&lt;br/&gt;&lt;br/&gt;
+&lt;b&gt;Test Flow: &lt;/b&gt;
+&lt;br&gt;&lt;br&gt;
+
+The test proceeds as follows:
+&lt;ul&gt;
+&lt;li&gt;Append the “/$schema” to the original URL &lt;/li&gt;
+&lt;li&gt;Perform an http GET operation on the resulting URL &lt;/li&gt;
+&lt;li&gt;Check response for a 200 status code &lt;/li&gt;
+&lt;li&gt;On successful retrieval, the result of the GET operation is read into a .Net XmlSchema object. &lt;/li&gt;
+&lt;li&gt;Iterate through all the defined ResourceKind elements&lt;/li&gt;
+&lt;li&gt;For every ResourceKind element check that it's defined only once for the given namespace in the xml schema&lt;/li&gt; 
+&lt;/ul&gt;</Description>
+                      <TestParent>SchemaValidityGroup</TestParent>
+                      <Order>2102</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Schema.SyntacticValidation.ElementComplexTypeDefinition</FullName>
+                      <Label>Element ComplexType Definition</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>The SData specification recommends that the resource structure be defined as xs:complexType element rather than as a subset of the resource element. The validation tool checks that all resource kinds are followed by an &lt;b&gt;xs:compexType&lt;/b&gt; 
+element with the correct name, that is the resource kind name and &lt;b&gt;--type&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;
+&lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under: &lt;br&gt;&lt;a href="http://interop.sage.com/daisy/sdata/Metadata/191-DSY.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/Metadata/191-DSY.html&lt;/a&gt; 
+&lt;br&gt; &lt;br&gt; 
+&lt;b&gt;Test Flow: &lt;/b&gt;
+&lt;br&gt;&lt;br&gt;
+
+The test proceeds as follows:
+&lt;ul&gt;
+&lt;li&gt;Append the “/$schema” to the original URL&lt;/li&gt;
+&lt;li&gt;Perform an http GET operation on the resulting URL &lt;/li&gt;
+&lt;li&gt;Check response for a 200 status code &lt;/li&gt;
+&lt;li&gt;On successful retrieval, the result of the GET operation is read into a .Net XmlSchema object. &lt;/li&gt;
+&lt;li&gt;Investigate the first element of the result and determine whether it is a defined as a complex type&lt;/li&gt;
+&lt;/ul&gt;
+</Description>
+                      <TestParent>SchemaValidityGroup</TestParent>
+                      <Order>2103</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Schema.SyntacticValidation.CamelCase</FullName>
+                      <Label>camelCase </Label>
+                      <Removable>NotSet</Removable>
+                      <Description>The corresponding specification can be found under:&lt;br&gt;&lt;a href="http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/NamingConventionsForURLs.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/NamingConventionsForURLs.html&lt;/a&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;b&gt;Test Flow: &lt;/b&gt;
+&lt;br&gt;&lt;br&gt;
+
+The test proceeds as follows:
+&lt;ul&gt;
+&lt;li&gt;Append the “/$schema” to the original URL &lt;/li&gt;
+&lt;li&gt;Perform an http GET operation on the resulting URL &lt;/li&gt;
+&lt;li&gt;Check response for a 200 status code &lt;/li&gt;
+&lt;li&gt;On successful retrieval, the result of the GET operation is read into a .Net XmlSchema object. &lt;/li&gt;
+&lt;li&gt;Check for the given ResourceKind element check it's name matches the &lt;b&gt;camelCase&lt;/b&gt; rules&lt;/li&gt; 
+&lt;/ul&gt;</Description>
+                      <TestParent>SchemaValidityGroup</TestParent>
+                      <Order>2105</Order>
+                      <Feature>Recommended</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Schema.SyntacticValidation.CamelCaseProperties</FullName>
+                      <Label>camelCase Properties </Label>
+                      <Removable>NotSet</Removable>
+                      <Description>The validation tool checks for correct camelCase on property names within a schema.
+&lt;br/&gt;&lt;br/&gt;
+&lt;b&gt;Test Flow: &lt;/b&gt;
+&lt;br&gt;&lt;br&gt;
+
+The test proceeds as follows:
+&lt;ul&gt;
+&lt;li&gt;Append the “/$schema” to the original URL &lt;/li&gt;
+&lt;li&gt;Perform an http GET operation on the resulting URL &lt;/li&gt;
+&lt;li&gt;Check response for a 200 status code &lt;/li&gt;
+&lt;li&gt;On successful retrieval, the result of the GET operation is read into a .Net XmlSchema object. &lt;/li&gt;
+&lt;li&gt;Check for the given ResourceKind element that it's property names match the &lt;b&gt;camelCase&lt;/b&gt; rules&lt;/li&gt; 
+&lt;/ul&gt;</Description>
+                      <TestParent>SchemaValidityGroup</TestParent>
+                      <Order>2106</Order>
+                      <Feature>Recommended</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Schema.SyntacticValidation.SmePluralName</FullName>
+                      <Label>Sme pluralName </Label>
+                      <Removable>NotSet</Removable>
+                      <Description>All resource kinds in a schema must have the correct sme attributes set as per the spec 
+&lt;a href="http://interop.sage.com/daisy/sdata/Metadata/191-DSY.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/Metadata/191-DSY.html&lt;/a&gt; and &lt;a href="http://interop.sage.com/daisy/sdata/Metadata/SimpleMetadataExtensions.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/Metadata/SimpleMetadataExtensions.html&lt;/a&gt; 
+&lt;br/&gt;&lt;br/&gt;
+&lt;b&gt;Test Flow: &lt;/b&gt;
+&lt;br&gt;&lt;br&gt;
+The test proceeds as follows:
+&lt;ul&gt;
+&lt;li&gt;Append the “/$schema” to the original URL &lt;/li&gt;
+&lt;li&gt;Perform an http GET operation on the resulting URL &lt;/li&gt;
+&lt;li&gt;Check response for a 200 status code &lt;/li&gt;
+&lt;li&gt;On successful retrieval, the result of the GET operation is read into a .Net XmlSchema object. &lt;/li&gt;
+&lt;li&gt;Check for the presence of the &lt;b&gt;sme:role&lt;/b&gt; attribute against all top level elements in the schema (those marked with &lt;b&gt;xs:element&lt;/b&gt;)&lt;/li&gt;
+&lt;li&gt;Check that the &lt;b&gt;sme:role&lt;/b&gt; attribute is set to either &lt;b&gt;“resourceKind”&lt;/b&gt; or &lt;b&gt;“serviceOperation”&lt;/b&gt; or &lt;b&gt;“query”&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;Check the presence of the &lt;b&gt;sme:pluralName&lt;/b&gt; attribute&lt;/li&gt;
+&lt;li&gt;Check that the &lt;b&gt;sme:pluralName&lt;/b&gt; attribute is populated with a value&lt;/li&gt;
+&lt;/ul&gt;</Description>
+                      <TestParent>SchemaValidityGroup</TestParent>
+                      <Order>2107</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Schema.SyntacticValidation.SmePrecedence</FullName>
+                      <Label>Sme precedence</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>All resource kinds in a schema must have the correct sme attributes set as per the spec 
+&lt;a href="http://interop.sage.com/daisy/sdata/Metadata/191-DSY.html." target="_blank"&gt;http://interop.sage.com/daisy/sdata/Metadata/191-DSY.html.&lt;/a&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;b&gt;Test Flow: &lt;/b&gt;
+&lt;br/&gt;&lt;br/&gt;
+The test proceeds as follows:
+&lt;ul&gt;
+&lt;li&gt;Append the “/$schema” to the original URL &lt;/li&gt;
+&lt;li&gt;Perform an http GET operation on the resulting URL &lt;/li&gt;
+&lt;li&gt;Check response for a 200 status code &lt;/li&gt;
+&lt;li&gt;On successful retrieval, the result of the GET operation is read into a .Net XmlSchema object. &lt;/li&gt;
+&lt;li&gt;Check for the presence of the sme:label attribute&lt;/li&gt;
+&lt;li&gt;Check that the &lt;b&gt;sme:label&lt;/b&gt; attribute is populated with a value&lt;/li&gt;
+&lt;li&gt;Check the presence of the &lt;b&gt;sme:precedence&lt;/b&gt; attribute&lt;/li&gt;
+&lt;li&gt;Check that the &lt;b&gt;sme:precedence&lt;/b&gt; attribute is populated with a number value.&lt;/li&gt;
+&lt;/ul&gt;</Description>
+                      <TestParent>SchemaValidityGroup</TestParent>
+                      <Order>2108</Order>
+                      <Feature>Optional</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Schema.SyntacticValidation.SmeLabel</FullName>
+                      <Label>Sme label</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>All (resource kind) properties in a schema must have the correct sme attributes set as per the spec 
+&lt;a href="http://interop.sage.com/daisy/sdata/Metadata/192-DSY.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/Metadata/192-DSY.html&lt;/a&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;b&gt;Test Flow: &lt;/b&gt;
+&lt;br&gt;&lt;br&gt;
+The test proceeds as follows:
+&lt;ul&gt;
+&lt;li&gt;Append the “/$schema” to the original URL &lt;/li&gt;
+&lt;li&gt;Perform an http GET operation on the resulting URL &lt;/li&gt;
+&lt;li&gt;Check response for a 200 status code &lt;/li&gt;
+&lt;li&gt;On successful retrieval, the result of the GET operation is read into a .Net XmlSchema object. &lt;/li&gt;
+&lt;li&gt;Check for the presence of the &lt;b&gt;sme:label&lt;/b&gt; attribute&lt;/li&gt;
+&lt;li&gt;Check that the &lt;b&gt;sme:label&lt;/b&gt; attribute is populated with a value&lt;/li&gt;
+&lt;/ul&gt;</Description>
+                      <TestParent>SchemaValidityGroup</TestParent>
+                      <Order>2109</Order>
+                      <Feature>Optional</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Schema.SyntacticValidation.RelationshipExistence</FullName>
+                      <Label>Relationship Existence</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>In a schema, if a property has a data type with the suffix &lt;b&gt;--type&lt;/b&gt; or &lt;b&gt;--list&lt;/b&gt; 
+then a relationship is implied 
+(see &lt;a href="http://interop.sage.com/daisy/sdata/Metadata/XSDStructure.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/Metadata/XSDStructure.html&lt;/a&gt; and 
+&lt;a href="http://interop.sage.com/daisy/sdata/Metadata/193-DSY.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/Metadata/193-DSY.html&lt;/a&gt;)  
+&lt;br/&gt;&lt;br/&gt;
+&lt;b&gt;Test Flow: &lt;/b&gt;
+&lt;br&gt;&lt;br&gt;
+The test proceeds as follows:
+&lt;ul&gt;
+&lt;li&gt;Append the “/$schema” to the original URL &lt;/li&gt;
+&lt;li&gt;Perform an http GET operation on the resulting URL &lt;/li&gt;
+&lt;li&gt;Check response for a 200 status code &lt;/li&gt;
+&lt;li&gt;On successful retrieval, the result of the GET operation is read into a .Net XmlSchema object. &lt;/li&gt;
+&lt;li&gt;Check for the presence of the &lt;b&gt;sme:relationship&lt;/b&gt; attribute&lt;/li&gt;
+&lt;li&gt;Check for the presence of the &lt;b&gt;sme:isCollection&lt;/b&gt; attribute&lt;/li&gt;
+&lt;li&gt;Check for the existence of the related resource kind within the schema&lt;/li&gt;
+&lt;/ul&gt;</Description>
+                      <TestParent>SchemaValidityGroup</TestParent>
+                      <Order>2110</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Schema.SyntacticValidation.RelationshipCollection</FullName>
+                      <Label>Relationship Collection</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>In a schema, if a property is marked with the SData attribute &lt;b&gt;sme:relationship="reference"&lt;/b&gt; 
+then it must follow the correct form as per the spec 
+&lt;a href="http://interop.sage.com/daisy/sdata/Metadata/193-DSY.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/Metadata/193-DSY.html&lt;/a&gt; 
+&lt;br/&gt;&lt;br/&gt;
+&lt;b&gt;Test Flow: &lt;/b&gt;
+&lt;br&gt;&lt;br&gt;
+The test proceeds as follows:
+&lt;ul&gt;
+&lt;li&gt;Append the “/$schema” to the original URL &lt;/li&gt;
+&lt;li&gt;Perform an http GET operation on the resulting URL &lt;/li&gt;
+&lt;li&gt;Check response for a 200 status code &lt;/li&gt;
+&lt;li&gt;On successful retrieval, the result of the GET operation is read into a .Net XmlSchema object. &lt;/li&gt;
+&lt;li&gt;Check for the presence of the sme:isCollection attribute&lt;/li&gt;
+&lt;li&gt;Check that &lt;b&gt;sme:isCollection&lt;/b&gt; is set to FALSE&lt;/li&gt;
+&lt;li&gt;Check that the property data type is marked with the suffix &lt;b&gt;--type&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;Check for the existence of the related resource kind within the schema&lt;/li&gt;
+&lt;/ul&gt;</Description>
+                      <TestParent>SchemaValidityGroup</TestParent>
+                      <Order>2111</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Schema.SyntacticValidation.RelationshipAssociation</FullName>
+                      <Label>Relationship Association</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>In a schema, if a property is marked with the SData attribute &lt;b&gt;sme:relationship="association"&lt;/b&gt; 
+then it must follow the correct form as per the spec 
+&lt;a href="http://interop.sage.com/daisy/sdata/Metadata/193-DSY.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/Metadata/193-DSY.html&lt;/a&gt; 
+&lt;br/&gt;&lt;br/&gt;
+&lt;b&gt;Test Flow: &lt;/b&gt;
+&lt;br&gt;&lt;br&gt;
+The test proceeds as follows:
+&lt;ul&gt;
+&lt;li&gt;Append the “/$schema” to the original URL &lt;/li&gt;
+&lt;li&gt;Perform an http GET operation on the resulting URL &lt;/li&gt;
+&lt;li&gt;Check response for a 200 status code &lt;/li&gt;
+&lt;li&gt;On successful retrieval, the result of the GET operation is read into a .Net XmlSchema object. &lt;/li&gt;
+&lt;li&gt;Check For the presence of the &lt;b&gt;sme:isCollection&lt;/b&gt; attribute&lt;/li&gt;
+&lt;li&gt;Check that &lt;b&gt;sme:isCollection&lt;/b&gt; is set to TRUE&lt;/li&gt;
+&lt;li&gt;Check that the property data type is marked with the suffix &lt;b&gt;--list&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;Check for the existence of the related resource kind within the schema&lt;/li&gt;
+&lt;/ul&gt;</Description>
+                      <TestParent>SchemaValidityGroup</TestParent>
+                      <Order>2112</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Schema.SyntacticValidation.RelationshipChild</FullName>
+                      <Label>Relationship Child</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>In a schema, if a property is marked with the SData attribute &lt;b&gt;sme:relationship="child"&lt;/b&gt; 
+then it must follow the correct form as per the spec 
+&lt;a href="http://interop.sage.com/daisy/sdata/Metadata/193-DSY.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/Metadata/193-DSY.html&lt;/a&gt; 
+&lt;br/&gt;&lt;br/&gt;
+&lt;b&gt;Test Flow: &lt;/b&gt;
+&lt;br&gt;&lt;br&gt;
+The test proceeds as follows:
+&lt;ul&gt;
+&lt;li&gt;Append the “/$schema” to the original URL &lt;/li&gt;
+&lt;li&gt;Perform an http GET operation on the resulting URL &lt;/li&gt;
+&lt;li&gt;Check response for a 200 status code &lt;/li&gt;
+&lt;li&gt;On successful retrieval, the result of the GET operation is read into a .Net XmlSchema object. &lt;/li&gt;
+&lt;li&gt;Check for the presence of the &lt;b&gt;sme:isCollection&lt;/b&gt; attribute&lt;/li&gt;
+&lt;li&gt;Check that &lt;b&gt;sme:isCollection&lt;/b&gt; is set to TRUE&lt;/li&gt;
+&lt;li&gt;Check that the property data type is marked with the suffix &lt;b&gt;--list&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;Check for the existence of the related resource kind within the schema&lt;/li&gt;
+&lt;/ul&gt;</Description>
+                      <TestParent>SchemaValidityGroup</TestParent>
+                      <Order>2113</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Schema.SyntacticValidation.RelationshipParent</FullName>
+                      <Label>Relationship Parent</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>In a schema, if a property is marked with the SData attribute 
+&lt;b&gt;sme:relationship="parent"&lt;/b&gt; then it must follow the correct form as per the spec 
+&lt;a href="http://interop.sage.com/daisy/sdata/Metadata/193-DSY.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/Metadata/193-DSY.html&lt;/a&gt; 
+&lt;br/&gt;&lt;br/&gt;
+&lt;b&gt;Test Flow: &lt;/b&gt;
+&lt;br&gt;&lt;br&gt;
+The test proceeds as follows:
+&lt;ul&gt;
+&lt;li&gt;Append the “/$schema” to the original URL &lt;/li&gt;
+&lt;li&gt;Perform an http GET operation on the resulting URL &lt;/li&gt;
+&lt;li&gt;Check response for a 200 status code &lt;/li&gt;
+&lt;li&gt;On successful retrieval, the result of the GET operation is read into a .Net XmlSchema object. &lt;/li&gt;
+&lt;li&gt;Check for the presence of the &lt;b&gt;sme:isCollection&lt;/b&gt; attribute&lt;/li&gt;
+&lt;li&gt;Check that &lt;b&gt;sme:isCollection&lt;/b&gt; is set to FALSE&lt;/li&gt;
+&lt;li&gt;Check that the property data type is marked with the suffix &lt;b&gt;--type&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;Check for the existence of the related resource kind within the schema&lt;/li&gt;
+&lt;/ul&gt;</Description>
+                      <TestParent>SchemaValidityGroup</TestParent>
+                      <Order>2114</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Schema.SyntacticValidation.RelationshipOrphanedCollection</FullName>
+                      <Label>Relationship Orphaned Collection</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>If a schema (resource kind) property is marked with the &lt;b&gt;sme:isCollection&lt;/b&gt; attribute (any value) yet it is patently not a relationship property then the validation tool warns the user.
+&lt;br/&gt;&lt;br/&gt;
+&lt;b&gt;Test Flow: &lt;/b&gt;
+&lt;br&gt;&lt;br&gt;
+The test proceeds as follows:
+&lt;ul&gt;
+&lt;li&gt;Append the “/$schema” to the original URL &lt;/li&gt;
+&lt;li&gt;Perform an http GET operation on the resulting URL &lt;/li&gt;
+&lt;li&gt;Check response for a 200 status code &lt;/li&gt;
+&lt;li&gt;On successful retrieval, the result of the GET operation is read into a .Net XmlSchema object. &lt;/li&gt;
+&lt;li&gt;Iterate through all the defined ResourceKind elements&lt;/li&gt;
+&lt;li&gt;For every ResourceKind element check that if &lt;b&gt;sme:isCollection="true"&lt;/b&gt; is defined, &lt;b&gt;sme:relationship&lt;/b&gt; should be defined as well&lt;/li&gt; 
+&lt;/ul&gt;</Description>
+                      <TestParent>SchemaValidityGroup</TestParent>
+                      <Order>2115</Order>
+                      <Feature>Recommended</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Schema.SyntacticValidation.FeedComparisonUUID</FullName>
+                      <Label>Feed Comparison sme:hasUuid</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>The SData compliance summary (&lt;a href="http://interop.sage.com/daisy/sdata/662-DSY.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/662-DSY.html&lt;/a&gt;) 
+states that there are a number of schema attributes that must be complied with in the returned feed.
+&lt;br/&gt;
+&lt;b&gt;Note: Not all entries are examined. The number of entries to be checked can be changed in Menu-&gt;Settings.&lt;/b&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;b&gt;Test Flow: &lt;/b&gt;
+&lt;br&gt;&lt;br&gt;
+The test proceeds as follows:
+&lt;ul&gt;
+&lt;li&gt;Append the “/$schema” to the original URL &lt;/li&gt;
+&lt;li&gt;Perform an http GET operation on the resulting URL &lt;/li&gt;
+&lt;li&gt;Check response for a 200 status code &lt;/li&gt;
+&lt;li&gt;On successful retrieval, the result of the GET operation is read into a .Net XmlSchema object. &lt;/li&gt;
+&lt;li&gt;Get all feed entries for the given resourceKind&lt;/li&gt;
+&lt;li&gt;Check if a resource kind has &lt;b&gt;sme:hasUuid&lt;/b&gt; attribute set to TRUE, that the returned feed contains an SData UUID attribute.&lt;/li&gt;
+&lt;li&gt;check if a (resource kind) property has &lt;b&gt;sme:isMandatory&lt;/b&gt; attribute set to TRUE, that the property is present in the returned feed.&lt;/li&gt;
+&lt;/ul&gt;</Description>
+                      <TestParent>SchemaValidityGroup</TestParent>
+                      <Order>2116</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Schema.SyntacticValidation.FeedComparisonUnsupported</FullName>
+                      <Label>Feed Comparison sme:unsupported</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>The SData compliance summary (&lt;a href="http://interop.sage.com/daisy/sdata/662-DSY.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/662-DSY.html&lt;/a&gt;) 
+states that there are a number of schema attributes that should be complied with in the returned feed.
+&lt;br/&gt;
+&lt;b&gt;Note: Not all entries are examined. The number of entries to be checked can be changed in Menu-&gt;Settings.&lt;/b&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;b&gt;Test Flow: &lt;/b&gt;
+&lt;br&gt;&lt;br&gt;
+The test proceeds as follows:
+&lt;ul&gt;
+&lt;li&gt;Append the “/$schema” to the original URL &lt;/li&gt;
+&lt;li&gt;Perform an http GET operation on the resulting URL &lt;/li&gt;
+&lt;li&gt;Check response for a 200 status code &lt;/li&gt;
+&lt;li&gt;On successful retrieval, the result of the GET operation is read into a .Net XmlSchema object. &lt;/li&gt;
+&lt;li&gt;Get all feed entries for the given resourceKind&lt;/li&gt;
+&lt;li&gt;Check if a resource kind has the sme:unsupported attribute set to TRUE, that the returned feed does not contain that resource kind&lt;/li&gt;
+&lt;li&gt;Check if a (resource kind) property has the &lt;b&gt;sme:unsupported&lt;/b&gt; attribute set to TRUE, that the returned feed does not contain that property (on the resource kind)&lt;/li&gt;
+&lt;li&gt;Check if a (resource kind) property has the &lt;b&gt;sme:isUniqueKey&lt;/b&gt; attribute set to TRUE, then the returned feed should contain a value in that property&lt;/li&gt;
+&lt;li&gt;Check if a (resource kind) property has the &lt;b&gt;sme:isLocalized&lt;/b&gt; attribute set to TRUE, then the returned feed should contain a value in that property&lt;/li&gt;
+&lt;/ul&gt;</Description>
+                      <TestParent>SchemaValidityGroup</TestParent>
+                      <Order>2117</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Schema.SyntacticValidation.FeedComparisonNull</FullName>
+                      <Label>Feed Comparison Null Values</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>The validation tool checks that:
+&lt;b&gt;xsi:nil="true"&lt;/b&gt; can be used only if &lt;b&gt;nillable="true"&lt;/b&gt; is defined in the schema
+&lt;br/&gt;
+&lt;b&gt;Note: Not all entries are examined. The number of entries to be checked can be changed in Menu-&gt;Settings.&lt;/b&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;b&gt;Test Flow: &lt;/b&gt;
+&lt;br&gt;&lt;br&gt;
+The test proceeds as follows:
+&lt;ul&gt;
+&lt;li&gt;Append the “/$schema” to the original URL &lt;/li&gt;
+&lt;li&gt;Perform an http GET operation on the resulting URL &lt;/li&gt;
+&lt;li&gt;Check response for a 200 status code &lt;/li&gt;
+&lt;li&gt;On successful retrieval, the result of the GET operation is read into a .Net XmlSchema object. &lt;/li&gt;
+&lt;li&gt;Get all feed entries&lt;/li&gt;
+&lt;li&gt;Iterate through all feed ResourceKind properties&lt;/li&gt;
+&lt;li&gt;For every ResourceKind property which has &lt;b&gt;xsi:nil="true"&lt;/b&gt; check that &lt;b&gt;nillable="true"&lt;/b&gt; is defined in the schema&lt;/li&gt; 
+&lt;/ul&gt;</Description>
+                      <TestParent>SchemaValidityGroup</TestParent>
+                      <Order>2118</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Schema.SyntacticValidation.FeedComparisonComplianceMUST</FullName>
+                      <Label>Feed Comparison Compliance MUST</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>The SData compliance summary (&lt;a href="http://interop.sage.com/daisy/sdata/662-DSY.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/662-DSY.html&lt;/a&gt;) 
+states that compliance levels also apply to resource kinds and properties.
+&lt;br/&gt;
+&lt;b&gt;Note: Not all entries are examined. The number of entries to be checked can be changed in Menu-&gt;Settings.&lt;/b&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;b&gt;Test Flow: &lt;/b&gt;
+&lt;br&gt;&lt;br&gt;
+The test proceeds as follows:
+&lt;ul&gt;
+&lt;li&gt;Append the “/$schema” to the original URL &lt;/li&gt;
+&lt;li&gt;Perform an http GET operation on the resulting URL &lt;/li&gt;
+&lt;li&gt;Check response for a 200 status code &lt;/li&gt;
+&lt;li&gt;On successful retrieval, the result of the GET operation is read into a .Net XmlSchema object. &lt;/li&gt;
+&lt;li&gt;Get all feed entries for the given resourceKind&lt;/li&gt;
+&lt;li&gt;check if a resource kind has the &lt;b&gt;sme:compliance&lt;/b&gt; attribute set to MUST that a feed can be returned for that resource kind&lt;/li&gt;
+&lt;li&gt;Check if a (resource kind) property has the &lt;b&gt;sme:compliance&lt;/b&gt; attribute set to MUST that a feed returned for that resource kind has the relevant property in the feed.&lt;/li&gt;
+&lt;/ul&gt;</Description>
+                      <TestParent>SchemaValidityGroup</TestParent>
+                      <Order>2119</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Schema.SyntacticValidation.FeedComparisonComplianceSHOULD</FullName>
+                      <Label>Feed Comparison Compliance SHOULD</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>The SData compliance summary (&lt;a href="http://interop.sage.com/daisy/sdata/662-DSY.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/662-DSY.html&lt;/a&gt;) 
+states that compliance levels also apply to resource kinds and properties.
+&lt;br/&gt;
+&lt;b&gt;Note: Not all entries are examined. The number of entries to be checked can be changed in Menu-&gt;Settings.&lt;/b&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;b&gt;Test Flow: &lt;/b&gt;
+&lt;br&gt;&lt;br&gt;
+The test proceeds as follows:
+&lt;ul&gt;
+&lt;li&gt;Append the “/$schema” to the original URL &lt;/li&gt;
+&lt;li&gt;Perform an http GET operation on the resulting URL &lt;/li&gt;
+&lt;li&gt;Check response for a 200 status code &lt;/li&gt;
+&lt;li&gt;On successful retrieval, the result of the GET operation is read into a .Net XmlSchema object. &lt;/li&gt;
+&lt;li&gt;Get all feed entries for the given resourceKind&lt;/li&gt;
+&lt;li&gt;If a resource kind has the &lt;b&gt;sme:compliance&lt;/b&gt; attribute set to SHOULD that a feed can be returned for that resource kind&lt;/li&gt;
+&lt;li&gt;If a (resource kind) property has the &lt;b&gt;sme:compliance&lt;/b&gt; attribute set to SHOULD that a feed returned for that resource kind has the relevant property in the feed.&lt;/li&gt;
+&lt;/ul&gt;</Description>
+                      <TestParent>SchemaValidityGroup</TestParent>
+                      <Order>2120</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <State>Checked</State>
+                    <Collapsed>true</Collapsed>
+                  </Nodes>
+                </TestInfo>
+                <State>Checked</State>
+                <Collapsed>true</Collapsed>
+              </Nodes>
+            </TestInfo>
+            <TestInfo xsi:type="TestCategoryInfo">
+              <State>Checked</State>
+              <Collapsed>true</Collapsed>
+              <Category>ResourceGeneral</Category>
+              <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+              <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Groups.HttpGetGroup</FullName>
+              <Label>HTTP GET functionality</Label>
+              <Removable>NotSet</Removable>
+              <Description>The tests grouped in this collection operate on a URL that points to an individual resource kind. They check the implementation conformance of http GET operations.&lt;br&gt; &lt;br&gt;
+A detailed description can be found under: &lt;br&gt; &lt;br&gt; 
+&lt;a href="http://interop.sage.com/daisy/sdata/ReadOperation.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/ReadOperation.html&lt;/a&gt;
+</Description>
+              <TestParent />
+              <Order>2</Order>
+              <GroupID>HttpGetGroup</GroupID>
+              <Nodes>
+                <TestInfo xsi:type="TestCaseInfo">
+                  <State>Checked</State>
+                  <Collapsed>false</Collapsed>
+                  <Category>ResourceGeneral</Category>
+                  <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                  <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Basic.Get.All</FullName>
+                  <Label>Retrieve resource feed</Label>
+                  <Removable>NotSet</Removable>
+                  <Description>The test checks the ability to retrieve a feed containing several resources of the same resource kind (also known as a resource collection).&lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under: &lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/ResourceCollectionURL.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/ResourceCollectionURL.html&lt;/a&gt;&lt;br&gt;&lt;br&gt;
+This test is pivotal for a reasonable performance for the validation. The results are internally cached by the validation tool and used in subsequent tests without any further involvement of the provider. &lt;br&gt;&lt;br&gt;
+NOTE: For performance reasons, the initial attempt will be to restrict the number of resources to be retrieved using the count specification. 
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows:&lt;br&gt;
+- Perform an http GET operation on the resource URL with a count = 5&lt;br&gt;
+- If an error is returned, it is assumed that the count specification is not supported on the resource kind. In this case a subsequent GET operation is issued. If the response is paged by the provider, then only the first page is read. &lt;br&gt;
+- Check results for a status code of 200&lt;br&gt;
+- On successful retrieval of a resource collection (feed) proceed to check the following&lt;br&gt;
+    o Read the returned feed in a .Net XmlDocument object&lt;br&gt;
+    o Check that the response content type is application/atom+xml or application/atom+xml;type=feed&lt;br&gt;
+    o Check the existence of a feed element&lt;br&gt;
+    o Check for the existence of a feed entry element&lt;br&gt;</Description>
+                  <TestParent>HttpGetGroup</TestParent>
+                  <Order>1</Order>
+                  <Feature>Required</Feature>
+                </TestInfo>
+                <TestInfo xsi:type="TestCaseInfo">
+                  <State>Checked</State>
+                  <Collapsed>false</Collapsed>
+                  <Category>ResourceGeneral</Category>
+                  <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                  <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Basic.Get.Individual.Correctness</FullName>
+                  <Label>GET using ATOM ID url</Label>
+                  <Removable>NotSet</Removable>
+                  <Description>This test checks the correctness of SData resource properties. In particular, it tests whether the URLs provided in the ATOM ID allow retrieval of individual SData resources&lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under: &lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataFeed/FeedElements.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataFeed/FeedElements.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows:&lt;br&gt;
+- Obtain a collection of resources using the count = 10 specification&lt;br&gt;
+- Check results for a status code of 200&lt;br&gt;
+- On successful retrieval of a resource collection (feed) check whether the ID element points towards an SData resource kind URL &lt;br&gt;
+- For each individual entry check whether the ID element points to a single resource URL by retrieving the resource and comparing it against the original feed entry&lt;br&gt;</Description>
+                  <TestParent>HttpGetGroup</TestParent>
+                  <Order>2</Order>
+                  <Feature>Required</Feature>
+                </TestInfo>
+                <TestInfo xsi:type="TestCategoryInfo">
+                  <State>Checked</State>
+                  <Collapsed>true</Collapsed>
+                  <Category>ResourceGeneral</Category>
+                  <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                  <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Groups.AtomComplianceGroup</FullName>
+                  <Label>ATOM compliance</Label>
+                  <Removable>NotSet</Removable>
+                  <Description>The tests grouped in this collection operate on a URL that points to an individual resource kind. They check compliance with SData’s underlying ATOM publishing protocol. &lt;br&gt; &lt;br&gt;
+A detailed description can be found under: &lt;br&gt; &lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataFeed.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataFeed.html&lt;/a&gt;
+</Description>
+                  <TestParent>HttpGetGroup</TestParent>
+                  <Order>3</Order>
+                  <GroupID>AtomComplianceGroup</GroupID>
+                  <Nodes>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Basic.Get.Syntax.Feed</FullName>
+                      <Label>ATOM Feed compliance</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>The test checks for the compliance of an SData resource collection to the ATOM standard.&lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under: &lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/Introduction/186-DSY.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/Introduction/186-DSY.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows:&lt;br&gt;
+- Obtain a collection of resources using the count = 5 specification&lt;br&gt;
+- Check results for a status code of 200&lt;br&gt;
+- On successful retrieval of a resource collection (feed) validate the feed envelope for compliance to the ATOM specification for a feed&lt;br&gt;</Description>
+                      <TestParent>AtomComplianceGroup</TestParent>
+                      <Order>1</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Basic.Get.Syntax.Entry</FullName>
+                      <Label>ATOM Entry compliance</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>The test checks for the compliance of an individual SData resource collection to the ATOM standard.&lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under: &lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/Introduction/186-DSY.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/Introduction/186-DSY.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows:&lt;br&gt;
+- Obtain a collection of resources using the count = 5 specification&lt;br&gt;
+- Check results for a status code of 200&lt;br&gt;
+- On successful retrieval of a resource collection (feed) with at least one resource investigate a single entry and validate against the ATOM specification for an entry&lt;br&gt;</Description>
+                      <TestParent>AtomComplianceGroup</TestParent>
+                      <Order>2</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Basic.Get.Syntax.IdElement</FullName>
+                      <Label>ID element specification</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>This test checks the correct usage of the ATOM ID feed element is correctly specified.&lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under: &lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataFeed/FeedElements.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataFeed/FeedElements.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows:&lt;br&gt;
+- Obtain a collection of resources using the count = 10 specification&lt;br&gt;
+- Check results for a status code of 200&lt;br&gt;
+- On successful retrieval of a resource collection (feed) check whether the ID element points towards an SData resource kind URL &lt;br&gt;
+- For each individual entry check whether the ID element points to a single resource URL&lt;br&gt;</Description>
+                      <TestParent>AtomComplianceGroup</TestParent>
+                      <Order>3</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <State>Checked</State>
+                    <Collapsed>true</Collapsed>
+                  </Nodes>
+                </TestInfo>
+                <TestInfo xsi:type="TestCaseInfo">
+                  <State>Checked</State>
+                  <Collapsed>false</Collapsed>
+                  <Category>ResourceGeneral</Category>
+                  <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                  <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Basic.Get.SchemaValidation</FullName>
+                  <Label>Schema compliance</Label>
+                  <Removable>NotSet</Removable>
+                  <Description>The test validates retrieved resources against the schema provided at the resource kind.
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Preconditions:&lt;/b&gt;&lt;br&gt;Get operation is supported
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows:&lt;br&gt;
+- Obtain at least one resource through an http GET operation on the resource URL. In order to avoid reading the whole dataset, the GET operation initially uses the count specification; should count not be supported a paged approach is taken.&lt;br&gt;
+- Obtain the schema for the resource kind (either from the application schema or the resource kind schema)&lt;br&gt;
+- Validate the retrieved resource against the schema specification&lt;br&gt;</Description>
+                  <TestParent>HttpGetGroup</TestParent>
+                  <Order>3</Order>
+                  <Feature>Recommended</Feature>
+                </TestInfo>
+                <TestInfo xsi:type="TestCaseInfo">
+                  <State>Checked</State>
+                  <Collapsed>false</Collapsed>
+                  <Category>ResourceGeneral</Category>
+                  <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                  <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Basic.Get.Count</FullName>
+                  <Label>Count</Label>
+                  <Removable>NotSet</Removable>
+                  <Description>The test checks the ability to retrieve a feed containing several resources of the same resource kind (also known as a resource collection) by limiting the number of returned entries using the count specification.&lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under: &lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/QueryParameters.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/QueryParameters.html&lt;/a&gt;&lt;br&gt;&lt;br&gt;
+NOTE: the ability to restrict the size of the collection has a direct influence on the run-time performance of the validation tests. In the absence of the count, the validation tool is forced to request a significantly higher number of records from the provider.
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows:&lt;br&gt;
+- Obtain a collection of resources using the count = 5 specification&lt;br&gt;
+- Check results for a status code of 200&lt;br&gt;
+- On successful retrieval of a resource collection (feed) proceed to check the following&lt;br&gt;
+     o Read the returned feed in a .Net XmlDocument object&lt;br&gt;
+     o Check that the response content type is application/atom+xml or application/atom+xml;type=feed&lt;br&gt;
+     o Check the existence of a feed element&lt;br&gt;
+     o Check for the existence of a feed entry element&lt;br&gt;
+- Assuming the above retrieval provided a number of X resources, perform the retrievals using the following count values:&lt;br&gt;
+     o X-1 -&gt; should return X-1 resources&lt;br&gt;
+     o 0 -&gt; should return a correct feed containing no entries&lt;br&gt;
+     o -1 -&gt; should have the same effect as count=0&lt;br&gt;
+     o 1 -&gt; should return a correct feed containing exactly one entry&lt;br&gt;
+- If X lower than 5 (original query) retrieve using a count X+1 -&gt; should return a feed with exactly X entries&lt;br&gt;</Description>
+                  <TestParent>HttpGetGroup</TestParent>
+                  <Order>4</Order>
+                  <Feature>Required</Feature>
+                </TestInfo>
+                <TestInfo xsi:type="TestCategoryInfo">
+                  <State>Checked</State>
+                  <Collapsed>true</Collapsed>
+                  <Category>ResourceGeneral</Category>
+                  <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                  <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Groups.PagingGroup</FullName>
+                  <Label>Paging</Label>
+                  <Removable>NotSet</Removable>
+                  <Description>The tests grouped in this collection operate on a URL that points to an individual resource kind. They check the implementation conformance of http GET operations that perform paging.&lt;br&gt;&lt;br&gt;
+      The corresponding specification can be found under:&lt;br&gt;&lt;a href="http://interop.sage.com/daisy/sdata/Queries/Paging.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/Queries/Paging.html&lt;/a&gt;</Description>
+                  <TestParent>HttpGetGroup</TestParent>
+                  <Order>5</Order>
+                  <GroupID>PagingGroup</GroupID>
+                  <Nodes>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.FeedNavigation.Paging.BasicCanPageIndex</FullName>
+                      <Label>Can Page Index</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>canPageIndex indicates if the resource kind supports indexed paging. When this attribute is true, feeds must contain opensearch elements. Also, startIndex parameter must and count parameter should be supported in query URLs&lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under:&lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/Queries/Paging.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/Queries/Paging.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;b&gt;Preconditions:&lt;/b&gt; &lt;br&gt; 
+Schema exists and is valid&lt;br&gt;
+sme:canGet supported &lt;br&gt;
+sme:canPageIndex supported&lt;br&gt;
+At least 3 entries reacheable&lt;br&gt;&lt;br&gt;
+&lt;b&gt;Test Flow: &lt;/b&gt;
+&lt;br&gt;
+- Obtain a feed (source feed) for the resource type using a count=10 specification.&lt;br&gt;
+      Check existence of the opensearch elements.&lt;br&gt;
+      Validate opensearch element values.&lt;br&gt;
+- Obtain a feed for resource type using query parameter startIndex=2.&lt;br&gt;
+      Compare received entry[0] with entry[1] of source feed.&lt;br&gt;
+      Check existence of the opensearch elements.&lt;br&gt;
+      Validate opensearch element values.&lt;br&gt;
+- Obtain a last page for resource type using query parameter startIndex=opensearch:totalResults of source feed.&lt;br&gt;
+      Check existence of the opensearch elements.&lt;br&gt;
+      Validate opensearch element values.&lt;br&gt;
+    </Description>
+                      <TestParent>PagingGroup</TestParent>
+                      <Order>1</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.FeedNavigation.Paging.BasicCanPageNext</FullName>
+                      <Label>Can Page Next</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>canPageNext indicates if the resource kind supports sequential paging in forwards direction.
+When this attribute is true, feeds must contain first link and next link. The last page in the sequence must not contain a next link.
+&lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under:&lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/Queries/Paging.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/Queries/Paging.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;b&gt;Preconditions: &lt;/b&gt;&lt;br&gt;
+Schema exists and is valid &lt;br&gt;
+sme:canGet supported &lt;br&gt;
+sme:canPageNext supported &lt;br&gt;
+At least 2 pages for this resource kind&lt;br&gt;&lt;br&gt;
+&lt;b&gt;Test Flow: &lt;/b&gt;&lt;br&gt;
+- Obtain a feed (source feed) for the resource type using a count=10 specification.&lt;br&gt;
+Validate the feed.&lt;br&gt;
+- Obtain the first page using the &amp;lt;link ref="first"&amp;gt; of the source feed.&lt;br&gt;
+Compare source feed with first page.&lt;br&gt;
+- Iterate through the pages by following &amp;lt;link ref="next"&amp;gt; starting from first page.&lt;br&gt;
+Validate the feed and check if the last page was reached.&lt;br&gt;    </Description>
+                      <TestParent>PagingGroup</TestParent>
+                      <Order>2</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.FeedNavigation.Paging.BasicCanPagePrevious</FullName>
+                      <Label>Can Page Previous</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>canPagePrevious indicates if the resource kind supports sequential paging in backwards direction.
+When this attribute is true, feeds must contain last link and previous link. The first page in the sequence must not contain a previous link.
+&lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under:&lt;br&gt;&lt;a href="http://interop.sage.com/daisy/sdata/Queries/Paging.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/Queries/Paging.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;b&gt;Preconditions: &lt;/b&gt;&lt;br&gt;
+Schema exists and is valid &lt;br&gt;
+sme:canGet supported &lt;br&gt;
+sme:canPagePrevious supported &lt;br&gt;
+At least 2 pages for this resource kind&lt;br&gt;&lt;br&gt;
+&lt;b&gt;Test Flow: &lt;/b&gt;&lt;br&gt;
+- Obtain a feed (source feed) for the resource type using a count=10 specification.&lt;br&gt;
+Validate the feed as a first page.&lt;br&gt;
+- Obtain the last page using &amp;lt;link ref="last"&amp;gt; of the source feed.&lt;br&gt;
+Validate the last page.&lt;br&gt;
+- Iterate through the pages in backwards direction by following &amp;lt;link ref="previous"&amp;gt; starting from the last page.&lt;br&gt;
+Validate the feed and check if the first page was reached.&lt;br&gt;    
+Check for equality between entries of the first page (source feed) and the last page of iteration.&lt;br&gt;
+</Description>
+                      <TestParent>PagingGroup</TestParent>
+                      <Order>3</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.FeedNavigation.Paging.BasicCanPageNextAndPrevious</FullName>
+                      <Label>Can Page Next and Previous</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>canPageNext indicates if the resource kind supports sequential paging in forwards direction.
+When this attribute is true, feeds must contain first link and next link. The last page in the sequence must not contain a next link.&lt;br&gt;
+canPagePrevious indicates if the resource kind supports sequential paging in backwards direction.
+When this attribute is true, feeds must contain last link and previous link. The first page in the sequence must not contain a previous link.
+&lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under:&lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/Queries/Paging.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/Queries/Paging.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;b&gt;Preconditions: &lt;/b&gt;&lt;br&gt;
+Schema exists and is valid &lt;br&gt;
+sme:canGet supported &lt;br&gt;
+sme:canPagePrevious supported &lt;br&gt;
+sme:canPageNext supported &lt;br&gt;&lt;br&gt;
+&lt;b&gt;Test Flow: &lt;/b&gt;&lt;br&gt;
+- Obtain a feed (source feed) for the resource type using a Count=10 specification.&lt;br&gt;
+Validate the feed as a first page.&lt;/b&gt;&lt;br&gt;
+- Obtain the last page using &amp;lt;link ref="last"&amp;gt; of the source feed.&lt;br&gt;
+Validate the last page.&lt;br&gt;
+- Obtain the first page using &amp;lt;link ref="first"&amp;gt; of the last page.&lt;br&gt;
+Validate the first page.&lt;br&gt;
+Check for equality between entries of source feed and the first page.&lt;br&gt;
+- Obtain the second page using &amp;lt;link ref="next"&amp;gt; of the first page.&lt;br&gt;
+Validate the page.&lt;br&gt;
+- Obtain the first page using &amp;lt;link ref="previous"&amp;gt; of the second page.&lt;br&gt;
+Validate the first page.&lt;br&gt;
+Check for equality between entries of source feed and the first page.&lt;br&gt;
+</Description>
+                      <TestParent>PagingGroup</TestParent>
+                      <Order>4</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <State>Checked</State>
+                    <Collapsed>true</Collapsed>
+                  </Nodes>
+                </TestInfo>
+                <TestInfo xsi:type="TestCategoryInfo">
+                  <State>Checked</State>
+                  <Collapsed>true</Collapsed>
+                  <Category>ResourceGeneral</Category>
+                  <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                  <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Groups.QueryGroup</FullName>
+                  <Label>Query</Label>
+                  <Removable>NotSet</Removable>
+                  <Description>The tests grouped in this collection operate on a URL that points to an individual resource kind. They check compliance with the query language specification of the SData standard.&lt;br&gt; &lt;br&gt; 
+A detailed description can be found under: &lt;br&gt; &lt;br&gt; 
+&lt;a href="http://interop.sage.com/daisy/sdata/Queries.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/Queries.html&lt;/a&gt;
+</Description>
+                  <TestParent>HttpGetGroup</TestParent>
+                  <Order>6</Order>
+                  <GroupID>QueryGroup</GroupID>
+                  <Nodes>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.InDept.Get.Query.Logical.And</FullName>
+                      <Label>Logical And</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>The test checks the correct implementation of the logical AND operator defined for the SData query language. &lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under: &lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/QueryLanguage.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/QueryLanguage.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Preconditions:&lt;/b&gt;&lt;br&gt;Schema exists and is valid
+A property with attribute CanFilter = true must be present
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows: &lt;br&gt;
+- Retrieve the first 10 resources&lt;br&gt;
+- Check that the result is a valid feed&lt;br&gt;
+- Search the schema for the resource kind and identify a filterable property, ideally one that is also a unique key&lt;br&gt;
+- Search the feed for the first entry having a non-null value for the property selected above&lt;br&gt;
+- The following query is generated: where=[property] eq [value] and [property] eq [value] and a GET request is performed&lt;br&gt;
+- If the property was unique, then the result of the GET operation must return exactly one entry, namely the one that matching the resource originally selected&lt;br&gt;
+- Otherwise, the original resource must be contained in the result of the query&lt;br&gt;</Description>
+                      <TestParent>QueryGroup</TestParent>
+                      <Order>1</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.InDept.Get.Query.Logical.Or</FullName>
+                      <Label>Logical Or</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>The test checks the correct implementation of the logical OR operator defined for the SData query language. &lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under: &lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/QueryLanguage.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/QueryLanguage.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Preconditions:&lt;/b&gt;&lt;br&gt;Schema exists and is valid &lt;br&gt;
+A property with attribute CanFilter = true must be present
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows: &lt;br&gt;
+- Retrieve the first 10 resources&lt;br&gt;
+- Check that the result is a valid feed&lt;br&gt;
+- Search the schema for the resource kind and identify a filterable property, ideally one that is also a unique key&lt;br&gt;
+- Search the feed for the first entry having a non-null value for the property selected above&lt;br&gt;
+- The following query is generated: where=[property] eq [value] or [property] eq [value] and a GET request is performed&lt;br&gt;
+- If the property was unique, then the result of the GET operation must return exactly one entry, namely the one that matching the resource originally selected&lt;br&gt;
+- Otherwise, the original resource must be contained in the result of the query&lt;br&gt;</Description>
+                      <TestParent>QueryGroup</TestParent>
+                      <Order>2</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.InDept.Get.Query.Comparison.BasicStringComparison</FullName>
+                      <Label>Basic string comparisons</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>The test checks the basic comparison operators for string type properties&lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under: &lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/QueryLanguage.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/QueryLanguage.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Preconditions:&lt;/b&gt;&lt;br&gt;Successfully compiled schema for the resource
+A string property that allows filtering must be present&lt;br&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows: &lt;br&gt;
+- Select a reference property of string type that is filterable based on the schema definition. The property is ideally sortable and unique&lt;br&gt;
+- Retrieve a resource where the content of the reference property is not null&lt;br&gt;
+- Dependent on the attributes proceed as described below:&lt;br&gt;
+    o Property has unique attribute -&gt; generate the following queries&lt;br&gt;
+       o where=[property] eq [value]&lt;br&gt;
+       o where= where=[property] ge [value] and [property] le [value]&lt;br&gt;
+       o where=[property] between [value] and  [value]&lt;br&gt;
+- Check whether the reference resource is the only resource in the response feed&lt;br&gt;
+    o Property has sortable attribute -&gt; generate the following queries&lt;br&gt;
+       o where=[property] eq [value]&lt;br&gt;
+       o where= [property] ge [value] &lt;br&gt;
+       o where= [property] ge [value] and [property] le [value]&lt;br&gt;
+       o where=[property] gt [value without last character)]&lt;br&gt;
+       o where=[property] gt [value without last character)] and [property] lt [value+”a”]&lt;br&gt;
+       o where=[property] between [value] and  [value]&lt;br&gt;
+- Check whether the reference resource is found in the response feed&lt;br&gt;
+    o Otherwise (best try) -&gt; generate the following queries&lt;br&gt;
+       o where=[property] eq [value]&lt;br&gt;
+       o where= where=[property] ge [value] and [property] le [value]&lt;br&gt;
+       o where=[property] gt [value without last character)] and [property] lt [value+”a”]&lt;br&gt;
+       o where=[property] between [value] and  [value]&lt;br&gt;&lt;br&gt;
+Check whether the reference resource is found in the response feed&lt;br&gt;</Description>
+                      <TestParent>QueryGroup</TestParent>
+                      <Order>3</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.InDept.Get.Query.Comparison.BasicIntegerComparison</FullName>
+                      <Label>Basic integer comparisons</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>The test checks the basic comparison operators for integer type properties&lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under: &lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/QueryLanguage.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/QueryLanguage.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Preconditions:&lt;/b&gt;&lt;br&gt;Successfully compiled schema for the resource&lt;br&gt;
+An integer property that allows filtering must be present&lt;br&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows: &lt;br&gt;
+- Select a reference property of integer type that is filterable based on the schema definition. The property is ideally sortable and unique&lt;br&gt;
+- Retrieve a resource where the content of the reference property is not null&lt;br&gt;
+- Dependent on the attributes proceed as described below:&lt;br&gt;
+    o Property has unique attribute -&gt; generate the following queries&lt;br&gt;
+         o where=[property] eq [value]&lt;br&gt;
+         o where= where=[property] ge [value] and [property] le [value]&lt;br&gt;
+         o where=[property] between [value] and  [value]&lt;br&gt;
+- Check whether the reference resource is the only resource in the response feed&lt;br&gt;
+    o Property has sortable attribute -&gt; generate the following queries&lt;br&gt;
+         o where=[property] eq [value]&lt;br&gt;
+         o where= [property] ge [value] &lt;br&gt;
+         o where= [property] ge [value] and [property] le [value]&lt;br&gt;
+         o where=[property] gt [value -1)]&lt;br&gt;
+         o where=[property] gt [value -1)] and [property] lt [value+1]&lt;br&gt;
+         o where=[property] between [value] and  [value]&lt;br&gt;
+- Check whether the reference resource is found in the response feed&lt;br&gt;
+    o Otherwise (best try) -&gt; generate the following queries&lt;br&gt;
+         o where=[property] eq [value]&lt;br&gt;
+         o where= where=[property] ge [value] and [property] le [value]&lt;br&gt;
+         o where=[property] gt [value -1)] and [property] lt [value+1]&lt;br&gt;
+         o where=[property] between [value] and  [value]&lt;br&gt;
+- Check whether the reference resource is found in the response feed&lt;br&gt;</Description>
+                      <TestParent>QueryGroup</TestParent>
+                      <Order>4</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.InDept.Get.Query.Comparison.BasicDecimalComparison</FullName>
+                      <Label>Basic decimal comparisons</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>The test checks the basic comparison operators for decimal type properties&lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under: &lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/QueryLanguage.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/QueryLanguage.html&lt;/a&gt;&lt;br&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Preconditions:&lt;/b&gt;&lt;br&gt;Successfully compiled schema for the resource&lt;br&gt;
+An decimal property that allows filtering must be present&lt;br&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows: &lt;br&gt;
+- Select a reference property of decimal type that is filterable based on the schema definition. The property is ideally sortable and unique&lt;br&gt;
+- Retrieve a resource where the content of the reference property is not null&lt;br&gt;
+- Dependent on the attributes proceed as described below:&lt;br&gt;
+    o Property has unique attribute -&gt; generate the following queries&lt;br&gt;
+       o where=[property] eq [value]&lt;br&gt;
+       o where= where=[property] ge [value] and [property] le [value]&lt;br&gt;
+       o where=[property] between [value] and  [value]&lt;br&gt;
+- Check whether the reference resource is the only resource in the response feed&lt;br&gt;
+    o Property has sortable attribute -&gt; generate the following queries&lt;br&gt;
+       o where=[property] eq [value]&lt;br&gt;
+       o where= [property] ge [value] &lt;br&gt;
+       o where= [property] ge [value] and [property] le [value]&lt;br&gt;
+       o where=[property] gt [value -1)]&lt;br&gt;
+       o where=[property] gt [value -1)] and [property] lt [value+1]&lt;br&gt;
+       o where=[property] between [value] and  [value]&lt;br&gt;
+- Check whether the reference resource is found in the response feed&lt;br&gt;
+       o Otherwise (best try) -&gt; generate the following queries&lt;br&gt;
+       o where=[property] eq [value]&lt;br&gt;
+       o where= where=[property] ge [value] and [property] le [value]&lt;br&gt;
+       o where=[property] gt [value -1)] and [property] lt [value+1]&lt;br&gt;
+       o where=[property] between [value] and  [value]&lt;br&gt;
+- Check whether the reference resource is found in the response feed&lt;br&gt;</Description>
+                      <TestParent>QueryGroup</TestParent>
+                      <Order>5</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.InDept.Get.Query.Comparison.BasicBooleanComparison</FullName>
+                      <Label>Basic boolean comparisons</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>The test checks the basic comparison operators for boolean type properties&lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under: &lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/QueryLanguage.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/QueryLanguage.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Preconditions:&lt;/b&gt;&lt;br&gt;Successfully compiled schema for the resource&lt;br&gt;
+A boolean property that allows filtering must be present
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows:&lt;br&gt; 
+- Select a reference property of Boolean type that is filterable based on the schema definition. The property is ideally sortable and unique&lt;br&gt;
+- Retrieve a resource where the content of the reference property is not null&lt;br&gt;
+- Generate a query where=[property] eq [value]&lt;br&gt;
+- Check whether the reference resource is found in the response feed&lt;br&gt;
+</Description>
+                      <TestParent>QueryGroup</TestParent>
+                      <Order>6</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.InDept.Get.Query.Comparison.BasicDateComparison</FullName>
+                      <Label>Basic date comparisons</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>The test checks the basic comparison operators for date type properties&lt;br&gt;&lt;br&gt;
+
+The corresponding specification can be found under: &lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/QueryLanguage.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/QueryLanguage.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Preconditions:&lt;/b&gt;&lt;br&gt;Successfully compiled schema for the resource&lt;br&gt;
+An decimal property that allows filtering must be present&lt;br&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows: &lt;br&gt;
+- Select a reference property of date type that is filterable based on the schema definition. The property is ideally sortable and unique&lt;br&gt;
+- Retrieve a resource where the content of the reference property is not null&lt;br&gt;
+- Dependent on the attributes proceed as described below:&lt;br&gt;
+     o Property has unique attribute -&gt; generate the following queries&lt;br&gt;
+         o where=[property] eq [value]&lt;br&gt;
+         o where= where=[property] ge [value] and [property] le [value]&lt;br&gt;
+         o where=[property] between [value] and  [value]&lt;br&gt;
+- Check whether the reference resource is the only resource in the response feed&lt;br&gt;
+     o Property has sortable attribute -&gt; generate the following queries&lt;br&gt;
+         o where=[property] eq [value]&lt;br&gt;
+         o where= [property] ge [value] &lt;br&gt;
+         o where= [property] ge [value] and [property] le [value]&lt;br&gt;
+         o where=[property] gt [value -1 day)]&lt;br&gt;
+         o where=[property] gt [value -1 day)] and [property] lt [value+1 day]&lt;br&gt;
+         o where=[property] between [value] and  [value]&lt;br&gt;
+- Check whether the reference resource is found in the response feed&lt;br&gt;
+     o Otherwise (best try) -&gt; generate the following queries&lt;br&gt;
+         o where=[property] eq [value]&lt;br&gt;
+         o where= where=[property] ge [value] and [property] le [value]&lt;br&gt;
+         o where=[property] gt [value -1 day)] and [property] lt [value+1 day]&lt;br&gt;
+         o where=[property] between [value] and  [value]&lt;br&gt;
+Check whether the reference resource is found in the response feed&lt;br&gt;</Description>
+                      <TestParent>QueryGroup</TestParent>
+                      <Order>6</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.InDept.Get.Query.Additive.BasicIntegerAdditive</FullName>
+                      <Label>Basic integer additive</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>The test checks the implementation of additive operations on integer properties in the context of the SData query language.&lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under: &lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/QueryLanguage.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/QueryLanguage.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Preconditions:&lt;/b&gt;&lt;br&gt;Successfully compiled schema for the resource&lt;br&gt;
+At least one filterable integer property is present&lt;br&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows: &lt;br&gt;
+- Select a reference property of type integer that is filterable. Ideally, this property is unique.&lt;br&gt;
+- Obtain a feed of 20 entries and select a reference with a non null value in the reference property&lt;br&gt;
+- Perform a query with parameters where=[property]+[value]-[value] eq [value]&lt;br&gt;
+- Check the response feed to ensure that all entries have the targeted value in the reference property&lt;br&gt;</Description>
+                      <TestParent>QueryGroup</TestParent>
+                      <Order>8</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.InDept.Get.Query.Additive.BasicDecimalAdditive</FullName>
+                      <Label>Basic decimal additive</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>The test checks the implementation of additive operations on decimal properties in the context of the SData query language.&lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under: &lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/QueryLanguage.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/QueryLanguage.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Preconditions:&lt;/b&gt;&lt;br&gt;Successfully compiled schema for the resource&lt;br&gt;
+At least one filterable decimal property is present
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows: &lt;br&gt;
+- Select a reference property of type decimal that is filterable. Ideally, this property is unique.&lt;br&gt;
+- Obtain a feed of 20 entries and select a reference with a non null value in the reference property&lt;br&gt;
+- Perform a query with parameters where=[property]+[value]-[value] eq [value]&lt;br&gt;
+- Check the response feed to ensure that all entries have the targeted value in the reference property&lt;br&gt;</Description>
+                      <TestParent>QueryGroup</TestParent>
+                      <Order>9</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.InDept.Get.Query.Additive.BasicDateAdditive</FullName>
+                      <Label>Basic date additive</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>The test checks the implementation of additive operations on date properties in the context of the SData query language.&lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under: &lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/QueryLanguage.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/QueryLanguage.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Preconditions:&lt;/b&gt;&lt;br&gt;Successfully compiled schema for the resource&lt;br&gt;
+At least one filterable date-type property is present
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows: &lt;br&gt;
+- Select a reference property of type date that is filterable. Ideally, this property is unique.&lt;br&gt;
+- Obtain a feed of 20 entries and select a reference with a non null value in the reference property&lt;br&gt;
+- Perform a query with parameters where=[property]+[value]-[value] eq [value]&lt;br&gt;
+- Check the response feed to ensure that all entries have the targeted value in the reference property&lt;br&gt;</Description>
+                      <TestParent>QueryGroup</TestParent>
+                      <Order>10</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.InDept.Get.Query.Multiplicative.BasicIntegerMultiplicative</FullName>
+                      <Label>Basic integer multiplicative</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>The test checks the implementation of multiplicative operations on integer properties in the context of the SData query language.&lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under: &lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/QueryLanguage.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/QueryLanguage.html&lt;/a&gt;&lt;br&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Preconditions:&lt;/b&gt;&lt;br&gt;Successfully compiled schema for the resource&lt;br&gt;
+At least one filterable integer property is present
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows: &lt;br&gt;
+- Select a reference property of type integer that is filterable. Ideally, this property is unique.&lt;br&gt;
+- Obtain a feed of 20 entries and select a reference with a non null and non-zero value in the reference property&lt;br&gt;
+- Perform a query with parameters where=[property] mul [value] div [value] eq [value]&lt;br&gt;
+- Check the response feed to ensure that all entries have the targeted value in the reference property&lt;br&gt;
+</Description>
+                      <TestParent>QueryGroup</TestParent>
+                      <Order>11</Order>
+                      <Feature>Optional</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.InDept.Get.Query.Multiplicative.BasicDecimalMultiplicative</FullName>
+                      <Label>Basic decimal multiplicative</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>The test checks the implementation of multiplicative operations on decimal properties in the context of the SData query language.&lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under: &lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/QueryLanguage.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/QueryLanguage.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Preconditions:&lt;/b&gt;&lt;br&gt;Successfully compiled schema for the resource&lt;br&gt;
+At least one filterable decimal property is present
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows: &lt;br&gt;
+- Select a reference property of type decimal that is filterable. Ideally, this property is unique.&lt;br&gt;
+- Obtain a feed of 20 entries and select a reference with a non null and non-zero value in the reference property&lt;br&gt;
+- Perform a query with parameters where=[property] mul [value] div [value] eq [value]&lt;br&gt;
+- Check the response feed to ensure that all entries have the targeted value in the reference property&lt;br&gt;</Description>
+                      <TestParent>QueryGroup</TestParent>
+                      <Order>13</Order>
+                      <Feature>Optional</Feature>
+                    </TestInfo>
+                    <State>Checked</State>
+                    <Collapsed>true</Collapsed>
+                  </Nodes>
+                </TestInfo>
+                <TestInfo xsi:type="TestCategoryInfo">
+                  <State>Checked</State>
+                  <Collapsed>true</Collapsed>
+                  <Category>ResourceGeneral</Category>
+                  <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                  <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Groups.PrecedenceGroup</FullName>
+                  <Label>Precedence</Label>
+                  <Removable>NotSet</Removable>
+                  <Description>The tests grouped in this collection operate on a URL that points to an individual resource kind. They check compliance with the precedence specification of the SData standard. &lt;br&gt; &lt;br&gt; 
+A detailed description can be found under: &lt;br&gt; &lt;br&gt; 
+&lt;a href="http://interop.sage.com/daisy/sdata/Queries/ControllingThePayload.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/Queries/ControllingThePayload.html&lt;/a&gt;
+</Description>
+                  <TestParent>HttpGetGroup</TestParent>
+                  <Order>7</Order>
+                  <GroupID>PrecedenceGroup</GroupID>
+                  <Nodes>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.InDept.Get.Query.Payload.BasicPrecedence</FullName>
+                      <Label>Basic precedence</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>The test checks the correct implementation of the precedence specification for the resource kind.&lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under: &lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/Queries/ControllingThePayload.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/Queries/ControllingThePayload.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Preconditions:&lt;/b&gt;&lt;br&gt;Successfully compiled schema for the resource&lt;br&gt;
+Precedence support for the resource kind present in schema
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows: &lt;br&gt;
+- Select a set of reference resources&lt;br&gt;
+- Determine the minimal and maximal precedence values for the resource&lt;br&gt;
+- Perform a query filtering the payload with a median between the minimal and maximal precedence values&lt;br&gt;
+- Check results for correctness&lt;br&gt;
+- Perform a query with precedence=0&lt;br&gt;
+- Check for the absence of payload&lt;br&gt;
+- Perform a query with precedence greater than maximal precedence in the reference resource&lt;br&gt;
+- Check that all properties are present&lt;br&gt;</Description>
+                      <TestParent>PrecedenceGroup</TestParent>
+                      <Order>1</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.InDept.Get.Query.Payload.ZeroPrecedence</FullName>
+                      <Label>Tests precedence=0</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>The test checks the correct implementation of the precedence=0 specification for the resource kind.&lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under: 
+&lt;a href="http://interop.sage.com/daisy/sdata/Queries/ControllingThePayload.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/Queries/ControllingThePayload.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Preconditions:&lt;/b&gt;&lt;br&gt;Successfully compiled schema for the resource
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows: &lt;br&gt;
+- Select a set of reference resources&lt;br&gt;
+- Perform a query with precedence=0&lt;br&gt;
+- Check for the absence of payload&lt;br&gt;
+
+</Description>
+                      <TestParent>PrecedenceGroup</TestParent>
+                      <Order>2</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <State>Checked</State>
+                    <Collapsed>true</Collapsed>
+                  </Nodes>
+                </TestInfo>
+                <TestInfo xsi:type="TestCategoryInfo">
+                  <State>Checked</State>
+                  <Collapsed>false</Collapsed>
+                  <Category>ResourceGeneral</Category>
+                  <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                  <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Groups.SortingGroup</FullName>
+                  <Label>Sorting</Label>
+                  <Removable>NotSet</Removable>
+                  <Description>The tests grouped in this collection operate on a URL that points to an individual resource kind. They check compliance with the precedence specification of the SData standard. &lt;br&gt; &lt;br&gt; 
+A detailed description can be found under: &lt;br&gt; &lt;br&gt; 
+&lt;a href="http://interop.sage.com/daisy/sdata/Queries/Sorting.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/Queries/Sorting.html&lt;/a&gt;
+</Description>
+                  <TestParent>HttpGetGroup</TestParent>
+                  <Order>8</Order>
+                  <GroupID>SortingGroup</GroupID>
+                  <Nodes>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.InDept.Get.Query.Sorting.BasicIntegerSorting</FullName>
+                      <Label>Basic integer sorting</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>The test checks for the correct implementation of the sorting specification for integer type properties.&lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under: &lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/Queries/Sorting.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/Queries/Sorting.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Preconditions:&lt;/b&gt;&lt;br&gt;Successfully compiled schema for the resource
+At least one sortable integer property is present
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows: &lt;br&gt;
+- Perform a query on the resource kind using an ascending sort instruction and restricting the result to 20 entries&lt;br&gt;
+- Check whether the returned element are correctly ordered &lt;br&gt;
+- Perform a query on the resource kind using an descending sort instruction and restricting the result to 20 entries&lt;br&gt;
+- Check whether the returned element are correctly ordered &lt;br&gt;</Description>
+                      <TestParent>SortingGroup</TestParent>
+                      <Order>1</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.InDept.Get.Query.Sorting.BasicDecimalSorting</FullName>
+                      <Label>Basic decimal sorting</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>The test checks for the correct implementation of the sorting specification for decimal type properties.&lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under: &lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/Queries/Sorting.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/Queries/Sorting.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Preconditions:&lt;/b&gt;&lt;br&gt;Successfully compiled schema for the resource&lt;br&gt;
+At least one sortable decimal property is present
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows: &lt;br&gt;
+- Perform a query on the resource kind using an ascending sort instruction and restricting the result to 20 entries&lt;br&gt;
+- Check whether the returned element are correctly ordered &lt;br&gt;
+- Perform a query on the resource kind using an descending sort instruction and restricting the result to 20 entries&lt;br&gt;
+- Check whether the returned element are correctly ordered &lt;br&gt;
+</Description>
+                      <TestParent>SortingGroup</TestParent>
+                      <Order>2</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.InDept.Get.Query.Sorting.BasicDateSorting</FullName>
+                      <Label>Basic date sorting</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>The test checks for the correct implementation of the sorting specification for date type properties.&lt;br&gt;&lt;br&gt;
+
+The corresponding specification can be found under: &lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/Queries/Sorting.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/Queries/Sorting.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Preconditions:&lt;/b&gt;&lt;br&gt;Successfully compiled schema for the resource&lt;br&gt;
+At least one sortable date property is present
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows: &lt;br&gt;
+- Perform a query on the resource kind using an ascending sort instruction and restricting the result to 20 entries&lt;br&gt;
+- Check whether the returned element are correctly ordered &lt;br&gt;
+- Perform a query on the resource kind using an descending sort instruction and restricting the result to 20 entries&lt;br&gt;
+- Check whether the returned element are correctly ordered &lt;br&gt;</Description>
+                      <TestParent>SortingGroup</TestParent>
+                      <Order>3</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <State>Checked</State>
+                    <Collapsed>true</Collapsed>
+                  </Nodes>
+                </TestInfo>
+                <State>Checked</State>
+                <Collapsed>true</Collapsed>
+              </Nodes>
+            </TestInfo>
+            <TestInfo xsi:type="TestCategoryInfo">
+              <State>Checked</State>
+              <Collapsed>true</Collapsed>
+              <Category>ResourceGeneral</Category>
+              <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+              <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Groups.HttpPostGroup</FullName>
+              <Label>HTTP POST functionality</Label>
+              <Removable>NotSet</Removable>
+              <Description>The tests grouped in this collection operate on a URL that points to an individual resource kind. They check the implementation conformance of http POST operations.&lt;br&gt; &lt;br&gt; 
+A detailed description can be found under: &lt;br&gt; &lt;br&gt; 
+&lt;a href="http://interop.sage.com/daisy/sdata/CreateOperation.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/CreateOperation.html&lt;/a&gt;
+</Description>
+              <TestParent />
+              <Order>3</Order>
+              <GroupID>HttpPostGroup</GroupID>
+              <Nodes>
+                <TestInfo xsi:type="TestCaseInfo">
+                  <State>Checked</State>
+                  <Collapsed>false</Collapsed>
+                  <Category>ResourceGeneral</Category>
+                  <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                  <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Basic.Post.Existence</FullName>
+                  <Label>POST verb existence</Label>
+                  <Removable>NotSet</Removable>
+                  <Description>This test detects whether the POST operation is implemented for a resource kind.&lt;br&gt;
+The corresponding specification can be found under:&lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/CreateOperation/Example.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/CreateOperation/Example.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows:&lt;br&gt;
+- Perform a POST operation on the URL of a resource kind with no payload&lt;br&gt;
+- Expected is a status code 500 error&lt;br&gt;</Description>
+                  <TestParent>HttpPostGroup</TestParent>
+                  <Order>1</Order>
+                  <Feature>Required</Feature>
+                </TestInfo>
+                <TestInfo xsi:type="TestCaseInfo">
+                  <State>Checked</State>
+                  <Collapsed>false</Collapsed>
+                  <Category>ResourceGeneral</Category>
+                  <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                  <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Basic.Template</FullName>
+                  <Label>Template existence</Label>
+                  <Removable>NotSet</Removable>
+                  <Description>The test checks for the availability of a template for a resource kind.&lt;br&gt;&lt;br&gt;
+For every resource kind, there is a special URL that returns a “template resource”, namely under the $template segment immediately succeeding the resource kind segment. The template is a payload corresponding to the resource schema having individual properties set to default values.&lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under: &lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/TemplateResourceURL.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/AnatomyOfAnSDataURL/TemplateResourceURL.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows:&lt;br&gt;
+- Append the “/$template” to the original URL &lt;br&gt;
+- Perform an http GET operation on the resulting URL&lt;br&gt;
+- Check response for a 200 status code&lt;br&gt;
+- Check the response content type to be one of: application/atom+xml oder application/atom+xml;type=feed&lt;br&gt;
+- Check for presence of a feed element&lt;br&gt;</Description>
+                  <TestParent>HttpPostGroup</TestParent>
+                  <Order>2</Order>
+                  <Feature>Required</Feature>
+                </TestInfo>
+                <TestInfo xsi:type="TestCaseInfo">
+                  <State>Checked</State>
+                  <Collapsed>false</Collapsed>
+                  <Category>ResourceGeneral</Category>
+                  <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                  <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Basic.Post.Template</FullName>
+                  <Label>POST using $template</Label>
+                  <Removable>NotSet</Removable>
+                  <Description>This test checks whether a POST operation can be successfully completed if a template is present.&lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under: &lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/CreateOperation/UseOfTemplateURL.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/CreateOperation/UseOfTemplateURL.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;
+The test proceeds as follows:&lt;br&gt;
+- Retrieve the template from the $template segment&lt;br&gt;
+- POST the template to the resource kind URL&lt;br&gt;
+- Check the result as follows:&lt;br&gt;
+    o Status code = 201&lt;br&gt;
+    o Load the result payload in a .Net XmlDocument object&lt;br&gt;
+    o Check that the response content type matches application/atom+xml;type=entry &lt;br&gt;
+    o Check the response location&lt;br&gt;
+    o Retrieve newly created resource&lt;br&gt;
+    o Compare with the return of the POST operation&lt;br&gt;&lt;br&gt;
+Teardown:&lt;br&gt;
+- A delete operation is sent for the newly created resource using the URL in the ID element&lt;br&gt;</Description>
+                  <TestParent>HttpPostGroup</TestParent>
+                  <Order>3</Order>
+                  <Feature>Required</Feature>
+                </TestInfo>
+                <TestInfo xsi:type="TestCaseInfo">
+                  <State>Checked</State>
+                  <Collapsed>false</Collapsed>
+                  <Category>ResourceGeneral</Category>
+                  <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                  <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Basic.Post.Success</FullName>
+                  <Label>POST using GET</Label>
+                  <Removable>NotSet</Removable>
+                  <Description>This test performs a POST operation based on the contents of an already present resource.
+&lt;br/&gt;&lt;br/&gt;
+&lt;b&gt;Preconditions:&lt;/b&gt; 
+&lt;br/&gt;
+Schema exists and is valid 
+&lt;br/&gt;&lt;br/&gt;
+&lt;b&gt;Test flow:&lt;/b&gt; 
+&lt;br/&gt;
+- Obtain an individual resource by GET using a count=10 specification&lt;br/&gt;
+- Clear the contents of the primary key elements&lt;br/&gt;
+- Perform a POST using the amended contents - expect a status of 201 Created&lt;br/&gt;</Description>
+                  <TestParent>HttpPostGroup</TestParent>
+                  <Order>4</Order>
+                  <Feature>Required</Feature>
+                </TestInfo>
+                <State>Checked</State>
+                <Collapsed>true</Collapsed>
+              </Nodes>
+            </TestInfo>
+            <TestInfo xsi:type="TestCategoryInfo">
+              <State>Checked</State>
+              <Collapsed>true</Collapsed>
+              <Category>ResourceGeneral</Category>
+              <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+              <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Groups.HttpPutGroup</FullName>
+              <Label>HTTP PUT functionality</Label>
+              <Removable>NotSet</Removable>
+              <Description>The tests grouped in this collection operate on a URL that points to an individual resource kind. They check the implementation conformance of http PUT operations.&lt;br&gt; &lt;br&gt; 
+A detailed description can be found under: &lt;br&gt; &lt;br&gt; 
+&lt;a href="http://interop.sage.com/daisy/sdata/UpdateOperation.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/UpdateOperation.html&lt;/a&gt;
+</Description>
+              <TestParent />
+              <Order>4</Order>
+              <GroupID>HttpPutGroup</GroupID>
+              <Nodes>
+                <TestInfo xsi:type="TestCaseInfo">
+                  <State>Checked</State>
+                  <Collapsed>false</Collapsed>
+                  <Category>ResourceGeneral</Category>
+                  <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                  <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Basic.Put.Existence</FullName>
+                  <Label>PUT verb existence</Label>
+                  <Removable>NotSet</Removable>
+                  <Description>This test detects whether the PUT operation is implemented for a resource kind.&lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under:&lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/UpdateOperation/Example.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/UpdateOperation/Example.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows:&lt;br&gt; 
+- Perform a PUT operation on the URL of a resource kind with no payload&lt;br&gt;
+- Expected is a status code 500 error &lt;br&gt;
+</Description>
+                  <TestParent>HttpPutGroup</TestParent>
+                  <Order>1</Order>
+                  <Feature>Required</Feature>
+                </TestInfo>
+                <TestInfo xsi:type="TestCaseInfo">
+                  <State>Checked</State>
+                  <Collapsed>false</Collapsed>
+                  <Category>ResourceGeneral</Category>
+                  <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                  <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Basic.Put.Success</FullName>
+                  <Label>PUT success</Label>
+                  <Removable>NotSet</Removable>
+                  <Description>This test checks whether the implementation of the PUT operation for a resource kind is correct.&lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under:&lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/UpdateOperation/Example.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/UpdateOperation/Example.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Preconditions:&lt;/b&gt;&lt;br&gt;A successful GET operation
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows: &lt;br&gt;
+- Retrieve a single resource&lt;br&gt;
+- PUT the resource without any modification to the resource kind URL&lt;br&gt;
+- Check the result as follows:&lt;br&gt;
+    o Status code = 200&lt;br&gt;
+    o Load the result payload in a .Net XmlDocument object&lt;br&gt;
+    o Check that the response content type matches application/atom+xml;type=entry &lt;br&gt;
+    o Compare the original resource with the return of the POST operation&lt;br&gt;</Description>
+                  <TestParent>HttpPutGroup</TestParent>
+                  <Order>2</Order>
+                  <Feature>Required</Feature>
+                </TestInfo>
+                <TestInfo xsi:type="TestCaseInfo">
+                  <State>Checked</State>
+                  <Collapsed>false</Collapsed>
+                  <Category>ResourceGeneral</Category>
+                  <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                  <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Basic.Put.PartialUpdate</FullName>
+                  <Label>Partial update</Label>
+                  <Removable>NotSet</Removable>
+                  <Description>The test checks the partial update capability of a resource.&lt;br&gt;
+The SData update protocol does not require that the consumer send the full payload when updating a resource. Instead, he may send a partial payload with modified properties only.&lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under:&lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/UpdateOperation/199-DSY.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/UpdateOperation/199-DSY.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows:&lt;br&gt;
+- Retrieve a single resource&lt;br&gt;
+- PUT the resource after removing non-key properties from the payload to the resource kind URL&lt;br&gt;
+- Check the result as follows:&lt;br&gt;
+    o Status code = 200&lt;br&gt;
+    o Load the result payload in a .Net XmlDocument object&lt;br&gt;
+    o Check that the response content type matches application/atom+xml;type=entry &lt;br&gt;
+    o Compare the original resource with the return of the POST operation&lt;br&gt;</Description>
+                  <TestParent>HttpPutGroup</TestParent>
+                  <Order>3</Order>
+                  <Feature>Required</Feature>
+                </TestInfo>
+                <State>Checked</State>
+                <Collapsed>true</Collapsed>
+              </Nodes>
+            </TestInfo>
+            <TestInfo xsi:type="TestCategoryInfo">
+              <State>Checked</State>
+              <Collapsed>false</Collapsed>
+              <Category>ResourceGeneral</Category>
+              <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+              <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Groups.HttpDeleteGroup</FullName>
+              <Label>HTTP DELETE functionality</Label>
+              <Removable>NotSet</Removable>
+              <Description>The tests grouped in this collection operate on a URL that points to an individual resource kind. They check the implementation conformance of http DELETE operations.&lt;br&gt; &lt;br&gt; 
+A detailed description can be found under: &lt;br&gt; &lt;br&gt; 
+&lt;a href="http://interop.sage.com/daisy/sdata/DeleteOperation.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/DeleteOperation.html&lt;/a&gt;
+</Description>
+              <TestParent />
+              <Order>5</Order>
+              <GroupID>HttpDeleteGroup</GroupID>
+              <Nodes>
+                <TestInfo xsi:type="TestCaseInfo">
+                  <State>Checked</State>
+                  <Collapsed>false</Collapsed>
+                  <Category>ResourceGeneral</Category>
+                  <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                  <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Basic.Delete.Success</FullName>
+                  <Label>DELETE verb existence</Label>
+                  <Removable>NotSet</Removable>
+                  <Description>The test checks the correct implementation of a DELETE operation for a resource kind.&lt;br&gt;&lt;br&gt;
+The corresponding specification can be found under:&lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/DeleteOperation/Example.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/DeleteOperation/Example.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows: &lt;br&gt;
+- Retrieve a single resource&lt;br&gt;
+- DELETE the retrieved resource&lt;br&gt;
+- Check the response for Status code = 200&lt;br&gt;
+- Attempt retrieval of the resource using the original resource &lt;br&gt;
+</Description>
+                  <TestParent>HttpDeleteGroup</TestParent>
+                  <Order>1</Order>
+                  <Feature>Required</Feature>
+                </TestInfo>
+                <State>Checked</State>
+                <Collapsed>true</Collapsed>
+              </Nodes>
+            </TestInfo>
+            <TestInfo xsi:type="TestCategoryInfo">
+              <State>Checked</State>
+              <Collapsed>false</Collapsed>
+              <Category>ResourceGeneral</Category>
+              <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+              <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Groups.SyncGroup</FullName>
+              <Label>Synchronization support</Label>
+              <Removable>NotSet</Removable>
+              <Description>The tests grouped in this collection operate on the synchronization services of an individual resource. They check the implementation of the services provided below $syncDigest, $syncSource and $syncTarget segments of a resource kind. 
+&lt;br/&gt;&lt;br/&gt;A detailed description can be found under: 
+&lt;br/&gt;&lt;a href="http://interop.sage.com/daisy/sdata/SDataProtocolDescription/171-DSY/g4/172-DSY.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/SDataProtocolDescription/171-DSY/g4/172-DSY.html&lt;/a&gt;</Description>
+              <TestParent />
+              <Order>6</Order>
+              <GroupID>SyncGroup</GroupID>
+              <Nodes>
+                <TestInfo xsi:type="TestCategoryInfo">
+                  <State>Checked</State>
+                  <Collapsed>false</Collapsed>
+                  <Category>ResourceGeneral</Category>
+                  <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                  <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Groups.LinkingGroup</FullName>
+                  <Label>Linking</Label>
+                  <Removable>NotSet</Removable>
+                  <Description>The tests grouped in this collection operate on the linking services of an individual resource. Tests manipulation and queriabilty on linking metadata.&lt;br&gt;&lt;br&gt;
+      A detailed description can be found under:&lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdata/SDataProtocolDescription/171-DSY/g1/277-DSY.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/SDataProtocolDescription/171-DSY/g1/277-DSY.html&lt;/a&gt;
+</Description>
+                  <TestParent>SyncGroup</TestParent>
+                  <Order>1</Order>
+                  <GroupID>LinkingGroup</GroupID>
+                  <Nodes>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Linking.ReadLinkingEntries</FullName>
+                      <Label>Read Linked Entries</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>The test checks the ability to retrieve linking entries.&lt;br&gt;&lt;br&gt;
+      The corresponding specification can be found under: &lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdataSync/Link/522-DSY.html" target="_blank"&gt;http://interop.sage.com/daisy/sdataSync/Link/522-DSY.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Preconditions:&lt;/b&gt;&lt;br&gt;Get /$linked operation is supported. At least one linked entry must be obtained by GET requests.
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows:&lt;br&gt;
+- Obtain a feed representing a collection of linked resources for the resource type using operation /$linked.&lt;br&gt;
+- Read the sdata:uuid attribute of the resource payload of the first entry. If the uuid element is not found, the test results as ERROR and stops running&lt;br/&gt;
+- The uuid value found MUST be a valid guid. Otherwise the test results as ERROR and stops running.&lt;br/&gt;
+- Obtain a feed representing a single linked resource using the uuid previously retrieved.&lt;br/&gt;
+- Exactly on entry must exist in feed.&lt;br/&gt;
+- Read the sdata:uuid attribute of the resource payload of the entry. If the uuid element is not found, the test results as ERROR and stops running&lt;br/&gt;
+- The uuid value found must be exactly the same than the uuid retrieved in first feed.&lt;br/&gt;
+    </Description>
+                      <TestParent>LinkingGroup</TestParent>
+                      <Order>1</Order>
+                      <Feature>Required</Feature>
+                    </TestInfo>
+                    <TestInfo xsi:type="TestCaseInfo">
+                      <State>Checked</State>
+                      <Collapsed>false</Collapsed>
+                      <Category>ResourceGeneral</Category>
+                      <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                      <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Linking.HttpDeleteLinking</FullName>
+                      <Label>Delete Link</Label>
+                      <Removable>NotSet</Removable>
+                      <Description>      The test checks the correct implementation of a DELETE operation for a correlation of a resource kind.&lt;br&gt;&lt;br&gt;
+      The corresponding specification can be found under: &lt;br&gt;
+&lt;a href="http://interop.sage.com/daisy/sdataSync/Link/522-DSY.html" target="_blank"&gt;http://interop.sage.com/daisy/sdataSync/Link/522-DSY.html&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Preconditions:&lt;/b&gt;&lt;br&gt;At least one linked element must be obtained by GET $linked requests. 
+&lt;br&gt;&lt;br&gt;&lt;b&gt;Test Flow:&lt;/b&gt;&lt;br&gt;The test proceeds as follows:&lt;br&gt;
+- Obtain feed that enumerates correlations (linked-elements).&lt;br&gt;
+- DELETE the link currently received.&lt;br&gt;
+- Try to retrieve the link currently removed. =&gt; This MUST fail.&lt;br&gt;
+- Try to retrieve the single resource using the sdata:url value of the resource payload. =&gt; The feed MUST contain exactly 1 entry and the resource payload MUST NOT contain a sdata:uuid attribute.&lt;br&gt;&lt;br&gt;
+    </Description>
+                      <TestParent>LinkingGroup</TestParent>
+                      <Order>2</Order>
+                      <Feature>Optional</Feature>
+                    </TestInfo>
+                    <State>Checked</State>
+                    <Collapsed>true</Collapsed>
+                  </Nodes>
+                </TestInfo>
+                <TestInfo xsi:type="TestCaseInfo">
+                  <State>Checked</State>
+                  <Collapsed>false</Collapsed>
+                  <Category>ResourceGeneral</Category>
+                  <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                  <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Sync.SyncComplete</FullName>
+                  <Label>Synchronization basic mechanism compliance</Label>
+                  <Removable>NotSet</Removable>
+                  <Description>&lt;b&gt;Overview:&lt;/b&gt; This test targets the existence and structure of the synchronization mechanisms exposed for a resource kind.
+&lt;br/&gt;The test starts by collecting the digest for the resource kind. The digest is then manipulated by setting the application’s tick to 0 and used to retrieve the corresponding resources from the resource kind’s $syncSource service. A single selected resource is then POSTed to the $syncTarget of the resourceKind.
+&lt;br/&gt;&lt;br/&gt;The corresponding specification can be found under: 
+&lt;br/&gt;&lt;a href="http://interop.sage.com/daisy/sdata/SDataProtocolDescription/171-DSY/g4/172-DSY.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/SDataProtocolDescription/171-DSY/g4/172-DSY.html&lt;/a&gt;
+&lt;br/&gt;&lt;br/&gt;Preconditions:
+&lt;ul&gt;
+	&lt;li&gt;$syncDigest is required&lt;/li&gt;
+        &lt;li&gt;There exists at least one record of the resource kind. Should this not be the case, the test will be stopped and a warning issued&lt;/li&gt;
+        &lt;li&gt;$syncSource should be present. In its absence the test will be stopped with an informational status&lt;/li&gt;
+        &lt;li&gt;$syncTarget should be present. In its absence the test will be stopped with an informational status&lt;/li&gt;
+&lt;/ul&gt;
+&lt;b&gt;Test Flow:&lt;/b&gt; 
+&lt;br/&gt;&lt;br/&gt;The test proceeds as follows: 
+&lt;ul&gt;
+	&lt;li&gt;Append the “/$syncDigest” to the original URL&lt;/li&gt;
+	&lt;li&gt;Perform an http GET operation on the resulting URL&lt;/li&gt; 
+	&lt;li&gt;Check response for a 200 status code and that at least one record of the resource kind exists&lt;/li&gt; 
+	&lt;li&gt;Generate “trackingID” and append the “/$syncSource?trackingId=” to the original URL&lt;/li&gt; 
+	&lt;li&gt;Perform an http POST operation using response from $syncDigest request as body payload&lt;/li&gt; 
+	&lt;li&gt;Check response for a 202 status code&lt;/li&gt; 
+	&lt;li&gt;On successful retrieval, get Location header&lt;/li&gt; 
+	&lt;li&gt;Perform an http GET operation on the URL extracted from Location header&lt;/li&gt; 
+	&lt;li&gt;Check response for a 200 status code&lt;/li&gt; 
+	&lt;li&gt;Generate “trackingID” and append the “/$syncTarget?trackingId=” to the original URL&lt;/li&gt; 
+	&lt;li&gt;Perform an http POST operation on the resulting URL using the source payload from previous http GET&lt;/li&gt; 
+	&lt;li&gt;Check response for a 202 status code&lt;/li&gt; 
+	&lt;li&gt;On successful retrieval, get Location header&lt;/li&gt; 
+	&lt;li&gt;Perform an http GET operation on the URL extracted from Location header&lt;/li&gt; 
+	&lt;li&gt;Check response for a 200 status code&lt;/li&gt; 
+	&lt;li&gt;Append the “/$syncResults” to the original URL&lt;/li&gt;
+	&lt;li&gt;Perform an http POST operation on the resulting URL using the source payload from previous http GET&lt;/li&gt;
+	&lt;li&gt;Check response for a 200 status code&lt;/li&gt;
+	&lt;li&gt;Perform an http DELETE operation on the URL extracted from Location header&lt;/li&gt; 
+	&lt;li&gt;Check response for a 200 status code&lt;/li&gt; 
+&lt;/ul&gt;</Description>
+                  <TestParent>SyncGroup</TestParent>
+                  <Order>1</Order>
+                  <Feature>Optional</Feature>
+                </TestInfo>
+                <TestInfo xsi:type="TestCaseInfo">
+                  <State>Checked</State>
+                  <Collapsed>false</Collapsed>
+                  <Category>ResourceGeneral</Category>
+                  <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                  <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Sync.SyntacticValidation.SyncDigest</FullName>
+                  <Label>syncDigest compliance</Label>
+                  <Removable>NotSet</Removable>
+                  <Description>&lt;b&gt;Overview:&lt;/b&gt; This test targets the functionality exposed by the $syncDigest segment for a resource kind. The test retrieves the digest provided by the application and checks its syntactic correctness.
+&lt;br/&gt;&lt;br/&gt;The corresponding specification can be found under: 
+&lt;br/&gt;&lt;a href="http://interop.sage.com/daisy/sdata/SDataProtocolDescription/171-DSY/g4/173-DSY.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/SDataProtocolDescription/171-DSY/g4/173-DSY.html&lt;/a&gt;
+&lt;br/&gt;&lt;br/&gt;Preconditions:
+&lt;ul&gt;
+	&lt;li&gt;$syncDigest is required&lt;/li&gt;
+&lt;/ul&gt;
+&lt;b&gt;Test Flow:&lt;/b&gt; 
+&lt;br/&gt;&lt;br/&gt;The test proceeds as follows: 
+&lt;ul&gt;
+	&lt;li&gt;Append the “/$syncDigest” to the original URL&lt;/li&gt;
+	&lt;li&gt;Perform an http GET operation on the resulting URL&lt;/li&gt;
+	&lt;li&gt;Check response for a 200 status code&lt;/li&gt;
+	&lt;li&gt;Atom schema conformance check&lt;/li&gt;
+	&lt;li&gt;Sdata2008 schema conformance check&lt;/li&gt; 
+	&lt;li&gt;Check if “/atom:entry” exists&lt;/li&gt;
+	&lt;li&gt;Check if “/atom:entry/sdata:payload” exists&lt;/li&gt;
+	&lt;li&gt;Check if “/atom:entry/sdata:payload/sync:digest” exists&lt;/li&gt; 
+	&lt;li&gt;Check if “/atom:entry/sdata:payload/sync:digest/sync:digestEntry” exists&lt;/li&gt; 
+&lt;/ul&gt;</Description>
+                  <TestParent>SyncGroup</TestParent>
+                  <Order>2</Order>
+                  <Feature>Optional</Feature>
+                </TestInfo>
+                <TestInfo xsi:type="TestCaseInfo">
+                  <State>Checked</State>
+                  <Collapsed>false</Collapsed>
+                  <Category>ResourceGeneral</Category>
+                  <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                  <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Sync.SyntacticValidation.SyncSource</FullName>
+                  <Label>syncSource compliance</Label>
+                  <Removable>NotSet</Removable>
+                  <Description>&lt;b&gt;Overview:&lt;/b&gt; This test targets the functionality exposed by the $syncSource segment for a resource kind. The digest is then manipulated by setting the application’s tick to 0 and used to retrieve the corresponding resources from the resource kind’s $syncSource service. The test checks the syntactic correctness of the returned result.
+&lt;br/&gt;&lt;br/&gt;The corresponding specification can be found under: 
+&lt;br/&gt;&lt;a href="http://interop.sage.com/daisy/sdata/SDataProtocolDescription/171-DSY/g4/172-DSY.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/SDataProtocolDescription/171-DSY/g4/172-DSY.html&lt;/a&gt;
+&lt;br/&gt;&lt;br/&gt;Preconditions:
+&lt;ul&gt;
+	&lt;li&gt;$syncDigest is required&lt;/li&gt;
+	&lt;li&gt;There exists at least one record of the resource kind. Should this not be the case, the test will be stopped and a warning issued&lt;/li&gt;
+&lt;/ul&gt;
+&lt;b&gt;Test Flow:&lt;/b&gt; 
+&lt;br/&gt;&lt;br/&gt;The test proceeds as follows: 
+&lt;ul&gt;
+	&lt;li&gt;Append the “/$syncDigest” to the original URL&lt;/li&gt;
+	&lt;li&gt;Perform an http GET operation on the resulting URL&lt;/li&gt;
+	&lt;li&gt;Check response for a 200 status code and that at least one record of the resource kind exists&lt;/li&gt;
+	&lt;li&gt;Atom schema conformance check&lt;/li&gt;
+	&lt;li&gt;Sdata2008 schema conformance check&lt;/li&gt; 
+	&lt;li&gt;Check if “/atom:entry” exists&lt;/li&gt;
+	&lt;li&gt;Check if “/atom:entry/sdata:payload” exists&lt;/li&gt;
+	&lt;li&gt;Check if “/atom:entry/sdata:payload/sync:digest” exists&lt;/li&gt; 
+	&lt;li&gt;Check if “/atom:entry/sdata:payload/sync:digest/sync:digestEntry” exists&lt;/li&gt; 
+	&lt;li&gt;Set Digest ticks equals 0&lt;/li&gt; 
+	&lt;li&gt;Generate “trackingID” and append the “/$syncSource?trackingId=” to the original URL&lt;/li&gt; 
+	&lt;li&gt;Perform an http POST operation using response from $syncDigest request as body payload&lt;/li&gt; 
+	&lt;li&gt;Check response for a 202 status code&lt;/li&gt; 
+	&lt;li&gt;Sdata2008 schema conformance check&lt;/li&gt; 
+	&lt;li&gt;Check if root node is defined in sdata2008 namespace&lt;/li&gt; 
+	&lt;li&gt;Get HTTP Location header from previous response&lt;/li&gt; 
+	&lt;li&gt;Perform an http GET operation on the URL extracted from Location header&lt;/li&gt; 
+	&lt;li&gt;Check response for a 200 status code&lt;/li&gt; 
+	&lt;li&gt;Atom schema conformance check&lt;/li&gt; 
+	&lt;li&gt;Sdata2008 schema conformance check&lt;/li&gt;  
+	&lt;li&gt;Sync schema conformance check&lt;/li&gt; 
+	&lt;li&gt;sdataHttp schema conformance check&lt;/li&gt;  
+	&lt;li&gt;Check if root node is defined in atom namespace&lt;/li&gt; 
+	&lt;li&gt;Check if “/atom:feed/atom:entry” exists, and if “true” check for “/atom:feed/atom:entry/sync:syncState”, “/atom:feed/atom:entry/sdatahttp:httpMethod”&lt;/li&gt; 
+&lt;/ul&gt;</Description>
+                  <TestParent>SyncGroup</TestParent>
+                  <Order>3</Order>
+                  <Feature>Required</Feature>
+                </TestInfo>
+                <TestInfo xsi:type="TestCaseInfo">
+                  <State>Checked</State>
+                  <Collapsed>false</Collapsed>
+                  <Category>ResourceGeneral</Category>
+                  <AssemblyPath>C:\sdata\Validation\Sage.Sis.Sdata.Validation\Staging\bin\Sage.Sis.Sdata.Validation.TestCases.dll</AssemblyPath>
+                  <FullName>Sage.Sis.Sdata.Validation.TestCases.ResourceKind.Sync.SyntacticValidation.SyncTarget</FullName>
+                  <Label>Synchronization functional compliance</Label>
+                  <Removable>NotSet</Removable>
+                  <Description>&lt;b&gt;Overview:&lt;/b&gt; This checks the functional compliance of the complete synchronization protocol for a resource kind.
+&lt;br/&gt;The test starts by collecting the digest for the resource kind. The digest is then manipulated by setting a tick value of 0 for the application’s vector. This new digest is used to retrieve in a paged manner, (all) resources from the resource kind’s $syncSource service. The first returned resource is then manipulated by setting its modification tick to the pair (validationToolId, validationToolTick+1) where validationToolTick is either 0 or the value returned in the application’s digest; the payload itself is not modified. The resulting record along with the corresponding digest are then POSTed to the resource kind’s $syncTarget service.
+&lt;br/&gt;&lt;br/&gt;The corresponding specification can be found under: 
+&lt;br/&gt;&lt;a href="http://interop.sage.com/daisy/sdata/SDataProtocolDescription/171-DSY/g4/172-DSY.html" target="_blank"&gt;http://interop.sage.com/daisy/sdata/SDataProtocolDescription/171-DSY/g4/172-DSY.html&lt;/a&gt;
+&lt;br/&gt;&lt;br/&gt;Preconditions:
+&lt;ul&gt;
+	&lt;li&gt;$syncDigest is required&lt;/li&gt;
+	&lt;li&gt;There exists at least one record of the resource kind. Should this not be the case, the test will be stopped and a warning issued&lt;/li&gt;
+	&lt;li&gt;$syncSource should be present. In its absence, the test will be stopped with an informational status&lt;/li&gt;
+        &lt;li&gt;$syncTarget should be present. In its absence, the test will be stopped with an informational status&lt;/li&gt;
+&lt;/ul&gt;
+&lt;b&gt;Test Flow:&lt;/b&gt; 
+&lt;br/&gt;&lt;br/&gt;The test proceeds as follows: 
+&lt;ul&gt;
+	&lt;li&gt;Append the “/$syncDigest” to the original URL&lt;/li&gt;
+	&lt;li&gt;Perform an http GET operation on the resulting URL&lt;/li&gt;
+	&lt;li&gt;Check response for a 200 status code and that at least one record of the resource kind exists&lt;/li&gt;
+	&lt;li&gt;Atom schema conformance check&lt;/li&gt;
+	&lt;li&gt;Sdata2008 schema conformance check&lt;/li&gt; 
+	&lt;li&gt;Check if “/atom:entry” exists&lt;/li&gt;
+	&lt;li&gt;Check if “/atom:entry/sdata:payload” exists&lt;/li&gt;
+	&lt;li&gt;Check if “/atom:entry/sdata:payload/sync:digest” exists&lt;/li&gt; 
+	&lt;li&gt;Check if “/atom:entry/sdata:payload/sync:digest/sync:digestEntry” exists&lt;/li&gt; 
+	&lt;li&gt;Set Digest ticks equals 0&lt;/li&gt; 
+	&lt;li&gt;Generate “trackingID” and append the “/$syncSource?trackingId=” to the original URL&lt;/li&gt; 
+	&lt;li&gt;Perform an http POST operation using response from $syncDigest request as body payload&lt;/li&gt; 
+	&lt;li&gt;Check response for a 202 status code&lt;/li&gt; 
+	&lt;li&gt;Sdata2008 schema conformance check&lt;/li&gt; 
+	&lt;li&gt;Check if root node is defined in sdata2008 namespace&lt;/li&gt; 
+	&lt;li&gt;Get HTTP Location header from previous response&lt;/li&gt; 
+	&lt;li&gt;Perform an http GET operation on the URL extracted from Location header&lt;/li&gt; 
+	&lt;li&gt;Check response for a 200 status code&lt;/li&gt; 
+	&lt;li&gt;Atom schema conformance check&lt;/li&gt; 
+	&lt;li&gt;Sdata2008 schema conformance check&lt;/li&gt;  
+	&lt;li&gt;Sync schema conformance check&lt;/li&gt; 
+	&lt;li&gt;sdataHttp schema conformance check&lt;/li&gt;  
+	&lt;li&gt;Check if root node is defined in atom namespace&lt;/li&gt; 
+	&lt;li&gt;Check if “/atom:feed/atom:entry” exists, and if “true” check for “/atom:feed/atom:entry/sync:syncState”, “/atom:feed/atom:entry/sdatahttp:httpMethod”&lt;/li&gt; 
+	&lt;li&gt;Increase tick of first entry&lt;/li&gt;
+	&lt;li&gt;Set timestamp of first entry to current datetime&lt;/li&gt;
+	&lt;li&gt; Generate “trackingID” and append the “/$syncTarget?trackingId=” to the original URL&lt;/li&gt;
+	&lt;li&gt;Perform an http POST operation using the edited response from $syncSourcerequest as body payload&lt;/li&gt;
+	&lt;li&gt;Check response for a 202 status code&lt;/li&gt;
+	&lt;li&gt;Sdata2008 schema conformance check&lt;/li&gt;
+	&lt;li&gt;Check if root node is defined in sdata2008 namespace&lt;/li&gt;
+	&lt;li&gt;Get HTTP Location header from previous response&lt;/li&gt;
+	&lt;li&gt;Perform an http GET operation on the URL extracted from Location header&lt;/li&gt;
+	&lt;li&gt;Check response for a 200 status code&lt;/li&gt;
+	&lt;li&gt;Atom schema conformance check&lt;/li&gt;
+	&lt;li&gt;Sdata2008 schema conformance check&lt;/li&gt; 
+	&lt;li&gt;OpenSearch schema conformance check&lt;/li&gt;
+	&lt;li&gt;sdataHttp schema conformance check&lt;/li&gt; 
+	&lt;li&gt;Check if root node is defined in atom namespace&lt;/li&gt;
+	&lt;li&gt;Check if “/atom:feed/atom:entry” exists&lt;/li&gt;
+	&lt;li&gt;Check if “/atom:feed/atom:entry/sdata:payload” exists&lt;/li&gt; 
+	&lt;li&gt;Perform an http DELETE operation on the URL extracted from Location header&lt;/li&gt;
+	&lt;li&gt;Check response for a 200 status code&lt;/li&gt; 
+&lt;/ul&gt;</Description>
+                  <TestParent>SyncGroup</TestParent>
+                  <Order>4</Order>
+                  <Feature>Required</Feature>
+                </TestInfo>
+                <State>Checked</State>
+                <Collapsed>true</Collapsed>
+              </Nodes>
+            </TestInfo>
+            <State>Checked</State>
+            <Collapsed>true</Collapsed>
+          </Nodes>
+        </TestInfo>
+        <State>Checked</State>
+        <Collapsed>true</Collapsed>
+      </Nodes>
+    </TestInfo>
+    <State>Checked</State>
+    <Collapsed>true</Collapsed>
+  </Tests>
+  <FeedUrls>
+    <FeedUrl xmlns="">
+      <State>Indeterminate</State>
+      <Collapsed>false</Collapsed>
+      <Url>http://kar-23970-ws:5493/sdata/Northwind/gcrm/-</Url>
+      <Target>Application</Target>
+      <Login />
+      <Password />
+      <Resources>
+        <ResourceInfo>
+          <State>Checked</State>
+          <Collapsed>false</Collapsed>
+          <Name>tradingAccounts/$schema</Name>
+          <DisplayName>tradingAccounts</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Checked</State>
+          <Collapsed>false</Collapsed>
+          <Name>contacts/$schema</Name>
+          <DisplayName>contacts</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>contactGroups/$schema</Name>
+          <DisplayName>contactGroups</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Checked</State>
+          <Collapsed>false</Collapsed>
+          <Name>salesOrders/$schema</Name>
+          <DisplayName>salesOrders</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>salesOrderLines/$schema</Name>
+          <DisplayName>salesOrderLines</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>salesQuotations/$schema</Name>
+          <DisplayName>salesQuotations</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>salesQuotationLines/$schema</Name>
+          <DisplayName>salesQuotationLines</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Checked</State>
+          <Collapsed>false</Collapsed>
+          <Name>commodities/$schema</Name>
+          <DisplayName>commodities</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Checked</State>
+          <Collapsed>false</Collapsed>
+          <Name>commodityGroups/$schema</Name>
+          <DisplayName>commodityGroups</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>priceLists/$schema</Name>
+          <DisplayName>priceLists</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Checked</State>
+          <Collapsed>false</Collapsed>
+          <Name>prices/$schema</Name>
+          <DisplayName>prices</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Checked</State>
+          <Collapsed>false</Collapsed>
+          <Name>unitsOfMeasure/$schema</Name>
+          <DisplayName>unitsOfMeasure</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>opportunities/$schema</Name>
+          <DisplayName>opportunities</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>interactions/$schema</Name>
+          <DisplayName>interactions</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>salesInvoices/$schema</Name>
+          <DisplayName>salesInvoices</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>salesInvoiceLines/$schema</Name>
+          <DisplayName>salesInvoiceLines</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>salesCredits/$schema</Name>
+          <DisplayName>salesCredits</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>salesCreditLines/$schema</Name>
+          <DisplayName>salesCreditLines</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>salesReturns/$schema</Name>
+          <DisplayName>salesReturns</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>salesReturnLines/$schema</Name>
+          <DisplayName>salesReturnLines</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>salesOrderDeliveries/$schema</Name>
+          <DisplayName>salesOrderDeliveries</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>salesOrderDeliveryLines/$schema</Name>
+          <DisplayName>salesOrderDeliveryLines</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>salesReturnDeliveries/$schema</Name>
+          <DisplayName>salesReturnDeliveries</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>salesReturnDeliveryLines/$schema</Name>
+          <DisplayName>salesReturnDeliveryLines</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>purchaseOrders/$schema</Name>
+          <DisplayName>purchaseOrders</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>purchaseOrderLines/$schema</Name>
+          <DisplayName>purchaseOrderLines</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>purchaseRequisitions/$schema</Name>
+          <DisplayName>purchaseRequisitions</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>purchaseRequisitionLines/$schema</Name>
+          <DisplayName>purchaseRequisitionLines</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>purchaseInvoices/$schema</Name>
+          <DisplayName>purchaseInvoices</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>purchaseInvoiceLines/$schema</Name>
+          <DisplayName>purchaseInvoiceLines</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>purchaseCredits/$schema</Name>
+          <DisplayName>purchaseCredits</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>purchaseCreditLines/$schema</Name>
+          <DisplayName>purchaseCreditLines</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>purchaseReturns/$schema</Name>
+          <DisplayName>purchaseReturns</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>purchaseReturnLines/$schema</Name>
+          <DisplayName>purchaseReturnLines</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>purchaseOrderDeliveries/$schema</Name>
+          <DisplayName>purchaseOrderDeliveries</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>purchaseOrderDeliveryLines/$schema</Name>
+          <DisplayName>purchaseOrderDeliveryLines</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>purchaseReturnDeliveries/$schema</Name>
+          <DisplayName>purchaseReturnDeliveries</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>purchaseReturnDeliveryLines/$schema</Name>
+          <DisplayName>purchaseReturnDeliveryLines</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>receipts/$schema</Name>
+          <DisplayName>receipts</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>receiptLines/$schema</Name>
+          <DisplayName>receiptLines</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>payments/$schema</Name>
+          <DisplayName>payments</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>paymentLines/$schema</Name>
+          <DisplayName>paymentLines</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>projects/$schema</Name>
+          <DisplayName>projects</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>projectLines/$schema</Name>
+          <DisplayName>projectLines</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>bankAccounts/$schema</Name>
+          <DisplayName>bankAccounts</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>locations/$schema</Name>
+          <DisplayName>locations</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>commodityIdentifiers/$schema</Name>
+          <DisplayName>commodityIdentifiers</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>salesPersons/$schema</Name>
+          <DisplayName>salesPersons</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>commodityDimensions/$schema</Name>
+          <DisplayName>commodityDimensions</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>commodityVariants/$schema</Name>
+          <DisplayName>commodityVariants</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>cases/$schema</Name>
+          <DisplayName>cases</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>taxCodes/$schema</Name>
+          <DisplayName>taxCodes</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>computePrice/$schema</Name>
+          <DisplayName>computePrice</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>operatingCompanies/$schema</Name>
+          <DisplayName>operatingCompanies</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>people/$schema</Name>
+          <DisplayName>people</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Checked</State>
+          <Collapsed>false</Collapsed>
+          <Name>postalAddresses/$schema</Name>
+          <DisplayName>postalAddresses</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Checked</State>
+          <Collapsed>false</Collapsed>
+          <Name>emails/$schema</Name>
+          <DisplayName>emails</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Checked</State>
+          <Collapsed>false</Collapsed>
+          <Name>phoneNumbers/$schema</Name>
+          <DisplayName>phoneNumbers</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>notes/$schema</Name>
+          <DisplayName>notes</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>financialAccounts/$schema</Name>
+          <DisplayName>financialAccounts</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>costCentres/$schema</Name>
+          <DisplayName>costCentres</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>departments/$schema</Name>
+          <DisplayName>departments</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>financialAccountAnalysis/$schema</Name>
+          <DisplayName>financialAccountAnalysis</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>financialAccountGroups/$schema</Name>
+          <DisplayName>financialAccountGroups</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>financialAccountsHistory/$schema</Name>
+          <DisplayName>financialAccountsHistory</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>financialAccountsMultiCurrencyHistory/$schema</Name>
+          <DisplayName>financialAccountsMultiCurrencyHistory</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>financialAccountsBudget/$schema</Name>
+          <DisplayName>financialAccountsBudget</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>financialPeriods/$schema</Name>
+          <DisplayName>financialPeriods</DisplayName>
+        </ResourceInfo>
+        <ResourceInfo>
+          <State>Unchecked</State>
+          <Collapsed>false</Collapsed>
+          <Name>financialAccountBudgetType/$schema</Name>
+          <DisplayName>financialAccountBudgetType</DisplayName>
+        </ResourceInfo>
+        <State>Indeterminate</State>
+        <Collapsed>false</Collapsed>
+      </Resources>
+    </FeedUrl>
+    <State>Checked</State>
+    <Collapsed>true</Collapsed>
+  </FeedUrls>
+</TestSuite>

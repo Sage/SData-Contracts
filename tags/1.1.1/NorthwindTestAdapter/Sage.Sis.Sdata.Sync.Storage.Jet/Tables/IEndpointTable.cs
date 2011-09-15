@@ -9,7 +9,7 @@ using Sage.Sis.Common.Data.OleDb;
 
 namespace Sage.Sis.Sdata.Sync.Storage.Jet.Tables
 {
-    interface IEndpointTable : ITable
+    interface IEndPointTable : ITable
     {
     }
 }

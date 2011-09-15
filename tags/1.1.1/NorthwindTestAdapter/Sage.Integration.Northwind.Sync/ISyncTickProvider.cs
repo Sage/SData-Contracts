@@ -3,14 +3,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Sage.Sis.Sdata.Sync.Tick;
 
 #endregion
 
 namespace Sage.Integration.Northwind.Adapter.Sync
 {
-    public interface ISyncTickProvider : ITickProvider
+    public interface ISynctickProvider : Sage.Sis.Sdata.Sync.tick.ItickProvider
     {
-        new int CreateNextTick(string resourceKind);
+        new int CreateNexttick(string resourceKind);
     }
 }
