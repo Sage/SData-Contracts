@@ -18,7 +18,7 @@ namespace Sage.Sis.Sdata.Sync.Storage
         /// <returns>An object of type <see cref="SyncDigestInfo"/> or null if no sync digest entry found.</returns>
         SyncDigestInfo Get(string resourceKind);
 
-        SyncDigestEntryInfo Get(string resourceKind, string endPoint);
+        SyncDigestEntryInfo Get(string resourceKind, string EndPoint);
 
         /// <summary>
         /// Adds a sync digest for a given resource kind in the store.

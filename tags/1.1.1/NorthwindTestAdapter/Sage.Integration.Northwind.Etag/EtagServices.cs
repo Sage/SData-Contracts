@@ -6,7 +6,6 @@ using System.Text;
 using Sage.Sis.Sdata.Etag.Crc;
 using Sage.Common.Syndication;
 using System.Diagnostics;
-using Sage.Integration.Northwind.Feeds;
 
 #endregion
 
@@ -54,7 +53,7 @@ namespace Sage.Integration.Northwind.Etag
         /// <param name="feedEntry">The FeedEntry to compute the etag for.</param>
         /// <param name="recursive">Should the etag contain values of complex types?</param>
         /// <returns>A string representing the etag.</returns>
-        public static string ComputeEtag(PayloadBase payload, bool recursive)
+        public static string ComputeEtag(FeedEntry payload, bool recursive)
         {
             return (recursive) ? stat_etagSevices._deepEtagBuilder.Compute(payload) : stat_etagSevices._simpleEtagBuilder.Compute(payload);
         }

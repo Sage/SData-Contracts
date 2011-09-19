@@ -9,19 +9,19 @@ using Sage.Integration.Northwind.Common;
 namespace Sage.Integration.Northwind.Sync.Syndication
 {
     [XmlRootAttribute("syncState", Namespace = Namespaces.syncNamespace, IsNullable = false)]
-    public class SyncState
+    public class SyncState1
     {
-        private string _endpoint;
+        private string _EndPoint;
         private int _tick;
         private DateTime _stamp;
 
-        public SyncState() : this("",0)
+        public SyncState1() : this("",0)
         {
         }
 
-        public SyncState(string endPoint, int tick)
+        public SyncState1(string EndPoint, int tick)
         {
-            _endpoint = endPoint;
+            _EndPoint = EndPoint;
             _tick = tick;
             _stamp = DateTime.Now;
         }
@@ -29,15 +29,15 @@ namespace Sage.Integration.Northwind.Sync.Syndication
         
 
 
-        [XmlElement(ElementName = "endpoint", Namespace = Namespaces.syncNamespace)]
-        public string Endpoint
+        [XmlElement(ElementName = "EndPoint", Namespace = Namespaces.syncNamespace)]
+        public string EndPoint
         {
-            get { return _endpoint; }
-            set { _endpoint = value; }
+            get { return _EndPoint; }
+            set { _EndPoint = value; }
         }
 
         [XmlElement(ElementName = "tick", Namespace = Namespaces.syncNamespace)]
-        public int Tick
+        public int tick
         {
             get { return _tick; }
             set { _tick = value; }
@@ -48,18 +48,6 @@ namespace Sage.Integration.Northwind.Sync.Syndication
         {
             get { return _stamp; }
             set { _stamp = value; }
-        }
-
-        
-        
-        [XmlNamespaceDeclarations()]
-        [XmlIgnore()]
-        private static XmlSerializerNamespaces SerializerNamespaces
-        {
-            get
-            {
-                return NameSpaceHelpers.SerializerNamespaces;
-            }
         }
     }
 }

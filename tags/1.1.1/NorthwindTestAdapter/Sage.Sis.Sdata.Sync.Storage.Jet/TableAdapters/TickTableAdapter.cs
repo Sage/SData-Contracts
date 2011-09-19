@@ -13,17 +13,17 @@ using System.Data;
 
 namespace Sage.Sis.Sdata.Sync.Storage.Jet.TableAdapters
 {
-    internal class TickTableAdapter : ITickTableAdapter
+    internal class tickTableAdapter : ItickTableAdapter
     {
         #region Class Variables
 
-        private readonly ITickTable _tickTable;
+        private readonly ItickTable _tickTable;
 
         #endregion
 
         #region Ctor.
 
-        public TickTableAdapter(ITickTable tickTable, SdataContext context)
+        public tickTableAdapter(ItickTable tickTable, SdataContext context)
         {
             _tickTable = tickTable;
             this.Context = context;
@@ -31,7 +31,7 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet.TableAdapters
 
         #endregion
 
-        #region ITickTableAdapter Members
+        #region ItickTableAdapter Members
 
         public bool TryGet(int resourceKindId, out int tick, IJetTransaction jetTransaction)
         {
@@ -41,19 +41,19 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet.TableAdapters
 
             string sqlQuery = string.Empty;
 
-            sqlQuery = "SELECT [FKResourceKindId], [Tick] FROM {0} WHERE ([FKResourceKindId]=@ResourceKindId);";
+            sqlQuery = "SELECT [FKResourceKindId], [tick] FROM {0} WHERE ([FKResourceKindId]=@ResourceKindId);";
             oleDbCommand.CommandText = string.Format(sqlQuery, _tickTable.TableName);
             oleDbCommand.Parameters.AddWithValue("@ResourceKindId", resourceKindId);
 
-            OleDbDataReader reader = oleDbCommand.ExecuteReader(CommandBehavior.SingleRow);
-
-            if (reader.Read())
+            using (OleDbDataReader reader = oleDbCommand.ExecuteReader(CommandBehavior.SingleRow))
             {
-                tick = Convert.ToInt32(reader["Tick"]);
-                
-                return true;
+                if (reader.Read())
+                {
+                    tick = Convert.ToInt32(reader["tick"]);
+
+                    return true;
+                }
             }
-            
             return false;
         }
         
@@ -62,11 +62,11 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet.TableAdapters
             OleDbCommand oleDbCommand = jetTransaction.CreateOleCommand();
 
             string sqlQuery = string.Empty;
-            sqlQuery = "UPDATE [{0}] SET [Tick]=@Tick WHERE (FKResourceKindId=@ResourceKindId);";
+            sqlQuery = "UPDATE [{0}] SET [tick]=@tick WHERE (FKResourceKindId=@ResourceKindId);";
 
             oleDbCommand.CommandText = string.Format(sqlQuery, _tickTable.TableName);
 
-            oleDbCommand.Parameters.AddWithValue("@Tick", tick);
+            oleDbCommand.Parameters.AddWithValue("@tick", tick);
             oleDbCommand.Parameters.AddWithValue("@ResourceKindId", resourceKindId);
 
             oleDbCommand.ExecuteNonQuery();
@@ -77,17 +77,17 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet.TableAdapters
             OleDbCommand oleDbCommand = jetTransaction.CreateOleCommand();
 
             string sqlQuery = string.Empty;
-            sqlQuery = "INSERT INTO [{0}] ([Tick], [FKResourceKindId]) VALUES (@Tick, @ResourceKindId);";
+            sqlQuery = "INSERT INTO [{0}] ([tick], [FKResourceKindId]) VALUES (@tick, @ResourceKindId);";
 
             oleDbCommand.CommandText = string.Format(sqlQuery, _tickTable.TableName);
 
-            oleDbCommand.Parameters.AddWithValue("@Tick", tick);
+            oleDbCommand.Parameters.AddWithValue("@tick", tick);
             oleDbCommand.Parameters.AddWithValue("@ResourceKindId", resourceKindId);
 
             oleDbCommand.ExecuteNonQuery();
         }
 
-        public ITickTable Table { get { return _tickTable; } }
+        public ItickTable Table { get { return _tickTable; } }
         
         #endregion
 

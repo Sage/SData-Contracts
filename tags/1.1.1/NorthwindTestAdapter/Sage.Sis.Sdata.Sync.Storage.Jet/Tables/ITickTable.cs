@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Sage.Sis.Sdata.Sync.Storage.Jet.Tables
 {
-    interface ITickTable : ITable
+    interface ItickTable : ITable
     {
         IResourceKindTable ResourceKindTable { get; }
     }

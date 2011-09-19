@@ -5,6 +5,9 @@ using System.Collections.Generic;
 using System.Text;
 using Sage.Integration.Northwind.Adapter.Common;
 using Sage.Integration.Messaging.Model;
+using System.Reflection;
+using System.IO;
+using Sage.Common.Syndication;
 
 #endregion
 
@@ -23,6 +26,8 @@ namespace Sage.Integration.Northwind.Adapter.Common.Performers
 
         public void DoWork(IRequest request)
         {
+            //ReturnSample(request);
+            //return;
             _trackingPerformer.GetTrackingState(request);
         }
 
@@ -31,6 +36,8 @@ namespace Sage.Integration.Northwind.Adapter.Common.Performers
             _requestContext = requestContext;
         }
 
+
+       
         #endregion
 
         #region ITrackingConsumer Members

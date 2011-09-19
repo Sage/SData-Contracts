@@ -13,7 +13,7 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet.TableAdapters
 {
     interface ISyncResultsTableAdapter : ITableAdapter
     {
-        void Insert(SyncResultEntryInfo[] syncResultEntryInfos, IJetTransaction jetTransaction);
+        void Insert(SyncResultEntryInfo[] syncResultEntryInfos, string runName, string runStamp, IJetTransaction jetTransaction);
         void Delete(IJetTransaction jetTransaction);
 
         new ISyncResultsTable Table { get; }

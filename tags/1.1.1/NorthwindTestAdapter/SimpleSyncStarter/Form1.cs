@@ -1,4 +1,6 @@
-﻿using System;
+﻿#region Usings
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,35 +11,74 @@ using System.Xml;
 using System.Net;
 using System.IO;
 
+#endregion
+
 namespace SimpleSyncStarter
 {
     public partial class Form1 : Form
     {
+        private const string RUNNAME_TEMPLATE = "SimpleSyncStarter_{0}";
+        private const string APPCONFIGFILENAME = "SimpleSyncStarter.exe.config";
+        private XmlDocument _doc;
+        private XmlNode _runCounterNode;
+
+        #region Ctor.
+
         public Form1()
         {
             InitializeComponent();
+
+            _doc = new XmlDocument();
+            _doc.Load(APPCONFIGFILENAME);
         }
+
+        #endregion
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            XmlNodeList nodes;
 
+            nodes = _doc.SelectNodes("/configuration/applicationSettings/SimpleSyncStarter.Properties.Settings/setting[@name='RunCounter']/value");
+
+            if (nodes.Count == 0)
+                throw new ApplicationException("Invalid application config file. Cannot read setting 'RunCounter'");
+            else
+                _runCounterNode = nodes[0];
+
+
+            this.txtRunName.Text = string.Format(RUNNAME_TEMPLATE, this.GetRunCounter());
         }
+
+
+        private int GetRunCounter()
+        {
+            return Convert.ToInt32(_runCounterNode.InnerText);
+        }
+        private void SetRunCounter(int newRunCounter)
+        {
+            _runCounterNode.InnerText = XmlConvert.ToString(newRunCounter);
+            _doc.Save(APPCONFIGFILENAME);
+        }
+
 
         #region Ui Handler
 
         private void btn_1to2_Click(object sender, EventArgs e)
         {
+           
             try
             {
-                if (string.IsNullOrEmpty(txtEndpoint1.Text) || string.IsNullOrEmpty(txtEndpoint2.Text))
+                if (string.IsNullOrEmpty(txtEndPoint1.Text) || string.IsNullOrEmpty(txtEndPoint2.Text))
                 {
-                    MessageBox.Show("Please enter an endpoint", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Please enter an EndPoint", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
-                string endpoint1 = txtEndpoint1.Text.TrimEnd('/');
-                string endpoint2 = txtEndpoint2.Text.TrimEnd('/');
-
-                this.StartSync(endpoint1, endpoint2);
+                string EndPoint1 = txtEndPoint1.Text.TrimEnd('/');
+                string EndPoint2 = txtEndPoint2.Text.TrimEnd('/');
+                //Properties.Settings.Default.Source = EndPoint1;
+                //Properties.Settings.Default.Target = EndPoint2;
+                //Properties.Settings.Default.Save();
+                this.StartSync(EndPoint1, EndPoint2);
                 
             }
             catch (Exception exception)
@@ -50,16 +91,19 @@ namespace SimpleSyncStarter
         {
             try
             {
-                if (string.IsNullOrEmpty(txtEndpoint1.Text) || string.IsNullOrEmpty(txtEndpoint2.Text))
+                if (string.IsNullOrEmpty(txtEndPoint1.Text) || string.IsNullOrEmpty(txtEndPoint2.Text))
                 {
-                    MessageBox.Show("Please enter an endpoint", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Please enter an EndPoint", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
 
-                string endpoint1 = txtEndpoint1.Text.TrimEnd('/');
-                string endpoint2 = txtEndpoint2.Text.TrimEnd('/');
+                string EndPoint1 = txtEndPoint1.Text.TrimEnd('/');
+                string EndPoint2 = txtEndPoint2.Text.TrimEnd('/');
+                //Properties.Settings.Default.Source = EndPoint1;
+                //Properties.Settings.Default.Target = EndPoint2;
+                //Properties.Settings.Default.Save();
 
-                this.StartSync(endpoint2, endpoint1);
+                this.StartSync(EndPoint2, EndPoint1);
 
                 
             }
@@ -71,105 +115,123 @@ namespace SimpleSyncStarter
 
         #endregion
 
-        private void StartSync(string endpointSource, string endpointTarget)
+        private void StartSync(string EndPointSource, string EndPointTarget)
         {
-
-            string strStartDate = DateTime.Now.ToString("yyyyMMdd_hhmmss");
-            string runDirPath = Path.Combine(Environment.CurrentDirectory, @"SimpleSyncStarter\Run_" + strStartDate);
-            if (!Directory.Exists(runDirPath))
-                Directory.CreateDirectory(runDirPath);
-
-            string trackingId = Guid.NewGuid().ToString();
-
-            string responsePayload;
-            string requestPayload;
-            HttpStatusCode httpStatusCode;
-
-            // GET SyncDigest
-            httpStatusCode = this.GetSyncDigest(endpointTarget, trackingId, out responsePayload);
-            this.SaveResponse(responsePayload, Path.Combine(runDirPath, "GET_SyncDigest.xml"));
-
-            // POST: SyncSource
-            requestPayload = responsePayload;
-            httpStatusCode = this.PostSyncSource(endpointSource, trackingId, requestPayload, out responsePayload);
-
-            // 3. GET SyncSource
-            do
+            DateTime runStamp = DateTime.Now;
+            try
             {
-                // wait a little time period 
-                System.Threading.Thread.Sleep(this.GetPollingMillis(responsePayload));
+                string strStartDate = DateTime.Now.ToString("yyyyMMdd_hhmmss");
+                string runDirPath = Path.Combine(Environment.CurrentDirectory, @"SimpleSyncStarter\Run_" + strStartDate);
+                if (!Directory.Exists(runDirPath))
+                    Directory.CreateDirectory(runDirPath);
 
-                responsePayload = "";
-                httpStatusCode = this.GetSyncSource(endpointSource, trackingId, out responsePayload);
+                string trackingId = Guid.NewGuid().ToString();
 
-            } while (httpStatusCode == HttpStatusCode.Accepted);
+                string responsePayload;
+                string requestPayload;
+                HttpStatusCode httpStatusCode;
 
-            string getSyncSourceResponse = responsePayload;
-            string nextSyncSourcePagingUrl;
-            bool nextSyncSourcePageExists = false;
-            int syncSourcePageCounter = 1;
-            // paging through GET syncsource
-            do
-            {
-                this.SaveResponse(getSyncSourceResponse, Path.Combine(runDirPath, "GET_SyncSource_page" + syncSourcePageCounter + ".xml"));
+                // GET SyncDigest
+                httpStatusCode = this.GetSyncDigest(EndPointTarget, trackingId, out responsePayload);
+                this.SaveResponse(responsePayload, Path.Combine(runDirPath, "GET_SyncDigest.xml"));
 
-                // 4. POST SyncTarget
-                string trackingId2 = Guid.NewGuid().ToString(); // !!!!!!!
-                requestPayload = getSyncSourceResponse;
-                
-                httpStatusCode = this.PostSyncTarget(endpointTarget, trackingId2, requestPayload, out responsePayload);
+                // POST: SyncSource
+                requestPayload = responsePayload;
+                httpStatusCode = this.PostSyncSource(EndPointSource, trackingId, requestPayload, out responsePayload);
 
-                // 5. GET SyncTarget
+                // 3. GET SyncSource
                 do
                 {
-                    // wait a little time period
+                    // wait a little time period 
                     System.Threading.Thread.Sleep(this.GetPollingMillis(responsePayload));
 
                     responsePayload = "";
-                    httpStatusCode = this.GetSyncTarget(endpointTarget, trackingId2, out responsePayload);
+                    httpStatusCode = this.GetSyncSource(EndPointSource, trackingId, out responsePayload);
 
                 } while (httpStatusCode == HttpStatusCode.Accepted);
 
-                // paging through GET SyncTarget 
-                string getSyncTargetResponse;
-                int syncTargetPageCounter = 1;
-                string nextSyncTargetPagingUrl;
-                bool nextSyncTargetPageExists = false;
+                string getSyncSourceResponse = responsePayload;
+                string nextSyncSourcePagingUrl;
+                bool nextSyncSourcePageExists = false;
+                int syncSourcePageCounter = 1;
+                // paging through GET syncsource
                 do
                 {
-                    getSyncTargetResponse = responsePayload;
+                    this.SaveResponse(getSyncSourceResponse, Path.Combine(runDirPath, "GET_SyncSource_page" + syncSourcePageCounter + ".xml"));
 
-                    // 5.2 POST SyncResults
-                    httpStatusCode = this.PostSyncResults(endpointSource, getSyncTargetResponse);
+                    // 4. POST SyncTarget
+                    string trackingId2 = Guid.NewGuid().ToString(); // !!!!!!!
+                    requestPayload = getSyncSourceResponse;
 
-                    this.SaveResponse(getSyncTargetResponse, Path.Combine(runDirPath, "GET_SyncTarget" + syncSourcePageCounter + "_page" + syncTargetPageCounter + ".xml"));
+                    httpStatusCode = this.PostSyncTarget(EndPointTarget, trackingId2, requestPayload, out responsePayload);
+
+                    // 5. GET SyncTarget
+                    do
+                    {
+                        // wait a little time period
+                        System.Threading.Thread.Sleep(this.GetPollingMillis(responsePayload));
+
+                        responsePayload = "";
+                        httpStatusCode = this.GetSyncTarget(EndPointTarget, trackingId2, out responsePayload);
+
+                    } while (httpStatusCode == HttpStatusCode.Accepted);
+
+                    // paging through GET SyncTarget 
+                    string getSyncTargetResponse;
+                    int syncTargetPageCounter = 1;
+                    string nextSyncTargetPagingUrl;
+                    bool nextSyncTargetPageExists = false;
+                    do
+                    {
+                        getSyncTargetResponse = responsePayload;
+
+                        // 5.2 POST SyncResults
+                        httpStatusCode = this.PostSyncResults(EndPointSource, runStamp, getSyncTargetResponse);
+
+                        this.SaveResponse(getSyncTargetResponse, Path.Combine(runDirPath, "GET_SyncTarget" + syncSourcePageCounter + "_page" + syncTargetPageCounter + ".xml"));
+
+                        // next SyncSource page
+                        syncTargetPageCounter++;
+                        nextSyncTargetPagingUrl = this.GetNextPagingUrl(getSyncTargetResponse);
+                        nextSyncTargetPageExists = (nextSyncTargetPagingUrl != null);
+                        if (nextSyncTargetPageExists)
+                            httpStatusCode = this.GetPage(nextSyncTargetPagingUrl, out getSyncTargetResponse);
+                    }
+                    while (nextSyncTargetPageExists);
+
+                    // DELETE SyncTarget
+                    this.DeleteSyncTarget(EndPointTarget, trackingId2);
 
                     // next SyncSource page
-                    syncTargetPageCounter++;
-                    nextSyncTargetPagingUrl = this.GetNextPagingUrl(getSyncTargetResponse);
-                    nextSyncTargetPageExists = (nextSyncTargetPagingUrl != null);
-                    if (nextSyncTargetPageExists)
-                        httpStatusCode = this.GetPage(nextSyncTargetPagingUrl, out getSyncTargetResponse);
+                    syncSourcePageCounter++;
+                    nextSyncSourcePagingUrl = this.GetNextPagingUrl(getSyncSourceResponse);
+                    nextSyncSourcePageExists = (nextSyncSourcePagingUrl != null);
+                    if (nextSyncSourcePageExists)
+                        httpStatusCode = this.GetPage(nextSyncSourcePagingUrl, out getSyncSourceResponse);
                 }
-                while (nextSyncTargetPageExists);
+                while (nextSyncSourcePageExists);
 
-                // DELETE SyncTarget
-                this.DeleteSyncTarget(endpointTarget, trackingId2);
-
-                // next SyncSource page
-                syncSourcePageCounter++;
-                nextSyncSourcePagingUrl = this.GetNextPagingUrl(getSyncSourceResponse);
-                nextSyncSourcePageExists = (nextSyncSourcePagingUrl != null);
-                if (nextSyncSourcePageExists)
-                    httpStatusCode = this.GetPage(nextSyncSourcePagingUrl, out getSyncSourceResponse);
+                // DELETE SyncSource
+                this.DeleteSyncSource(EndPointSource, trackingId);
             }
-            while (nextSyncSourcePageExists);
-
-            // DELETE SyncSource
-            this.DeleteSyncSource(endpointSource, trackingId);
+            finally
+            {
+                try
+                {
+                    int runCounter = this.GetRunCounter();
+                    runCounter++;
+                    // Change the RunCounter and display new next run Name
+                    this.SetRunCounter(runCounter);
+                    this.txtRunName.Text = string.Format(RUNNAME_TEMPLATE, runCounter);
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show("Failed to save config file: " + Environment.NewLine + exception.Message);
+                }
+            }
         }
 
-        private HttpStatusCode DeleteSyncSource(string endpoint, string trackingId)
+        private HttpStatusCode DeleteSyncSource(string EndPoint, string trackingId)
         {
             HttpMethod httpMethod;
             string url;
@@ -179,7 +241,7 @@ namespace SimpleSyncStarter
             string requestPayload;
             string responsePayload;
 
-            url = url = string.Format("{0}/$syncsource?trackingid={1}", endpoint, trackingId);
+            url = url = string.Format("{0}/$syncSource?trackingid={1}", EndPoint, trackingId);
             httpMethod = HttpMethod.DELETE;
             contentType = "HTTP/1.1";
             requestPayload = "";
@@ -187,7 +249,7 @@ namespace SimpleSyncStarter
             return doRequest(httpMethod, url, contentType, userName, pwd, requestPayload, out responsePayload, false);
         }
 
-        private HttpStatusCode DeleteSyncTarget(string endpoint, string trackingId)
+        private HttpStatusCode DeleteSyncTarget(string EndPoint, string trackingId)
         {
             HttpMethod httpMethod;
             string url;
@@ -197,7 +259,7 @@ namespace SimpleSyncStarter
             string requestPayload;
             string responsePayload;
 
-            url = string.Format("{0}/$synctarget?trackingid={1}", endpoint, trackingId);
+            url = string.Format("{0}/$syncTarget?trackingid={1}", EndPoint, trackingId);
             httpMethod = HttpMethod.DELETE;
             contentType = "HTTP/1.1";
             requestPayload = "";
@@ -206,7 +268,7 @@ namespace SimpleSyncStarter
         }
 
 
-        private HttpStatusCode GetSyncSource(string endpoint, string trackingId, out string responsePayload)
+        private HttpStatusCode GetSyncSource(string EndPoint, string trackingId, out string responsePayload)
         {
             HttpMethod httpMethod;
             string url;
@@ -215,7 +277,7 @@ namespace SimpleSyncStarter
             string pwd = "";
             string requestPayload;
 
-            url = string.Format("{0}/$syncsource('{1}')", endpoint, trackingId);
+            url = string.Format("{0}/$syncSource('{1}')", EndPoint, trackingId);
             httpMethod = HttpMethod.GET;
             contentType = "";
             requestPayload = "";
@@ -223,7 +285,7 @@ namespace SimpleSyncStarter
             return doRequest(httpMethod, url, contentType, userName, pwd, requestPayload, out responsePayload, true);
         }
 
-        private HttpStatusCode GetSyncDigest(string endpoint, string trackingId, out string responsePayload)
+        private HttpStatusCode GetSyncDigest(string EndPoint, string trackingId, out string responsePayload)
         {
             HttpMethod httpMethod;
             string url;
@@ -232,7 +294,7 @@ namespace SimpleSyncStarter
             string pwd = "";
             string requestPayload;
 
-            url = endpoint + "/$syncdigest";
+            url = EndPoint + "/$syncDigest";
             httpMethod = HttpMethod.GET;
             contentType = "";
             requestPayload = "";
@@ -240,7 +302,7 @@ namespace SimpleSyncStarter
             return doRequest(httpMethod, url, contentType, userName, pwd, requestPayload, out responsePayload, true);
         }
 
-        private HttpStatusCode PostSyncSource(string endpoint, string trackingId, string requestPayload, out string responsePayload)
+        private HttpStatusCode PostSyncSource(string EndPoint, string trackingId, string requestPayload, out string responsePayload)
         {
             HttpMethod httpMethod;
             string url;
@@ -248,7 +310,7 @@ namespace SimpleSyncStarter
             string userName = "";
             string pwd = "";
 
-            url = string.Format("{0}/$syncsource?trackingid={1}", endpoint, trackingId);
+            url = string.Format("{0}/$syncSource?trackingid={1}", EndPoint, trackingId);
             httpMethod = HttpMethod.POST;
             contentType = "application/atom+xml;type=entry";
             responsePayload = "";
@@ -256,7 +318,7 @@ namespace SimpleSyncStarter
             return doRequest(httpMethod, url, contentType, userName, pwd, requestPayload, out responsePayload, true);
         }
 
-        private HttpStatusCode GetSyncTarget(string endpoint, string trackingId, out string responsePayload)
+        private HttpStatusCode GetSyncTarget(string EndPoint, string trackingId, out string responsePayload)
         {
             HttpMethod httpMethod;
             string url;
@@ -265,7 +327,7 @@ namespace SimpleSyncStarter
             string pwd = "";
             string requestPayload;
 
-            url = string.Format("{0}/$synctarget('{1}')", endpoint,  trackingId);
+            url = string.Format("{0}/$syncTarget('{1}')", EndPoint,  trackingId);
             httpMethod = HttpMethod.GET;
             contentType = "";
             requestPayload = "";
@@ -273,7 +335,7 @@ namespace SimpleSyncStarter
             return doRequest(httpMethod, url, contentType, userName, pwd, requestPayload, out responsePayload, true);
         }
 
-        private HttpStatusCode PostSyncTarget(string endpoint, string trackingId, string requestPayload, out string responsePayload)
+        private HttpStatusCode PostSyncTarget(string EndPoint, string trackingId, string requestPayload, out string responsePayload)
         {
             HttpMethod httpMethod;
             string url;
@@ -281,7 +343,7 @@ namespace SimpleSyncStarter
             string userName = "";
             string pwd = "";
 
-            url = string.Format("{0}/$synctarget?trackingid={1}", endpoint, trackingId);
+            url = string.Format("{0}/$syncTarget?trackingid={1}", EndPoint, trackingId);
             httpMethod = HttpMethod.POST;
             contentType = "application/atom+xml;type=feed";
             responsePayload = "";
@@ -289,7 +351,7 @@ namespace SimpleSyncStarter
             return doRequest(httpMethod, url, contentType, userName, pwd, requestPayload, out responsePayload, true);
         }
 
-        private HttpStatusCode PostSyncResults(string endpoint, string requestPayload)
+        private HttpStatusCode PostSyncResults(string EndPoint, DateTime runStamp, string requestPayload)
         {
             HttpMethod httpMethod;
             string url;
@@ -298,7 +360,7 @@ namespace SimpleSyncStarter
             string pwd = "";
             string responsePayload = "";
 
-            url = string.Format("{0}/$syncresults", endpoint);
+            url = string.Format("{0}/$syncResults?runName={1}&runStamp={2}", EndPoint, this.txtRunName.Text, runStamp.ToUniversalTime());
             httpMethod = HttpMethod.POST;
             contentType = "application/atom+xml;type=feed";
             
@@ -401,8 +463,10 @@ namespace SimpleSyncStarter
             out string responsePayload,
             bool responseStreamExpected)
         {
+            if (url.Contains("7778"))
+                userName = "Sage";
             HttpStatusCode statusCode = HttpStatusCode.OK;
-            ASCIIEncoding encoding = new ASCIIEncoding();
+            UTF8Encoding encoding = new UTF8Encoding();
             byte[] buffer = encoding.GetBytes(requestPayload);
             HttpWebRequest myRequest = (HttpWebRequest)WebRequest.Create(url);
             myRequest.Method = httpMethod.ToString();

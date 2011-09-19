@@ -95,18 +95,18 @@ namespace Sage.Integration.Northwind.Sync
         //        throw new ArgumentNullException("syncState");
         //    lock (lockObj)
         //    {
-        //        SyncDigestEntryInfo entry = _provider.Get(resourceKind, syncState.Endpoint);
+        //        SyncDigestEntryInfo entry = _provider.Get(resourceKind, syncState.EndPoint);
         //        if (entry != null)
         //        {
-        //            if (entry.Tick < syncState.Tick+1)
+        //            if (entry.Tick < syncState.tick+1)
         //            {
-        //                entry.Tick = syncState.Tick+1;
+        //                entry.Tick = syncState.tick+1;
         //                _provider.Update(resourceKind, entry);
         //            }
         //        }
         //        else
         //        {
-        //            entry = new SyncDigestEntryInfo(syncState.Endpoint, syncState.Tick+1, 0, DateTime.Now);
+        //            entry = new SyncDigestEntryInfo(syncState.EndPoint, syncState.tick+1, 0, DateTime.Now);
         //            _provider.Add(resourceKind, entry);
         //        }
         //    }
@@ -124,7 +124,7 @@ namespace Sage.Integration.Northwind.Sync
             
             lock (lockObj)
             {
-                SyncDigestEntryInfo entry = _provider.Get(resourceKind, resSyncInfo.Endpoint);
+                SyncDigestEntryInfo entry = _provider.Get(resourceKind, resSyncInfo.EndPoint);
                 if (entry != null)
                 {
                     if (entry.Tick < resSyncInfo.Tick+1)
@@ -135,7 +135,7 @@ namespace Sage.Integration.Northwind.Sync
                 }
                 else
                 {
-                    entry = new SyncDigestEntryInfo(resSyncInfo.Endpoint, resSyncInfo.Tick + 1, 0, DateTime.Now);
+                    entry = new SyncDigestEntryInfo(resSyncInfo.EndPoint, resSyncInfo.Tick + 1, 1, DateTime.Now);
                     _provider.Add(resourceKind, entry);
                 }
             }

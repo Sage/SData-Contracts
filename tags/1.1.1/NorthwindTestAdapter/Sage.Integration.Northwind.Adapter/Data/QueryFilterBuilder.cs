@@ -92,11 +92,6 @@ namespace Sage.Integration.Northwind.Adapter.Data
                     return GetExpression(expression as ShortcutConditionalOperatorExpression, ref parameters);
                 }
 
-                //if (expression is DivideExpression)
-                //{
-                //    return GetExpression(expression as DivideExpression, ref parameters);
-                //}
-
                 if (expression is ComparisonOperatorExpression)
                 {
                     return GetExpression(expression as ComparisonOperatorExpression, ref parameters);
@@ -106,22 +101,22 @@ namespace Sage.Integration.Northwind.Adapter.Data
                 {
                     return GetExpression(expression as LikeExpression, ref parameters);
                 }
-                //if (expression is MinusExpression)
-                //{
-                //    return GetExpression(expression as MinusExpression, ref parameters);
-                //}
-                //if (expression is MultiplyExpression)
-                //{
-                //    return GetExpression(expression as MultiplyExpression, ref parameters);
-                //}
-                //if (expression is MinusExpression)
-                //{
-                //    return GetExpression(expression as MinusExpression, ref parameters);
-                //}
-                //if (expression is PlusExpression)
-                //{
-                //    return GetExpression(expression as PlusExpression, ref parameters);
-                //}
+                if (expression is DivideExpression)
+                {
+                    return GetExpression(expression as DivideExpression, ref parameters);
+                }
+                if (expression is MultiplyExpression)
+                {
+                    return GetExpression(expression as MultiplyExpression, ref parameters);
+                }
+                if (expression is MinusExpression)
+                {
+                    return GetExpression(expression as MinusExpression, ref parameters);
+                }
+                if (expression is PlusExpression)
+                {
+                    return GetExpression(expression as PlusExpression, ref parameters);
+                }
                 if (expression is LiteralExpression) // 'alfki' 1 ....
                 {
                     return GetExpression(expression as LiteralExpression, ref parameters);
@@ -195,12 +190,6 @@ namespace Sage.Integration.Northwind.Adapter.Data
                     return GetExpression(expression as ShortcutConditionalOperatorExpression, ref parameters);
                 }
 
-            //    if (expression is DivideExpression)
-            //    {
-            //        return GetExpression(expression as DivideExpression, ref parameters);
-            //    }
-
-
                 if (expression is ComparisonOperatorExpression)
                 {
                     return GetExpression(expression as ComparisonOperatorExpression, ref parameters);
@@ -210,22 +199,22 @@ namespace Sage.Integration.Northwind.Adapter.Data
                 {
                     return GetExpression(expression as LikeExpression, ref parameters);
                 }
-            //    if (expression is MinusExpression)
-            //    {
-            //        return GetExpression(expression as MinusExpression, ref parameters);
-            //    }
-            //    if (expression is MultiplyExpression)
-            //    {
-            //        return GetExpression(expression as MultiplyExpression, ref parameters);
-            //    }
-            //    if (expression is MinusExpression)
-            //    {
-            //        return GetExpression(expression as MinusExpression, ref parameters);
-            //    }
-            //    if (expression is PlusExpression)
-            //    {
-            //        return GetExpression(expression as PlusExpression, ref parameters);
-            //    }
+                if (expression is DivideExpression)
+                {
+                    return GetExpression(expression as DivideExpression, ref parameters);
+                }
+                if (expression is MultiplyExpression)
+                {
+                    return GetExpression(expression as MultiplyExpression, ref parameters);
+                }
+                if (expression is MinusExpression)
+                {
+                    return GetExpression(expression as MinusExpression, ref parameters);
+                }
+                if (expression is PlusExpression)
+                {
+                    return GetExpression(expression as PlusExpression, ref parameters);
+                }
 
                 else
                     return expression.ToString();
@@ -295,23 +284,28 @@ namespace Sage.Integration.Northwind.Adapter.Data
                             GetExpressionDispatch(expression.Children[1], ref parameters) + " ) ";
             }
 
-            //private static string GetExpression(PlusExpression expression, ref List<OleDbParameter> parameters)
-            //{
-            //    return " ( " + GetExpressionDispatch(expression.Children[0], ref parameters) + " + " +
-            //      GetExpressionDispatch(expression.Children[1], ref parameters) + " ) ";
-            //}
+            private string GetExpression(DivideExpression expression, ref List<OleDbParameter> parameters)
+            {
+                return " ( " + GetExpressionDispatch(expression.Children[0], ref parameters) + " / " +
+                  GetExpressionDispatch(expression.Children[1], ref parameters) + " ) ";
+            }
+            private string GetExpression(PlusExpression expression, ref List<OleDbParameter> parameters)
+            {
+                return " ( " + GetExpressionDispatch(expression.Children[0], ref parameters) + " + " +
+                  GetExpressionDispatch(expression.Children[1], ref parameters) + " ) ";
+            }
 
-            //private static string GetExpression(MultiplyExpression expression, ref List<OleDbParameter> parameters)
-            //{
-            //    return " ( " + GetExpressionDispatch(expression.Children[0], ref parameters) + " * " +
-            //      GetExpressionDispatch(expression.Children[1], ref parameters) + " ) ";
-            //}
+            private string GetExpression(MultiplyExpression expression, ref List<OleDbParameter> parameters)
+            {
+                return " ( " + GetExpressionDispatch(expression.Children[0], ref parameters) + " * " +
+                  GetExpressionDispatch(expression.Children[1], ref parameters) + " ) ";
+            }
 
-            //private static string GetExpression(MinusExpression expression, ref List<OleDbParameter> parameters)
-            //{
-            //    return " ( " + GetExpressionDispatch(expression.Children[0], ref parameters) + " - " +
-            //      GetExpressionDispatch(expression.Children[1], ref parameters) + " ) ";
-            //}
+            private string GetExpression(MinusExpression expression, ref List<OleDbParameter> parameters)
+            {
+                return " ( " + GetExpressionDispatch(expression.Children[0], ref parameters) + " - " +
+                  GetExpressionDispatch(expression.Children[1], ref parameters) + " ) ";
+            }
 
             private string GetExpression(LikeExpression expression, ref List<OleDbParameter> parameters)
             {
@@ -351,12 +345,6 @@ namespace Sage.Integration.Northwind.Adapter.Data
                 return " ( " + GetExpressionDispatch(expression.Children[0], ref parameters) + " = " +
                   GetExpressionDispatch(expression.Children[1], ref parameters) + " ) ";
             }
-
-            //private static string GetExpression(DivideExpression expression, ref List<OleDbParameter> parameters)
-            //{
-            //    return " ( " + GetExpressionDispatch(expression.Children[0], ref parameters) + " / " +
-            //      GetExpressionDispatch(expression.Children[1], ref parameters) + " ) ";
-            //}
 
             private string GetExpression(AndExpression expression, ref List<OleDbParameter> parameters)
             {

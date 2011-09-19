@@ -436,6 +436,7 @@ namespace Sage.Integration.Northwind.Application.Entities.Product
 
                 tableAdapter.Connection = connection;
 
+                HandleDelimiterClause(ref whereExpression);
                 if (string.IsNullOrEmpty(whereExpression))
                     recordCount = tableAdapter.Fill(productsDataset.Products);
                 else
@@ -489,12 +490,12 @@ namespace Sage.Integration.Northwind.Application.Entities.Product
                 if (productDoc.name.IsNull)
                     row.SetProductNameNull();
                 else
-                    row.ProductName = (string)productDoc.name.Value;
+                    row.ProductName = Convert.ToString(productDoc.name.Value);
 
                 if (productDoc.productfamilyid.IsNull)
                     row.SetCategoryIDNull();
                 else
-                    row.CategoryID = (int)productDoc.productfamilyid.Value;
+                    row.CategoryID = Convert.ToInt32(productDoc.productfamilyid.Value);
 
                 // uom category ???
 
@@ -590,12 +591,12 @@ namespace Sage.Integration.Northwind.Application.Entities.Product
                     if (productDoc.name.IsNull)
                         row.SetProductNameNull();
                     else
-                        row.ProductName = (string)productDoc.name.Value;
+                        row.ProductName = Convert.ToString(productDoc.name.Value);
 
                     if (productDoc.productfamilyid.IsNull)
                         row.SetCategoryIDNull();
                     else
-                        row.CategoryID = (int)productDoc.productfamilyid.Value;
+                        row.CategoryID = Convert.ToInt32(productDoc.productfamilyid.Value);
 
                     // uom category ???
 

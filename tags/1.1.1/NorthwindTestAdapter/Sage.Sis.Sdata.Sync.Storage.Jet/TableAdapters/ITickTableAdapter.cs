@@ -10,12 +10,12 @@ using Sage.Sis.Sdata.Sync.Storage.Jet.Tables;
 
 namespace Sage.Sis.Sdata.Sync.Storage.Jet.TableAdapters
 {
-    interface ITickTableAdapter : ITableAdapter
+    interface ItickTableAdapter : ITableAdapter
     {
         bool TryGet(int resourceKindId, out int tick, IJetTransaction jetTransaction);
         void Update(int resourceKindId, int tick, IJetTransaction jetTransaction);
         void Insert(int resourceKindId, int tick, IJetTransaction jetTransaction);
 
-        new ITickTable Table { get; }
+        new ItickTable Table { get; }
     }
 }

@@ -5,9 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using Sage.Integration.Northwind.Adapter.Common;
 using Sage.Integration.Messaging.Model;
-using Sage.Integration.Northwind.Adapter.Data;
 using Sage.Integration.Northwind.Application;
-using Sage.Integration.Northwind.Feeds;
 using System.IO;
 
 #endregion
@@ -24,7 +22,6 @@ namespace Sage.Integration.Northwind.Adapter.Common.Performers
         private RequestContext _requestContext;
 
         #endregion
-
 
         #region IRequestPerformer Members
 

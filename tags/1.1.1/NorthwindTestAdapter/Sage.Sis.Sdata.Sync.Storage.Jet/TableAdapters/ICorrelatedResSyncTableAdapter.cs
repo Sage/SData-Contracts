@@ -14,7 +14,7 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet.TableAdapters
         CorrelatedResSyncInfo[] GetByLocalId(string[] localIds, IJetTransaction jetTransaction);
         CorrelatedResSyncInfo[] GetByUuids(Guid[] uuids, IJetTransaction jetTransaction);
         CorrelatedResSyncInfo[] GetAll(IJetTransaction jetTransaction);
-        CorrelatedResSyncInfo[] GetSinceTick(int endpointId, int tick, IJetTransaction jetTransaction);
+        CorrelatedResSyncInfo[] GetSincetick(int EndPointId, int tick, IJetTransaction jetTransaction);
 
         void Insert( CorrelatedResSyncInfo info, IJetTransaction jetTransaction);
         bool Update(CorrelatedResSyncInfo info, IJetTransaction jetTransaction);

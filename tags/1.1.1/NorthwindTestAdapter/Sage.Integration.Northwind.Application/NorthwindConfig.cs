@@ -30,9 +30,11 @@ namespace Sage.Integration.Northwind.Application
 
     public class NorthwindConfig
     {
+        private const string DEFAULT_DATASET = "Northwind.mdb";
+
         #region constructor
 
-        public NorthwindConfig()
+        public NorthwindConfig(string dataset)
         {
             this.path = "";
             this.currencyCode = "EUR";
@@ -43,6 +45,19 @@ namespace Sage.Integration.Northwind.Application
             customisationVersion = version;
             logChangeLog = false;
             logDir = "c:\\";
+
+            if (dataset == "-")
+            {
+                this._dataset = DEFAULT_DATASET;
+            }
+            else if (!dataset.Contains("."))
+            {
+                this._dataset = dataset + ".mdb";
+            }
+            else
+            {
+                this._dataset = dataset;
+            }
         }
 
         #endregion
@@ -156,7 +171,17 @@ namespace Sage.Integration.Northwind.Application
 
         public string ConnectionString
         {
-            get { return "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Path + "Northwind.mdb;Persist Security Info=True"; }
+            get 
+            {
+                //return "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Path + Dataset + ";Persist Security Info=True;"; //Connection pooling disabled
+                return "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Path + Dataset + ";Persist Security Info=True;OLE DB Services=-4;"; //Connection pooling enabled
+            }
+        }
+
+        private string _dataset;
+        public string Dataset
+        {
+            get { return _dataset; }
         }
 
         public string CrmUser

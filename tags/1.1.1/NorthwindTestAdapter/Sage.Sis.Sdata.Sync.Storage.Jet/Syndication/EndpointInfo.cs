@@ -8,14 +8,14 @@ using System.Text;
 
 namespace Sage.Sis.Sdata.Sync.Storage.Jet.Syndication
 {
-    public class EndpointInfo
+    public class EndPointInfo
     {
         #region Ctor.
 
-        public EndpointInfo(int id, string endpoint)
+        public EndPointInfo(int id, string EndPoint)
         {
             this.Id = id;
-            this.Endpoint = endpoint;
+            this.EndPoint = EndPoint;
         }
 
         #endregion
@@ -23,7 +23,7 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet.Syndication
         #region Properties
 
         public int Id { get; private set; }
-        public string Endpoint { get; private set; }
+        public string EndPoint { get; private set; }
 
         #endregion
     }

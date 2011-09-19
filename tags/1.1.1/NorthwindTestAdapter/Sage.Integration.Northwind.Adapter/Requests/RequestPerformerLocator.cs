@@ -68,6 +68,11 @@ namespace Sage.Integration.Northwind.Adapter.Common
             Type iTrackingPerformerType = typeof(ITrackingPerformer);
             Type iTrackingConsumerType = typeof(ITrackingConsumer);
 
+            // just for testing
+            //requestPerformer = new T();
+            //requestPerformer.Initialize(context);
+            //return requestPerformer;
+
             lock (lockObj)
             {
                 if (false == (iTrackingPerformerType.IsAssignableFrom(type) || iTrackingConsumerType.IsAssignableFrom(type)))

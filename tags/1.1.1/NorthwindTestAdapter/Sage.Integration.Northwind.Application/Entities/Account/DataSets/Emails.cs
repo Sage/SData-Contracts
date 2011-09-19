@@ -1,4 +1,88 @@
-﻿namespace Sage.Integration.Northwind.Application.Entities.Account.DataSets.EmailsTableAdapters
+﻿namespace Sage.Integration.Northwind.Application.Entities.Account.DataSets
+{
+}
+namespace Sage.Integration.Northwind.Application.Entities.Account.DataSets
+{
+}
+namespace Sage.Integration.Northwind.Application.Entities.Account.DataSets
+{
+}
+namespace Sage.Integration.Northwind.Application.Entities.Account.DataSets
+{
+}
+namespace Sage.Integration.Northwind.Application.Entities.Account.DataSets
+{
+}
+namespace Sage.Integration.Northwind.Application.Entities.Account.DataSets
+{
+}
+namespace Sage.Integration.Northwind.Application.Entities.Account.DataSets
+{
+}
+namespace Sage.Integration.Northwind.Application.Entities.Account.DataSets
+{
+}
+namespace Sage.Integration.Northwind.Application.Entities.Account.DataSets
+{
+}
+namespace Sage.Integration.Northwind.Application.Entities.Account.DataSets
+{
+}
+namespace Sage.Integration.Northwind.Application.Entities.Account.DataSets
+{
+}
+namespace Sage.Integration.Northwind.Application.Entities.Account.DataSets
+{
+}
+namespace Sage.Integration.Northwind.Application.Entities.Account.DataSets
+{
+}
+namespace Sage.Integration.Northwind.Application.Entities.Account.DataSets
+{
+}
+namespace Sage.Integration.Northwind.Application.Entities.Account.DataSets
+{
+}
+namespace Sage.Integration.Northwind.Application.Entities.Account.DataSets
+{
+}
+namespace Sage.Integration.Northwind.Application.Entities.Account.DataSets
+{
+}
+namespace Sage.Integration.Northwind.Application.Entities.Account.DataSets
+{
+}
+namespace Sage.Integration.Northwind.Application.Entities.Account.DataSets
+{
+}
+namespace Sage.Integration.Northwind.Application.Entities.Account.DataSets
+{
+}
+namespace Sage.Integration.Northwind.Application.Entities.Account.DataSets
+{
+}
+namespace Sage.Integration.Northwind.Application.Entities.Account.DataSets
+{
+}
+namespace Sage.Integration.Northwind.Application.Entities.Account.DataSets
+{
+}
+namespace Sage.Integration.Northwind.Application.Entities.Account.DataSets
+{
+}
+namespace Sage.Integration.Northwind.Application.Entities.Account.DataSets
+{
+}
+namespace Sage.Integration.Northwind.Application.Entities.Account.DataSets
+{
+}
+namespace Sage.Integration.Northwind.Application.Entities.Account.DataSets
+{
+}
+namespace Sage.Integration.Northwind.Application.Entities.Account.DataSets
+{
+}
+namespace Sage.Integration.Northwind.Application.Entities.Account.DataSets.EmailsTableAdapters
 {
     public partial class CustomerEmailsTableAdapter
     {

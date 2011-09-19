@@ -36,8 +36,10 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet.Tables
             sqlQueries[0] += " [HttpLocation]           TEXT(255) DEFAULT NULL, ";
             sqlQueries[0] += " [Diagnoses]              MEMO DEFAULT NULL, ";
             sqlQueries[0] += " [Payload]                MEMO DEFAULT NULL, ";
-            sqlQueries[0] += " [Endpoint]               TEXT(255) NOT NULL, ";
-            sqlQueries[0] += " [Stamp]                  TIMESTAMP NOT NULL);";
+            sqlQueries[0] += " [EndPoint]               TEXT(255) NOT NULL, ";
+            sqlQueries[0] += " [Stamp]                  TIMESTAMP NOT NULL, ";
+            sqlQueries[0] += " [RunName]                TEXT(100) DEFAULT NULL, ";
+            sqlQueries[0] += " [RunStamp]               TEXT(40) DEFAULT NULL);";
             
 
             sqlQueries[1] = string.Format("CREATE UNIQUE INDEX PK_ID ON [{0}] ([ID]) WITH PRIMARY;", tableName);

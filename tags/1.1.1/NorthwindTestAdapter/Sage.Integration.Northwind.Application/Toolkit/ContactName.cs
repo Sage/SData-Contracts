@@ -194,8 +194,18 @@ namespace Sage.Integration.Northwind.Application.Toolkit
             if ((northwindContacName != null) &&
                 (northwindContacName.Contains(" ")))
             {
-                crmFirstName = northwindContacName.Substring(0, northwindContacName.IndexOf(" "));
-                crmLastName = northwindContacName.Substring(northwindContacName.IndexOf(" ") + 1);
+                string[] parts = northwindContacName.Split(new char[] { ' ' });
+                if (parts.Length == 2)
+                {
+                    crmFirstName = parts[0];
+                    crmLastName = parts[1];
+                }
+                else if (parts.Length == 3)
+                {
+                    crmFirstName = parts[0];
+                    crmMiddleName = parts[1];
+                    crmLastName = parts[2];
+                }
             }
         }
 

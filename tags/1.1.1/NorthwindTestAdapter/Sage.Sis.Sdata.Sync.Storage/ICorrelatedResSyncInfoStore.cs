@@ -33,15 +33,15 @@ namespace Sage.Sis.Sdata.Sync.Storage
 
         /// <summary>
         /// Returns an iterator over correlated resource synchronisation entries, that have a higher tick than the given one.
-        /// Sorted by Tick.
+        /// Sorted by tick.
         /// </summary>
         /// <param name="resourceKind">Kind of the resource. (I.e. account, contact, salesOrder, etc.)</param>
-        /// <param name="endpoint">The endpoint to filter for.</param>
+        /// <param name="EndPoint">The EndPoint to filter for.</param>
         /// <param name="tick">The minimum tick value.</param>
-        /// <returns>An iterator over the results sorted by Tick.</returns>
+        /// <returns>An iterator over the results sorted by tick.</returns>
         /// <exception cref="ArgumentException">If resourceKind is null or empty.</exception>
-        /// <exception cref="ArgumentException">If endpoint is null or empty.</exception>
-        ICorrelatedResSyncInfoEnumerator GetSinceTick(string resourceKind, string endpoint, int tick);
+        /// <exception cref="ArgumentException">If EndPoint is null or empty.</exception>
+        ICorrelatedResSyncInfoEnumerator GetSincetick(string resourceKind, string EndPoint, int tick);
 
         /// <summary>
         /// Returns an iterator over all correlated resource synchronisation entries of a resource kind.

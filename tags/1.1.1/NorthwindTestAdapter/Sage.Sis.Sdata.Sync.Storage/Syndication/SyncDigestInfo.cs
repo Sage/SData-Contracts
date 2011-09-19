@@ -52,13 +52,13 @@ namespace Sage.Sis.Sdata.Sync.Storage.Syndication
             get { return _entries[index]; }
             set { _entries[index] = value; }
         }
-        public SyncDigestEntryInfo this[string endpoint]
+        public SyncDigestEntryInfo this[string EndPoint]
         {
             get
             {
                 SyncDigestEntryInfo entry;
-                if (!this.FindByEndpoint(endpoint, out entry))
-                    throw new ArgumentException("No entry with given endpoint exists.");
+                if (!this.FindByEndPoint(EndPoint, out entry))
+                    throw new ArgumentException("No entry with given EndPoint exists.");
 
                 return entry;
             }
@@ -89,13 +89,13 @@ namespace Sage.Sis.Sdata.Sync.Storage.Syndication
 
         #region Private Methods
 
-        private bool FindByEndpoint(string endpoint, out SyncDigestEntryInfo entry)
+        private bool FindByEndPoint(string EndPoint, out SyncDigestEntryInfo entry)
         {
             entry = null;
 
             foreach (SyncDigestEntryInfo info in _entries)
             {
-                if (info.Endpoint == endpoint)
+                if (info.EndPoint == EndPoint)
                 {
                     entry = info;
                     return true;

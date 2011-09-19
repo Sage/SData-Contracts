@@ -33,12 +33,12 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet.TableAdapters
 
         #region SyncResultsTableAdapter Members
 
-        public void Insert(SyncResultEntryInfo[] infos, IJetTransaction jetTransaction)
+        public void Insert(SyncResultEntryInfo[] infos, string runName, string runStamp, IJetTransaction jetTransaction)
         {
             OleDbCommand oleDbCommand = jetTransaction.CreateOleCommand();
 
             string sqlQuery = string.Empty;
-            sqlQuery = "INSERT INTO {0} ([HttpMethod], [HttpStatus], [HttpMessage], [HttpLocation], [Diagnoses], [Payload], [Endpoint], [Stamp]) VALUES (@HttpMethod, @HttpStatus, @HttpMessage, @HttpLocation, @Diagnoses, @Payload, @Endpoint, @Stamp);";
+            sqlQuery = "INSERT INTO {0} ([HttpMethod], [HttpStatus], [HttpMessage], [HttpLocation], [Diagnoses], [Payload], [EndPoint], [Stamp], [RunName], [RunStamp]) VALUES (@HttpMethod, @HttpStatus, @HttpMessage, @HttpLocation, @Diagnoses, @Payload, @EndPoint, @Stamp, @RunName, @RunStamp);";
 
             oleDbCommand.CommandText = string.Format(sqlQuery, _syncResultsTable.TableName);
 
@@ -48,7 +48,7 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet.TableAdapters
                 //oleDbCommand.Parameters.Clear();
                 oleDbCommand.Parameters.AddWithValue("@HttpMethod", info.HttpMethod);
                 oleDbCommand.Parameters.AddWithValue("@HttpStatus", info.HttpStatus);
-                if (null != info.HttpMessage) oleDbCommand.Parameters.AddWithValue("@HttpMessage", info.HttpMessage);
+                if (null != info.HttpMessage) oleDbCommand.Parameters.AddWithValue("@HttpMessage", (info.HttpMessage.Length > 255 ? info.HttpMessage.Substring(0, 255) : info.HttpMessage));
                 else oleDbCommand.Parameters.AddWithValue("@HttpMessage", DBNull.Value);
                 if (null != info.HttpLocation) oleDbCommand.Parameters.AddWithValue("@HttpLocation", info.HttpLocation);
                 else oleDbCommand.Parameters.AddWithValue("@HttpLocation", DBNull.Value);
@@ -56,8 +56,12 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet.TableAdapters
                 else oleDbCommand.Parameters.AddWithValue("@Diagnoses", DBNull.Value);
                 if (null != info.PayloadXml) oleDbCommand.Parameters.AddWithValue("@Payload", info.PayloadXml);
                 else oleDbCommand.Parameters.AddWithValue("@Payload", DBNull.Value);
-                oleDbCommand.Parameters.AddWithValue("@Endpoint", info.Endpoint);
+                oleDbCommand.Parameters.AddWithValue("@EndPoint", info.EndPoint);
                 oleDbCommand.Parameters.AddWithValue("@Stamp", info.Stamp.ToString());
+                if (null != runName) oleDbCommand.Parameters.AddWithValue("@RunName", runName);
+                else oleDbCommand.Parameters.AddWithValue("@RunName", DBNull.Value);
+                if (null != runStamp) oleDbCommand.Parameters.AddWithValue("@RunStamp", runStamp);
+                else oleDbCommand.Parameters.AddWithValue("@RunStamp", DBNull.Value);
 
                 oleDbCommand.ExecuteNonQuery();
             }

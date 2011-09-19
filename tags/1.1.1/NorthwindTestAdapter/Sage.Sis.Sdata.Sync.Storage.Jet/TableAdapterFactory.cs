@@ -57,42 +57,42 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet
             //return cachedResourceKindTableAdapter;
         }
 
-        internal IEndpointTableAdapter CreateEndpointTableAdapter()
+        internal IEndPointTableAdapter CreateEndPointTableAdapter()
         {
-            IEndpointTable endpointTable = new EndpointTable();
+            IEndPointTable EndPointTable = new EndPointTable();
             using (IJetTransaction jetTransaction = _connProvider.GetTransaction(false))
             {
-                if (!JetHelpers.TableExists(endpointTable.TableName, jetTransaction))
+                if (!JetHelpers.TableExists(EndPointTable.TableName, jetTransaction))
                 {
-                    endpointTable.CreateTable(jetTransaction);
+                    EndPointTable.CreateTable(jetTransaction);
                     jetTransaction.Commit();
                 }
             }
 
-            IEndpointTableAdapter endpointTableAdapter = new EndpointTableAdapter(endpointTable, _context);
+            IEndPointTableAdapter EndPointTableAdapter = new EndPointTableAdapter(EndPointTable, _context);
 
             using (IJetTransaction jetTransaction = _connProvider.GetTransaction(false))
             {
-                endpointTableAdapter.SetOriginEndPoint(_context.BaseUrl, jetTransaction);
+                EndPointTableAdapter.SetOriginEndPoint(_context.BaseUrl, jetTransaction);
                 jetTransaction.Commit();
 
             }
 
-            return endpointTableAdapter;
-            //CachedEndpointTableAdapter cachedEndpointTableAdapter = new CachedEndpointTableAdapter(endpointTableAdapter);
+            return EndPointTableAdapter;
+            //CachedEndPointTableAdapter cachedEndPointTableAdapter = new CachedEndPointTableAdapter(EndPointTableAdapter);
             
             //using (IJetTransaction jetTransaction = _connProvider.GetTransaction(false))
             //{
-            //    cachedEndpointTableAdapter.Load(jetTransaction);
+            //    cachedEndPointTableAdapter.Load(jetTransaction);
             //    jetTransaction.Commit();
             //}
 
-            //return cachedEndpointTableAdapter;
+            //return cachedEndPointTableAdapter;
         }
 
-        internal ISyncDigestTableAdapter CreateSyncDigestTableAdapter(IResourceKindTableAdapter resourceKindTableAdapter, IEndpointTableAdapter endpointTableAdapter)
+        internal ISyncDigestTableAdapter CreateSyncDigestTableAdapter(IResourceKindTableAdapter resourceKindTableAdapter, IEndPointTableAdapter EndPointTableAdapter)
         {
-            ISyncDigestTable syncDigestTable = new SyncDigestTable(resourceKindTableAdapter.Table, endpointTableAdapter.Table);
+            ISyncDigestTable syncDigestTable = new SyncDigestTable(resourceKindTableAdapter.Table, EndPointTableAdapter.Table);
             using (IJetTransaction jetTransaction = _connProvider.GetTransaction(false))
             {
                 // create the table
@@ -131,7 +131,7 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet
             return new AppBookmarkTableAdapter(appBookmarkTable, _context);
         }
 
-        internal ICorrelatedResSyncTableAdapter CreateCorrelatedResSyncTableAdapter(string resourceKind, IEndpointTableAdapter endpointTableAdapter, IResourceKindTableAdapter resourceKindTableAdapter)
+        internal ICorrelatedResSyncTableAdapter CreateCorrelatedResSyncTableAdapter(string resourceKind, IEndPointTableAdapter EndPointTableAdapter, IResourceKindTableAdapter resourceKindTableAdapter)
         {
             ResourceKindInfo resourceKindInfo = null;
             using (IJetTransaction jetTransaction = _connProvider.GetTransaction(false))
@@ -140,7 +140,7 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet
                 jetTransaction.Commit();
             }
 
-            ICorrelatedResSyncTable correlatedResSyncTable = new CorrelatedResSyncTable(resourceKindInfo.Id, resourceKindTableAdapter.Table, endpointTableAdapter.Table);
+            ICorrelatedResSyncTable correlatedResSyncTable = new CorrelatedResSyncTable(resourceKindInfo.Id, resourceKindTableAdapter.Table, EndPointTableAdapter.Table);
             using (IJetTransaction jetTransaction = _connProvider.GetTransaction(false))
             {
                 if (!JetHelpers.TableExists(correlatedResSyncTable.TableName, jetTransaction))
@@ -153,9 +153,9 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet
             return new CorrelatedResSyncTableAdapter(correlatedResSyncTable,_context);
         }
 
-        internal ITickTableAdapter CreateTickTableAdapter(IResourceKindTableAdapter resourceKindTableAdapter)
+        internal ItickTableAdapter CreatetickTableAdapter(IResourceKindTableAdapter resourceKindTableAdapter)
         {
-            ITickTable tickTable = new TickTable(resourceKindTableAdapter.Table);
+            ItickTable tickTable = new tickTable(resourceKindTableAdapter.Table);
             using (IJetTransaction jetTransaction = _connProvider.GetTransaction(false))
             {
                 if (!JetHelpers.TableExists(tickTable.TableName, jetTransaction))
@@ -165,7 +165,7 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet
                 }
             }
 
-            return new TickTableAdapter(tickTable, _context);
+            return new tickTableAdapter(tickTable, _context);
         }
 
         internal ISyncResultsTableAdapter CreateSyncResultsTableAdapter(string resourceKind, IResourceKindTableAdapter resourceKindTableAdapter)

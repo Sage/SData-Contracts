@@ -34,19 +34,19 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet
 
         #region ISyncDigestInfoStoreProvider Members
 
-        public SyncDigestEntryInfo Get(string resourceKind, string endPoint)
+        public SyncDigestEntryInfo Get(string resourceKind, string EndPoint)
         {
 
             SyncDigestEntryInfo resultInfo = null;
             ISyncDigestTableAdapter syncDigestTableAdapter = StoreEnvironment.Resolve<ISyncDigestTableAdapter>(_context);
             IResourceKindTableAdapter resourceKindTableAdapter = StoreEnvironment.Resolve<IResourceKindTableAdapter>(_context);
-            IEndpointTableAdapter endpointTableAdapter = StoreEnvironment.Resolve<IEndpointTableAdapter>(_context);
+            IEndPointTableAdapter EndPointTableAdapter = StoreEnvironment.Resolve<IEndPointTableAdapter>(_context);
 
             using (IJetTransaction jetTransaction = _jetConnectionProvider.GetTransaction(false))
             {
                 ResourceKindInfo resourceKindInfo = resourceKindTableAdapter.GetOrCreate(resourceKind, jetTransaction);
-                EndpointInfo endpointInfo = endpointTableAdapter.GetOrCreate(endPoint, jetTransaction);
-                resultInfo = syncDigestTableAdapter.Get(resourceKindInfo.Id, endpointInfo.Id, jetTransaction);
+                EndPointInfo EndPointInfo = EndPointTableAdapter.GetOrCreate(EndPoint, jetTransaction);
+                resultInfo = syncDigestTableAdapter.Get(resourceKindInfo.Id, EndPointInfo.Id, jetTransaction);
 
                 jetTransaction.Commit();
             }
@@ -113,7 +113,7 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet
                 catch (OleDbException exception)
                 {
                     if (exception.Errors.Count == 1 && exception.Errors[0].SQLState == "3022")
-                        throw new StoreException(string.Format("An error occured while adding a new sync digest entry. A sync digest entry already exists for the resource kind '{0}' and endpoint '{1}.", resourceKind, info.Endpoint), exception);
+                        throw new StoreException(string.Format("An error occured while adding a new sync digest entry. A sync digest entry already exists for the resource kind '{0}' and EndPoint '{1}.", resourceKind, info.EndPoint), exception);
 
                     throw;
                 }

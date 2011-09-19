@@ -77,7 +77,7 @@ namespace Sage.Integration.Northwind.Adapter.Common
             this.SdataUri = sdataUri;
 
             // config
-            NorthwindConfig newConfig = new NorthwindConfig();
+            NorthwindConfig newConfig = new NorthwindConfig(sdataUri.CompanyDataset);
 
             newConfig.CurrencyCode = "EUR";
             newConfig.CrmUser = "Sdata";
@@ -240,7 +240,7 @@ namespace Sage.Integration.Northwind.Adapter.Common
                         {
                             this.RequestType = RequestType.None;            // -> Type: None
                             this.ResourceKind = SupportedResourceKinds.None;
-                            this.ErrorMessage = "please specify the primary key inside the predicate as string";
+                            this.ErrorMessage = "please specify the primary Key inside the predicate as string";
                             return;
                         }
                     }
@@ -278,7 +278,7 @@ namespace Sage.Integration.Northwind.Adapter.Common
                         {
                             this.RequestType = RequestType.None;            // -> Type: None
                             this.ResourceKind = SupportedResourceKinds.None;
-                            this.ErrorMessage = "please specify the primary key inside the predicate as string";
+                            this.ErrorMessage = "please specify the primary Key inside the predicate as string";
                             return;
                         }
                     }

@@ -9,7 +9,7 @@ using Sage.Sis.Common.Data.OleDb;
 
 namespace Sage.Sis.Sdata.Sync.Storage.Jet.Tables
 {
-    internal class TickTable : ITickTable
+    internal class tickTable : ItickTable
     {
         #region Class Variables
 
@@ -19,18 +19,18 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet.Tables
 
         #region Ctor.
 
-        public TickTable(IResourceKindTable resourceKindTable)
+        public tickTable(IResourceKindTable resourceKindTable)
         {
             this.ResourceKindTable = resourceKindTable;
 
             string tableName;
             string[] sqlQueries = new string[3];
 
-            tableName = string.Format("{0}tblTick", Settings.Default.TablePrefix);
+            tableName = string.Format("{0}tbltick", Settings.Default.TablePrefix);
 
             sqlQueries[0] = string.Format("CREATE TABLE [{0}] ", tableName);
             sqlQueries[0] += "([FKResourceKindId]     INTEGER NOT NULL, ";
-            sqlQueries[0] += " [Tick]                 INTEGER NOT NULL);";
+            sqlQueries[0] += " [tick]                 INTEGER NOT NULL);";
 
             sqlQueries[1] = string.Format("CREATE UNIQUE INDEX PK ON [{0}] ([FKResourceKindId]) WITH PRIMARY;", tableName);
             sqlQueries[2] = string.Format("ALTER TABLE {0} ADD CONSTRAINT FK_{0}_FKResourceKindId FOREIGN KEY (FKResourceKindId) REFERENCES {1} (ID);", tableName, this.ResourceKindTable.TableName);
@@ -40,7 +40,7 @@ namespace Sage.Sis.Sdata.Sync.Storage.Jet.Tables
 
         #endregion
 
-        #region ITickTable Members
+        #region ItickTable Members
 
         public IResourceKindTable ResourceKindTable { get; private set; }
 
