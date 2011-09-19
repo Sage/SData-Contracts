@@ -19017,7 +19017,7 @@ LOW</xs:documentation>
 				<xs:annotation>
 					<xs:documentation>
             Bank Account to which the Payment was made. See BankAccount
-            definition.
+            definition.  If there are multiple different Bank Accounts then these are expressed on the Payment Lines
           </xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -19087,7 +19087,15 @@ LOW</xs:documentation>
 					<xs:documentation>
             Trading Account (e.g. Supplier/Customer) to which the Payment was made.
             See TradingAccount definition. Not mandatory as Payment can also be against a
-            Financial Account.
+            Financial Account or Employee.
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="employee" type="employee--type" nillable="true" minOccurs="0" sme:label="Payment Employee" sme:relationship="reference" sme:isCollection="false">
+				<xs:annotation>
+					<xs:documentation>
+            Employee to which the Payment was made (if applicable).
+		    See Employee definition.
           </xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -19436,6 +19444,14 @@ LOW</xs:documentation>
           </xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="externalReference" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="PaymentLine Tender External Reference">
+				<xs:annotation>
+					<xs:documentation>
+            Reference for the Payment Line associated with the processor of the tender
+            type.
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="number" type="xs:decimal" minOccurs="0" sme:label="PaymentLine Number">
 				<xs:annotation>
 					<xs:documentation>
@@ -19448,6 +19464,46 @@ LOW</xs:documentation>
 					<xs:documentation>
             The date of the Payment Line. May be different to the Payment date if
             the Payment is allocated at a later date.
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="processDate" type="xs:date" nillable="true" minOccurs="0" sme:label="PaymentLine Process Date">
+				<xs:annotation>
+					<xs:documentation>
+            The date the Payment Line was processed, e.g. by the Bank Account (if
+            different). Could be same as Payment Line Date
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="bankAccount" type="bankAccount--type" nillable="true" minOccurs="0" sme:label="PaymentLine BankAccount" sme:relationship="reference" sme:isCollection="false">
+				<xs:annotation>
+					<xs:documentation>
+            Bank Account to which the Payment was made. See BankAccount
+            definition.
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="status" type="xs:normalizedString" nillable="true" minOccurs="0" sme:label="PaymentLine Status">
+				<xs:annotation>
+					<xs:documentation>
+            Status of the Payment Line (e.g. cleared, pending, authorized etc).
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="tradingAccount" type="tradingAccount--type" nillable="true" minOccurs="0" sme:label="PaymentLine TradingAccount" sme:relationship="reference" sme:isCollection="false">
+				<xs:annotation>
+					<xs:documentation>
+            Trading Account (e.g. Supplier/Customer) to which the Payment Line was made.
+            See TradingAccount definition. Not mandatory as Payment Line can also be against a
+            Financial Account or Employee.
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="employee" type="employee--type" nillable="true" minOccurs="0" sme:label="PaymentLine Employee" sme:relationship="reference" sme:isCollection="false">
+				<xs:annotation>
+					<xs:documentation>
+            Employee to which the payment Line was made (if applicable).
+		    See Employee definition.
           </xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -19466,6 +19522,73 @@ LOW</xs:documentation>
             Reference to other document Lines if the Payment Line is for that
             document Line (e.g. a Purchase Invoice Line). A single Payment can be for many
             documents/invoices. See PurchaseInvoiceLine definition.
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="taxCodes" type="taxCode--list" nillable="true" minOccurs="0" sme:label="PaymentLine Tax Codes" sme:relationship="association" sme:isCollection="true">
+				<xs:annotation>
+					<xs:documentation>
+            Tax code governing the tax regime applicable to this Payment Line. See
+            TaxCode definition.
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="currency" type="xs:normalizedString" minOccurs="0" sme:label="PaymentLine Currency">
+				<xs:annotation>
+					<xs:documentation>
+            The currency of the PaymentLine (e.g. GBP, USD, EUR). ISO 4217. Default =
+            Bank Account Currency.
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="operatingCompanyCurrency" type="xs:normalizedString" minOccurs="0" sme:label="PaymentLine OperatingCompany Currency">
+				<xs:annotation>
+					<xs:documentation>
+            The currency as used by OperatingCompany, the business operating the
+            Sage application (the base currency). ISO 4217.
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="operatingCompanyCurrencyExchangeRate" type="xs:decimal" nillable="true" minOccurs="0" sme:label="PaymentLine OperatingCompany Currency Exchange Rate">
+				<xs:annotation>
+					<xs:documentation>
+            Rate used to convert from Payment Line Currency into Payment Line
+            OperatingCompany Currency, if different.
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="operatingCompanyCurrencyExchangeRateOperator" type="rateOperator--enum" nillable="true" minOccurs="0" sme:label="PaymentLine OperatingCompany Currency Exchange Rate Operator">
+				<xs:annotation>
+					<xs:documentation>
+            Operator to be used (multiplication or division) to convert from
+            Payment Line Currency to Payment Line OperatingCompany Currency. * (multiplication) or /
+            division. E.g. if the operator is division then it is Payment Line Values in Payment Line Currency
+            / Payment Line Operating Company Currency Exchange Rate = Payment Line Values in Payment Line
+            OperatingCompany currency.
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="operatingCompanyCurrencyExchangeRateDate" type="xs:date" nillable="true" minOccurs="0" sme:label="PaymentLine OperatingCompany Currency Exchange Rate Date">
+				<xs:annotation>
+					<xs:documentation>
+            Date of the exchange rate used to convert from Payment Line Currency to
+            Payment Line OperatingCompany Currency, if different. Default = System date
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="balanceBefore" type="xs:decimal" nillable="true" minOccurs="0" sme:label="PaymentLine BankAccount Balance Before">
+				<xs:annotation>
+					<xs:documentation>
+            The balance of the Bank Account making the Payment Line before the amount is
+            applied. In Payment Currency.
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="balanceAfter" type="xs:decimal" nillable="true" minOccurs="0" sme:label="PaymentLine BankAccount Balance After">
+				<xs:annotation>
+					<xs:documentation>
+            The balance of the Bank Account making the Payment after the actual
+            amount is applied. In Payment Currency.
           </xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -19524,6 +19647,22 @@ LOW</xs:documentation>
 				<xs:annotation>
 					<xs:documentation>
             A description or narrative associated with the Payment Line.
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="text1" type="xs:string" nillable="true" minOccurs="0" sme:label="PaymentLine Text1">
+				<xs:annotation>
+					<xs:documentation>
+            Text/commentary (e.g. special picking/packing instructions) for the
+            Payment Line. Header text
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="text2" type="xs:string" nillable="true" minOccurs="0" sme:label="PaymentLine Text2">
+				<xs:annotation>
+					<xs:documentation>
+            Text/commentary (e.g. special picking/packing instructions) for the
+            Payment Line. Footer text
           </xs:documentation>
 				</xs:annotation>
 			</xs:element>
