@@ -31370,6 +31370,15 @@ LOW</xs:documentation>
           </xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="nextAppraisalDate" type="xs:date" nillable="true" minOccurs="0" sme:label="Next Appraisal Date">
+				<xs:annotation>
+					<xs:documentation>
+            The date the next Appraisal is planned.
+             
+
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="text1" type="xs:string" nillable="true" minOccurs="0" sme:label="Appraisal Text1">
 				<xs:annotation>
 					<xs:documentation>
@@ -35272,7 +35281,8 @@ LOW</xs:documentation>
 			<xs:enumeration value="Public Holiday"/>
 			<xs:enumeration value="Sickness"/>
 			<xs:enumeration value="Adoption"/>
-			<xs:enumeration value="Jury Service Compassionate"/>
+			<xs:enumeration value="Jury Service"/> 
+			<xs:enumeration value="Compassionate"/>
 			<xs:enumeration value="Custodial"/>
 			<xs:enumeration value="Maternity"/>
 			<xs:enumeration value="Paternity"/>
@@ -35281,6 +35291,7 @@ LOW</xs:documentation>
 			<xs:enumeration value="Trade"/>
 			<xs:enumeration value="Career Break"/>
 			<xs:enumeration value="Armed Forces"/>
+			<xs:enumeration value="Allowable"/>
 			<xs:enumeration value="Unknown"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -35320,7 +35331,8 @@ LOW</xs:documentation>
 			<xs:enumeration value="Public Holiday"/>
 			<xs:enumeration value="Sickness"/>
 			<xs:enumeration value="Adoption"/>
-			<xs:enumeration value="Jury Service Compassionate"/>
+			<xs:enumeration value="Jury Service"/>
+			<xs:enumeration value="Compassionate"/>
 			<xs:enumeration value="Custodial"/>
 			<xs:enumeration value="Maternity"/>
 			<xs:enumeration value="Paternity"/>
