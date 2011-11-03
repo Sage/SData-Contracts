@@ -25162,6 +25162,15 @@ LOW</xs:documentation>
           </xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="expectedLeaveDate" type="xs:date" nillable="true" minOccurs="0" sme:label="Employment Expected Leave Date">
+				<xs:annotation>
+					<xs:documentation>
+            Date the Employment is expected to be closed.
+             
+
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="workplaces" type="workplace--list" nillable="true" minOccurs="0" sme:label="Employment Workplace" sme:relationship="association" sme:isCollection="true">
 				<xs:annotation>
 					<xs:documentation>
@@ -25597,6 +25606,15 @@ LOW</xs:documentation>
 				<xs:annotation>
 					<xs:documentation>
             Total of all Sickness for the current Employment Period usually fiscal year.
+             
+
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="sicknessTerms" type="employmentSicknessTerms--enum" nillable="true" minOccurs="0" sme:label="Employment Sickness Terms">
+				<xs:annotation>
+					<xs:documentation>
+            The terms of the sickness entitlement e.g. Company, Occupational, None, Unknown, etc.
              
 
           </xs:documentation>
@@ -34468,11 +34486,12 @@ LOW</xs:documentation>
 			<xs:enumeration value="Permanent"/>
 			<xs:enumeration value="Casual"/>
 			<xs:enumeration value="Homeworker"/>
-			<xs:enumeration value="Secondment Expatrie"/>
+			<xs:enumeration value="Secondment"/>
 			<xs:enumeration value="Maternity Cover"/>
 			<xs:enumeration value="Student Intern"/>
 			<xs:enumeration value="Other"/>
 			<xs:enumeration value="Unknown"/>
+			<xs:enumeration value="Contractor"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="employmentDurationUnit--enum">
@@ -34569,6 +34588,7 @@ LOW</xs:documentation>
 			<xs:enumeration value="Cheque"/>
 			<xs:enumeration value="Electronic"/>
 			<xs:enumeration value="Unknown"/>
+			<xs:enumeration value="Credit Transfer"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="employmentPayrollPayFrequency--enum">
@@ -34652,6 +34672,14 @@ LOW</xs:documentation>
 			<xs:enumeration value="Month"/>
 			<xs:enumeration value="Quarter"/>
 			<xs:enumeration value="Year"/>
+			<xs:enumeration value="Unknown"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="employmentSicknessTerms--enum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Company"/>
+			<xs:enumeration value="Occupational"/>
+			<xs:enumeration value="None"/>
 			<xs:enumeration value="Unknown"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -34928,6 +34956,7 @@ LOW</xs:documentation>
 			<xs:enumeration value="Cheque"/>
 			<xs:enumeration value="Electronic"/>
 			<xs:enumeration value="Unknown"/>
+			<xs:enumeration value="Credit Transfer"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="payrollPayFrequency--enum">
@@ -35281,7 +35310,7 @@ LOW</xs:documentation>
 			<xs:enumeration value="Public Holiday"/>
 			<xs:enumeration value="Sickness"/>
 			<xs:enumeration value="Adoption"/>
-			<xs:enumeration value="Jury Service"/> 
+			<xs:enumeration value="Jury Service"/>
 			<xs:enumeration value="Compassionate"/>
 			<xs:enumeration value="Custodial"/>
 			<xs:enumeration value="Maternity"/>
@@ -35363,6 +35392,20 @@ LOW</xs:documentation>
 			<xs:enumeration value="Next of Kin"/>
 			<xs:enumeration value="None"/>
 			<xs:enumeration value="Unknown"/>
+			<xs:enumeration value="Sibling"/>
+			<xs:enumeration value="Friend"/>
+			<xs:enumeration value="Brother"/>
+			<xs:enumeration value="Daughter"/>
+			<xs:enumeration value="Father"/>
+			<xs:enumeration value="Grandchild"/>
+			<xs:enumeration value="Grandparent"/>
+			<xs:enumeration value="Guardian"/>
+			<xs:enumeration value="Husband"/>
+			<xs:enumeration value="Mother"/>
+			<xs:enumeration value="Partner"/>
+			<xs:enumeration value="Sister"/>
+			<xs:enumeration value="Son"/>
+			<xs:enumeration value="Wife"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="relatedPartyGender--enum">
