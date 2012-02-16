@@ -22155,6 +22155,7 @@ LOW</xs:documentation>
 			<xs:enumeration value="Both"/>
 			<xs:enumeration value="Neither"/>
 			<xs:enumeration value="Unknown"/>
+			<xs:enumeration value="Prospect"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="tradingAccountPersonFlag--enum">
